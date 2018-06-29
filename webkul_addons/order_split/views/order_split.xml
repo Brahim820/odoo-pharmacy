@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.order.split.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[last()]" position="after">
+                <button 
+                    class="oe_highlight" 
+                    groups="base.group_user" 
+                    name="split_action" 
+                    states="assigned,confirmed,partially_available,draft,waiting" 
+                    string="Split" type="object"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

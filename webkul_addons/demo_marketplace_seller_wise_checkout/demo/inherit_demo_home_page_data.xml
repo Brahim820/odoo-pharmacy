@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+        <record id="odoo_mp_seller_wise_checkout_demo_homepage" model="demo.home.page">
+            <field name="store_url">https://store.webkul.com/Odoo-Marketplace-Seller-Wise-Checkout.html</field>
+            <field name="blog_url">https://webkul.com/blog/odoo-marketplace-seller-wise-checkout/</field>
+            <field name="video_link"></field>
+            <field name="name">Odoo Marketplace Seller Wise Checkout</field>
+            <field name="about">Odoo Marketplace Seller Wise Checkout is a module by which orders can be splitted seller wise.
+                This module creates different orders in cart for different seller products and manages them separately.
+                Also, the customer can checkout and pay for each order separately.</field>
+            <field name="banner_path">demo_marketplace_seller_wise_checkout/static/img/Banner.png</field>
+            <field name="parent_demo_home_page_id" eval="ref('demo_odoo_marketplace.odoo_mp_demo_homepage_data1')"/>
+        </record>
+    </data>
+</odoo>

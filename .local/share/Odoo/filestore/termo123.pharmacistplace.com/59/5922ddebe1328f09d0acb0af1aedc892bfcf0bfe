@@ -1,0 +1,6 @@
+
+@media (min-width: 768px) {
+  .o_kanban_view.o_kanban_dashboard.o_pos_kanban.o_kanban_ungrouped .o_kanban_record {
+    min-width: 500px;
+  }
+}

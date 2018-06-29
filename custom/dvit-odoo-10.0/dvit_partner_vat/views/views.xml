@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="partner_vat_form" model="ir.ui.view">
+            <field name="name">partner_vat_form</field>
+            <field name="model">res.partner</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="vat" string="VAT/TIN"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

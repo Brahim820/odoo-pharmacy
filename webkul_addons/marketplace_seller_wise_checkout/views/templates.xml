@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <template id="mp_checkout_assets_frontend" inherit_id="website.assets_frontend" name="Seller Checkout">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/marketplace_seller_wise_checkout/static/src/js/mp_seller_checkout.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

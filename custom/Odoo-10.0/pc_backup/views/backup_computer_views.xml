@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+      <record id="backup_computer_view_form" model="ir.ui.view">
+          <field name="name">backup.computer.form.view</field>
+          <field name="model">backup.computer</field>
+          <field name="sequence">10</field>
+          <field name="arch" type="xml">
+      	      <form>
+      	          <sheet>    
+      	              <group>
+      	                  <field name="user_id"/>
+      	                  <field name="username"/>
+      	                  <field name="computer_name"/>
+      	                  <field name="backup_file_ids">
+      	                      <tree>
+      	                          <field name="file_name"/>
+      	                          <field name="backup_path"/>
+      	                      </tree>
+      	                  </field>
+          	      </group>
+      	          </sheet>
+      	      </form>
+      	  </field>
+      </record>
+
+      <record id="backup_computer_view_tree" model="ir.ui.view">
+          <field name="name">backup.computer.tree.view</field>
+          <field name="model">backup.computer</field>
+          <field name="sequence">20</field>
+          <field name="arch" type="xml">
+      	      <tree>
+      	          <field name="user_id"/>
+      	          <field name="computer_name"/>
+      	      </tree>
+      	  </field>
+      </record>
+
+      <record id="backup_computer_action" model="ir.actions.act_window">
+          <field name="name">PC Backups</field>
+	  <field name="res_model">backup.computer</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+	      <p>
+	          No PC Backups Found
+	      </p>
+          </field>
+      </record>
+
+      <record id="backup_user_action" model="ir.actions.act_window">
+          <field name="name">Backup Users</field>
+	  <field name="res_model">res.users</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="context" eval="'{\'default_backup_user\': True, \'default_groups_id\': [(4, ' + str( ref('remote_backup_user_group') ) + ')]}'"/>
+          <field name="domain">[('backup_user','=',True)]</field>
+          <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('res_users_backup_view_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('res_users_backup_view_form')})]"/>
+	  <field name="help" type="html">
+	      <p>
+	          No backup users
+	      </p>
+          </field>
+      </record>
+
+      <record id="backup_odoo_action" model="ir.actions.act_window">
+          <field name="name">Remote Odoo Database Backups</field>
+	  <field name="res_model">backup.odoo</field>
+	  <field name="view_mode">tree,form</field>
+	  <field name="help" type="html">
+	      <p>
+	          No Odoo Database Backups
+	      </p>
+          </field>
+      </record>
+
+      <menuitem id="backup_computer_parent_menu" name="Backup" parent="base.menu_administration" sequence="90"/>
+      <menuitem id="backup_computer_menu" name="Computer Backups" parent="backup_computer_parent_menu" action="backup_computer_action" sequence="10"/>
+      <menuitem id="backup_user_menu" name="Remote Backups Users" parent="backup_computer_parent_menu" action="backup_user_action" sequence="20"/>
+      <menuitem id="backup_odoo_menu" name="Remote Odoo Backups" parent="backup_computer_parent_menu" action="backup_odoo_action" sequence="30"/>
+      
+</odoo>

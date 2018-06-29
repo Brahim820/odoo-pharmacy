@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * product_profile_example
+# 
+# Translators:
+# enjolras <yo@miguelrevilla.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-29 08:49+0000\n"
+"PO-Revision-Date: 2018-01-29 08:49+0000\n"
+"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: product_profile_example
+#: model:ir.model.fields,field_description:product_profile_example.field_product_profile_available_in_pos
+msgid "Available in pos"
+msgstr "Disponible en TPV"
+
+#. module: product_profile_example
+#: model:ir.model.fields,field_description:product_profile_example.field_product_profile_purchase_ok
+msgid "Can be Purchased"
+msgstr "Se puede comprar"
+
+#. module: product_profile_example
+#: model:ir.model.fields,field_description:product_profile_example.field_product_profile_sale_ok
+msgid "Can be Sold"
+msgstr "Se puede vender"
+
+#. module: product_profile_example
+#: model:ir.model.fields,field_description:product_profile_example.field_product_profile_profile_default_categ_id
+msgid "Default category"
+msgstr "Categoría predeterminada"
+
+#. module: product_profile_example
+#: model:ir.model.fields,help:product_profile_example.field_product_profile_profile_default_route_ids
+msgid ""
+"Depending on the modules installed, this will allow you to define the route "
+"of the product: whether it will be bought, manufactured, MTO/MTS,..."
+msgstr ""
+
+#. module: product_profile_example
+#: model:ir.model.fields,field_description:product_profile_example.field_product_profile_profile_default_route_ids
+msgid "Routes"
+msgstr "Rutas"
+
+#. module: product_profile_example
+#: model:ir.model.fields,help:product_profile_example.field_product_profile_sale_ok
+msgid "Specify if the product can be selected in a sales order line."
+msgstr ""
+
+#. module: product_profile_example
+#: model:ir.model,name:product_profile_example.model_product_profile
+msgid "product.profile"
+msgstr "product.profile"

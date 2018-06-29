@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sale_offer,sale.offer.public,model_sale_offer,,1,0,0,0
+access_bogo_offer,bogo.ofer.rule.public,model_bogo_offer_rule,,1,0,0,0
+
+
+access_sale_offer_sale_manager,sale.offer.sale.manager,model_sale_offer,sales_team.group_sale_manager,1,1,1,0
+access_bogo_offer_sale_manager,bogo.ofer.rule.sale.manager,model_bogo_offer_rule,sales_team.group_sale_manager,1,1,1,1
+
+access_sale_offer_mp_seller,sale.offer.mp_seller,model_sale_offer,odoo_marketplace.marketplace_seller_group,1,1,1,1
+access_bogo_offer_mp_seller,bogo.ofer.rule.mp_seller,model_bogo_offer_rule,odoo_marketplace.marketplace_seller_group,1,1,1,1

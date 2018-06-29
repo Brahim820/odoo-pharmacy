@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mp_pharmacy_details_checkout_theme_assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mp_seller_wise_checkout_theme_compatibility/static/src/js/mp_pharmacist_details_theme.js"/>
+        </xpath>
+    </template>
+    <template id="inherit_theme_pharmacistplace_cart" inherit_id="theme_pharmacistplace.theme_pharmacistplace_cart">
+        <xpath expr="//a[@href='/shop']" position="attributes">
+            <attribute name="t-att-style">'display:None;' if continue_shopping else ''</attribute>
+        </xpath>
+        <xpath expr="//a[@href='/shop']" position="attributes">
+            <attribute name="t-att-style">'display:None;' if continue_shopping else ''</attribute>
+        </xpath>
+        <xpath expr="//a[@t-if='not optional_products and website_sale_order and website_sale_order.website_order_line']" position="replace"></xpath>
+    </template>
+    <template id="compatibility_inherit_theme_pharmacistplace_continue_shopping" inherit_id="marketplace_pharmacist_details.inherit_theme_pharmacistplace_continue_shopping">
+        <xpath expr="//a[@href='/shop/distributor_activate']" position="replace">
+            <a t-if="not optional_products and website_sale_order and website_sale_order.website_order_line" class="btn btn-info pull-right mb8" t-att-href="'/shop/distributor_activate?seller=%s' % (website_sale_order.marketplace_seller_id.id) if website_sale_order.marketplace_seller_id else '/shop/distributor_activate'">
+                <span class="">Process Checkout</span>
+                <span class="fa fa-shopping-cart" />
+            </a>
+        </xpath>
+    </template>
+    <template id="theme_continue_shopping_add_condition" inherit_id="theme_pharmacistplace.theme_pharmacistplace_continue_shopping">
+        <xpath expr="//a[@href='/shop']" position="before">
+            <t t-if="seller_so_ids" t-set="seller_so" t-value="seller_so_ids.filtered(lambda o: len(o.website_order_line)>0)"/>
+            <t t-else="" t-set="seller_so" t-value="False"/>
+            <t t-set="website_so" t-value="True if website_sale_order and website_sale_order.website_order_line else False"/>
+        </xpath>
+        <xpath expr="//a[@href='/shop']" position="attributes">
+            <attribute name="t-if">website_so or not website_so and not seller_so</attribute>
+        </xpath>
+    </template>
+    <template id="theme_confirmation_page_another_order" inherit_id="theme_pharmacistplace.theme_pharmacistplace_cart_done">
+        <xpath expr="//a[@id='another_order']" position="before">
+            <t t-set="website_sale_order" t-value="request.env['sale.order'].sudo().browse(int(request.session.get('admin_so'))) if request.session.get('admin_so') else False" />
+            <t t-if="website_sale_order" t-set="website_sale_order" t-value="website_sale_order.filtered(lambda o: len(o.website_order_line)>0)"/>
+            <t t-set="seller_so_ids" t-value="request.env['sale.order'].sudo().browse(request.website._get_seller_sale_order_ids(request.session.get('seller_so_ids') if request.session.get('seller_so_ids') else False))"/>
+            <t t-if="seller_so_ids" t-set="seller_so" t-value="seller_so_ids.filtered(lambda o: len(o.website_order_line)>0)"/>
+        </xpath>
+        <xpath expr="//a[@id='another_order']" position="attributes">
+            <attribute name="t-att-href">'/shop/cart' if website_sale_order or seller_so_ids else '/shop'</attribute>
+        </xpath>
+    </template>
+</odoo>

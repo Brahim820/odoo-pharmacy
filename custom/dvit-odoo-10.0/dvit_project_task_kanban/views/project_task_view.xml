@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="task_kanban_inherited" model="ir.ui.view">
+      <field name="name">project.task.kanban.inherited</field>
+      <field name="model">project.task</field>
+      <field name="priority">999</field>
+      <field name="inherit_id" ref="hr_timesheet.view_task_kanban_inherited_progress"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+          <div style="font-size:12px !important;">
+            <field name="progress" widget="gauge" style="width:160px;height:100px;cursor:pointer;float:right;">Progress</field>
+            <span><b>Planned: </b><field name="planned_hours"/></span><br/>
+            <span><b>Remaining: </b><field name="remaining_hours"/></span><br/>
+            <span><b>Customer: </b><field name="partner_id"/></span><br/>
+          </div>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</openerp>

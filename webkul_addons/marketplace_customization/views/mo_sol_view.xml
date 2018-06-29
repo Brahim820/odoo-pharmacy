@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="odoo_marketplace.wk_seller_slae_order_line_action" model="ir.actions.act_window">
+            <field name="name">Sale Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="domain">[('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+            <field name="view_id" ref="odoo_marketplace.wk_seller_product_order_line_tree_view"/>
+            <field name="context">{'search_default_by_marketplace_seller_id': 1}</field>
+            <field name="search_view_id" ref="odoo_marketplace.wk_seller_product_order_line_search_view"/>
+        </record>
+
+        <record id="odoo_marketplace.wk_seller_product_order_line_action_for_tree_done" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="odoo_marketplace.wk_seller_product_order_line_tree_view"/>
+            <field name="act_window_id" ref="odoo_marketplace.wk_seller_slae_order_line_action"/>
+        </record>
+
+        <record id="odoo_marketplace.wk_seller_product_order_line_action_for_form_done" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="odoo_marketplace.wk_seller_product_order_line_form_view"/>
+            <field name="act_window_id" ref="odoo_marketplace.wk_seller_slae_order_line_action"/>
+        </record>
+
+        <record id="odoo_marketplace.wk_seller_product_order_line_action_for_graph_done" model="ir.actions.act_window.view">
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="odoo_marketplace.wk_seller_product_order_line_graph_view"/>
+            <field name="act_window_id" ref="odoo_marketplace.wk_seller_slae_order_line_action"/>
+        </record>
+
+
+        <record id="odoo_marketplace.wk_seller_sale_order_line_analysis_action" model="ir.actions.act_window">
+            <field name="name">Sale Order Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="view_mode">graph</field>
+            <field name="domain">[('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+            <field name="view_id" ref="odoo_marketplace.wk_seller_product_order_line_graph_view"/>
+            <field name="context">{'search_default_by_marketplace_seller_id': 1,'search_default_by_month': 1}</field>
+            <field name="search_view_id" ref="odoo_marketplace.wk_seller_product_order_line_search_view"/>
+        </record>
+
+        <record id="editable_sol_to_seller" model="ir.ui.view">
+            <field name="name">Editable SOL For Seller</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_order_line_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_seller_group') ])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="edit">true</attribute>
+                </xpath>
+                <field name="product_id" position="attributes">
+                    <attribute name="attrs">{'readonly': [('marketplace_state', '!=', 'new')]}</attribute>
+                </field>
+                <field name="product_uom_qty" position="attributes">
+                    <attribute name="attrs">{'readonly': [('marketplace_state', '!=', 'new')]}</attribute>
+                </field>
+                <field name="qty_delivered" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                <field name="create_date" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

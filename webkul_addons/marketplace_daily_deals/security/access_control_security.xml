@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="show_seller_deal_rule" model="ir.rule">
+	        <field name="name">Seller Daily Deals</field>
+	        <field name="model_id" ref="website_daily_deals.model_website_deals"/>
+	        <field name="domain_force">[('marketplace_seller_id.id','=',user.partner_id.id)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_seller_group'))]"/>
+	    </record>
+        <record id="show_officer_deal_rule" model="ir.rule">
+	        <field name="name">Officer Daily Deals</field>
+	        <field name="model_id" ref="website_daily_deals.model_website_deals"/>
+	        <field name="domain_force">[(1,'=',1)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_officer_group'))]"/>
+	    </record>
+        <record id="show_manager_deal_rule" model="ir.rule">
+	        <field name="name">Manager Daily Deals</field>
+	        <field name="model_id" ref="website_daily_deals.model_website_deals"/>
+	        <field name="domain_force">[(1,'=',1)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_manager_group'))]"/>
+	    </record>
+    </data>
+</odoo>

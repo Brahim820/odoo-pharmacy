@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+      <record id="view_sale_reorder_config" model="ir.ui.view">
+          <field name="name">website.config.settings.form.inherit</field>
+          <field name="model">website.config.settings</field>
+          <field name="inherit_id" ref="website_sale.website_config_settings_view_form"/>
+          <field name="arch" type="xml">
+            <group name="delivery" position="before">
+              <group name="reorder" string="Website Reorder">
+                <field name="group_sale_reorder"/>
+              </group>
+            </group>
+          </field>
+      </record>
+</odoo>

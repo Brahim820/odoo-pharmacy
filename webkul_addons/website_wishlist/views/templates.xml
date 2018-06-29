@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+   <template id="assets_frontend_wishlist" inherit_id="website.assets_frontend" name="Wishlist">
+      <xpath expr="." position="inside">
+          <link rel='stylesheet' href='/website_wishlist/static/src/css/wk_wishlist.css'/>
+          <script type="text/javascript" src="/website_wishlist/static/src/js/wk_wishlish.js"></script>
+      </xpath>
+    </template>
+
+
+    <template id="website_product_wishlish" inherit_id="website_sale.product">
+      <xpath expr="//form[@class='js_add_cart_variants']" position="after">
+         <t t-set="is_user_public" t-value="website.env.user == request.website.user_id"/>
+         <t t-if="not is_user_public">
+          <div class="wishlist-box">
+            <hr/>
+            <data id="wishlist_ids" t-att-ids='website.check_wishlist_product()'/>
+            <div class="js_product col-md-5" style="padding: 0px;">
+              <i class="fa fa-heart">&#032;<a class="add_to_wishlist" style="color: #337ab7;" href="#">Add to WishList</a></i>
+            </div> 
+            <div class="clearfix"/>
+          </div>
+          </t>
+      </xpath>
+    </template>
+
+
+    <template id="header" inherit_id="website.layout" name="Header Shop My Cart Link" >
+      <xpath expr="//header//ul[@id='top_menu']/li" position="before">
+        <li t-att-class="'' if website.get_wishlist_products() else 'hidden'">
+            <a href="/wishlist" >
+                <i class="fa fa-heart"></i>
+                My Wishlist <sup t-attf-class="my_wishlist_quantity label label-primary" ><t t-esc="len(website.get_wishlist_products()) or ''"/></sup>
+            </a>
+        </li>
+      </xpath>
+    </template>
+
+
+    <template id="wishlist" name="Wishlist" page="True">
+      <t t-call="website.layout">
+        <div id="wrap">
+          <div class="container oe_website_sale">
+            <h1 class="mb32">My WishList</h1>
+            <div class="row">
+                <div class="col-md-8 col-sm-9 oe_cart">
+                    <t t-set="product_wishlist" t-value="website.get_wishlist_products()"/>
+                    <div t-if="not product_wishlist" class="well well-lg">
+                      No Product(s) in your Wishlist!
+                  </div>
+
+                    <table class='table table-striped table-condensed' id="wishlist_products" t-if="product_wishlist">
+                        <thead>
+                            <tr>
+                                <th width="100">Product</th>
+                                <th></th>
+                                <th width="100" class="text-center">Price</th>
+                                <th width="150"></th>
+                            </tr>
+                        </thead>
+                       <tbody>
+                          <t t-foreach="product_wishlist" t-as="line">
+                            <tr>
+                                <td colspan="2" t-if="not line.template_id"></td>
+                                <td align="center" >
+                                    <span t-field="line.template_id.image_small"
+                                          t-field-options='{"widget": "image", "class": "img-rounded"}'/>
+                                </td>
+                                <td t-if="line.template_id.product_tmpl_id">
+                                    <div>
+                                        <a t-attf-href="/shop/product/#{ slug(line.template_id.product_tmpl_id) }">
+                                            <strong t-esc="line.template_id.name"/>
+                                        </a>
+                                    </div>
+                                    <div class="text-muted" t-esc="line.template_id.name_get()[0][1]"/>
+                                </td>
+                                <td class="text-center" name="price">
+                                  <span t-field="line.template_id.lst_price" style="white-space: nowrap;" t-field-options='{
+                                       "widget": "monetary",
+                                       "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                                   }'/>
+                                </td>
+                                <td>
+                                  <div id="wrapper">
+                                    <ul id="list"> <a t-if="product_wishlist" id="wishlist_to_cart" class="btn btn-primary pull-right mb31"  t-att-product-id="'%s' % line.template_id.id">Add To Cart <span class="fa fa-long-arrow-right"/></a></ul>
+                                    <div>
+                                    <a class="remove_whishlist" t-att-whishlist-id="'%s' % line.template_id.id"  href="#"> Remove from Wishlist</a>
+                                    </div>
+                                  </div>
+                                </td>
+                            </tr>
+                          </t>
+                        </tbody> 
+                    </table>
+                    <div class="clearfix"/>
+                    <div class="oe_structure"/>
+                </div>
+            </div>
+          </div>
+          <div class="oe_structure"/>
+        </div>
+      </t>
+    </template>
+
+
+  </data>
+</odoo>

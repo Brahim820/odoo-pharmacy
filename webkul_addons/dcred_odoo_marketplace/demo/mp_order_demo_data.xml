@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+    	<record id="dcred_odoo_marketplace.mp_sale_order_1" model="sale.order">
+            <field name="partner_id" ref="base.res_partner_2"/>
+            <field name="partner_invoice_id" ref="base.res_partner_2"/>
+            <field name="partner_shipping_id" ref="base.res_partner_2"/>
+            <field name="user_id" ref="base.user_demo"/>
+            <field name="pricelist_id" ref="product.list0"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="date_order" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.mp_sale_order_line_1" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Red Bag</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller1"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">150.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_2" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Note Book</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller2"/>
+            <field name="product_uom_qty">3</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">10.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_3" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Kodak Old Camera</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller3"/>
+            <field name="product_uom_qty">1</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">59.0</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_4" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Round Shape Glass</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller4"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">59.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_5" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Apple iPhone 4</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller5"/>
+            <field name="product_uom_qty">1</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">7999.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_6" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_1"/>
+            <field name="name">Headset USB</field>
+            <field name="product_id" ref="product.product_delivery_01"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">65.00</field>
+        </record>
+
+        <!-- Marketplace Order2 -->
+        <record id="dcred_odoo_marketplace.mp_sale_order_2" model="sale.order">
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+            <field name="partner_invoice_id" ref="base.res_partner_address_1"/>
+            <field name="partner_shipping_id" ref="base.res_partner_address_1"/>
+            <field name="user_id" ref="base.user_demo"/>
+            <field name="pricelist_id" ref="product.list0"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="date_order" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.mp_sale_order_line_7" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">Black Bag</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller1"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">170.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_8" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">School Report Book</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller2"/>
+            <field name="product_uom_qty">3</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">20.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_9" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">Slim White Samsung Camera</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller3"/>
+            <field name="product_uom_qty">1</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">399.0</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_10" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">Sunglass For Boys</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller4"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">159.00</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_11" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">Samsung Galaxy S Duos</field>
+            <field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller5"/>
+            <field name="product_uom_qty">1</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">4299.0</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.sale_order_line_12" model="sale.order.line">
+            <field name="order_id" ref="dcred_odoo_marketplace.mp_sale_order_2"/>
+            <field name="name">Headset USB</field>
+            <field name="product_id" ref="product.product_delivery_01"/>
+            <field name="product_uom_qty">2</field>
+            <field name="product_uom" ref="product.product_uom_unit"/>
+            <field name="price_unit">65.00</field>
+        </record>
+
+        <function model="sale.order" name="action_confirm" eval="[ref('dcred_odoo_marketplace.mp_sale_order_2')]"/>
+        <function model="sale.order" name="action_confirm" eval="[ref('dcred_odoo_marketplace.mp_sale_order_1')]"/>
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="action_Patients_form_view" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html"><p class="oe_view_nocontent_create">Click to add a Patient.</p><p>Pharmacist Place helps you easily track all activities related to a patient: medical history, prescrptions, etc.</p>
+        </field>
+    </record>
+
+    <menuitem action="action_Patients_form_view"
+              name="Pharmacy"
+              id="menu_action_Pharmacy_form"
+              sequence="10"
+              groups=""
+              />
+</odoo>

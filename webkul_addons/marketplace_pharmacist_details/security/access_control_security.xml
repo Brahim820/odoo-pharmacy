@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data noupdate="1">
+
+        <record id="seller_own_pharmacist_details_rule" model="ir.rule">
+	        <field name="name">Seller own pharmacist details only </field>
+	        <field name="model_id" ref="marketplace_pharmacist_details.model_pharmacist_id_details"/>
+	        <field name="domain_force">[('marketplace_seller_id.id','=',user.partner_id.id)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_seller_group'))]"/>
+	    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+    <template id="report_saleorder_discount" inherit_id="sale.report_saleorder_document">
+
+      <xpath expr="//th[@xid='unit_price']" position="after">
+        <th xid="total" t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Total</th>
+      </xpath>
+      <xpath expr="//th[@xid='disc_percent']" position="after">
+        <th xid="discount" t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Discount</th>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.price_unit']/.." position="after">
+        <td t-if="display_discount" groups="sale.group_discount_per_so_line" class="text-right">
+          <span t-field="l.total_line"/>
+        </td>
+      </xpath>
+      <xpath expr="//span[@t-field='l.discount']/.." position="after">
+        <td t-if="display_discount" groups="sale.group_discount_per_so_line" class="text-right">
+          <span t-field="l.disc_line"/>
+        </td>
+      </xpath>
+
+      <xpath expr="//span[@t-field='doc.amount_untaxed']/../.." position="before">
+        <tr xid="total_b4_discount" t-if="display_discount" groups="sale.group_discount_per_so_line">
+          <td>Total Before Discount:
+          </td>
+          <td class="text-right">
+            <span t-field="doc.total_b4_disc"/>
+          </td>
+        </tr>
+        <tr xid="total_discount" t-if="display_discount" groups="sale.group_discount_per_so_line">
+          <td>Total Discount:</td>
+          <td class="text-right">
+            <span t-field="doc.disc_total"/>
+          </td>
+        </tr>
+      </xpath>
+    </template>
+  </data>
+</odoo>

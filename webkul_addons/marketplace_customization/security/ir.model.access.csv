@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+seller_staff_seller,seller_staff_Seller,model_seller_staff,odoo_marketplace.marketplace_seller_group,1,1,1,0
+
+seller_staff_officer,seller_staff_officer,model_seller_staff,odoo_marketplace.marketplace_officer_group,1,1,1,0
+
+seller_staff_manager,seller_staff_manager,model_seller_staff,odoo_marketplace.marketplace_manager_group,1,1,1,1
+
+access_seller_so,seller_so,sale.model_sale_order,odoo_marketplace.marketplace_seller_group,1,1,0,0
+
+access_seller_po,seller_po,procurement.model_procurement_order,odoo_marketplace.marketplace_seller_group,1,1,1,0
+
+access_seller_pg,seller_pg,procurement.model_procurement_group,odoo_marketplace.marketplace_seller_group,1,1,1,0
+
+access_seller_stock_location_path,seller_stock_location_path,stock.model_stock_location_path,odoo_marketplace.marketplace_seller_group,1,0,0,0
+

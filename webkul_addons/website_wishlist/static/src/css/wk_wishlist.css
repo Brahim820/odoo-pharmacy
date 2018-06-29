@@ -1,0 +1,16 @@
+.add_to_wishlist {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #777;
+}
+
+.wishlist_disabled {
+    pointer-events: none;
+    cursor: default;
+    color: green !important;
+    text-decoration: none;
+}
+
+.wishlist_enabled {
+    color: #337ab7;
+}

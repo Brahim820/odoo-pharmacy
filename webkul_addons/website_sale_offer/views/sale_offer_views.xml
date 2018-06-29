@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <!-- views and menus -->
+    <record id="sale_offer_view_form" model="ir.ui.view">
+        <field name="name">sale.offer.form.view</field>
+        <field name="model">sale.offer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" default_focus="1" placeholder="Name" required="1"/>
+                            <field name="marketplace_seller_id" groups="odoo_marketplace.marketplace_officer_group" options="{'no_create_edit':True}" domain="[('seller','=',True),('state','=','approved')]" context="{'form_view_ref':'odoo_marketplace.wk_seller_form_view'}" required="1"/>
+                        </group>
+                        <group>
+                            <field name="promo_code" placeholder="Promo Code..." required="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Order Level Discount">
+                            <field name="order_discount"/>
+                            <field name="min_order_amt_so_discount"/>
+                            <field name="max_discount_for_so"/>
+                        </group>
+                        <group string="Payment Method Discount">
+                            <field name="payment_acquirer_id" options="{'no_create_edit': True,'no_open':True}" domain="[('website_published','=', True)]"/>
+                            <field name="payment_acquirer_discount"/>
+                            <field name="min_order_amt_payment_acq_discount"/>
+                            <field name="max_discount_for_payment_acq"/>
+                        </group>
+                    </group>
+                    <label for="description"/>
+                    <field name="description"/> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bogo_offer_rule_view_form" model="ir.ui.view">
+        <field name="name">bogo.offer.rule.form.view</field>
+        <field name="model">bogo.offer.rule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                        </group>
+                        <group>
+                            <field name="min_ordered_qty"/>
+                            <label for="free_qty" string="Free Qty"/>
+                            <div >
+                                <field name="free_qty" style="width:49%" />
+                                <field name="free_qty_type" style="width:49%;float:right" />
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_offer_view_tree" model="ir.ui.view">
+        <field name="name">sale.offer.view.tree</field>
+        <field name="model">sale.offer</field>
+        <field name="arch" type="xml">
+            <tree string="Sale offers">
+                <field name="name"/>
+                <field name="promo_code"/>
+                <field name="marketplace_seller_id" groups="odoo_marketplace.marketplace_officer_group"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mp_seller_sales_offers_search_view" model="ir.ui.view">
+        <field name="name">sales.offers.search</field>
+        <field name="model">sale.offer</field>
+        <field name="arch" type="xml">
+            <search>
+                <group>
+                    <filter string="Name"
+                        name="groupby_name"
+                        context="{'group_by':'name'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="inherit_mp_seller_sales_offers_search_view" model="ir.ui.view">
+        <field name="name">sales.offers.search.mp.inherit</field>
+        <field name="model">sale.offer</field>
+        <field name="inherit_id" ref="website_sale_offer.mp_seller_sales_offers_search_view"/>
+        <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+        <field name="arch"  type="xml">
+            <group position="inside">
+                <filter string="Seller"
+                    context="{'group_by':'marketplace_seller_id'}"
+                    name="groupby_marketplace_seller_id"
+                    groups="odoo_marketplace.marketplace_officer_group"
+                    />
+            </group>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <record id="wk_sale_offer_action" model="ir.actions.act_window">
+        <field name="name">Sale Offers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.offer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+    </record>
+
+    <!-- <record id="mp_seller_sales_offers_action" model="ir.actions.act_window">
+        <field name="name">Marketplace Seller Sales Offer Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.offer</field>
+        <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+            <field name="context">{'mp_seller_sale_offer':1, 'search_default_groupby_marketplace_seller_id':1}</field>
+        <field name="help" type="html">
+            <p>
+            Here is a list of all your Offers of Sellers of Marketplace. You
+            can click an Offer to get the detailed Information About it.
+            </p>
+        </field>
+        <field
+            name="view_ids"
+            eval="[(5, 0, 0),
+                (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('odoo_marketplace.mp_inherit_sale_offer_view_tree')}),
+                (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('odoo_marketplace.mp_inherit_sale_offer_view_form')})
+            ]"/>
+    </record> -->
+
+    <menuitem name= "Website Offers" id= "mp_seller_sales_offers_menu" sequence= "8" parent= "odoo_marketplace.wk_seller_dashboard" groups="odoo_marketplace.marketplace_seller_group" />
+    <menuitem name= "All Offers" id= "mp_seller_sales_offers_submenu" action= "website_sale_offer.wk_sale_offer_action" parent= "website_sale_offer.mp_seller_sales_offers_menu" sequence= "1" groups="odoo_marketplace.marketplace_seller_group" />
+
+    <!-- <menuitem id="sales_offers_menu" name="Website Offers" parent="website.menu_website_configuration" />
+    <menuitem id="sale_offer" name="All Offers" parent="sales_offers_menu" action="wk_sale_offer_action" sequence="1"/> -->
+
+</odoo>

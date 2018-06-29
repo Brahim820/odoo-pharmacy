@@ -1,0 +1,108 @@
+.deals_banner{
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+.banner_image{
+	text-align:center;
+	max-height:100%;
+	min-height:100%;
+}
+.wk_product_image{
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  z-index: 4;
+  float:left;
+  
+}
+.page_name{
+	font-size:24px;
+	left:20px;
+	text-align:left !important;
+	color:;
+
+}
+.page_header{
+	width:100%;
+	border:solid 1px #EEEEEE;
+	height:40px;
+	margin-bottom:10px;
+	margin-top:10px;
+	font-size:24px;
+	text-align:center;
+	vertical-align:center;
+	color :white;
+	background-color: #5C6BC0
+}
+.product_deals{
+	float:right;
+	vertical-align: center;
+	margin-right:3%;
+	text-align:center;
+}
+.product_name{
+	color:#64B5F6;
+	font-size:20px;
+	word-wrap: break-word;
+	cursor:pointer;
+}
+.product_name:hover{
+	color:#0D47A1;
+	
+}
+.deal_title{
+	width:100%;
+	height:40px;
+	margin:10px;
+	font-size:24px;
+	text-align:center;
+	vertical-align:center;
+	color :black;
+}
+.wk_original_price{
+	font-size:16px;
+	color:#BDBDBD;
+	margin-top:10px;
+	float:left;
+	clear:left;
+	
+}
+.wk_new_price{
+	font-size:20px;
+	color:#E91E63;
+	margin-left: 24%;
+	margin-top:10px;
+	float:left;
+}
+.deal_discount{
+	font-size:20px;
+	color:#8BC34A;
+	float:left;
+	margin-left: 10px;
+	margin-top:8px;
+}
+.other_deals{
+	font-size:16px;
+	color:#616161;
+	clear:both;
+	margin-top:10px;
+}
+
+/*.load-more{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.btn-load-more {
+   color: #fff; 
+   background-color: #9E9E9E; 
+}*/
+.expiry_message{
+	font-size: 14px;
+	color:#F44336;
+	margin-left:10%;
+	
+}

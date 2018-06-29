@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+
+    <record id="view_wiz_prod_uom" model="ir.ui.view">
+      <field name="name">view_wiz_prod_uom</field>
+      <field name="model">wiz.prod.uom</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <div>
+              <b>Main UoM</b>is the main reference UoM.<br/>
+              <b>Additional UoMs:</b>Please add them in below table.<br/>
+              <br/>
+              <br/>
+            </div>
+          </group>
+          <label for="ref_uom" string="Main UoM"/>
+          <field name="ref_uom" required="1" class="oe_inline"/>
+          <field name="line_ids">
+            <tree string="Unit of Measures" editable="top">
+              <field name="uom" required="1"/>
+              <field name="utype" required="1"/>
+              <field name="qty" required="1"/>
+            </tree>
+          </field>
+          <footer>
+            <button class="oe_highlight" name="add_uoms" string="Add" type="object"/>
+            or
+            <button class="oe_link" special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_add_uoms" model="ir.actions.act_window">
+      <field name="name">Add UoMs</field>
+      <field name="res_model">wiz.prod.uom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_wiz_prod_uom"/>
+      <field name="target">new</field>
+    </record>
+
+    <record id="dvit_product_uom" model="ir.ui.view">
+      <field name="name">dvit_product_uom</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='list_price']/../.." position="before">
+          <group attrs="{'invisible':['|','|',
+            ('qty_available','!=',0),
+            ('virtual_available','!=',0),
+            ('sales_count','!=',0),
+            ]}">
+              <button name="%(action_add_uoms)d" type="action" string="Add UoMs" class="oe_highlight oe_inline" />
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

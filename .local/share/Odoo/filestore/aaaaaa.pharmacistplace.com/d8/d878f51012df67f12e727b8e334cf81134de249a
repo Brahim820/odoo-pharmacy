@@ -1,0 +1,87 @@
+
+/* Copyright 2016 LasLabs Inc.
+ * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). */
+.app-drawer-nav {
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  border: 0px solid #cccccc;
+  border: 0px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0px !important;
+  border-radius: 4px;
+  background-clip: padding-box;
+}
+.app-drawer-nav .navbar-left {
+  width: 100%;
+}
+.app-drawer-nav .navbar-left li {
+  padding: 0;
+}
+.app-drawer-nav .app-drawer-title {
+  float: none;
+}
+.app-drawer-nav .app-drawer-panel-title {
+  margin-top: 4px;
+}
+.app-drawer-nav .app-drawer-icon-app {
+  height: 100%;
+  width: 100%;
+  max-width: 6em;
+  max-height: 6em;
+  object-fit: contain;
+  object-position: center;
+}
+.app-drawer-nav .panel-body {
+  padding-top: 50px;
+}
+.app-drawer-nav #appDrawerAppPanelHead {
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  z-index: 9999;
+}
+.drawer-nav {
+  width: 100%;
+  z-index: 9999;
+}
+.drawer--left .drawer-nav {
+  left: -100%;
+}
+.drawer--left.drawer-open .drawer-hamburger {
+  left: 100%;
+}
+.drawer--right .drawer-nav {
+  right: -100%;
+}
+.drawer-open .oe-right-toolbar {
+  display: none;
+}
+.drawer-closed .oe-right-toolbar {
+  display: block;
+}
+/* App Drawer Toggle */
+.app-drawer-toggle {
+  background-color: transparent;
+  border: none;
+}
+.app-drawer-toggle.navbar-toggle {
+  background-color: #ee3366;
+  margin-left: 1em;
+}
+.drawer-nav {
+  background: transparent url('/backend_theme_v10_old/static/src/img/material-background.jpg') no-repeat scroll center center / cover;
+}
+.app-drawer-nav .app-drawer-title {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-drawer-nav .panel-body {
+  margin: auto;
+  max-width: 768px;
+  padding-top: 80px;
+  width: 90%;
+}

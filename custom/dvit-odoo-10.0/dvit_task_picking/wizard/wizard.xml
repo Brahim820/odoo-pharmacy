@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_wiz_task_stock" model="ir.ui.view">
+            <field name="name">view.wiz.task.stock</field>
+            <field name="model">wiz.task.stock</field>
+            <field name="arch" type="xml">
+                <form>
+                  <group>
+                        <field name="invoice_state"/>
+                      </group>
+                        <field name="move_lines" nolabel="1">
+                        <tree string="Products" editable="top">
+                          <field name="product_id"/>
+                          <field name="product_qty"/>
+                        </tree>
+                      </field>
+                    <footer>
+                        <button class="oe_highlight"
+                                name="add_pick"
+                                string="Add"
+                                type="object" />
+                        or
+                        <button class="oe_link"
+                                special="cancel"
+                                string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_addition" model="ir.actions.act_window">
+            <field name="name">Addition View</field>
+            <field name="res_model">wiz.task.stock</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wiz_task_stock" />
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

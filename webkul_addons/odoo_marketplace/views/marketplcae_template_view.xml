@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <!-- CUSTOMIZATION FOR AHMED ALI -->
+  <!-- <template id="marketplace_dashboard_link" name="Link to Marketplace Dashboard" inherit_id="website.layout">
+    <xpath expr="//li[@id='o_logout']" position="before">
+      <t t-if="website.env.user.partner_id.seller">
+        <li><a href="/my/marketplace" role="menuitem">Marketplace</a></li>
+      </t>
+    </xpath>
+  </template> -->
+</odoo>

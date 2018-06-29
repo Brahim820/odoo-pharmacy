@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+
+    <template id="wk_orders_reorder" name="Orders Reorder" inherit_id="website_sale.confirmation">
+        <xpath expr="//div[@class='col-lg-8 col-sm-9']//div[@class='thanks_msg']" position="inside">
+            <a id="wk_add_to_cart_reorder"
+                class="btn btn-primary mt8 js_check_product a-submit pull-right mb32 "
+                groups="sale_reorder.group_sale_reorder"
+                t-attf-href="/my/orders/reorder/#{(order.id)}">Reorder</a>
+        </xpath>
+    </template>
+    
+</odoo>

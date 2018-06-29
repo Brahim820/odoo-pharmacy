@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+
+    	<!-- by partner 1 -->
+    	<record id="res_partner_2_seller_review_1" model="seller.review">
+            <field name="title">Awesome service with Awesome product.</field>
+            <field name="msg">Seller delivery speed is awesome, product as well.</field>
+            <field name="rating">5</field>
+            <field name="email">agrolait@yourcompany.example.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <record id="res_partner_2_seller_review_2" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">agrolait@yourcompany.example.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <record id="res_partner_2_seller_review_3" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">agrolait@yourcompany.example.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <record id="res_partner_2_seller_review_4" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">agrolait@yourcompany.example.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <record id="res_partner_2_seller_review_5" model="seller.review">
+            <field name="title">Awesome service with Awesome product.</field>
+            <field name="msg">Seller delivery speed is awesome, product as well.</field>
+            <field name="rating">5</field>
+            <field name="email">agrolait@yourcompany.example.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <!--  seller.recommendation  -->
+        <record id="res_partner_2_seller_recommendation_1" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_2_seller_recommendation_2" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_2_seller_recommendation_3" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_2_seller_recommendation_4" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="recommend_state">no</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_2_seller_recommendation_5" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="state">pub</field>
+        </record>
+
+        <!--  seller.review like/dislike  -->
+        <record id="res_partner_2_review_help_1" model="review.help">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_2_seller_review_1"/>
+        </record>
+
+        <record id="res_partner_2_review_help_2" model="review.help">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_2_seller_review_2"/>
+        </record>
+
+        <record id="res_partner_2_review_help_3" model="review.help">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_2_seller_review_3"/>
+        </record>
+
+        <record id="res_partner_2_review_help_4" model="review.help">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="review_help">no</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_2_seller_review_4"/>
+        </record>
+
+        <record id="res_partner_2_review_help_5" model="review.help">
+            <field name="customer_id" ref="base.res_partner_2"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_2_seller_review_5"/>
+        </record>
+
+        <!-- By partner 2 -->
+     	<record id="res_partner_address_1_seller_review_1" model="seller.review">
+            <field name="title">Awesome service with Awesome product.</field>
+            <field name="msg">Seller delivery speed is awesome, product as well.</field>
+            <field name="rating">5</field>
+            <field name="email">tang@asustek.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+        </record>
+
+        <record id="res_partner_address_1_seller_review_2" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">tang@asustek.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+        </record>
+
+        <record id="res_partner_address_1_seller_review_3" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">tang@asustek.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+        </record>
+
+        <record id="res_partner_address_1_seller_review_4" model="seller.review">
+            <field name="title">Good service with Good product.</field>
+            <field name="msg">Seller delivery speed is good, product as well.</field>
+            <field name="rating">4</field>
+            <field name="email">tang@asustek.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+        </record>
+
+        <record id="res_partner_address_1_seller_review_5" model="seller.review">
+            <field name="title">Awesome service with Awesome product.</field>
+            <field name="msg">Seller delivery speed is awesome, product as well.</field>
+            <field name="rating">5</field>
+            <field name="email">tang@asustek.com</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="website_published" eval="True"/>
+            <field name="partner_id" ref="base.res_partner_address_1"/>
+        </record>
+
+        <!--  seller.recommendation  -->
+        <record id="res_partner_address_1_seller_recommendation_1" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_address_1_seller_recommendation_2" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_address_1_seller_recommendation_3" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_address_1_seller_recommendation_4" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="recommend_state">no</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="state">pub</field>
+        </record>
+        <record id="res_partner_address_1_seller_recommendation_5" model="seller.recommendation">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="recommend_state">yes</field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="state">pub</field>
+        </record>
+
+        <!--  seller.review like/dislike  -->
+        <record id="res_partner_address_1_review_help_1" model="review.help">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_address_1_seller_review_1"/>
+        </record>
+
+        <record id="res_partner_address_1_review_help_2" model="review.help">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_address_1_seller_review_2"/>
+        </record>
+
+        <record id="res_partner_address_1_review_help_3" model="review.help">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_address_1_seller_review_3"/>
+        </record>
+
+        <record id="res_partner_address_1_review_help_4" model="review.help">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="review_help">no</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_address_1_seller_review_4"/>
+        </record>
+
+        <record id="res_partner_address_1_review_help_5" model="review.help">
+            <field name="customer_id" ref="base.res_partner_address_1"/>
+            <field name="review_help">yes</field>
+            <field name="seller_review_id" ref="dcred_odoo_marketplace.res_partner_address_1_seller_review_5"/>
+        </record>
+    </data>
+</odoo>

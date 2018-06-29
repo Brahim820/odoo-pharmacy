@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="form_view_wk_rma_sale_config_settings" model="ir.ui.view">
+            <field name="name">rma.config.settings</field>
+            <field name="model">rma.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure RMA" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <div id="main" position="inside">
+                        <group string="RMA">
+                            <label for="module_mrp_repair" string="Repair Management"/>
+                            <div>
+                                <field name="module_mrp_repair" class="oe_inline"/>
+                                <label for="module_mrp_repair" class="oe_inline"/>
+
+                                <group attrs="{'invisible': [('module_mrp_repair', '!=', True)]}" col="2">
+                                    <group>
+                                        <field name="repair_location_id" class="oe_inline" attrs="{'required': [('module_mrp_repair', '=', True)]}"/>
+                                    </group>
+                                </group>
+                            </div>
+                            <label for="allow_quote_cancellation" string="Quotes Cancellation"/>
+                            <div>
+                                <field name="allow_quote_cancellation" class="oe_inline"/>
+                                <label for="allow_quote_cancellation" class="oe_inline"/>
+                            </div>
+                            <!-- <label for="process_do_state" string="RMA Process"/>
+                            <div>
+                                <label for="process_do_state" class="oe_inline" string="Allow RMA process at "/>
+                                <field name="process_do_state" class="oe_inline" required="1"/>
+                                <label for="process_do_state" class="oe_inline" string=" state of Delivery Order."/>
+                            </div> -->
+                            <label for="days_for_rma"/>
+                            <div>
+                                <label for="days_for_rma" string="Product return will be accepted with in" class="oe_inline"/>
+                                <field name="days_for_rma" required="1" class="oe_inline"/>
+                                <label for="rma_day_apply_on" string="days on the basis of" class="oe_inline"/>
+                                <field name="rma_day_apply_on" required="1" class="oe_inline"/>
+                            </div>
+                            <label for="show_rma_stage" string="RMA Stage"/>
+                            <div>
+                                <field name="show_rma_stage" class="oe_inline"/>
+                                <label for="show_rma_stage" class="oe_inline"/>
+                            </div>
+                            <label for="rma_term_condition" string="Term And Conditions"/>
+                            <div>
+                                <label for="rma_term_condition" string="Terms &amp; Conditions"/>
+                                <field name="rma_term_condition" required="1"/>
+                            </div>
+                        </group>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rma_config_settings_id" model="ir.actions.act_window">
+            <field name="name">Configure RMA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rma.config.settings</field>
+            <field name="view_id" ref="form_view_wk_rma_sale_config_settings"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+    </data>
+</odoo>

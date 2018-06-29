@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+cod_users,wk.cod,model_wk_cod,,1,0,0,0
+cod_admin,wk.cod,model_wk_cod,account.group_account_manager,1,1,1,1
+cod_applicable_users,wk.cod.applicability.rule,model_wk_cod_applicability_rule,,1,0,0,0
+cod_applicable_admin,wk.cod.applicability.rule,model_wk_cod_applicability_rule,account.group_account_manager,1,1,1,1

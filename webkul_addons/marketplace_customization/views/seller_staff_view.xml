@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data>
+
+        <record id="seller_staff_form_view" model="ir.ui.view">
+            <field name="name">Marketplace Seller Staff</field>
+            <field name="model">seller.staff</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_request" string="Request" type="object" groups="odoo_marketplace.marketplace_seller_group" states="draft" class="btn-primary"/>
+                        <button name="do_approve" string="Approve" type="object" groups="odoo_marketplace.marketplace_officer_group" class="btn-primary" states="requested,rejected"/>
+                        <button name="do_reject" string="Reject" type="object" groups="odoo_marketplace.marketplace_officer_group" states="draft,approved"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <!-- <field name="image" widget='image' class="oe_avatar"/> -->
+                        <div class="oe_button_box" name="mp_button_box">
+                            <button string="Change Password" type="object" name="change_password_wizard" help="Change the user password." attrs="{'invisible':[('user_id', '=', False)]}"/>
+                        </div>
+
+                        <div class="oe_title">
+                            <label for="name" class=""/>
+                            <h1><field name="name" required="1" attrs="{'readonly':[('state', 'in', ['approved','rejected'])]}" placeholder="Staff Name"/></h1>
+                            <label for="login" class="" string="Email Address"/>
+                            <h2>
+                            <field name="login" placeholder="email@yourcompany.com" attrs="{'readonly':[('state', 'in', ['approved','rejected'])]}"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                                <field name="partner_id" attrs="{'readonly':[('state', 'in', ['approved','rejected'])]}" groups="odoo_marketplace.marketplace_officer_group" options="{'no_create_edit': True}"/>
+                                <field name="user_id" groups="odoo_marketplace.marketplace_officer_group"/>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_form_readonly_to_staff" model="ir.ui.view">
+            <field name="name">Readonly Form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('marketplace_customization.group_marketplace_seller_staff') ])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="edit">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="seller_staff_tree_view" model="ir.ui.view">
+            <field name="name">Marketplace Seller Staff</field>
+            <field name="model">seller.staff</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="login"/>
+                    <field name="partner_id" groups="odoo_marketplace.marketplace_officer_group"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="seller_staff_action" model="ir.actions.act_window">
+            <field name="name">Staff</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">seller.staff</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create new staff.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="seller_staff_action" id="seller_staff_menu" parent="odoo_marketplace.wk_seller_dashboard_menu1" string="Seller Staff" sequence="1" groups="odoo_marketplace.marketplace_seller_group"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data noupdate="1">
+        <!-- RMA DEMO RECORDS -->
+        <record id="rma_demo_1" model="rma.rma">
+            <field name="order_id" ref="sale.sale_order_7"/>
+            <field name="orderline_id" ref="sale.sale_order_line_18"/>
+            <field name="product_id" ref="product.product_delivery_02"/>
+            <field name="partner_id" ref="base.res_partner_3"/>
+            <field name="refund_qty">1</field>
+            <field name="return_request_type">refund</field>
+            <field name="reason_id" ref="rma.defected_product"/>
+            <field name="i_agree">True</field>
+        </record>
+
+        <record id="rma_demo_2" model="rma.rma">
+            <field name="order_id" ref="sale.sale_order_6"/>
+            <field name="orderline_id" ref="sale.sale_order_line_15"/>
+            <field name="product_id" ref="product.product_product_4"/>
+            <field name="partner_id" ref="base.res_partner_18"/>
+            <field name="refund_qty">1</field>
+            <field name="return_request_type">exchange</field>
+            <field name="stage_id" ref="rma.rma_agreement"/>
+            <field name="reason_id" ref="rma.defected_product"/>
+            <field name="i_agree">True</field>
+        </record>
+
+        <record id="rma_demo_3" model="rma.rma">
+            <field name="order_id" ref="sale.sale_order_5"/>
+            <field name="orderline_id" ref="sale.sale_order_line_12"/>
+            <field name="product_id" ref="product.product_delivery_02"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+            <field name="refund_qty">1</field>
+            <field name="return_request_type">exchange</field>
+            <field name="reason_id" ref="rma.wrong_product"/>
+            <field name="i_agree">True</field>
+        </record>
+    </data>
+</odoo>

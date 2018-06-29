@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <template id="report_option" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//div[@name='total']" position="after">
+        <div t-if="doc.option_line_ids">
+          <t t-foreach="doc.order_lines_layouted()" t-as="page">
+            <b>Optional products:</b>Not included in the offer.
+            <table xid="option_lines" class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th class="text-right">Unit Price</th>
+                </tr>
+              </thead>
+              <tbody class="sale_tbody">
+                <t t-foreach="page" t-as="layout_category">
+                  <t t-if="layout_category_size > 1 or page_size > 1" groups="sale.group_sale_layout">
+                    <tr class="active">
+                      <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;
+                        <t t-esc="layout_category['name']"/>
+                      </td>
+                    </tr>
+                  </t>
+                  <!-- Lines associated -->
+                  <t t-foreach="doc.option_line_ids" t-as="l">
+                    <tr>
+                      <td>
+                        <span t-if="l.product_id.default_code">
+                          [<span t-field="l.product_id.default_code"/>]
+                        </span>
+                        <span t-field="l.name"/>
+                      </td>
+                      <td class="text-right">
+                        <span t-field="l.price_unit"/>
+                      </td>
+                    </tr>
+                  </t>
+                </t>
+              </tbody>
+            </table>
+          </t>
+        </div>
+      </xpath>
+    </template>
+  </data>
+</odoo>

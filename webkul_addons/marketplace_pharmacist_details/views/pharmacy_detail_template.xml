@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="distributor_activate" name="Distributor Activate">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <t t-call="theme_pharmacistplace.header_three_for_cart_checkout">
+                    <t t-set="pp_step" t-value="15"/>
+                </t>
+                <div class="container oe_website_sale">
+                    <t t-call="website_sale.wizard_checkout">
+                        <t t-set="step" t-value="15"/>
+                    </t>
+                    <div class="col-md-12 mb32" style="padding-top: 20px;padding-bottom: 20px;">
+                        <div style="display:flex;">
+                            <div style="width:38%">
+                                <t t-call="theme_pharmacistplace.three_hr_lines_left_part"/>
+                            </div>
+                            <div style="width:24%;text-align: center;">
+                                <span style="font-size: 30px;" class="pp-brand-info">Distributor Name</span>
+                            </div>
+                            <div style="width:38%">
+                                <t t-call="theme_pharmacistplace.three_hr_lines_right_part"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oe_structure">
+                        <!-- <div class="col-md-offset-2 col-md-8"> -->
+                        <div class="row mb64 mt32">
+                            <div class="col-md-6" style="border-right:1px solid #dedede;">
+                                <div class="mt16 mb16" style="padding: 40px;">
+                                    <span class="pp-brand-info mb8" style="display:block; font-weight: 600;">
+                                        Have you id account, please add this in below field
+                                    </span>
+                                    <!-- <label for="pharmacy_account_id" class="text-muted"> Add Pharmacy Id</label>
+                                    <input type="text" class="" name="pharmacy_account_id" id="pharmacy_account_id"/> -->
+                                    <span for="pharmacy_account_id" class="text-muted"> Add Pharmacy Id</span>
+                                    <div class="input-group mt4" style="width: 70%;">
+                                        <input type="text" class="form-control" placeholder="Pharmacy Id" name="pharmacy_account_id" id="pharmacy_account_id"/>
+                                        <span class="input-group-btn" style="padding-left:10px;">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mt16 mb16" style="padding: 40px;">
+                                    <span class="pp-brand-info" style="display:block; font-weight: 600;">
+                                        If you have no id account, please create a registration request
+                                    </span>
+                                    <p>
+                                        Your account details will be send to "Distributor name."
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="/pharmacy/account" class="btn btn-primary">
+                                            <span>
+                                                Create New Account
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <!-- It is for testing purpose only delete it when needed -->
+                                    <div class="text-center mt24">
+                                        <a href="/shop/checkout" class="btn btn-primary">
+                                            <span>
+                                                Checkout For Testing
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="inherit_theme_pharmacistplace_continue_shopping" inherit_id="theme_pharmacistplace.new_cart_amount_total">
+        <xpath expr="//div[@id='new_cart_total_right_btn_div']/a[@href='/shop/checkout']" position="attributes">
+            <attribute name="href">/shop/distributor_activate</attribute>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_wizard_checkout_pharmacy_details" inherit_id="theme_pharmacistplace.theme_pharmacistplace_wizard_checkout">
+        <xpath expr="//li[@id='step15']//a[@href='/shop/cart']" position="attributes">
+            <attribute name="href">/shop/distributor_activate</attribute>
+        </xpath>
+    </template>
+
+</odoo>

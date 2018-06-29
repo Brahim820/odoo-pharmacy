@@ -1,0 +1,357 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dvit_hora_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-14 18:58+0000\n"
+"PO-Revision-Date: 2018-03-14 21:03+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_EG\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Building:</b>"
+msgstr ""
+"-\n"
+"                            <b>رقم العمارة:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>City:</b>"
+msgstr ""
+"-\n"
+"                            <b>المدينة:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Floor:</b>"
+msgstr ""
+"-\n"
+"                            <b>الطابق:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Mobile:</b>"
+msgstr ""
+"-\n"
+"                            <b>جوال:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Name:</b>"
+msgstr ""
+"-\n"
+"                            <b>الاسم:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Order #:</b>"
+msgstr ""
+"-\n"
+"                            <b>طلب #:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Phone:</b>"
+msgstr ""
+"-\n"
+"                            <b>هاتف:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"-\n"
+"                            <b>Zone:</b>"
+msgstr ""
+"-\n"
+"                            <b>المنطقة:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "<b>Date:</b>"
+msgstr "<b>التاريخ:</b>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid ""
+"<strong>Subtotal:\n"
+"                                </strong>"
+msgstr ""
+"<strong>اجمالي فرعي:\n"
+"                                </strong>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>المجموع بدون الضريبة</strong>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "<strong>Total</strong>"
+msgstr "<strong>الإجمالي</strong>"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "All orders must be in same city at least."
+msgstr "يجب ان تكون كل الطلبات في نفس المدينة على الاقل."
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "Building"
+msgstr "مبنى"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_name
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+msgid "Building No."
+msgstr "رقم المنبى."
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "Building..."
+msgstr "مبنى..."
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_building_ids
+msgid "Buildings"
+msgstr "مباني"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_partner_building_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_users_building_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_building_id
+msgid "Buliding"
+msgstr "Buliding"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_state_city_ids
+msgid "Cities"
+msgstr "Cities"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_name
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_city_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_partner_city_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_users_city_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_city_id
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+#: model:ir.ui.view,arch_db:dvit_hora_address.view_sales_order_filter
+msgid "City"
+msgstr "المدينة"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "City..."
+msgstr "City..."
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_country_id
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+msgid "Country"
+msgstr "دولة"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_res_country_state
+msgid "Country state"
+msgstr "الولاية أو المنطقة في الدولة"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_create_uid
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_create_uid
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_create_date
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_create_date
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_display_name
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_display_name
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_partner_floor
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_users_floor
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_floor
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "Floor"
+msgstr "الطابق"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+msgid "Floor No."
+msgstr "رقم الطابق."
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city___last_update
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone___last_update
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_write_uid
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_write_uid
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_write_date
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_write_date
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_res_partner
+msgid "Partner"
+msgstr "شريك"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "Price"
+msgstr "سعر"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "Quantity"
+msgstr "كمية"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_sale_order
+msgid "Sales Order"
+msgstr "أمر المبيعات"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_sequence
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_sequence
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_sequence
+msgid "Sequence"
+msgstr "المسلسل"
+
+#. module: dvit_hora_address
+#: model:ir.actions.report.xml,name:dvit_hora_address.report_sale_shipping
+msgid "Shipping Report"
+msgstr "تقرير التسليم"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_state_id
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+msgid "State"
+msgstr "المحافظة"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "State / Province"
+msgstr "الدولة / المنطقة"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "State / Province..."
+msgstr "الدولة / المنطقة..."
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "Total Price"
+msgstr "السعر الإجمالي"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.report_sale_shipping_doc
+msgid "Unit Price"
+msgstr "سعر الوحده"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zip_code
+msgid "Zip"
+msgstr "الرمز البريدي"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_name
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_partner_zone_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_users_zone_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_zone_building_zone_id
+#: model:ir.model.fields,field_description:dvit_hora_address.field_sale_order_zone_id
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+#: model:ir.ui.view,arch_db:dvit_hora_address.partner_address_inherit
+#: model:ir.ui.view,arch_db:dvit_hora_address.view_sales_order_filter
+msgid "Zone"
+msgstr "منطقة"
+
+#. module: dvit_hora_address
+#: model:ir.ui.view,arch_db:dvit_hora_address.address
+msgid "Zone..."
+msgstr "منطقة..."
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_zone_ids
+msgid "Zones"
+msgstr "مناطق"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_res_country_city
+msgid "res.country.city"
+msgstr "res.country.city"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_res_country_city_zone
+msgid "res.country.city.zone"
+msgstr "res.country.city.zone"
+
+#. module: dvit_hora_address
+#: model:ir.model,name:dvit_hora_address.model_res_zone_building
+msgid "res.zone.building"
+msgstr "res.zone.building"
+
+#. module: dvit_hora_address
+#: model:ir.model.fields,field_description:dvit_hora_address.field_res_country_city_state_id
+msgid "state"
+msgstr "state"

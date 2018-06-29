@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  
+    <record id="wk_website_cart_recovery_from" model="ir.ui.view">
+        <field name="name">default.stock.notify.config</field>
+        <field name="model">website.cart.recovery.settings</field>
+        <field name="arch" type="xml">
+            <form string="Abandoned Cart Configuration" class="oe_form_configuration" style="height:400px;">
+                <group string="Cart Recovery Settings">
+                    <label for="order_lifetime" />
+                    <div name="order_lifetime">
+                        <div class="oe_inline">
+                            <field name="order_lifetime" />
+                        </div>
+                    </div>
+                    <label for="followup_mail_count" />
+                    <div name="followup_mail_count">
+                        <div class="oe_inline">
+                            <field name="followup_mail_count" />
+                            <group col="4">
+                                <field name="cart_recovery_email_template_one" attrs="{'invisible': [('followup_mail_count', 'not in', ['one', 'two', 'three'])]}" />
+                                <field name="cart_recovery_template_one_time" attrs="{'invisible': [('followup_mail_count', 'not in', ['one', 'two', 'three'])]}" />
+                                <field name="cart_recovery_email_template_two" attrs="{'invisible': [('followup_mail_count', 'not in', ['two', 'three'])]}" />
+                                <field name="cart_recovery_template_two_time" attrs="{'invisible': [('followup_mail_count', 'not in', ['two', 'three'])]}" />
+                                <field name="cart_recovery_email_template_three" attrs="{'invisible': [('followup_mail_count', 'not in', ['three'])]}" />
+                                <field name="cart_recovery_template_three_time" attrs="{'invisible': [('followup_mail_count', 'not in', ['three'])]}" />
+                            </group>
+                        </div>
+                    </div>
+                    <field name="cart_recovery_cron_shedular" />
+                    <field name="recovery_sales_teams" widget="many2many_tags" />
+                    <field name="module_website_stock" invisible="1" />
+                    <!-- <field name="check_product_availability" attrs="{'readonly': [('module_website_stock', '=', False)]}" style="margin-top:8px;" /> -->
+                </group>
+                <footer>
+                    <button string="Apply" type="object" name="execute" class="oe_highlight" /> or
+                    <button string="Cancel" type="button" name="cancel" class="oe_link" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_cart_recovery" model="ir.actions.act_window">
+        <field name="name">Abandoned Cart Configuration</field>
+        <field name="res_model">website.cart.recovery.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="abandoned_configuration_installer_todo" model="ir.actions.todo">
+        <field name="action_id" ref="website_cart_recovery.action_website_cart_recovery" />
+        <field name="sequence">16</field>
+        <field name="type">automatic</field>
+    </record>
+
+</odoo>

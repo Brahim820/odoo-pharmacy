@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="assets_frontend" inherit_id="website.assets_frontend" name="COD">
+    <xpath expr="." position="inside">
+      <script src="/payment_cash_on_delivery/static/src/js/payment_cash_on_delivery.js" type="text/javascript"/>
+      <link href="/payment_cash_on_delivery/static/src/css/payment_cash_on_delivery.css" rel="stylesheet"/>
+    </xpath>
+  </template>
+
+  <template active="True" id="payment_cash_on_delivery.product" inherit_id="website_sale.product" name="COD  Availability">
+    <xpath expr="//hr" position="before">
+      <t t-if='cod_payment'>
+      <hr/>
+      <t t-if="cod_availability">
+        <p t-if="cod_payment.cod_availability_message">
+          <t t-esc="cod_payment.cod_availability_message"/>
+        </p>
+        <p t-if="cod_payment.show_expected_cod_date">DELIVERED BY
+          <t t-esc="website.expected_cod_date(product)"/></p>
+            <p data-placement="left" data-toggle="popover" data-trigger="hover" t-att-data-content="cod_payment.policy_content" t-if="cod_payment.show_policy" title="COD Availability">
+              <i class="fa fa-plus-circle"/>Policy and Authenticity</p>
+            </t>
+      <t t-if="not cod_availability and cod_payment.cod_unavailability_message">
+        <p>
+          <t t-esc="cod_payment.cod_unavailability_message"/>
+        </p>
+      </t>
+    </t>
+
+    </xpath>
+  </template>
+  <template id="payment_cash_on_delivery_acquirer_button">
+    <form id="payment" method="post" t-att-action="tx_url" t-if="acquirer" target="_self">
+      <button t-att-class="submit_class" type="submit" width="100px">
+        <a href="#" t-if="not submit_txt" target="_blank">
+          <img src="/payment_cash_on_delivery/static/src/img/payment_cash_on_delivery.png" t-if="not submit_txt"/>
+        </a>
+        <span t-if="submit_txt">
+          <t t-esc="submit_txt"/>
+          <span class="fa fa-long-arrow-right"/>
+        </span>
+      </button>
+      <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
+      <input name="return_url" t-att-value="return_url" type="hidden"/>
+      <input name="reference" t-att-value="reference" type="hidden"/>
+      <input name="amount" t-att-value="amount or &quot;0.0&quot;" type="hidden"/>
+      <input name="currency" t-att-value="currency.name" type="hidden"/>
+    </form>
+  </template>
+</odoo>

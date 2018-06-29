@@ -1,0 +1,298 @@
+<odoo>
+    <data>
+
+        <!-- CUSTOMIZATION OF MULTI-VENDER MARKETPLACE -->
+        <template id="sell_link_in_header_theme" inherit_id="website.show_sign_in">
+			<xpath expr="//ul[@id='top_menu']" position="inside">
+				<t t-if="website.env.user and not website.env.user.partner_id.seller and website.sudo().get_mp_config_settings_values().get('show_sell_menu_header', False) ">
+					<t t-if="website.sudo().get_mp_config_settings_values().get('sell_page_label', False) ">
+						<li class="divider hello hidden-xs"/>
+						<li>
+							<a href="/seller" target="_blank"><t t-esc="website.sudo().get_mp_config_settings_values().get('sell_page_label', False)"/></a>
+						</li>
+					</t>
+					<t t-if="not website.sudo().get_mp_config_settings_values().get('sell_page_label', False) ">
+						<li class="divider hello hidden-xs"/>
+						<li>
+							<a href="/seller" target="_blank">Sell</a>
+						</li>
+					</t>
+				</t>
+			</xpath>
+		</template>
+
+        <template id="marketplace_dashboard_link_theme" name="Link to Marketplace Dashboard" inherit_id="theme_stoneware.layout">
+          <xpath expr="//div[@class='ht-dropdown hed-drop']/ul//li[4]" position="after">
+              <li><a href="/my/marketplace" role="menuitem" t-if="website.env.user.partner_id.seller"><i class="fa fa-shopping-cart"/>Marketplace</a></li>
+          </xpath>
+        </template>
+
+        <!-- CUSTOMIZATION OF WEBSITE COLLECTION PAGE -->
+        <template id="collection_link_in_header_theme" inherit_id="website.show_sign_in">
+            <xpath expr="//ul[@id='top_menu']" position="inside">
+                <t t-if="website.sudo().get_collection_config_settings_values().get('show_collectional_menu', False) == 'header' or
+                        website.sudo().get_collection_config_settings_values().get('show_collectional_menu', False) == 'both' ">
+                    <t t-if="website.sudo().get_collection_config_settings_values().get('collectional_page_label', False) ">
+                        <li>
+                            <a href="/collections"><t t-esc="website.sudo().get_collection_config_settings_values().get('collectional_page_label', False)"/></a>
+                        </li>
+                    </t>
+                    <t t-if="not website.sudo().get_collection_config_settings_values().get('collectional_page_label', False)">
+                        <li>
+                            <a href="/collections">Collections</a>
+                        </li>
+                    </t>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="footer_collection_theme" inherit_id="website.footer_custom">
+            <xpath expr="//ul[@id='products']" position="inside">
+                <t t-if="website.sudo().get_collection_config_settings_values().get('show_collectional_menu', False) == 'footer' or
+                        website.sudo().get_collection_config_settings_values().get('show_collectional_menu', False) == 'both' ">
+                    <t t-if="website.sudo().get_collection_config_settings_values().get('collectional_page_label', False) ">
+                        <li>
+                            <a t-attf-href="/collections"><t t-esc="website.sudo().get_collection_config_settings_values().get('collectional_page_label', False)"/></a>
+                        </li>
+                    </t>
+                    <t t-if="not website.sudo().get_collection_config_settings_values().get('collectional_page_label', False)">
+                        <li>
+                            <a t-attf-href="/collections">Collections</a>
+                        </li>
+                    </t>
+                </t>
+            </xpath>
+        </template>
+
+        <!-- CUSTOMIZATION OF AJAX LOGIN -->
+        <template id="theme_stoneware_ajax_custom_login" inherit_id="theme_stoneware.layout_logo_show">
+            <xpath expr="//ul[@class='dropdown-menu']//li//a[@href='/web/login']" position="replace">
+                <a class="wk_a" href="#" id="login_menu" data-backdrop="static" data-keyboard="false" t-if="website.user_id == user_id" t-ignore="true">Log in
+                </a>
+            </xpath>
+            <xpath expr="//ul[@class='dropdown-menu']//li//a[@href='/web/signup']" position="replace">
+                <a class="wk_a" href="#" id="login_menu" data-backdrop="static" data-keyboard="false" t-if="website.user_id == user_id" t-ignore="true">Register
+                </a>
+            </xpath>
+        </template>
+
+        <template id="theme_stoneware_ajax_custom_modal" inherit_id="website.footer_custom">
+            <xpath expr="//ul[@id='products']" position="inside">
+                 <div t-if="website.env.user == request.website.user_id" id="wk_ajax_login_doc"/>
+                <div class="modal fade" id="wk_Modal_login" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div id="wk_model">
+                                <div class="modal-header">
+                                    <ul class="top_ribbon_login">
+                                        <li/>
+                                        <li/>
+                                        <li/>
+                                        <li/>
+                                    </ul>
+                                    <t t-if="not website.sudo().get_wk_block_ui_info()">
+                                        <button aria-hidden="true" class="close wk_close" data-dismiss="modal" type="button" style="font-size: 30px;" title="Close">×</button>
+                                    </t>
+                                    <div style="text-align: center;">
+                                        <a href="/">
+                                            <img src="/logo.png" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                                        </a>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <span class="modal-title" id="wk_ModalLabel">Login To Your Account
+                                        </span>
+                                        <div>
+                                            <p id="subtitle">Sign in with your email address.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-body" style="padding: 0px;">
+                                    <form class="oe_login_form" id="wk_ajax_login_form" method="POST" role="form">
+                                        <div id="wk_login_error"/>
+                                        <t t-call="website_ajax_login.wkdatabase_select"/>
+                                        <div class="input-group has-feedback" style="margin-bottom: 25px">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"/>
+                                            </span>
+                                            <input autofocus="autofocus" class="form-control" id="login" name="username" placeholder="username or email" type="text" value=""/>
+                                        </div>
+                                        <div class="input-group has-feedback" style="margin-bottom: 25px">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-key"/>
+                                            </span>
+                                            <input class="form-control" id="password" name="password" placeholder="password" type="password"/>
+                                        </div>
+                                        <input name="redirect" t-att-value="redirect" type="hidden"/>
+                                        <div class="checkbox" t-if="for_future_scope">
+                                            <label id="footertitle">
+                                                <input id="login-remember" name="remember" type="checkbox" value="1"/>Remember me</label>
+                                        </div>
+                                        <div class="text-center" id="bottom_buttons_login">
+                                            <div class="login-btn-div">
+                                                <a class="btn btn-xs btn-success" href="#" id="wk_login_button">Login</a>
+                                            </div>
+                                            <t t-set="wk_module" t-value="website.wk_get_social_enabled()"/>
+                                            <t t-if="wk_module==[True]">
+                                                <div class="extension_login mb8 mt8" id="footertitle">or Login with</div>
+                                            </t>
+                                            <t t-if="website.website_facebook_login==True">
+                                                <span class="ml8 mr8">
+                                                    <a class="btn btn-facebook" href="#" title="SignUp with Facebook">
+                                                        <i class="icon-fb"/>
+                                                    </a>
+                                                </span>
+                                            </t>
+                                            <t t-if="website.website_gmail_login==True">
+                                                <span class="ml8 mr8">
+                                                    <a class="btn btn-googleplus" href="#" title="SignUp with Google+">
+                                                        <i class="icon-google-plus"/>
+                                                    </a>
+                                                </span>
+                                            </t>
+                                            <t t-if="website.website_odoo_login==True">
+                                                <span class="ml8 mr8">
+                                                    <a class="btn btn-odoo" href="#" title="SignUp with Odoo">
+                                                        <i class="icon icon-odoo"/>
+                                                    </a>
+                                                </span>
+                                            </t>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <center>
+                                        <t t-if="website.wk_allow_signup">
+                                            <div class="col-md-12 control">
+                                                <div id="footertitle">Don't have an account!
+                                                    <a href="#" id="linksignup">Sign Up Here</a>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="wk_Modal_signup" role="dialog">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-footer">
+                                <ul class="top_ribbon_signup">
+                                    <li/>
+                                    <li/>
+                                    <li/>
+                                    <li/>
+                                </ul>
+                                <t t-if="not website.sudo().get_wk_block_ui_info()">
+                                    <button aria-hidden="true" class="close wk_close" data-dismiss="modal" type="button" style="font-size: 30px;" title="Close">×</button>
+                                </t>
+                                <div style="text-align: center;">
+                                    <a href="/">
+                                        <img src="/logo.png" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                                    </a>
+                                </div>
+                                <div class="wk_main">
+                                    <div style="text-align: center;">
+                                        <span id="wk_ModalLabel" style="text-align: left;">Create Your Account , Its Free !!
+                                        </span>
+                                        <p id="subtitle">Don't buy for reason , Shop for emotion.
+                                        </p>
+                                    </div>
+                                    <div class="mainbox">
+                                        <form class="oe_login_form wk_signup_form" id="wk_ajax_signup_form" role="form">
+                                            <div id="wk_signup_error"/>
+                                            <t t-call="website_ajax_login.wkdatabase_select"/>
+                                            <div class="form-group">
+                                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                                    <input autofocus="" class="form-control" id="name" name="name" placeholder="Name" required="required" t-att-value="name" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group wk_email has-feedback ">
+                                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                                    <input
+                                                        class="form-control wk_email_input demo_signupclass "
+                                                        id="login"
+                                                        name="login"
+                                                        placeholder="Email"
+                                                        required="required"
+                                                        t-att-autofocus="'autofocus' if name  else None"
+                                                        t-att-readonly="'readonly' if only_passwords else None"
+                                                        t-att-value="login"
+                                                        type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group field-password has-feedback">
+                                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                                    <input class="form-control placeholder psw demo_signupclass " id="password" name="password" placeholder="Password" required="required" t-att-autofocus="'autofocus' if login else None" type="password"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group field-password has-feedback">
+                                                <div class="col-md-12" style="margin-bottom: 20px;">
+                                                    <input class="form-control placeholder demo_signupclass" id="confirm_password" name="confirm_password" placeholder="Confirm password" required="required" type="password"/>
+                                                </div>
+                                            </div>
+                                            <input name="redirect" t-att-value="redirect" type="hidden"/>
+                                            <div class="clearfix oe_login_buttons col-md-12" style="text-align: right;">
+                                                <div class="text-center" id="bottom_buttons_signup">
+                                                    <div>
+                                                        <button class="btn btn-xs btn-success" id="wk_signup_button" type="button">SignUp</button>
+                                                    </div>
+                                                    <t t-set="wk_module" t-value="website.wk_get_social_enabled()"/>
+                                                    <t t-if="wk_module==[True]">
+                                                        <div class="extension_signup mt8 mb8" id="footertitle">or Continue with</div>
+                                                    </t>
+                                                    <t t-if="website.website_facebook_login==True">
+                                                        <span class="ml8 mr8">
+                                                            <a class="btn btn-facebook" href="#" title="SignUp with Facebook">
+                                                                <i class="icon-fb"/>
+                                                            </a>
+                                                        </span>
+                                                    </t>
+                                                    <t t-if="website.website_gmail_login==True">
+                                                        <span class="ml8 mr8">
+                                                            <a class="btn btn-googleplus" href="#" title="SignUp with Google+">
+                                                                <i class="icon-google-plus"/>
+                                                            </a>
+                                                        </span>
+                                                    </t>
+                                                    <t t-if="website.website_odoo_login==True">
+                                                        <span class="ml8 mr8">
+                                                            <a class="btn btn-odoo" href="#" title="SignUp with Odoo">
+                                                                <i class="icon icon-odoo"/>
+                                                            </a>
+                                                        </span>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="mt16">
+                                    <center>
+                                        <span style="margin: 0px auto">
+                                            <span id="footertitle">Already Have An Account ?</span>
+                                            <a href="#" id="linklogin">Login
+                                            </a>
+                                        </span>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <!-- CUSTOMIZATION FOR WEBSITE SITE MAP -->
+        <template id="theme_stoneware_footer_default_site_map" inherit_id="theme_stoneware.footer_default">
+    		<xpath	expr="//div[@id='info']/ul/li[1]" position="replace">
+                <li>
+    			    <a href="/page/website.sitemap">  Sitemap</a>
+                </li>
+    		</xpath>
+    	</template>
+
+    </data>
+</odoo>

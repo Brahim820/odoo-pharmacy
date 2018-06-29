@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+      <record id="mrp_production_purchase_form" model="ir.ui.view">
+        <field name="name">mrp_production_purchase_form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='move_raw_ids']/.." position="after">
+            <page name="purchase_ids" string="Purchased Materials" readonly="1">
+                      <button name="%(add_po_action)d" type="action"
+                              string="Request materials"
+                              class="oe_inline oe_highlight"
+                              states="confirmed"
+                              />
+                  <field name="purchase_ids" nolabel="1" readonly="1"
+                    attrs="{'invisible':[('purchase_req_ids','=',False)]}"/>
+                  <field name="purchase_req_ids" nolabel="1" readonly="1"
+                    attrs="{'invisible':[('purchase_ids','=',False)]}"/>
+            </page>
+          </xpath>
+        </field>
+      </record>
+
+      <record id="purchase_form" model="ir.ui.view">
+        <field name="name">purchase_form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+          <field name="incoterm_id" position="before">
+            <field name="production_id" readonly="1"/>
+          </field>
+        </field>
+      </record>
+    </data>
+</odoo>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="theme_pharmacistplace_portal_layout" inherit_id="website_portal.portal_layout" name="Account Manager" priority="16">
+        <div class="container mt16" position="replace">
+            <div class="container mt32">
+                <div class="row">
+                    <div class="col-sm-4" >
+                        <h3 class="pp-brand-info"> My Account </h3>
+                        <div class="sidebar-nav">
+                            <div class="navbar navbar-default">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#oe-help-navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="visible-xs navbar-brand" href="/my/home"> My Account</a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="oe-help-navbar-collapse">
+                                    <ul class="nav navbar-nav o_portal_submenu">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 pp_portal_content_sheet">
+                        <t t-raw="0"/>
+                    </div>
+                    <div id="o_my_sidebar" class="o_my_sidebar hide">
+                        <div class="o_my_contact" t-if="sales_rep">
+                            <t t-call="website_portal.contact"/>
+                        </div>
+                        <div class="o_my_details">
+                            <h3 class="page-header">Your Details 
+                                <a href="/my/account" class="btn btn-default btn-xs">Change</a>
+                            </h3>
+                            <div t-field="request.env.user.partner_id" t-options='{"widget": "contact", "fields": ["email", "phone", "address", "name"]}'/></div>
+                        <div class="o_my_archives" t-if="archive_groups">
+                            <t t-call="website_portal.portal_archive_groups"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wrap" position="replace"/>
+    </template>
+
+    <template id="theme_pharmacistplace_portal_my_home_menu_sale" name="Portal layout : sales menu entries" inherit_id="website_portal_sale.portal_my_home_menu_sale">
+        <xpath expr="//a[@href='/my/quotes']/.." position="replace">
+            <li t-att-class="'active' if quotations else ''">
+                <a href="/my/quotes" class="pp-brand-info">
+                    <span class="fa fa-shopping-cart"/>
+                    <span>Quotes</span>
+                    <span class="pull-right fa fa-angle-right"/>
+                </a>
+            </li>
+        </xpath>
+
+        <xpath expr="//a[@href='/my/orders']/.." position="replace">
+            <li t-att-class="'active' if orders else ''">
+                <a href="/my/orders" class="pp-brand-info">
+                    <span class="fa fa-shopping-cart"/>
+                    <span>Orders</span>
+                    <span class="pull-right fa fa-angle-right"/>
+                </a>
+            </li>
+        </xpath>
+
+        <xpath expr="//a[@href='/my/invoices']/.." position="replace">
+            <li t-att-class="'active' if invoices else ''">
+                <a href="/my/invoices" class="pp-brand-info">
+                    <span class="fa fa-file-text"/>
+                    <span>Invoices</span>
+                    <span class="pull-right fa fa-angle-right"/>
+                </a>
+            </li>
+        </xpath>
+
+        <xpath expr="//ul[contains(@class,'o_portal_submenu')]" position="inside">
+            <li t-att-class="'active' if my_profile else ''">
+                <a href="/my/account" class="pp-brand-info">
+                    <span class="fa fa-male"/>
+                    <span>Profile</span>
+                    <span class="pull-right fa fa-angle-right"/>
+                </a>
+            </li>
+            <li t-att-class="'active' if change_password else ''">
+                <a href="/web/reset_password" class="pp-brand-info">
+                    <span class="fa fa-key"/>
+                    <span>Change Password</span>
+                    <span class="pull-right fa fa-angle-right"/>
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_portal_my_account" name="My Account">
+        <t t-call="website_portal.portal_layout">
+            <h1>Contact Details</h1>
+            <form action="/my/account" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="row o_website_portal_details">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div t-if="error_message" class="alert alert-danger">
+                                    <t t-foreach="error_message" t-as="err">
+                                        <t t-esc="err"/>
+                                        <br />
+                                    </t>
+                                </div>
+                            </div>
+                            <div t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="name">Your Name</label>
+                                <input type="text" name="name" class="form-control" t-att-value="name or partner.name" />
+                            </div>
+                            <div t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" name="email" class="form-control" t-att-value="email or partner.email" />
+                            </div>
+                            <div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="phone">Phone</label>
+                                <input type="tel" name="phone" class="form-control" t-att-value="phone or partner.phone" />
+                            </div>
+                            <div class="clearfix" />
+                            <div t-attf-class="form-group #{error.get('company_name') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label label-optional" for="company_name">Company Name</label>
+                                <p t-if="partner.commercial_partner_id.is_company" class="form-control" t-esc="partner.commercial_company_name"/>
+                                <input t-else="" type="text" name="company_name" class="form-control" t-att-value="company_name or partner.company_name"/>
+                            </div>
+                            <div t-if="has_check_vat" t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label label-optional" for="vat">VAT Number</label>
+                                <input type="text" name="vat" class="form-control" t-att-value="vat or partner.vat" />
+                            </div>
+                            <div class="clearfix" />
+                            <div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label label-optional" for="street">Street</label>
+                                <input type="text" name="street" class="form-control" t-att-value="street or partner.street"/>
+                            </div>
+                            <div t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="city">City</label>
+                                <input type="text" name="city" class="form-control" t-att-value="city or partner.city" />
+                            </div>
+                            <div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="zipcode">Zip / Postal Code</label>
+                                <input type="text" name="zipcode" class="form-control" t-att-value="zipcode or partner.zip" />
+                            </div>
+                            <div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label" for="country_id">Country</label>
+                                <select name="country_id" class="form-control">
+                                    <option value="">Country...</option>
+                                    <t t-foreach="countries or []" t-as="country">
+                                        <option t-att-value="country.id" t-att-selected="country.id == int(country_id) if country_id else country.id == partner.country_id.id">
+                                            <t t-esc="country.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6">
+                                <label class="control-label label-optional" for="state_id">State / Province</label>
+                                <select name="state_id" class="form-control">
+                                    <option value="">select...</option>
+                                    <t t-foreach="states or []" t-as="state">
+                                        <option t-att-value="state.id" style="display:none;" t-att-data-country_id="state.country_id.id" t-att-selected="state.id == partner.state_id.id">
+                                            <t t-esc="state.name" />
+                                        </option>
+                                    </t>
+                                </select>
+                            </div>
+                            <input type="hidden" name="redirect" t-att-value="redirect"/>
+                        </div>
+                        <div class="clearfix">
+                            <button type="submit" class="btn btn-default btn-primary pull-right mb32 ">                                        Confirm                                        
+                                <span class="fa fa-long-arrow-right" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </t>
+    </template>
+
+    <template id="theme_pharmacistplace_change_password" name="Theme Pharmacistplace Reset password">
+        <t t-call="website_portal.portal_layout">
+            <h1 class="text-center">Reset Password</h1>
+            <div t-if="message">
+                <p class="alert alert-success" t-if="message">
+                    <t t-esc="message"/>
+                </p>
+                <!-- <a href="/web/login" class="btn btn-link pull-right">Back to Login</a> -->
+            </div>
+            <form class="pp_change_password_form" role="form" method="post" t-if="not message">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <t t-if="token and not invalid_token">
+                    <t t-call="auth_signup.fields">
+                        <t t-set="only_passwords" t-value="1"/></t>
+                </t>
+                <t t-if="not token">
+                    <div class="form-group field-login">
+                        <label for="login" class="control-label">Your Email</label>
+                        <input type="text" name="login" t-att-value="login" id="login" class="form-control" autofocus="autofocus" required="required" autocapitalize="off"/>
+                    </div>
+                </t>
+                <p class="alert alert-danger" t-if="error">
+                    <t t-esc="error"/>
+                </p>
+                <input type="hidden" name="redirect" t-att-value="redirect"/>
+                <input type="hidden" name="token" t-att-value="token"/>
+                <div class="clearfix oe_login_buttons">
+                    <!-- <a t-if="not token" t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link pull-right">Back to Login</a> -->
+                    <!-- <a t-if="invalid_token" href="/web/login" class="btn btn-link pull-right">Back to Login</a> -->
+                    <button type="submit" class="btn btn-primary pull-left">Confirm</button>
+                </div>
+            </form>
+            <!-- <form class="pp_change_password_form" role="form" method="post" t-if="not message">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="form-group field-login">
+                    <label for="old_password" class="control-label text-muted">Old Password</label>
+                    <input type="text" name="old_password" id="old_password" class="form-control" autofocus="autofocus" required="required" autocapitalize="off"/>
+
+                    <label for="new_password" class="control-label text-muted">New Password</label>
+                    <input type="text" name="new_password" id="new_password" class="form-control" autofocus="autofocus" required="required" autocapitalize="off"/>
+
+                    <label for="confirm_password" class="control-label text-muted">Confirm Password</label>
+                    <input type="text" name="confirm_password" id="confirm_password" class="form-control" autofocus="autofocus" required="required" autocapitalize="off"/>
+                </div>
+            </form> -->
+        </t>
+    </template>
+
+    <template id="theme_pharmacistplace_orders_followup" inherit_id="website_portal_sale.orders_followup" name="Theme Pharmacistplace Sales Order">
+        <t t-call="website.layout" position="attributes">
+            <attribute name="t-call">website_portal.portal_layout</attribute>
+        </t>
+        <div class="col-sm-4" position="attributes">
+            <attribute name="class">col-sm-12</attribute>
+        </div>
+    </template>
+
+</odoo>

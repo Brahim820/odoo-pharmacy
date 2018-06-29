@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="theme_pharmacistplace_cart" inherit_id="website_sale.cart" name="Theme Pharmacistplace Shopping Cart">
+        <h1 class="mb32" position="attributes">
+            <attribute name="style">display:None;</attribute>
+        </h1>
+        <xpath expr="//div[hasclass('container')]" position="before">
+            <t t-call="theme_pharmacistplace.header_three_for_cart_checkout">
+                <t t-set="pp_step" t-value="10"/>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[hasclass('oe_cart')]" position="attributes">
+            <attribute name="class">col-md-12 col-sm-12 oe_cart</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('oe_cart')]//a[@href='/shop/checkout']" position="replace">
+            <!-- <attribute name="style">display:none;</attribute> -->
+        </xpath>
+
+        <xpath expr="//div[hasclass('oe_cart')]//div[hasclass('oe_structure')]" position="replace">
+            <!-- <attribute name="style">display:none;</attribute> -->
+        </xpath>
+
+        <xpath expr="//div[@id='right_column']" position="replace">
+
+        </xpath>
+
+    </template>
+
+    <template id="new_cart_amount_total" name="Cart New Features">
+        <div class="pull-right" style="display:grid;padding: 0px;margin-top: 10px;" id="new_cart_total_right_btn_div">
+            <a t-if="not optional_products and website_sale_order and website_sale_order.website_order_line" class="btn btn-info pull-right mb8" href="/shop/checkout">
+                <span class="">Process Checkout</span>
+                <span class="fa fa-shopping-cart" />
+            </a>
+        </div>
+    </template>
+
+    <template id="theme_pharmacistplace_continue_shopping" inherit_id="theme_pharmacistplace.new_cart_amount_total">
+        <xpath expr="//div[@id='new_cart_total_right_btn_div']/a[1]" position="after">
+            <a t-if="continue_shopping" href="/shop" class="btn btn-default pull-right mb8">
+                <span class="">Continue Shopping</span>
+                <span class="fa fa-long-arrow-right" />
+            </a>
+        </xpath>
+    </template>
+
+    <template id="theme_inherit_continue_shopping" inherit_id="website_sale.continue_shopping">
+        <xpath expr="//a[@href='/shop']" position="replace">
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_clear_shopping_cart" inherit_id="theme_pharmacistplace.new_cart_amount_total" customize_show="True" name="Clear Shopping Cart">
+        <xpath expr="//div[@id='new_cart_total_right_btn_div']/a[last()]" position="after">
+            <t t-if="website_sale_order and website_sale_order.website_order_line">
+                <form action="/clear/cart" method="post">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <input type="hidden" name="cart_so_id" t-att-value="website_sale_order.id"/>
+                    <button type="submit" class="btn btn-primary pull-right mb8" style="width: 100%;">
+                        <span class="">Clear Shopping Cart</span>
+                        <span class="list_icon" />
+                    </button>
+                </form>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_cart_lines" inherit_id="website_sale.cart_lines" name="Theme Pharmacistplace Shopping Cart Lines">
+        <xpath expr="//div[hasclass('well-lg')]" position="attributes">
+            <attribute name="class">well well-lg row col-md-12 </attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='website_sale.total']" position="before">
+            <div t-att-class="'%s %s' % (coupon_code and 'row','mb32' if not website_sale_order or not website_sale_order.website_order_line else '')">
+                <div t-if="website_sale_order and website_sale_order.website_order_line and coupon_code" class="col-md-4 col-xs-12 text-muted">
+                    <t>
+                        <h4>Coupon Code</h4>
+                        <p>Have a coupon code? Fill in this field and apply.</p>
+                        <t t-if="code_not_available">
+                            <p class="bg-warning">This promo code is not available</p>
+                        </t>
+                    </t>
+                    <form t-if="website_sale_order and website_sale_order.website_order_line and coupon_code" action="/shop/pricelist" method="post" class="mb32">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <div class="input-group">
+                            <input name="promo" class="form-control" type="text" placeholder="code..." t-att-value="website_sale_order.pricelist_id.code or None" />
+                            <div class="input-group-btn">
+                                <a class="btn btn-default a-submit">Apply</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-xs-12" style="display:None;">
+                    <!-- blank column -->
+                </div>
+                <div class="col-md-4 col-xs-12 pull-right" id="new_cart_total_right">
+                    <t t-call="theme_pharmacistplace.new_cart_amount_total"/>
+                    <div class="oe_structure" />
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//thead/tr" position="inside">
+            <th width="5"></th>
+        </xpath>
+        <xpath expr="//a[hasclass('js_delete_product')]" position="attributes">
+            <attribute name="style">display:None;</attribute>
+        </xpath>
+        <xpath expr="//tbody//tr" position="inside">
+            <td style="vertical-align: middle !important;">
+                <a href='#' class='js_delete_product no-decoration'>
+                    <small>
+                        <i class='fa fa-trash-o fa-2x'></i>
+                    </small>
+                </a>
+            </td>
+        </xpath>
+        <xpath expr="//t[@t-set='extra_class']" position="attributes">
+            <attribute name="t-value">"col-sm-5 col-xs-12"</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('js_cart_lines')][last()]" position="attributes">
+            <attribute name="style">margin-left: 0px;margin-right: 0px;margin-bottom:32px;</attribute>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_total" inherit_id="website_sale.total" name="Theme Pharmacistplace Shopping Cart Lines">
+        <xpath expr="//div/div[1]" position="before">
+            <div class="row" style="">
+                <h4 class="pp-brand-primary">Cart Totals</h4>
+            </div>
+        </xpath>
+        <div id="order_total_untaxed" position="attributes">
+            <attribute name="style"> padding: 0px 15px 0px 15px;</attribute>
+        </div>
+        <xpath expr="//div[@id='order_total_untaxed']//span[1]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+        <xpath expr="//div[@id='order_total_untaxed']//span[2]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+
+        <div id="order_total_taxes" position="attributes">
+            <attribute name="style"> padding: 0px 15px 0px 15px;</attribute>
+        </div>
+        <xpath expr="//div[@id='order_total_taxes']/span[1]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+        <xpath expr="//div[@id='order_total_taxes']/span[2]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+
+
+        <div id="order_total" position="attributes">
+            <attribute name="style"> padding: 0px 15px 0px 15px;</attribute>
+        </div>
+        <xpath expr="//div[@id='order_total']/span[1]" position="attributes">
+            <attribute name="style">text-align: left;padding:5px 0px 5px 0px</attribute>
+        </xpath>
+        <xpath expr="//div[@id='order_total']/span[2]" position="attributes">
+            <attribute name="style">text-align: left;padding:5px 0px 5px 0px</attribute>
+            <attribute name="class">col-xs-6 text-left h4 pp-brand-primary</attribute>
+        </xpath>
+
+    </template>
+
+    <template id="theme_pharmacistplace_cart_delivery" name="Delivery Costs" inherit_id="website_sale_delivery.cart_delivery">
+        <div id="order_delivery" position="attributes">
+            <attribute name="style"> padding: 0px 15px 0px 15px;</attribute>
+        </div>
+        <xpath expr="//div[@id='order_delivery']/span[1]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+        <xpath expr="//div[@id='order_delivery']/span[2]" position="attributes">
+            <attribute name="style">text-align: left;border-bottom:1px solid;padding:5px 0px 5px 0px;</attribute>
+        </xpath>
+
+    </template>
+
+
+
+    <template id="theme_pharmacistplace_wizard_checkout" inherit_id="website_sale.wizard_checkout" name="Theme Pharmacistplace Wizard Checkout">
+        <ul class="wizard pull-right" position="replace">
+            <div class="col-md-12 text-center mt32 mb32">
+                <ul class="pp_wizard">
+                    <li t-att-class="step==10 and 'pp-text-white' or 'pp-text-primary'" id="step10" t-attf-style="#{step&gt;10 and step&lt;=50 and 'background-color:rgb(18, 174, 142)'}">
+                        <t t-if="step&gt;10 and step&lt;50">
+                            <a href="/shop/cart" class="pp-text-white">My Order</a>
+                        </t>
+                        <span t-if="not (step&gt;10 and step&lt;50)" t-att-class="step == 50 and 'pp-text-white'">My Order</span>
+                    </li>
+                    <hr class="pp_hr"/>
+                    <li t-att-class="step==15 and 'pp-text-white' or 'pp-text-primary'" id="step15" t-attf-style="#{step&gt;15 and step&lt;=50 and 'background-color:rgb(18, 174, 142)'}">
+                        <t t-if="step&gt;15 and step&lt;50">
+                            <a href="/shop/cart" class="pp-text-white">Distributor Activate</a>
+                        </t>
+                        <span t-if="not (step&gt;15 and step&lt;50)" t-att-class="step == 50 and 'pp-text-white'">Distributor Activate</span>
+                    </li>
+                    <hr class="pp_hr"/>
+
+                    <li t-att-class="step==40 and 'pp-text-white' or 'pp-text-primary'" t-attf-style="#{step&gt;15 and step&lt;=50 and 'background-color:rgb(18, 174, 142)'}" id="step40">
+                        <t t-if="step&gt;40 and step&lt;50">
+                            <a href="/shop/cart" class="pp-text-white"> Checkout </a>
+                        </t>
+                        <span t-if="not (step&gt;40 and step&lt;50)" t-att-class="step == 50 and 'pp-text-white'"> Checkout </span>
+                    </li>
+                    <hr class="pp_hr"/>
+                    <li t-att-class="(step==50 and 'pp-text-white') or 'pp-text-primary'" id="step50">Done</li>
+                </ul>
+            </div>
+        </ul>
+    </template>
+
+    <template id="three_hr_lines_left_part" name="Message With Three Lines">
+        <div id="three_hr_lines_left_part" class="mt8">
+            <hr class="hr_primary" style="margin: 0px 0px  0px 20%;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+            <hr class="hr_info" style="margin: 10px 0px 10px 0px;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+            <hr class="hr_primary" style="margin: 0px 0px 0px 20%;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+        </div>
+    </template>
+    <template id="three_hr_lines_right_part" name="Message With Three Lines">
+        <div id="three_hr_lines_right_part" class="mt8">
+            <hr class="hr_primary" style="margin: 0px 20%  0px 0px;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+            <hr class="hr_info" style="margin: 10px 0px 10px 0px;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+            <hr class="hr_primary" style="margin: 0px 20% 0px 0px;padding: 0px;box-shadow: 0 1px 2px 0px #1c5f51;"/>
+        </div>
+    </template>
+
+    <template id="theme_pharmacistplace_cart_done" inherit_id="website_sale.confirmation" name="Theme Pharmacistplace Cart Done">
+        <xpath expr="//div[hasclass('container')]" position="before">
+            <t t-call="theme_pharmacistplace.header_three_for_cart_checkout">
+                <t t-set="pp_step" t-value="50"/>
+            </t>
+        </xpath>
+        <h1 position="before">
+            <div class="row mt32">
+                <div class="col-md-12" style="text-align: -webkit-center;">
+                    <t t-call="theme_pharmacistplace.checkmark_with_circle"/>
+                    <h1 class="mt64 pp-brand-info"> Congrats! Your Order has been Sent.</h1>
+                    <h2 class="pp-brand-primary mt16">
+                        <span> Order ID: </span>
+                        <span>
+                            # <t t-esc="order.name" />
+                        </span>
+                    </h2>
+                    <div class="mt64 mb64">
+                        <a href="/shop" class="btn btn-primary" id="another_order">
+                            <span> Compleat another order </span>
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </h1>
+    </template>
+    
+    <template id="header_three_for_cart_checkout" name="Header Three For Cart Checkout">
+        <div class="navbar navbar-default navbar-static-top" style="height: 80px;">
+            <div class="container">
+                <div class="row" style="display: inline;">
+                    <div class="col-md-6" style="padding: 0px;">
+                        <ul class="nav navbar-nav " style="padding-top: 15px;">
+                            <h4 class="mb32 pp-brand-info">
+                                <span t-if="pp_step==10"> Shopping Cart </span>
+                                <span t-if="pp_step==15"> Distributor Activate </span>
+                                <span t-if="pp_step==40"> Checkout </span>
+                                <span t-if="pp_step==50"> Done </span>
+                            </h4>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style="padding: 0px;">
+                        <ul class="nav navbar-nav pull-right" style="padding-top: 20px;">
+                            <a href="/" class="">
+                                Home
+                            </a>
+                            <span class="pp-brand-primary"> / </span>
+                            <span t-if="pp_step==10" class="pp-brand-primary"> Cart </span>
+                            <span t-if="pp_step==15" class="pp-brand-primary"> Cart </span>
+                            <span t-if="pp_step==40" class="pp-brand-primary"> Checkout </span>
+                            <span t-if="pp_step==50" class="pp-brand-primary"> Done </span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="checkmark_with_circle" name="Checkmark Inside Circle">
+        <div style="height: 150px;width: 150px;" class="div_circle">
+            <!-- Div for creating circle. Manage it's height and width -->
+            <div style="width: 16px;height: 44px;" class="checkmark">
+                <!-- Div to create checkmark. Manage it's height and width accoring to outer circle div-->
+            </div>
+        </div>
+    </template>
+</odoo>

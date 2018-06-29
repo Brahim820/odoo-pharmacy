@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_website_recently_viewed_product" model="ir.ui.view">
+            <field name="name">Website Recently Viewed Setting</field>
+            <field name="model">website.recently.viewed.setting</field>
+            <field name="arch" type="xml">
+                <form string="Recently Viewed Setting" class="oe_form_configuration">
+                    <group string="Recently Viewed Setting">
+
+                        <label for="wk_maximum_product" />
+                        <div name="wk_maximum_product">
+                            <div class="oe_inline">
+                                <field name="wk_maximum_product"/>
+                            </div>
+                        </div>
+
+                        <label for="wk_show_product" />
+                        <div name="wk_show_product">
+                            <div class="oe_inline">
+                                <field name="wk_show_product"/>
+                            </div>
+                        </div>
+                    </group>
+                    <footer>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="button" name="cancel" class="oe_link"/>
+                    </footer>
+                </form> 
+            </field>
+        </record>
+
+        <record id="action_website_recently_viewed_product" model="ir.actions.act_window">
+            <field name="name">Website Recently Viewed Setting</field>
+            <field name="res_model">website.recently.viewed.setting</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

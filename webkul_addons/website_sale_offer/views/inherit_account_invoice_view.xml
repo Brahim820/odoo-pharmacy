@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+        <record id="inherit_account_inv_sale_offer_form_view" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='invoice_line_ids']" position="after">
+                    <div style="float:left;">
+                    <div>
+                        <label for="applied_sale_offer_id"/>
+                        <field name="applied_sale_offer_id"/>
+                    </div>
+                    <div attrs="{'invisible': [('order_level_discount', '=', 0.0)]}">
+                        <label for="order_level_discount" string="Order Discount(%): "/>
+                        <field name="order_level_discount"/>
+                    </div>
+                    <div attrs="{'invisible': [('payment_method_discount', '=', 0.0)]}">
+                        <label for="payment_method_discount" string="Payment Method Discount(%): "/>
+                        <field name="payment_method_discount"/>
+                    </div>
+                    <div attrs="{'invisible': [('total_seller_commission', '=', 0.0)]}">
+                        <label for="total_seller_commission"/>
+                        <field name="total_seller_commission"/>
+                    </div>
+                    </div>
+                </xpath>
+
+                <field name="amount_tax" position="after">
+                    <field name="global_discount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

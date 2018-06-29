@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+		<template id="assets_frontend_mp_p_c" inherit_id="website.assets_frontend" name="Assets Frontend Price Comparison">
+			<xpath expr="." position="inside">
+			    <link rel="stylesheet" href="/marketplace_product_price_comparison/static/src/css/seller_price_comparison.css" media="all" type="text/css"/>
+		    </xpath>
+		</template>
+		<template id="other_sellers_info_in_product" inherit_id="website_sale.product" active="True" name="Product Other Seller">
+			<xpath expr="//form[@class='js_add_cart_variants']" position="after">
+			 	<t t-if="product.seller_product_ids or product.global_product_tmpl_id" >
+			 		<hr class=""/>
+					<t t-call="marketplace_product_price_comparison.wk_product_other_seller_link"/>
+				</t>
+			</xpath>
+		</template>
+
+		<template id="wk_product_other_seller_link" active="True" name="Product Other Seller Info">
+			<section class="container" id="other_seller_info">
+				<div class="">
+					<t t-if="product.seller_product_ids">
+						<t t-set="mp_other_seller_products" t-value="product.seller_product_ids.filtered(lambda p: p.status == 'approved' and p.website_published) + product.filtered(lambda p: p.website_published)"/>
+					</t>
+					<t t-if="product.global_product_tmpl_id and product.marketplace_seller_id">
+						<t t-set="mp_other_seller_products" t-value="product.global_product_tmpl_id.seller_product_ids.filtered(lambda p: p.status == 'approved' and p.website_published) + product.global_product_tmpl_id.filtered('website_published')"/>
+					</t>
+					<t t-if="len(mp_other_seller_products) &gt; 1">
+						<span> View </span>
+						<a t-attf-href="/product/sellers/#{product.id}">
+							<span t-esc="len(mp_other_seller_products)"/>
+							<span>
+								Sellers
+							</span>
+						</a>
+						<t t-set="sorted_products" t-value="mp_other_seller_products.sorted(key=lambda p: p.website_price)"/>
+						<t t-if="len(mp_other_seller_products) &gt; 1">
+							starting from
+							<strong>
+								<t t-if="sorted_products">
+									<span t-esc="sorted_products[0].website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+								</t>
+							</strong>
+							to
+							<strong>
+								<t t-if="sorted_products">
+									<span t-esc="sorted_products[-1].website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+								</t>
+							</strong>
+						</t>
+					</t>
+					<t t-if="len(mp_other_seller_products) == 1">
+						<span> View </span>
+						<a t-attf-href="/product/sellers/#{product.id}">
+							<span t-esc="len(mp_other_seller_products)"/>
+							Seller
+						</a>
+						also selling the same Product.
+					</t>
+				</div>
+				</section>
+		</template>
+
+		<template id="wk_mp_product_other_seller_page" active="True" name="Product Other Seller Info">
+			<t t-call="website.layout">
+				<t t-set="additional_title" t-value="product.name"/>
+				<section class="container mt8">
+					<div class="col-md-12">
+						<div>
+							<i class="fa fa-chevron-left" aria-hidden="true" style="color:#777777"></i>
+							<a class="go-to-back" style="color:#777777;" t-attf-href="/shop/product/#{product.id}"> Go Back To</a>
+						</div>
+						<div class="col-md-6" style="padding:0px;">
+							<span style="font-size:40px; font-weight:600;">
+								All Sellers
+							</span>
+						</div>
+						<div class="col-md-6" style="padding:0px;">
+							<div class="col-md-2 col-xs-6 pull-right" style="padding:0px;">
+								<a itemprop="url" t-attf-href="/shop/product/#{product.id}">
+									<span itemprop="image" t-field="product.image" t-options="{'widget': 'image', 'resize': None if product_image_big else '300x300', 'zoom': 'image'}" t-att-alt="product.name" />
+								</a>
+							</div>
+							<div class="col-md-10 col-xs-6" style="padding:0px;">
+								<div style="float:right;margin-right: 15px;">
+									<h5>
+										<strong>
+											<a style="color:#333333;" itemprop="name" t-attf-href="/shop/product/#{product.id}" t-field="product.name"/>
+										</strong>
+									</h5>
+									<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price" t-if="product.product_variant_ids">
+										<b>
+											<span t-esc="product.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" class="mp-price"/>
+											<span itemprop="price" style="display:none;" t-esc="product.website_price" />
+											<span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+											<t t-if="product.marketplace_seller_id">
+												<t t-set="seller" t-value="product.sudo().marketplace_seller_id"/>
+												<div id="mp_sellerl_name">
+													<span class="mp-price">By </span>
+													<span>
+														<strong>
+															<a class="seller-shop-name" itemprop="name" target="_blank" t-attf-href="/seller/profile/#{seller.sudo().url_handler if seller.sudo().url_handler else seller.sudo().id}" t-field="seller.sudo().name"/>
+														</strong>
+													</span>
+												</div>
+												<div class="">
+													<t t-if="seller.show_seller_review">
+														<t t-set="avg_val" t-value="seller.avg_review()"/>
+														<span class="" style="display:inline-flex;">
+															<input id="star-readonly" class="rating form-control hide" t-attf-value="#{avg_val}" data-show-clear="false" data-show-caption="false" data-min="0" data-max="5" data-step="0.1" data-readonly="true" data-size="xs" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa"/>
+														</span>
+													</t>
+												</div>
+											</t>
+										</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"/>
+					<hr class="mt16"/>
+					<div class="col-md-12 mt32" style="padding:0px;">
+						<table class="table table-hover mt36 wk_price_com_table">
+			                <thead>
+			                  	<tr class="all-seller-tr">
+			                      <th name="header_sold_by" style="text-transform: uppercase;">Sold By</th>
+			                      <th name="header_price" style="text-transform: uppercase;">Price</th>
+			                      <!-- <th t-if="len(mp_other_seller_products[0].product_variant_ids) == 1" name="header_qty" style="text-transform: uppercase;">Quantity</th> -->
+								  <th name="header_action" style="text-transform: uppercase;">Action</th>
+			                    </tr>
+			                </thead>
+			                <t t-foreach="mp_other_seller_products" t-as="other_seller_product">
+								<!-- <t t-if="other_seller_product.sudo().id != product.sudo().id"> -->
+				                    <tr>
+										<form action="/shop/cart/update" method="post">
+											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+					                        <td name="sold-by-seller">
+												<t t-set="other_seller" t-value="other_seller_product.sudo().marketplace_seller_id"/>
+												<span class="mp-price"> By </span>
+												<span name="sold_by">
+													<strong>
+														<t t-if="other_seller">
+															<a class="seller-shop-name" itemprop="name" target="_blank" t-attf-href="/seller/profile/#{other_seller.sudo().url_handler if other_seller.sudo().url_handler else other_seller.sudo().id}" t-field="other_seller.name"/>
+														</t>
+														<t t-if="not other_seller">
+															<span>Marketplace Owner</span>
+														</t>
+													</strong>
+												</span>
+												<div class="">
+													<t t-if="other_seller.show_seller_review">
+														<t t-set="other_avg_val" t-value="other_seller.avg_review()"/>
+														<span class="" style="display:inline-flex;">
+															<input
+																id="star-readonly"
+																class="rating form-control hide"
+																t-attf-value="#{other_avg_val}"
+																data-show-clear="false"
+																data-show-caption="false"
+																data-min="0"
+																data-max="5"
+																data-step="0.1"
+																data-readonly="true"
+																data-size="xs"
+																data-symbol="&#xf005;"
+																data-glyphicon="false"
+																data-rating-class="rating-fa"/>
+														</span>
+													</t>
+												</div>
+					                        </td>
+											<td name="product_price">
+												<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price" t-if="other_seller_product.product_variant_ids">
+													<b>
+														<span t-esc="other_seller_product.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+														<span itemprop="price" style="display:none;" t-esc="other_seller_product.website_price" />
+														<span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+													</b>
+												</div>
+											</td>
+											<!-- <t t-if="len(other_seller_product.product_variant_ids) == 1">
+					                        	<td class="oe_website_sale" name="product_qty">
+													<div class="css_quantity input-group oe_website_spinner" contenteditable="false">
+											            <a t-attf-href="#" class="mb8 input-group-addon js_add_cart_json">
+											                <i class="fa fa-minus"></i>
+											            </a>
+											            <input type="text" class="form-control" data-min="1" name="add_qty" value="1"/>
+											            <a t-attf-href="#" class="mb8 input-group-addon float_left js_add_cart_json">
+											                <i class="fa fa-plus"></i>
+											            </a>
+											        </div>
+					                        	</td>
+											</t> -->
+											<td name="product_add_to_cart">
+												<input name="product_id" t-att-value="other_seller_product.product_variant_id.id" type="hidden" />
+												<t t-if="len(other_seller_product.product_variant_ids) == 1">
+													<input class="btn btn-primary btn-lg" type="submit" value="Add to Cart"></input>
+												</t>
+												<t t-if="len(other_seller_product.product_variant_ids) &gt; 1">
+													<a class="btn btn-primary btn-lg" t-attf-href="/shop/product/#{other_seller_product.id}">
+														Add to Cart
+													</a>
+												</t>
+											</td>
+										</form>
+				                    </tr>
+								<!-- </t> -->
+			                </t>
+			            </table>
+					</div>
+				</section>
+			</t>
+		</template>
+
+		<template id="products_description" inherit_id="marketplace_product_price_comparison.wk_mp_product_other_seller_page" active="True" customize_show="True" name="Delivery Info">
+	        <xpath expr="//th[@name='header_price']" position="after">
+	            <th name="header_delivery" style="text-transform: uppercase;">Delivery</th>
+	        </xpath>
+			<xpath expr="//td[@name='product_price']" position="after">
+				<td name="product_delivery">
+				  <p class="mp-price" style="margin-bottom: 0px;">Estimated Delivery</p>
+				  <span style="font-weight:700;font-family: Helvetica;font-size: 12px;color: #333333;">
+					  Will be Delivered within
+					  <span t-esc="product.sale_delay"/>
+					  Day(s).
+				  </span>
+				</td>
+	        </xpath>
+
+	    </template>
+
+	</data>
+</odoo>

@@ -1,0 +1,155 @@
+<odoo>
+  <data>
+    <!-- sale.view_sales_order_filter sale.view_quotation_tree sale.view_sales_order_line_filter -->
+    <record id="sale_order_line_filter" model="ir.ui.view">
+      <field name="name">sale_order_line_filter</field>
+      <field name="model">sale.order.line</field>
+      <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group" position="inside">
+          <filter string='Today Orders' domain="[['date_order', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))], ['date_order', '&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59))]]"/>
+        </xpath>
+      </field>
+    </record>
+    <record id="view_sales_order_filter" model="ir.ui.view">
+      <field name="name">sale_order_tree</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group" position="inside">
+          <field name="city_id"/>
+          <field name="zone_id"/>
+          <field name="delivery_date"/>
+          <field name="delivery_period"/>
+          <filter string='City' context="{'group_by':'city_id'}"/>
+          <filter string='Zone' context="{'group_by':'zone_id'}"/>
+          <filter string='Today Orders' domain="[['date_order', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))], ['date_order', '&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59))]]"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="sale_quotation_tree" model="ir.ui.view">
+      <field name="name">sale_order_tree</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_quotation_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="after">
+          <field name="country_id" invisible='1'/>
+          <field name="state_id" invisible='1'/>
+          <field name="city_id" invisible='1'/>
+          <field name="zone_id" invisible='0'/>
+          <field name="building_id" invisible='0'/>
+          <field name="sequence" string="#" invisible='0'/>
+          <field name="floor" invisible='1'/>
+          <field name="delivery_date" invisible='0'/>
+          <field name="delivery_period" invisible='0'/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="sale_order_tree" model="ir.ui.view">
+      <field name="name">sale_order_tree</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="after">
+          <field name="country_id" invisible='1'/>
+          <field name="state_id" invisible='1'/>
+          <field name="city_id" invisible='1'/>
+          <field name="zone_id" invisible='0'/>
+          <field name="building_id" invisible='0'/>
+          <field name="sequence" string="#" invisible='0'/>
+          <field name="floor" invisible='1'/>
+          <field name="delivery_date" invisible='0'/>
+          <field name="delivery_period" invisible='0'/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="base_view_partner_tree1" model="ir.ui.view">
+      <field name="name">view.partner.tree</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='country_id']" position="after">
+          <field name="state_id"/>
+          <field name="city_id"/>
+          <field name="zone_id"/>
+          <field name="building_id"/>
+          <field name="floor"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="partner_address_inherit" model="ir.ui.view">
+      <field name="name">address</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='country_id']" position="replace"></xpath>
+        <xpath expr="//field[@name='state_id']" position="replace"></xpath>
+        <xpath expr="//field[@name='city']" position="replace">
+          <field name="city" invisible="1"/>
+          <field name="country_id" placeholder='Country' class="o_address_state"/>
+          <field name="state_id" domain="[('country_id','=',country_id)]" placeholder='State' class="o_address_state"/>
+          <field name="city_id" domain="[('state_id','=',state_id)]" placeholder='City' class="o_address_state"/>
+          <field name="zone_id" domain="[('city_id','=',city_id)]" placeholder='Zone' class="o_address_state"/>
+          <field name="building_id" domain="[('zone_id','=',zone_id)]" placeholder='Building No.' class="o_address_state"/>
+          <field name="floor" placeholder='Floor No.' class="o_address_zip"/>
+        </xpath>
+      </field>
+    </record>
+    <record id="city_city" model="ir.ui.view">
+      <field name="name">city.city</field>
+      <field name="model">res.country.city</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="state_id"/>
+              <field name="zip_code"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="zone_id" model="ir.ui.view">
+      <field name="name">zone_id</field>
+      <field name="model">res.zone.building</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="zone_id"/>
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="city_area" model="ir.ui.view">
+      <field name="name">city.area</field>
+      <field name="model">res.country.city.zone</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="city_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- <record id="floor" model="ir.ui.view"> <field name="name">zone_id</field> <field name="model">city.area.floor</field> <field name="arch" type="xml"> <form string=""> <sheet> <group> <field name="country_id"/> <field name="state_id"
+    domain="[('country_id','=',country_id)]" /> <field name="city_id" domain="[('state_id','=',state_id)]"/> <field name="zone_id"/> <field name="floor_no"/> </group> </sheet> </form> </field> </record> -->
+
+  </data>
+</odoo>

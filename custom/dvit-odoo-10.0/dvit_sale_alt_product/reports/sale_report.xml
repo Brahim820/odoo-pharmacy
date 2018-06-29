@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <template id="alt_product" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//span[@t-field='l.price_total']/../.." position="after">
+              <tr t-if="l.alt_product_id">
+                <td></td>
+                <td colspan="7" style="font-size: 10px !important; border: 0px !important;">
+                  <div style="color:blue !important;">
+                    <span><b>Alternative product: </b></span>
+                    <span t-field="l.alt_product_id.name"/> - [<span t-field="l.alt_product_id.default_code"/>]
+                    <span t-field="l.alt_product_id.description_sale"/>
+                    <span><b> Unit Price: </b></span>
+                    <span t-field="l.alt_product_id.lst_price"/>
+                  </div>
+              </td></tr>
+            </xpath>
+        </template>
+    </data>
+</odoo>

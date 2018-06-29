@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- CUSTOMIZATION FOR AHMED ALI -->
+	<!-- <template id="footer_default"
+		inherit_id="website.footer_default"
+		customize_show="True"
+		name="SEO Site MAP Footer">
+		<xpath
+			expr="//a[@href='/page/website.aboutus']"
+			position="after">
+			<i class="fa fa-sitemap ml8 text-primary"
+				aria-hidden="true"></i>
+				<a href="/page/website.sitemap">  Sitemap</a>
+		</xpath>
+	</template> -->
+
+
+	<template id="sitemap_recursive" name="Sitemap REC">
+		<li>
+		<i class="fa fa-link text-primary" aria-hidden="true"></i>
+        <a t-att-href="wk_menu.url" t-field="wk_menu.name"></a>
+        <ul t-if="wk_menu.child_id"  style="list-style: none;" class="mt8">
+            <t t-foreach="wk_menu.child_id" t-as="wk_menu">
+                <t t-call="website_seo_pro.sitemap_recursive" />
+            </t>
+        </ul>
+   </li>
+	</template>
+	<template id="sitemap" name="Site Map" page="True">
+	  <t t-call="website.layout">
+	   	<div id="wrap">
+	      <div class="oe_structure">
+	      	<section>
+		        <div class="container">
+		          <div class="row">
+		           <div class="col-md-12">
+		              <h1>
+		              	<i class="fa fa-sitemap fa-2x"
+		              		aria-hidden="true"></i>
+		          		<t t-esc='website.name'/> SiteMap</h1>
+			             <ul style="list-style: none;" class="mt16">
+			                <t t-foreach="menu_ids" t-as="wk_menu">
+			                    <t t-call="website_seo_pro.sitemap_recursive" />
+			                </t>
+		            	</ul>
+		           </div>
+		          </div>
+		        </div>
+      		</section>
+			</div>
+		</div>
+		</t>
+	</template>
+
+</odoo>

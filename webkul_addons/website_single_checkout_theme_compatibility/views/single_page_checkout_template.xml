@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="theme_pharmacistplace_single_page_checkout" inherit_id="website_single_page_checkout.single_page_checkout" name="Theme Pharmacistplace Single Page Checkout">
+        <h1 position="attributes">
+            <attribute name="style">display:None;</attribute>
+        </h1>
+        <xpath expr="//div[hasclass('container')]" position="before">
+            <t t-call="theme_pharmacistplace.header_three_for_cart_checkout">
+                <t t-set="pp_step" t-value="40"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_single_page_billing_kanban" inherit_id="website_single_page_checkout.single_page_billing_kanban">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+    </template>
+
+    <template id="theme_pharmacistplace_single_step_add_address" inherit_id="website_single_page_checkout.single_step_add_address">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+    </template>
+
+    <template id="theme_pharmacistplace_single_page_cart_review" inherit_id="website_single_page_checkout.single_page_cart_review">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+        <xpath expr="//thead/tr/th[2]" position="attributes">
+            <attribute name="style"> display:None;</attribute>
+        </xpath>
+        <xpath expr="//tbody/tr/td[2]" position="attributes">
+            <attribute name="style"> display:None;</attribute>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_single_page_extra_info" inherit_id="website_single_page_checkout.single_page_extra_info">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+    </template>
+
+    <template id="theme_pharmacistplace_single_page_deliver_method" inherit_id="website_single_page_checkout.single_page_deliver_method">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+    </template>
+
+    <template id="theme_pharmacistplace_single_page_payment_method" inherit_id="website_single_page_checkout.single_page_payment_method">
+        <h4 class="page-header mt8" position="attributes">
+            <attribute name="class"> page-header mt8 pp-brand-primary</attribute>
+        </h4>
+    </template>
+
+</odoo>

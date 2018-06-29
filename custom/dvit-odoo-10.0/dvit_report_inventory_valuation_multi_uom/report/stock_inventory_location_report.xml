@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_stock_inventory_location">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h2>Stock Inventory</h2>
+                        <div class="row mt32 mb32">
+                            <div class="col-xs-12">
+                                <span>Location :</span>
+                                <sapn t-field="o.location_id"/>
+                            </div>
+                        </div>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Product</th>
+                                    <th>Location</th>
+                                    <th>UOM</th>
+                                    <th>QTY</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.line_ids" t-as="l">
+                                    <tr style="background-color: #ededed;">
+                                        <td>
+                                            <span t-field="l.product_id.categ_id.display_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.product_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.location_id.display_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.product_uom_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.qty"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.standard_price"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.amount"/>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="l.product_id.product_tmpl_id.available_uom_ids" t-as="available_uom">
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <span t-esc="available_uom.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l.convert_qty_in_uom(l.product_uom_id,available_uom,l.qty)"/>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="len(l.product_id.product_tmpl_id.available_uom_ids) == 0 ">
+                                     <t t-foreach="l.product_uom_id.sudo().search([('active','=',True),
+                                     ('category_id','=',l.product_uom_id.category_id.id),('id','!=',l.product_uom_id.id)])" t-as="linee">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <span t-field="linee.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="l.convert_qty_in_uom(l.product_uom_id,linee,l.qty)"/>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

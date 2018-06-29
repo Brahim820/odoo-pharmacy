@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+    	<record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller1_shop">
+            <field name="name">Bryon Jun Shop</field>
+            <field name="url_handler">bryon-jun-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">Making life easier.</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="phone">914-943-1187</field>
+            <field name="email">bryon-jun@test.com</field>
+            <field name="fax">914-943-1187</field>
+            <field name="website_published" eval="True"/>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+        <record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller2_shop">
+            <field name="name">Maya Anand Shop</field>
+            <field name="url_handler">maya-anand-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">Save money. Live better.</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="phone">940-880-9982</field>
+            <field name="email">maya-anand@test.com</field>
+            <field name="fax">940-880-9982</field>
+            <field name="website_published" eval="True"/>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+        <record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller3_shop">
+            <field name="name">George Horne Shop</field>
+            <field name="url_handler">george-horne-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">Shopping the way you like it!</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="phone">816-809-6447</field>
+            <field name="email">george-horne@test.com</field>
+            <field name="fax">816-809-6447</field>
+            <field name="website_published" eval="True"/>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+        <record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller4_shop">
+            <field name="name">Ryan Solly Shop</field>
+            <field name="url_handler">ryan-solly-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">You’ll find it here!</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="phone">713-907-2091</field>
+            <field name="email">ryan-solly@test.com</field>
+            <field name="fax">713-907-2091</field>
+            <field name="website_published" eval="True"/>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+        <record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller7_deny_shop">
+            <field name="name">Brooke Daniels Shop</field>
+            <field name="url_handler">brooke-daniels-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">Your stores. Your place.</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller7_deny"/>
+            <field name="phone">919-680-9949</field>
+            <field name="email">brooke-daniels@test.com</field>
+            <field name="fax">919-680-9949</field>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+        <record model="seller.shop" id="dcred_odoo_marketplace.wk_mp_seller8_deny_shop">
+            <field name="name">Ryan Cooper Shop</field>
+            <field name="url_handler">ryan-cooper-shop</field>
+            <field name="shop_banner"></field>
+            <field name="shop_tag_line">Where the world comes to shop.</field>
+            <field name="description"></field>
+            <field name="seller_id" ref="dcred_odoo_marketplace.wk_mp_seller8_deny"/>
+            <field name="phone">406-424-0917</field>
+            <field name="email">ryan-cooper@test.com</field>
+            <field name="fax">406-424-0917</field>
+            <field name="shop_t_c" type="html">
+                <p>By opening or using a product purchased from <strong>our shop</strong>, the purchaser agrees to be bound by the term and conditions of sale as set forth below.
+                    If you do not agree to the terms and conditions of sale, please ship the product back to <strong>our shop</strong> unopened within 5 days of receipt for a full refund (less shipping and handling charges).</p>
+                <p><strong>our shop</strong> makes no warranty, either expressed or implied, of merchantability or fitness for any particular purpose, and none shall be implied by law.</p>
+                <p>Final determination of suitability of any item sold for the use contemplated by purchaser is the sole responsibility of the purchaser, and Seller shall have no responsibility in connection with such determination.</p>
+                <p><strong>our shop</strong> will not be responsible for any consequential or incidental damages resulting from the sale, non-delivery, use or improper function of any equipment purchased from us.
+                    The responsibility, if any is imposed, of <strong>our shop</strong> in regard to any item purchased shall be limited to the monetary value of the merchandise purchased.</p>
+                <p>Some item illustrations are for display purposes only, may not be exact, and are not necessarily included in the purchase price.
+                    <strong>our shop</strong> is not responsible for typographical or pictorial errors, and specifications may change without notice.</p>
+                <p>All items offered for sale are subject to availability. Many items on our Web site or catalog site come from various sources.
+                    <strong>our shop</strong> is, therefore, bound to fluctuating currency exchange rates, making it necessary to occasionally increase prices. In addition, some domestic and overseas products may be discontinued without our prior knowledge.
+                    Should this apply to your order, we will, at our discretion, either contact you for instructions before shipping or cancel your order and notify you of such cancellation.</p>
+                <p>We make every effort to provide you with an error-free Web site. However, in the event there is a misprint, we reserve the right to correct copy or pricing to reflect the actual current status.</p>
+                <p>Order confirmation given to you through <strong>our shop</strong> does not guarantee our acceptance of your order, nor does it constitute confirmation of an offer to sell.
+                    <strong>our shop</strong> reserves the right to decline and cancel an order, or supply less than quantity ordered at any time.</p>
+                <p>At times, we may experience a shortage of certain items. At these times, we reserve the right to restrict the quantity of a particular item ordered.
+                    We will notify you if a situation like this occurs, In addition . <strong>our shop</strong> may, at its own discretion, limit quantities sold in each order or to each person or household.</p>
+                <p>We do not sell to those who intend to resell products offered through <strong>our shop</strong>, including dealers, resellers, exporters, wholesalers, or customers.
+                    <strong>our shop</strong> reserves the right to decline or cancel an order at any time.</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

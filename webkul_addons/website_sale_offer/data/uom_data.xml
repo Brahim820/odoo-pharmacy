@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <record id="box_uom_categ" model="product.uom.categ">
+        <field name="name">Box</field>
+    </record>
+    <record id="box_uom" model="product.uom">
+        <field name="name">Box</field>
+        <field name="active" eval="True"/>
+        <field name="is_rental_uom" eval="True"/>
+        <field name="category_id" ref="box_uom_categ"/>
+        <field name="uom_type">reference</field>
+        <field name="rounding" eval="1.0"/>
+    </record>
+</odoo>

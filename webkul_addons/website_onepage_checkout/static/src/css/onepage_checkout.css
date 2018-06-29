@@ -1,0 +1,34 @@
+.control-label {
+    padding: 0px;
+}
+
+.hide_class {
+    pointer-events: none;
+    cursor: default;
+}
+
+.onepage-loader-big {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(/website_onepage_checkout/static/src/img/onepage_checkout_big.GIF) center no-repeat rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px white;
+}
+
+.onepage-loader-small {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(/website_onepage_checkout/static/src/img/onepage_checkout_small.gif) center no-repeat rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px white;
+}
+
+
+/* Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) */
+/* Responsible Developer:- Sunny Kumar Yadav */

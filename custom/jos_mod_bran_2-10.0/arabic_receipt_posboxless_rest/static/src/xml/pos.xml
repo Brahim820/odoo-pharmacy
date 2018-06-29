@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="Xml_Arabic">
+        <receipt align='center' width='50' value-thousands-separator='' >
+            <t>
+                <img t-if='receipt.company.logo' t-att-src='receipt.company.logo'/>
+                <br/>
+                <img t-if='malik' t-att-src="'data:image/png;base64,'+malik"/>
+            </t>
+        </receipt>
+    </t>
+
+    <t t-name="Xml_Arabicc">
+        <receipt align='center' width='50' value-thousands-separator='' >
+            <t>
+                <img t-if='malik' t-att-src="'data:image/png;base64,'+malik"/>
+                <br/>
+            </t>
+        </receipt>
+    </t>
+
+    <t t-name="PrintBillButton">
+        <t t-jquery=".control-button.order-printbill" t-operation="replace" />
+
+    </t>
+    <t t-name="PrintBillButton_1">
+        <span class="control-button order-printbill">
+            <i class="fa fa-print"></i>
+            Bill
+        </span>
+    </t>
+</templates>

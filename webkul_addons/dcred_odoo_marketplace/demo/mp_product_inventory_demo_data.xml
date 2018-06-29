@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+	<data noupdate="1">
+		<record id="dcred_odoo_marketplace.wk_mp_stock_product1_wk_mp_seller1" model="marketplace.stock">
+			<field name="name">Demo Stock added for red bag</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller1_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller1"/>
+			<field name="new_quantity">10</field>
+			<field name="location_id">15</field>
+			<field name="note"></field>
+			<field name="state">requested</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product2_wk_mp_seller1" model="marketplace.stock">
+			<field name="name">Demo Stock added for black bag</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller1_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller1"/>
+			<field name="new_quantity">15</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product3_wk_mp_seller1" model="marketplace.stock">
+			<field name="name">Demo Stock added for sky blue bag</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller1_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller1"/>
+			<field name="new_quantity">20</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product1_wk_mp_seller2" model="marketplace.stock">
+			<field name="name">Demo Stock added for noote book</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller2_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller2"/>
+			<field name="new_quantity">20</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product2_wk_mp_seller2" model="marketplace.stock">
+			<field name="name">Demo Stock added for school note book</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller2_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller2"/>
+			<field name="new_quantity">22</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product3_wk_mp_seller2" model="marketplace.stock">
+			<field name="name">Demo Stock added for drawaing note book</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller2_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller2"/>
+			<field name="new_quantity">12</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product1_wk_mp_seller3" model="marketplace.stock">
+			<field name="name">Demo Stock added Kodak old camera</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller3_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller3"/>
+			<field name="new_quantity">5</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product2_wk_mp_seller3" model="marketplace.stock">
+			<field name="name">Demo Stock added for slim white Samsung camera</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller3_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller3"/>
+			<field name="new_quantity">50</field>
+			<field name="location_id">15</field>
+			<field name="state">requested</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product1_wk_mp_seller4" model="marketplace.stock">
+			<field name="name">Demo Stock added round shape glass</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller4_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller4"/>
+			<field name="new_quantity">100</field>
+			<field name="location_id">15</field>
+			<field name="state">draft</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product2_wk_mp_seller4" model="marketplace.stock">
+			<field name="name">Demo Stock added for sunglass for boys</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller4_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller4"/>
+			<field name="new_quantity">200</field>
+			<field name="location_id">15</field>
+			<field name="state">draft</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product3_wk_mp_seller4" model="marketplace.stock">
+			<field name="name">Demo Stock added for sunglass for girls</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller4_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller4"/>
+			<field name="new_quantity">300</field>
+			<field name="location_id">15</field>
+			<field name="state">draft</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product1_wk_mp_seller5" model="marketplace.stock">
+			<field name="name">Demo Stock added for Apple iPhone 4</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller5_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product1_wk_mp_seller5"/>
+			<field name="new_quantity">19</field>
+			<field name="location_id">15</field>
+			<field name="state">rejected</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product2_wk_mp_seller5" model="marketplace.stock">
+			<field name="name">Demo Stock added for Samsung Galaxy S Duos</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller5_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product2_wk_mp_seller5"/>
+			<field name="new_quantity">29</field>
+			<field name="location_id">15</field>
+			<field name="state">rejected</field>
+			<field name="note"></field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_mp_stock_product3_wk_mp_seller5" model="marketplace.stock">
+			<field name="name">Demo Stock added for Apple iPhone 6</field>
+			<field name="product_temp_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller5_product_template"/>
+			<field name="product_id" ref="dcred_odoo_marketplace.product3_wk_mp_seller5"/>
+			<field name="new_quantity">39</field>
+			<field name="location_id">15</field>
+			<field name="state">rejected</field>
+			<field name="note"></field>
+        </record>
+
+        <!-- <function model="marketplace.stock" name="approve" eval="[[ref('wk_mp_stock_product2_wk_mp_seller3')]]"/> -->
+
+	</data>
+</odoo>

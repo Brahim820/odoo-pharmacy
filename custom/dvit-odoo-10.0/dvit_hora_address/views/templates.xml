@@ -1,0 +1,273 @@
+<odoo>
+  <data>
+    <!-- Sale shipping report -->
+    <report id="report_sale_shipping" string="Shipping Report" model="sale.order" report_type="qweb-pdf" file="dvit_hora_address.report_sale_shipping_doc" name="dvit_hora_address.report_sale_shipping_doc"/>
+    <record id="report_sale_shipping" model="ir.actions.report.xml">
+      <field name="paperformat_id" ref="dvit_hora_address.paperformat_delivery"/>
+    </record>
+
+    <template id="report_sale_shipping_doc">
+      <t t-call="report.html_container">
+
+        <div class="page" style="font-size: 14px !important">
+          <div class="oe_structure"/>
+
+          <t t-if="all([doc.city_id == docs[0].city_id for doc in docs])">
+            <!-- <div style="display: table !important;"> -->
+            <t t-foreach="docs" t-as="doc">
+              <t t-set="taxes" t-value="any([l.tax_id for l in doc.order_line])"/>
+              <!-- <div style="padding: 5px; float: left !important; width: 9cm !important; border: 2px solid darkblue;"> -->
+
+              <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+              <t t-foreach="doc.order_lines_layouted()" t-as="page">
+
+                <table class="table table-condensed">
+                  <thead>
+                    <!-- <tr> <th>Customer Information</th> </tr> -->
+                    <tr>
+                      <td style="colspan:5;">
+                        <b>Name:</b>
+                        <span t-field="doc.partner_id.name"/>
+                        -
+                        <t t-if="doc.partner_id.phone">
+                          <b>Phone:</b>
+                          <span t-field="doc.partner_id.phone"/>
+                          -</t>
+                        <t t-if="doc.partner_id.mobile">
+                          <b>Mobile:</b>
+                          <span t-field="doc.partner_id.mobile"/>
+                          -</t>
+                        <b>Floor:</b>
+                        <span t-field="doc.floor"/>
+                        -
+                        <b>Building:</b>
+                        <span t-field="doc.building_id"/>
+                        -
+                        <b>Zone:</b>
+                        <span t-field="doc.zone_id"/>
+                        -
+                        <b>City:</b>
+                        <span t-field="doc.city_id"/>
+                        .
+                      </td>
+                      <td style="colspan:5;">
+                        <b>Order #:</b>
+                        <span t-field="doc.name"/>
+                        -
+                        <b>Deliver On:
+                        </b>
+                        <span t-field="doc.delivery_date"/>
+                        -
+                        <span t-field="doc.delivery_period"/>.
+                      </td>
+                    </tr>
+                    <tr xid="header_row">
+                      <th xid="description">Product</th>
+                      <th style="min-width: 100px;" xid="quantity">Quantity</th>
+                      <th style="min-width: 100px;" xid="unit_price">Unit Price</th>
+                      <th t-if="taxes" xid="taxes">Taxes</th>
+                      <th xid="price" groups="sale.group_show_price_subtotal">Price</th>
+                      <th xid="total_price" class="price_tax_included" groups="sale.group_show_price_total">Total Price</th>
+                    </tr>
+                  </thead>
+                  <tbody class="sale_tbody">
+                    <t t-foreach="page" t-as="layout_category">
+
+                      <!-- Lines associated -->
+                      <t t-foreach="layout_category['lines']" t-as="l">
+                        <tr>
+                          <td><span t-field="l.name"/></td>
+                          <td >
+                            <span t-field="l.product_uom_qty"/>
+                            <span t-field="l.product_uom" groups="product.group_uom"/>
+                          </td>
+                          <td >
+                            <span t-field="l.price_unit"/>
+                          </td>
+                          <td t-if="taxes">
+                            <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.tax_id))"/>
+                          </td>
+                          <td groups="sale.group_show_price_subtotal">
+                            <span t-field="l.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                          </td>
+                          <td groups="sale.group_show_price_total">
+                            <span t-field="l.price_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                          </td>
+                        </tr>
+                      </t>
+
+                    </t>
+                    <tr xid="total_without_taxes" class="border-black" style="background-color:#eee; border-buttom: 2px solid balck !important;">
+                      <td class="text-right">
+                        <strong t-if="taxes">Total Without Taxes</strong>
+                      </td>
+                      <td >
+                        <span t-if="taxes" t-field="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                      </td>
+                      <t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
+                        <td t-if="taxes">
+                          <b><span t-esc="amount_by_group[0] or 'Taxes'"/>:
+                          </b>
+                          <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                        </td>
+                        <td groups="sale.group_show_price_total"></td>
+                      </t>
+
+                      <td class="text-right">
+                        <strong>Total</strong>
+                      </td>
+                      <td >
+                        <span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                      </td>
+
+                    </tr>
+
+                    <t t-if="page_index &lt; page_size - 1" groups="sale.group_sale_layout">
+                      <p style="page-break-before:always;"></p>
+                    </t>
+                  </tbody>
+                </table>
+
+              </t>
+
+              <!-- </div> -->
+            </t>
+            <!-- </div> -->
+          </t>
+
+          <t t-if="not all([doc.city_id == docs[0].city_id for doc in docs])">
+            <center>
+              <div>
+                <h1>All orders must be in same city at least.
+                </h1>
+              </div>
+            </center>
+          </t>
+
+          <div class="oe_structure"/>
+        </div>
+
+      </t>
+    </template>
+
+    <!-- website_sale -->
+    <template id="assets_frontend" inherit_id="website_sale.assets_frontend" name="Shop">
+      <xpath expr="." position="inside">
+        <script type="text/javascript" src="/dvit_hora_address/static/src/js/website_sale.js"></script>
+      </xpath>
+    </template>
+
+    <!-- order delivery_period & date -->
+    <template id="cart" inherit_id="website_sale.cart">
+      <xpath expr="//t[@t-call='website_sale.cart_lines']" position="before">
+        <div id="delivery_date_div" t-if="website_sale_order and website_sale_order.website_order_line">
+          <div class="row">
+
+            <div class="row">
+              <div class='col-md-4'>
+                <div class="form-group">
+                  <!-- <label class="control-label" for="delivery_date">Delivery Date</label> -->
+                  <div class='input-group date'>
+                    <!-- <span class="input-group-addon" id='delivery_date_icon' onclick="$('#delivery_date').datepicker('show');">
+                      <span class="fa fa-calendar"></span>
+                    </span> -->
+                    <!-- <input type='text' class="form-control" id='delivery_date' readonly="True"/> -->
+                    <span>
+                      <select id="delivery_period" name="delivery_period" class="form-control" data-init="1">
+                        <option value="">Time...</option>
+                        <t t-foreach="periods" t-as="p">
+                          <option t-att-value="p.id">
+                            <t t-esc="p.name"/>
+                          </option>
+                        </t>
+                      </select>
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </xpath>
+
+    </template>
+
+    <!-- address info -->
+    <template id="address" inherit_id="website_sale.address">
+      <xpath expr="//label[@for='zip']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='vat']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='company_name']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='street']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='zip']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='city']/.." position="replace"></xpath>
+      <xpath expr="//label[@for='country_id']/.." position="replace"></xpath>
+
+      <xpath expr="//label[@for='state_id']/.." position="replace">
+        <div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-md-6 div_state">
+          <label class="control-label" for="state_id">State / Province</label>
+          <select name="state_id" class="form-control" data-init="1">
+            <option value="">State / Province...</option>
+            <t t-foreach="country and country.state_ids or []" t-as="s">
+              <option t-att-value="s.id" t-att-selected="s.id == ('state_id' in checkout and country and checkout['state_id'] != '' and int(checkout['state_id']))">
+                <t t-esc="s.name"/>
+              </option>
+            </t>
+          </select>
+        </div>
+      </xpath>
+
+      <xpath expr="//input[@name='field_required']" position="replace">
+        <input type="hidden" name="field_required" t-att-value="mode[1] == 'billing' and 'phone,name,city_id,zone_id,building_id,floor' or ''"/>
+      </xpath>
+
+      <xpath expr="//label[@for='state_id']/.." position="after">
+        <div class="form-group field-name">
+          <div t-attf-class="form-group #{error.get('floor') and 'has-error' or ''} col-xs-6">
+            <label for="floor" class="control-label">Floor</label>
+            <input id="floor" name="floor" type='text' class="form-control" t-att-value="'floor' in checkout and checkout['floor']"/>
+          </div>
+
+          <div t-attf-class="form-group #{error.get('city_id') and 'has-error' or ''} col-md-6">
+            <label for="city_id" class="control-label">City</label>
+            <select id="city_id" name="city_id" class="form-control" data-init="1">
+              <option value="">City...</option>
+              <t t-foreach="cities" t-as="cc">
+                <option t-att-value="cc.id" t-att-selected="cc.id == ('city_id' in checkout and checkout['city_id'] != '' and int(checkout['city_id']) or -1)">
+                  <t t-esc="cc.name"/>
+                </option>
+              </t>
+            </select>
+          </div>
+
+          <div t-attf-class="form-group #{error.get('zone_id') and 'has-error' or ''} col-md-6">
+            <label for="zone_id" class="control-label">Zone</label>
+            <select id="zone_id" name="zone_id" class="form-control" data-init="1">
+              <option value="">Zone...</option>
+              <t t-foreach="zones" t-as="z">
+                <option t-att-value="z.id" t-att-selected="z.id == ('zone_id' in checkout and checkout['zone_id'] != '' and int(checkout['zone_id']) or -1)">
+                  <t t-esc="z.name"/>
+                </option>
+              </t>
+            </select>
+          </div>
+
+          <div t-attf-class="form-group #{error.get('building_id') and 'has-error' or ''} col-xs-6">
+            <label for="building_id" class="control-label">Building</label>
+            <select id="building_id" name="building_id" class="form-control" data-init="1">
+              <option value="">Building...</option>
+              <t t-foreach="builds" t-as="b">
+                <option t-att-value="b.id" t-att-selected="b.id == ('building_id' in checkout and checkout['building_id'] != '' and int(checkout['building_id']) or -1)">
+                  <t t-esc="b.name"/>
+                </option>
+              </t>
+            </select>
+          </div>
+
+        </div>
+      </xpath>
+
+    </template>
+
+  </data>
+</odoo>

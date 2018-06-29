@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+        <!-- TranslateMarketplaceConfigSettings Record -->
+        <record id="record_mp_translate_config_setting" model="translate.marketplace.config.settings">
+            <field name="sell_page_label">Sell</field>
+            <field name="sellers_list_label">Seller List</field>
+            <field name="seller_shop_list_label">Seller Shop List</field>
+        </record>
+
+
+        <record id="record_mp_translate_sell_page_label" model="ir.translation">
+            <field name="name">translate.marketplace.config.settings,sell_page_label</field>
+            <field name="source">Sell</field>
+        </record>
+
+        <record id="record_mp_translate_sellers_list_label" model="ir.translation">
+            <field name="name">translate.marketplace.config.settings,sellers_list_label</field>
+            <field name="source">Seller List</field>
+        </record>
+
+        <record id="record_mp_translate_seller_shop_list_label" model="ir.translation">
+            <field name="name">translate.marketplace.config.settings,seller_shop_list_label</field>
+            <field name="source">Seller Shop List</field>
+        </record>
+
+        <!-- Marketplace Config settings -->
+        <function id="set_mp_internal_categ" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'internal_categ', ref('product.product_category_all'))"/>
+
+        <function id="set_mp_auto_product_approve" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'auto_product_approve', False)"/>
+
+        <!-- <function id="get_vendor_bill_journal_id" model="account.journal" name="search" eval="[[('name', '=', 'Vendor Bills')]]"/>
+
+        <function id="set_mp_warehouse_location_id" model="ir.values" name="set_default">
+            <function id="get_vendor_bill_journal_id" model="account.journal" name="search" eval="[[('name', '=', 'Vendor Bills')]]"/>
+        </function>
+
+        <record id="set_mp_vendor_journal_id" model="ir.values">
+            <field name="name">seller_payment_journal_id</field>
+            <field name="model">marketplace.config.settings</field>
+            <field name="value_unpickle">
+                <function model="account.journal" name="search" eval="[[('name', '=', 'Vendor Bills')]]"/>
+            </field>
+        </record> -->
+
+        <function id="set_mp_default_warehouse" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'default_warehouse', ref('stock.warehouse0'))"/>
+
+        <function id="set_mp_seller_payment_limit" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_payment_limit', 0)"/>
+
+        <function id="set_mp_next_payment_requset" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'next_payment_requset', 0)"/>
+
+        <function id="set_mp_auto_approve_qty" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'auto_approve_qty', False)"/>
+
+        <function id="set_mp_auto_approve_qty" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'auto_approve_seller', False)"/>
+
+        <function id="set_mp_global_commission" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'global_commission', 0.0)"/>
+
+        <function id="set_mp_invoicing_type" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'invoicing_type', 'by_customer_and_seller')"/>
+
+        <function id="set_mp_enable_notify_admin_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_4_new_seller', False)"/>
+
+        <function id="set_mp_enable_notify_seller_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_4_new_seller', False)"/>
+
+        <function id="set_mp_enable_notify_admin_on_seller_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_on_seller_approve_reject', False)"/>
+
+        <function id="set_mp_enable_notify_seller_on_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_approve_reject', False)"/>
+
+        <function id="set_mp_enable_notify_admin_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_on_product_approve_reject', False)"/>
+
+        <function id="set_mp_enable_notify_seller_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_product_approve_reject', False)"/>
+
+        <function id="set_mp_enable_notify_seller_on_new_order" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_new_order', False)"/>
+
+        <function id="set_mp_notify_admin_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_4_new_seller', False)"/>
+
+        <function id="set_mp_notify_seller_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_4_new_seller', False)"/>
+
+        <function id="set_mp_notify_admin_on_seller_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_on_seller_approve_reject', False)"/>
+
+        <function id="set_mp_notify_seller_on_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_approve_reject', False)"/>
+
+        <function id="set_mp_notify_admin_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_on_product_approve_reject', False)"/>
+
+        <function id="set_mp_notify_seller_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_product_approve_reject', False)"/>
+
+        <function id="set_mp_notify_seller_on_new_order" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_new_order', False)"/>
+
+        <function id="set_mp_product_count" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'product_count', True)"/>
+
+        <function id="set_mp_sale_count" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'sale_count', True)"/>
+
+        <function id="set_mp_shipping_address" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'shipping_address', True)"/>
+
+        <function id="set_mp_seller_since" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_since', True)"/>
+
+        <function id="set_mp_seller_t_c" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_t_c', True)"/>
+
+        <function id="set_mp_seller_contact_btn" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_contact_btn', True)"/>
+
+        <function id="set_mp_seller_review" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_review', True)"/>
+
+        <function id="set_mp_return_policy" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'return_policy', True)"/>
+
+        <function id="set_mp_shipping_policy" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'shipping_policy', True)"/>
+
+        <function id="set_mp_recently_product" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'recently_product', 5)"/>
+
+        <function id="set_mp_review_load_no" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'review_load_no', 5)"/>
+
+        <function id="set_mp_review_auto_publish" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'review_auto_publish', False)"/>
+
+        <function id="set_mp_show_seller_list" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'show_seller_list', False)"/>
+
+        <function id="set_mp_landing_page_banner" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'landing_page_banner', None)"/>
+
+        <!-- <function id="set_mp_vendor_journal_id" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_payment_journal_id', None)"/> -->
+
+        <function id="set_mp_trans_mp_config_setting_id" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'trans_mp_config_setting_id', ref('record_mp_translate_config_setting'))"/>
+
+        <function id="set_mp_show_visit_shop" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'show_visit_shop', True)"/>
+        <function id="set_mp_show_sell_menu_header" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'show_sell_menu_header', True)"/>
+        <function id="set_mp_show_sell_menu_footer" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'show_sell_menu_footer', True)"/>
+
+        <function id="enable_notify_admin_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_4_new_seller', True)"/>
+        <function id="enable_notify_seller_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_4_new_seller', True)"/>
+        <function id="enable_notify_admin_on_seller_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_on_seller_approve_reject', True)"/>
+        <function id="enable_notify_seller_on_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_approve_reject', True)"/>
+        <function id="enable_notify_admin_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_admin_on_product_approve_reject', True)"/>
+        <function id="enable_notify_seller_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_product_approve_reject', True)"/>
+        <function id="enable_notify_seller_on_new_order" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'enable_notify_seller_on_new_order', True)"/>
+
+        <function id="notify_admin_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_4_new_seller', ref('marketplace_email_template_for_admin_by_seller'))"/>
+        <function id="notify_seller_4_new_seller" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_4_new_seller', ref('marketplace_email_template_for_seller_by_admin'))"/>
+        <function id="notify_admin_on_seller_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_on_seller_approve_reject', ref('marketplace_email_template_for_seller_status_change_to_admin'))"/>
+        <function id="notify_seller_on_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_approve_reject', ref('marketplace_email_template_for_seller_status_change_to_seller'))"/>
+        <function id="notify_admin_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_admin_on_product_approve_reject', ref('marketplace_template_for_product_status_changeto_admin'))"/>
+        <function id="notify_seller_on_product_approve_reject" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_product_approve_reject', ref('marketplace_template_for_product_status_change_to_seller'))"/>
+        <function id="notify_seller_on_new_order" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'notify_seller_on_new_order', ref('marketplace_template_for_order_to_seller'))"/>
+	</data>
+    
+    <data noupdate="0">
+        <function id="set_seller_payment_product_id" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'seller_payment_product_id', ref('odoo_marketplace.mp_seller_payment_product_demo_data'))"/>
+    </data>
+</odoo>

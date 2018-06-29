@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data>
+
+        <template id="sale_offer_assets_frontend" inherit_id="website.assets_frontend" name="Sale offer Assets Frontend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/website_sale_offer/static/src/js/sale_offer.js"></script>
+            </xpath>
+        </template>
+
+        <template id="inherit_prod_line_to_show_discount" inherit_id="website_sale.cart_lines" name="Product Cart Lines">
+            <xpath expr="//td[3]" position="replace">
+                <td t-if="line.product_id.product_tmpl_id">
+                    <div t-if="line.product_id.pharmacy_discount or not line.is_complemantory_line">
+                        <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                            <strong t-esc="line.product_id.with_context(display_default_code=False).display_name" />
+                        </a>
+                        <br/>
+                        <div class="text-muted">
+                            <t t-foreach="line.name.splitlines()[1:]" t-as="name_line">
+                                <span><t t-esc="name_line"/></span><br/>
+                            </t>
+                        </div>
+                        <t t-if="not line.is_complemantory_line">
+                            <t t-call="website_sale_offer.wk_product_sale_offer">
+                                <span class="" t-set="product" t-value="line.product_id"/>
+                            </t>
+                        </t>
+                        <br/>
+                        <a t-if="not line.is_complemantory_line" href='#' class='js_delete_product no-decoration'> <small><i class='fa fa-trash-o'></i> Remove</small></a>
+                    </div>
+                    <div t-else="">
+                        <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                            <strong t-esc="line.product_id.with_context(display_default_code=False).display_name" />
+                        </a>
+                        <br/>
+                        <div class="text-muted">
+                            <t t-foreach="line.name.splitlines()[1:]" t-as="name_line">
+                                <span><t t-esc="name_line"/></span><br/>
+                            </t>
+                        </div>
+                        <br/>
+                        <span class="label label-success" style="font-size:11px;">
+                            <span> Free Bonus product.
+                            </span>
+                        </span>
+                    </div>
+                </td>
+            </xpath>
+            <xpath expr="//td[4]" position="replace">
+                <td class="text-center" id="td-qty">
+                    <div class="input-group oe_website_spinner">
+                        <a t-if="not line.is_complemantory_line" t-attf-href="#" class="mb8 input-group-addon js_add_cart_json" data-no-instant="">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                        <i t-else="" class="fa fa-minus input-group-addon"></i>
+
+                        <input t-if="not line.is_complemantory_line" type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+                        <input t-else="" type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" readonly="readonly"/>
+
+                        <a t-if="not line.is_complemantory_line" t-attf-href="#" class="mb8 input-group-addon float_left js_add_cart_json" data-no-instant="">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                        <i t-else="" class="fa fa-plus input-group-addon"></i>
+                    </div>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="inherit_order_total" inherit_id="website_sale.total" name="Show Global Discount Amount">
+            <xpath expr="//div[@id='order_total']" position="before">
+                <div t-if="website_sale_order.global_discount" class="row" id="order_global_discount">
+                    <span class="col-xs-6 text-right text-muted" title="Taxes may be updated after providing shipping address"> Discount:</span>
+                    <span class="col-xs-6 text-right-not-xs text-left-xs text-muted">
+                        <span t-field="website_sale_order.global_discount" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                    </span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="sale_offer_code_in total" inherit_id="website_sale.total"  name="Promo Code">
+            <xpath expr="//div[@id='cart_total']" position="after">
+                <div t-if="website_sale_order.applied_sale_offer_id" class='col-xs-12 col-sm-12'>
+                    <p class="text-muted"> Promo code applied:
+                        <span id="applied_sale_offer_code" t-esc="website_sale_order.applied_sale_offer_id.promo_code"/>
+                    </p>
+                    <!-- <p class=""> Payment Offers:
+                        <t t-esc="website_sale_order.applied_sale_offer_id.promo_code"/>
+                    </p> -->
+                </div>
+            </xpath>
+        </template>
+
+        <template id="sale_offer_inherit_payment" inherit_id="website_sale.payment" name="Sale Offer Payment Page">
+            <xpath expr="//td[3]" position="inside">
+                <div t-if="line.product_id.pharmacy_discount and not line.is_complemantory_line">
+                    <t t-if="not line.is_complemantory_line">
+                        <t t-call="website_sale_offer.wk_product_sale_offer">
+                            <span class="" t-set="product" t-value="line.product_id"/>
+                        </t>
+                    </t>
+                    <span t-else="" class="label label-success" style="font-size:11px;">
+                        <span> Free Bonus product.</span>
+                    </span>
+                </div>
+                <div t-if="line.is_complemantory_line">
+                    <span class="label label-success" style="font-size:11px;">
+                        <span> Free Bonus product.</span>
+                    </span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="inherit_confirm_page_order_total" inherit_id="website_sale.confirmation" name="Show Global Discount Amount on Confirmation Page">
+            <xpath expr="//tfooter/tr[2]" position="after">
+                <tr t-if="order.global_discount">
+                    <td class='noborder' colspan="2"></td>
+                    <td class="text-right noborder">Discount:</td>
+                    <td class="text-right noborder">
+                        <span t-field="order.global_discount" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                    </td>
+                </tr>
+            </xpath>
+            <xpath expr="//tbody/tr/td/div[@class='text-muted']" position="after">
+                <div t-if="line.is_complemantory_line">
+                    <span class="label label-success" style="font-size:11px;">
+                        <span> Free Bonus product.
+                        </span>
+                    </span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="product_sale_offers_on_product_page" inherit_id="website_sale.product" active="True" name="Product Sale Offers On Product Page">
+            <xpath expr="//form[@class='js_add_cart_variants']" position="after">
+                <div class="wk_product_sale_offer mt16">
+                    <t t-call="website_sale_offer.wk_product_sale_offer">
+                        <!-- <span class="" t-set="product_sale_offer" t-value="product"/> -->
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+        <!-- #Required product.product obj as product variable name -->
+        <template id="wk_product_sale_offer" name="Product Sale Offers">
+            <t t-if="product">
+                <t t-set="seller_sale_offer" t-value="False"/>
+                <t t-if="product.marketplace_seller_id">
+                    <t t-set="seller_sale_offer" t-value="request.env['sale.offer'].sudo().search([('marketplace_seller_id', '=', product.marketplace_seller_id.id)])"/>
+                </t>
+                <span t-if="product.bogo_offer_rule_ids or seller_sale_offer or product.pharmacy_discount" style="color: #333333;font-weight: 600;"> Product Offers</span>
+                <div t-if="product.bogo_offer_rule_ids or seller_sale_offer or product.pharmacy_discount" class="col-md-12 alert alert-info" style="padding-top: 0px;padding-bottom: 0px;">
+                    <div t-if="product.bogo_offer_rule_ids or seller_sale_offer or product.pharmacy_discount" class="row mb4 mt4">
+                        <span t-if="product.pharmacy_discount" class="label label-danger" style="font-size:11px;">
+                            <span> Extra Discount :
+                                <t t-esc="product.pharmacy_discount"/>
+                                % off
+                            </span>
+                        </span>
+                    </div>
+                    <div t-if="product.bogo_offer_rule_ids" class="row" style="border-bottom:1px black solid;padding: 5px;color: #333333;text-decoration: underline;font-weight: 600;"> Bonus Product Offer</div>
+                    <div t-if="product.bogo_offer_rule_ids" class="row" style="border-bottom:1px black solid;padding: 5px;">
+                        <div class="col-md-4 text-center" style="text-transform: uppercase;">Order Min Qty</div>
+                        <div class="col-md-4 text-center" style="text-transform: uppercase;">Bonus Product</div>
+                        <div class="col-md-4 text-center" style="text-transform: uppercase;">Extra Bonus Qty</div>
+                    </div>
+                    <t t-foreach="product.sudo().bogo_offer_rule_ids" t-as="bogo_offer">
+                        <div class="row" style="border-bottom:1px black solid;padding: 5px;">
+                            <div class="col-md-4 text-center">
+                                <t t-esc="bogo_offer.min_ordered_qty"/>
+                                <t t-esc="bogo_offer.product_id.uom_id.name"/>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div>
+                                    <a t-attf-href="/shop/product/#{ slug(bogo_offer.product_id.product_tmpl_id) }">
+                                        <strong t-esc="bogo_offer.product_id.display_name"/>
+                                    </a>
+                                </div>
+                                <!-- <t t-esc="bogo_offer.product"/> -->
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <t t-if="bogo_offer.free_qty_type == 'fixed'">
+                                    <t t-esc="bogo_offer.free_qty"/> 
+                                    <t t-esc="bogo_offer.product_id.uom_id.name"/>
+                                </t>
+                                <t t-if="bogo_offer.free_qty_type == 'percentage'">
+                                    <t t-esc="bogo_offer.free_qty"/> % of ordered qty.
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-if="seller_sale_offer">
+                        <br t-if="product.bogo_offer_rule_ids"/>                            
+                        <span style="color: #333333;text-decoration: underline;font-weight: 600;"> Other Discount
+                        </span>
+                        <div class="col-md-12">
+                            <t t-foreach="seller_sale_offer" t-as="sale_offer">
+                                <div class="row">
+                                    <p t-if="sale_offer.order_discount or (sale_offer.payment_acquirer_id and sale_offer.payment_acquirer_discount)">
+                                        Get
+                                        <t t-if="sale_offer.order_discount">
+                                            <t t-esc="sale_offer.order_discount"/> % extra discount on order above 
+                                            <span t-field="sale_offer.min_order_amt_so_discount" style="white-space: nowrap;" t-field-options='{
+                                                "widget": "monetary",
+                                                "from_currency": "website.pricelist_id.currency_id",
+                                                "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                                            }'/>
+                                            <t t-if="sale_offer.max_discount_for_so">
+                                                (Maxmium discount 
+                                                <!-- <t t-esc="sale_offer.max_discount_for_so"/>) -->
+                                                <span t-field="sale_offer.max_discount_for_so" style="white-space: nowrap;" t-field-options='{
+                                                    "widget": "monetary",
+                                                    "from_currency": "website.pricelist_id.currency_id",
+                                                    "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                                                }'/>)
+                                            </t>
+                                        </t>
+                                        <t if="sale_offer.payment_acquirer_id and sale_offer.payment_acquirer_discount">
+                                            <t t-if="sale_offer.order_discount"> &amp; </t>
+                                            <t t-esc="sale_offer.payment_acquirer_discount"/> 
+                                            % extra discount on order above
+                                            <span t-field="sale_offer.min_order_amt_payment_acq_discount" style="white-space: nowrap;" t-field-options='{
+                                                "widget": "monetary",
+                                                "from_currency": "website.pricelist_id.currency_id",
+                                                "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                                            }'/>, by paying through
+                                            <b><i><t t-esc="sale_offer.payment_acquirer_id.name"/></i></b>.
+                                            <t t-if="sale_offer.max_discount_for_payment_acq">
+                                                (Maxmium discount 
+                                                <!-- <t t-esc="sale_offer.max_discount_for_payment_acq"/>) -->
+                                                <span t-field="sale_offer.max_discount_for_payment_acq" style="white-space: nowrap;" t-field-options='{
+                                                    "widget": "monetary",
+                                                    "from_currency": "website.pricelist_id.currency_id",
+                                                    "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                                                }'/>)
+                                            </t>
+                                        </t>
+                                        <span class="label label-success">
+                                            Use Promo Code: <t t-esc="sale_offer.promo_code"/>
+                                        </span>
+                                    </p>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

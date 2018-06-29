@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SCHEDULAR ACTION ~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<record model="ir.cron" id="create_global_product_scheduler">
+			<field name="name">Create Global Product Scheduler</field>
+			<field name="active" eval="True"/>
+			<field name="interval_number">1</field>
+			<field name="interval_type">hours</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="True"/>
+			<field name="model" eval="'res.partner'"/>
+			<field name="function" eval="'create_global_product_for_seller'"/>
+			<field name="args" eval="'()'"/>
+		</record>
+
+	</data>
+</odoo>

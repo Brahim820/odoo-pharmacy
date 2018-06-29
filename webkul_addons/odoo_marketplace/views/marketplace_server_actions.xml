@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="0">	
+		<!-- ####################################  SERVER ACTIONS  ###################################### -->
+		
+					<!--~~~~~~~ Server action for apprved product ~~~~~~~~~-->
+		
+		<record id="action_approve_product" model="ir.actions.server">
+			<field name="name">Approve Products</field>
+			<field name="model_id" ref="odoo_marketplace.model_product_template"/>
+			<field name="state">code</field>
+			<field name="code">action = self.approve_product(cr, uid, context.get("active_ids", []), context=context)</field>
+		</record>
+
+		<record id="ir_approve_product" model="ir.values">
+			<field eval="'client_action_multi'" name="key2"/>
+			<field eval="'product.template'" name="model"/>
+			<field name="name">Approve Products</field>
+			<field eval="'ir.actions.server,%d'%action_approve_product" name="value"/>
+		</record>
+					<!--~~~~~~~ Server action for reject product ~~~~~~~~~-->
+		
+		<record id="action_reject_product" model="ir.actions.server">
+			<field name="name">Reject Products</field>
+			<field name="model_id" ref="odoo_marketplace.model_product_template"/>
+			<field name="state">code</field>
+			<field name="code">action = self.reject_product(cr, uid, context.get("active_ids", []), context=context)</field>
+		</record>
+
+		<record id="ir_reject_product" model="ir.values">
+			<field eval="'client_action_multi'" name="key2"/>
+			<field eval="'product.template'" name="model"/>
+			<field name="name">Reject Products</field>
+			<field eval="'ir.actions.server,%d'%action_reject_product" name="value"/>
+		</record>
+		
+		<!-- #################################### END OF SERVER ACTION ######################################  -->
+		
+		
+
+    </data>
+</odoo>

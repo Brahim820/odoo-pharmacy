@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="action___view" model="">
+        <field name="name"></field>
+        <field name="type"></field>
+        <field name="res_model"></field>
+        <field name="view_type"></field>
+        <field name="view_mode"></field>
+    </record>
+
+    <menuitem action="action___view"
+              name="Configuration"
+              id="menu_action_Configuration_"
+parent=""              sequence="10"
+              groups=""
+              />
+
+    <record id="action___view" model="">
+        <field name="name"></field>
+        <field name="type"></field>
+        <field name="res_model"></field>
+        <field name="view_type"></field>
+        <field name="view_mode"></field>
+    </record>
+
+    <menuitem action="action___view"
+              name="Pathology"
+              id="menu_action_Pathology_"
+parent=""              sequence="10"
+              groups=""
+              />
+</odoo>

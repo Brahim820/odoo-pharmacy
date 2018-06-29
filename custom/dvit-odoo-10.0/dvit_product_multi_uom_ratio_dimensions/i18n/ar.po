@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dvit_task_picking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-27 11:53+0000\n"
+"PO-Revision-Date: 2017-10-27 14:12+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_EG\n"
+"X-Generator: Poedit 2.0.3\n"
+
+#. module: dvit_task_picking
+#: model:ir.ui.view,arch_db:dvit_task_picking.view_wiz_task_stock
+msgid "Add"
+msgstr "إضافة"
+
+#. module: dvit_task_picking
+#: model:ir.ui.view,arch_db:dvit_task_picking.task_form_extra_procurements
+msgid "Add material"
+msgstr "اضافة مواد"
+
+#. module: dvit_task_picking
+#: model:ir.actions.act_window,name:dvit_task_picking.action_addition
+msgid "Addition View"
+msgstr "شاشة الاضافة"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,help:dvit_task_picking.field_project_task_is_closed
+msgid "Based on stage closed status,         to reopen move the task to an open stage."
+msgstr "مرتبط بمرحلة المهمة ، للتعديل يجب نقل المهمة الى مرحلة اخرى."
+
+#. module: dvit_task_picking
+#: model:ir.ui.view,arch_db:dvit_task_picking.view_wiz_task_stock
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_project_task_is_closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_create_uid
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_create_date
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_display_name
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_id
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_invoice_state
+msgid "Invoice control"
+msgstr "التحكم في الفاتورة"
+
+#. module: dvit_task_picking
+#: selection:wiz.task.stock,invoice_state:0
+msgid "Invoiced"
+msgstr "مفوتر"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock___last_update
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_write_uid
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_write_date
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dvit_task_picking
+#: selection:wiz.task.stock,invoice_state:0
+msgid "Not Applicable"
+msgstr "غير ممكن"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_product_id
+msgid "Product"
+msgstr "منتج"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_move_lines
+#: model:ir.ui.view,arch_db:dvit_task_picking.task_form_extra_procurements
+#: model:ir.ui.view,arch_db:dvit_task_picking.view_wiz_task_stock
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_product_qty
+msgid "Qty in default UoM"
+msgstr "الكمية بالوحدة الافتراضية"
+
+#. module: dvit_task_picking
+#: model:ir.ui.view,arch_db:dvit_task_picking.task_form_extra_procurements
+msgid "Stock transfers"
+msgstr "حركات المخزن"
+
+#. module: dvit_task_picking
+#: model:ir.model,name:dvit_task_picking.model_project_task
+#: model:ir.model.fields,field_description:dvit_task_picking.field_stock_picking_task_id
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_task_id
+msgid "Task"
+msgstr "مهمة"
+
+#. module: dvit_task_picking
+#: selection:wiz.task.stock,invoice_state:0
+msgid "To Invoice"
+msgstr "للفوترة"
+
+#. module: dvit_task_picking
+#: model:ir.model,name:dvit_task_picking.model_stock_picking
+msgid "Transfer"
+msgstr "نقل"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_project_task_stock_pickings
+msgid "Warehouse Transfers"
+msgstr "حركات المخزن"
+
+#. module: dvit_task_picking
+#: model:ir.ui.view,arch_db:dvit_task_picking.view_wiz_task_stock
+msgid "or"
+msgstr "أو"
+
+#. module: dvit_task_picking
+#: model:ir.model.fields,field_description:dvit_task_picking.field_wiz_task_stock_line_wiz_stock_id
+msgid "wiz stock"
+msgstr "wiz stock"
+
+#. module: dvit_task_picking
+#: model:ir.model,name:dvit_task_picking.model_wiz_task_stock
+msgid "wiz.task.stock"
+msgstr "wiz.task.stock"
+
+#. module: dvit_task_picking
+#: model:ir.model,name:dvit_task_picking.model_wiz_task_stock_line
+msgid "wiz.task.stock.line"
+msgstr "wiz.task.stock.line"

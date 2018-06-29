@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+	<data>
+		<record id="marketplace_base_config_settings_form_view" model="ir.ui.view">
+			<field name="name">Marketplace.base.config.setting</field>
+			<field name="model">marketplace.config.settings</field>
+			<field name="arch" type="xml">
+				<form string="MarketPlace settings">
+					<header>
+						<button string="Apply" type="object" name="execute" class="oe_highlight"/>                        or
+						<button string="Cancel" type="object" name="cancel" class="oe_link"/>
+					</header>
+					<group string="Auto Approval Settings">
+						<group name="mp_auto_approval_setting">
+							<label for="auto_approve_seller" string="Seller Approval"/>
+							<div>
+								<field name="auto_approve_seller" help="Enable this if you want to approve seller automatically."/>
+								<label for="auto_approve_seller"/>
+							</div>
+							<label for="auto_product_approve" string="Product Approval"/>
+							<div>
+								<field name="auto_product_approve" class="oe_inline" help="Enable this if you want to approve seller product automatically."/>
+								<label for="auto_product_approve"/>
+							</div>
+							<label for="auto_approve_qty" string="Quantity Approval"/>
+							<div>
+								<field name="auto_approve_qty" help="Enable this if you want to approve product inventory automatically."/>
+								<label for="auto_approve_qty"/>
+							</div>
+						</group>
+						<group col="1" name="mp_auto_approval_setting_help">
+							<div name="auto_seller_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's requests will be automatically approved.		                        </h6>
+							</div>
+							<div name="auto_product_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's products will be automatically approved.		                        </h6>
+							</div>
+							<div name="auto_qty_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's product quantity update request will be automatically approved.		                        </h6>
+							</div>
+						</group>
+					</group>
+					<separator string="Other Settings"/>
+					<notebook name="mp_config_notebook">
+						<page string="Product Terms" name="config_product_terms">
+							<group>
+								<group name="mp_product_setting">
+									<label for="internal_categ" string="Internal Category"/>
+									<div>
+										<label for="internal_categ" string="Select Internal Category"/>
+										<field name="internal_categ" class="oe_inline" help="This category will be linked as a internal category for all seller products."/>
+									</div>
+								</group>
+								<group name="internal_categ_help" class="oe_grey" col="1">
+									<h6 class="oe_inline">			                        	⇒ All marketplace products will belong to defined internal category.			                        </h6>
+								</group>
+								<group>
+									<label for="default_warehouse" string="Warehouse/Location"/>
+									<div>
+										<label for="warehouse_location_id" string="Default Location" />
+										<field name="warehouse_location_id" class="oe_inline" help="This location will be  default location for all seller."/>
+										<label for="default_warehouse" string="Default Warehouse"/>
+										<field name="default_warehouse" class="oe_inline" help="This warehouse will be  default warehouse for all seller."/>
+									</div>
+								</group>
+								<group name="warehouse_location_help" class="oe_grey" col="1">
+									<h6 class="oe_inline">			                        	⇒ This will be default seller's location. Locations can be set for individual seller from seller record.			                        </h6>
+									<h6 class="oe_inline" style="margin-top: 5px;">			                        	⇒ This will be default seller's warehouse. You can set warehouse for individual seller in seller record.			                        </h6>
+								</group>
+							</group>
+							<separator/>
+							<group string="Invoicing" invisible="1">
+								<group>
+									<label for="invoicing_type" string="Invoice Type"/>
+									<div>
+										<field name="invoicing_type" widget="radio"/>
+									</div>
+								</group>
+								<group name="invoicing_help" class="oe_grey" col="1" attrs="{'invisible': [('invoicing_type','not in',('by_customer','by_customer_and_seller'))]}">
+									<h6 class="oe_inline" attrs="{'invisible': [('invoicing_type','in',('by_customer','by_seller'))]}">			                        	⇒ This option will generate seller and customer invoice both.			                        </h6>
+									<br/>
+									<h6 class="oe_inline oe_grey" attrs="{'invisible': [('invoicing_type','in',('by_customer_and_seller','by_seller'))]}" style="margin-top: 5px;">										⇒ This option will generate customer invoice only.									</h6>
+									<br/>
+									<!-- <h6 attrs="{'invisible': [('invoicing_type','in',('by_customer','by_customer_and_seller'))]}" style="margin-top: 5px;">
+										⇒ This option will generate seller invoice only.
+									</h6> -->
+								</group>
+							</group>
+							<group>
+								<label for="group_mp_product_variant" string="Product Variants"/>
+								<div>
+									<field name="group_mp_product_variant"/>
+									<label for="group_mp_product_variant"/>
+								</div>
+							</group>
+							<group>
+								<label for="group_mp_product_pricelist" string="Product Pricing"/>
+								<div>
+									<field name="group_mp_product_pricelist"/>
+									<label for="group_mp_product_pricelist"/>
+								</div>
+							</group>
+						</page>
+						<page string="Payment Terms" name="config_payment_terms">
+							<group>
+								<label for="global_commission" string="Commission"/>
+								<div>
+									<label for="global_commission"/>
+									<field name="global_commission" class="oe_inline" help="Set global commission. You can manage this commission seller wise from seller account."/>%
+								</div>
+							</group>
+							<group>
+								<label for="mp_currency_id" string="Marketplace Currency"/>
+								<div>
+									<label for="mp_currency_id"/>
+									<field name="mp_currency_id" required="1" class="oe_inline" help="If system has recorded any seller payment then you won't be able to change the marketplace currency."/>
+								</div>
+							</group>
+							<group>
+								<label for="seller_payment_limit" string="Amount Limit"/>
+								<div>
+									<label for="seller_payment_limit" string="Amount limit for seller payment request"/>
+									<field name="seller_payment_limit" class="oe_inline" help="Set amount limit for seller's payment request."/>
+								</div>
+							</group>
+							<group>
+								<label for="next_payment_requset" string="Minimum Gap"/>
+								<div>
+									<label for="next_payment_requset" string="Minimum gap for next payment request"/>
+									<field name="next_payment_requset" class="oe_inline" help="Set minimum gap in days for next payment request."/> Days
+								</div>
+							</group>
+							<group>
+								<label for="seller_payment_journal_id"/>
+								<div>
+									<label for="seller_payment_journal_id" string="Account journal for seller payment"/>
+									<field name="seller_payment_journal_id" class="oe_inline" help="Account journal used for creating automatic seller payment when seller get payment via adaptive PayPal. If Seller Payment Journal is not set then adaptive PayPal acquirer Payment Journal(if set) will used for same else seller automatic payment will not generate. Note: Sellers will get payment to  there PayPal account define in seller's profile."/>
+								</div>
+							</group>
+                            <group>
+								<label for="seller_payment_product_id"/>
+								<div>
+									<label for="seller_payment_product_id" string="Product used for creating seller payment"/>
+									<field name="seller_payment_product_id" class="oe_inline" help="Product used for creating seller payment."/>
+								</div>
+							</group>
+						</page>
+						<page string="Mail &amp; Notifications" name="config_mail_notify">
+							<group name="mail_notification">
+								<label for="enable_notify_admin_4_new_seller" string="On New Seller Request"/>
+								<div>
+									<field name="enable_notify_admin_4_new_seller" class="oe_inline" help="Enable to notify admin on new seller request."/>
+									<label for="enable_notify_admin_4_new_seller"/>
+									<label for="notify_admin_4_new_seller"/>
+									<field name="notify_admin_4_new_seller" class="oe_inline" required="1" help="Enable to notify admin on new seller request."/>
+									<br/>
+									<field name="enable_notify_seller_4_new_seller" class="oe_inline" help="Enable to notify to seller on new seller request."/>
+									<label for="enable_notify_seller_4_new_seller"/>
+									<label for="notify_seller_4_new_seller"/>
+									<field name="notify_seller_4_new_seller" class="oe_inline" required="1" help="Enable to notify to seller on new seller request."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_admin_on_seller_approve_reject" string="On Seller Approval/Rejection"/>
+								<div>
+									<field name="enable_notify_admin_on_seller_approve_reject" class="oe_inline" help="Enable to notify to admin on seller approval/rejection."/>
+									<label for="enable_notify_admin_on_seller_approve_reject"/>
+									<label for="notify_admin_on_seller_approve_reject"/>
+									<field name="notify_admin_on_seller_approve_reject" class="oe_inline" required="1" help="Enable to notify to admin on seller approval/rejection."/>
+									<br/>
+									<field name="enable_notify_seller_on_approve_reject" class="oe_inline" help="Enable to notify to seller seller approval/rejection."/>
+									<label for="enable_notify_seller_on_approve_reject"/>
+									<label for="notify_seller_on_approve_reject"/>
+									<field name="notify_seller_on_approve_reject" class="oe_inline" required="1" help="Enable to notify to seller seller approval/rejection."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_admin_on_product_approve_reject" string="On Product Approval/Rejection"/>
+								<div>
+									<field name="enable_notify_admin_on_product_approve_reject" class="oe_inline" help="Enable to notify to admin on seller product approval/rejection."/>
+									<label for="enable_notify_admin_on_product_approve_reject"/>
+									<label for="notify_admin_on_product_approve_reject"/>
+									<field name="notify_admin_on_product_approve_reject" class="oe_inline" required="1" help="Enable to notify to admin on seller product approval/rejection."/>
+									<br/>
+									<field name="enable_notify_seller_on_product_approve_reject" class="oe_inline" help="Enable to notify to seller on seller product approval/rejection."/>
+									<label for="enable_notify_seller_on_product_approve_reject"/>
+									<label for="notify_seller_on_product_approve_reject"/>
+									<field name="notify_seller_on_product_approve_reject" class="oe_inline" required="1" help="Enable to notify to seller on seller product approval/rejection."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_seller_on_new_order" string="On New Order" help="Enable this for sending mail notification to seller on order confirmation having saller product."/>
+								<div>
+									<field name="enable_notify_seller_on_new_order" class="oe_inline" help="Enable to notify to seller on new sale order."/>
+									<label for="enable_notify_seller_on_new_order"/>
+									<label for="notify_seller_on_new_order"/>
+									<field name="notify_seller_on_new_order" class="oe_inline" required="1" help="Enable to notify to seller on new sale order."/>
+								</div>
+							</group>
+						</page>
+						<page string="Website Settings" name="config_website">
+							<group string="Seller Profile/Shop Settings" name="mp_profile_shop_setting">
+								<group name="mp_profile_setting">
+									<label for="product_count" string="Product Count"/>
+									<div>
+										<field name="product_count" class="oe_inline" help="Enable to show seller product count on website."/>
+										<label for="product_count"/>
+									</div>
+									<label for="sale_count" string="Sale Count"/>
+									<div>
+										<field name="sale_count" class="oe_inline" help="Enable to show seller product sale count on website."/>
+										<label for="sale_count"/>
+									</div>
+									<label for="shipping_address" string="Seller Address"/>
+									<div>
+										<field name="shipping_address" class="oe_inline" help="Enable to show seller address on website."/>
+										<label for="shipping_address"/>
+									</div>
+									<label for="seller_since" string="Seller Since"/>
+									<div>
+										<field name="seller_since" class="oe_inline" help="Enable to show seller since date on website."/>
+										<label for="seller_since"/>
+									</div>
+									<label for="recently_product" string="Recently Added Products"/>
+									<div>
+										<field name="recently_product" class="oe_inline" help="Number to show recently product on website(max 20)."/>
+										<label for="recently_product"/>
+									</div>
+								</group>
+								<group name="mp_shop_setting">
+									<label for="return_policy" string="Return Policy"/>
+									<div>
+										<field name="return_policy" class="oe_inline" help="Enable to show seller return policy on website."/>
+										<label for="return_policy"/>
+									</div>
+									<label for="shipping_policy" string="Shipping Policy"/>
+									<div>
+										<field name="shipping_policy" class="oe_inline" help="Enable to show seller shipping policy on website."/>
+										<label for="shipping_policy"/>
+									</div>
+									<label for="seller_review" string="Seller Review"/>
+									<div>
+										<field name="seller_review" class="oe_inline" help="Enable to show seller reviews tab on website."/>
+										<label for="seller_review"/>
+									</div>
+									<label for="seller_t_c" string="Terms &amp; Conditions"/>
+									<div>
+										<field name="seller_t_c" class="oe_inline" help="Enable to show seller terms and condition website."/>
+										<label for="seller_t_c"/>
+									</div>
+									<label for="seller_contact_btn" string="Contact Seller Button"/>
+									<div>
+										<field name="seller_contact_btn" class="oe_inline" help="Enable to show seller contact button on website."/>
+										<label for="seller_contact_btn"/>
+									</div>
+								</group>
+							</group>
+							<group>
+								<group string="Seller Review Settings" name="mp_seller_review_setting">
+									<label for="review_load_no" string="Display Seller Reviews"/>
+									<div>
+										<field name="review_load_no" class="oe_inline" help="Number to show/load seller reviews on every click on website."/>
+										<label for="review_load_no"/>
+									</div>
+									<label for="review_auto_publish" string="Publish Seller Review"/>
+									<div>
+										<field name="review_auto_publish" class="oe_inline" help="Enable to auto publish seller review on website."/>
+										<label for="review_auto_publish"/>
+									</div>
+								</group>
+								<!-- <group string="Marketplace Product Page Settings" name="mp_product_page_setting">
+									<label for="show_visit_shop" string="Visit Shop"/>
+									<div>
+										<field name="show_visit_shop" class="oe_inline" help="Enable to display visit shop link on product page."/>
+										<label for="show_visit_shop"/>
+									</div>
+								</group> -->
+								<group string="Marketplace Landing Page Settings" name="mp_landing_page_setting">
+									<label for="show_sell_menu_header" string="Header Sell Menu"/>
+									<div>
+										<field name="show_sell_menu_header" class="oe_inline" help="Enable to display Sell menu at header."/>
+										<label for="show_sell_menu_header"/>
+									</div>
+									<label for="show_sell_menu_footer" string="Footer Sell Menu"/>
+									<div>
+										<field name="show_sell_menu_footer" class="oe_inline" help="Enable to display Sell menu at footer."/>
+										<label for="show_sell_menu_footer"/>
+									</div>
+									<label for="show_seller_list" string="Sellers List"/>
+									<div>
+										<field name="show_seller_list" class="oe_inline" help="Enable to display sellers list on website."/>
+										<label for="show_seller_list"/>
+									</div>
+									<label for="show_seller_shop_list" string="Seller Shop List" attrs="{'invisible': [('group_mp_shop_allow','=',False)]}"/>
+									<div attrs="{'invisible': [('group_mp_shop_allow','=',False)]}">
+										<field name="show_seller_shop_list" class="oe_inline" help="Enable to display seller shop list on website."/>
+										<label for="show_seller_shop_list"/>
+									</div>
+									<label for="landing_page_banner"/>
+									<div>
+										<field name="landing_page_banner" widget="image" class="" help="Banner for sellers landing page. Banner size must be 1298 x 400 px for perfect view." options='{"size": [320, 100]}'/>
+									</div>
+								</group>
+							</group>
+						</page>
+						<page string="Miscellaneous Settings" name="mp_miscellaneous_setting_page">
+							<group>
+								<label for="update_tanslate_field" string="Miscellaneous settings"/>
+								<button string="Click here to configure miscellaneous setting" type="object" name="update_tanslate_field" class="oe_link"/>
+							</group>
+							<group>
+								<label for="group_mp_shop_allow" string="Seller Shop"/>
+								<div>
+									<field name="group_mp_shop_allow"/>
+									<label for="group_mp_shop_allow"/>
+								</div>
+							</group>
+							<div class="oe_inline">
+								<separator string="NOTE :"/>
+								<h4>
+									<p>                                        1. Using this setting, marketplace admin or manager can add translated values for some text fields.                                    </p>
+									<p>                                        2. Landing page setting can be done easily like you can set
+										<i style="color:rebeccapurple;">Sell</i> link and
+										<i style="color:rebeccapurple;">Seller List</i> link label in different-different language.
+									</p>
+									<p>                                        3. Set marketplace terms &amp; conditions for multiple languages.                                    </p>
+								</h4>
+							</div>
+						</page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+		<record id="marketplace_auto_base_config_settings_form_view" model="ir.ui.view">
+			<field name="name">Marketplace.base.config.setting</field>
+			<field name="model">marketplace.config.settings</field>
+			<field name="arch" type="xml">
+				<form string="MarketPlace settings">
+					<group string="Auto Approval Settings">
+						<group>
+							<label for="auto_approve_seller" string="Seller Approval"/>
+							<div>
+								<field name="auto_approve_seller" help="Enable this if you want to approve seller automatically."/>
+								<label for="auto_approve_seller"/>
+							</div>
+							<label for="auto_product_approve" string="Product Approval"/>
+							<div>
+								<field name="auto_product_approve" class="oe_inline" help="Enable this if you want to approve seller product automatically."/>
+								<label for="auto_product_approve"/>
+							</div>
+							<label for="auto_approve_qty" string="Quantity Approval"/>
+							<div>
+								<field name="auto_approve_qty" help="Enable this if you want to approve product inventory automatically."/>
+								<label for="auto_approve_qty"/>
+							</div>
+						</group>
+						<group col="1" name="mp_auto_approval_setting_help">
+							<div name="auto_seller_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's requests will be automatically approved.		                        </h6>
+							</div>
+							<div name="auto_product_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's products will be automatically approved.		                        </h6>
+							</div>
+							<div name="auto_qty_approve_help" class="">
+								<h6 class="oe_inline oe_grey" style="  margin-top: 5px;margin-bottom: 5px;">		                        	⇒ If it is enabled then all seller's product quantity update request will be automatically approved.		                        </h6>
+							</div>
+						</group>
+					</group>
+					<separator string="Other Settings"/>
+					<notebook name="mp_config_notebook">
+						<page string="Product Terms" name="config_product_terms">
+							<group>
+								<group name="mp_product_setting">
+									<label for="internal_categ" string="Internal Category"/>
+									<div>
+										<label for="internal_categ" string="Select Internal Category"/>
+										<field name="internal_categ" class="oe_inline" help="This category will be linked as a internal category for all seller products."/>
+									</div>
+								</group>
+								<group name="internal_categ_help" class="oe_grey" col="1">
+									<h6 class="oe_inline">			                        	⇒ All marketplace products will belong to defined internal category.			                        </h6>
+								</group>
+								<group>
+									<label for="default_warehouse" string="Warehouse/Location"/>
+									<div>
+										<label for="warehouse_location_id" string="Default Location" />
+										<field name="warehouse_location_id" class="oe_inline" help="This location will be  default location for all seller."/>
+										<label for="default_warehouse" string="Default Warehouse"/>
+										<field name="default_warehouse" class="oe_inline" help="This warehouse will be  default warehouse for all seller."/>
+									</div>
+								</group>
+								<group name="warehouse_location_help" class="oe_grey" col="1">
+									<h6 class="oe_inline">			                        	⇒ This will be default seller's location. Locations can be set for individual seller from seller record.			                        </h6>
+									<h6 class="oe_inline" style="margin-top: 5px;">			                        	⇒ This will be default seller's warehouse. You can set warehouse for individual seller in seller record.			                        </h6>
+								</group>
+							</group>
+							<separator/>
+							<group string="Invoicing" invisible="1">
+								<group>
+									<label for="invoicing_type" string="Invoice Type"/>
+									<div>
+										<field name="invoicing_type" widget="radio"/>
+									</div>
+								</group>
+								<group name="invoicing_help" class="oe_grey" col="1" attrs="{'invisible': [('invoicing_type','not in',('by_customer','by_customer_and_seller'))]}">
+									<h6 class="oe_inline" attrs="{'invisible': [('invoicing_type','in',('by_customer','by_seller'))]}">			                        	⇒ This option will generate seller and customer invoice both.			                        </h6>
+									<br/>
+									<h6 class="oe_inline oe_grey" attrs="{'invisible': [('invoicing_type','in',('by_customer_and_seller','by_seller'))]}" style="margin-top: 5px;">										⇒ This option will generate customer invoice only.									</h6>
+									<br/>
+									<!-- <h6 attrs="{'invisible': [('invoicing_type','in',('by_customer','by_customer_and_seller'))]}" style="margin-top: 5px;">
+										⇒ This option will generate seller invoice only.
+									</h6> -->
+								</group>
+							</group>
+							<group>
+								<label for="group_mp_product_variant" string="Product Variants"/>
+								<div>
+									<field name="group_mp_product_variant"/>
+									<label for="group_mp_product_variant"/>
+								</div>
+							</group>
+						</page>
+						<page string="Payment Terms" name="config_payment_terms">
+							<group>
+								<label for="global_commission" string="Commission"/>
+								<div>
+									<label for="global_commission"/>
+									<field name="global_commission" class="oe_inline" help="Set global commission. You can manage this commission seller wise from seller account."/>%
+								</div>
+								<label for="mp_currency_id" string="Marketplace Currency"/>
+								<div>
+									<label for="mp_currency_id"/>
+									<field name="mp_currency_id" required="1" class="oe_inline" help="If system has recorded any seller payment then you won't be able to change the marketplace currency."/>
+								</div>
+								<label for="seller_payment_limit" string="Amount Limit"/>
+								<div>
+									<label for="seller_payment_limit" string="Amount limit for for seller payment request"/>
+									<field name="seller_payment_limit" class="oe_inline" help="Set amount limit for seller's payment request."/>
+								</div>
+								<label for="next_payment_requset" string="Minimum Gap"/>
+								<div>
+									<label for="next_payment_requset" string="Minimum gap for next payment request"/>
+									<field name="next_payment_requset" class="oe_inline" help="Set minimum gap in days for next payment request."/> Days
+								</div>
+								<label for="seller_payment_journal_id"/>
+								<div>
+									<label for="seller_payment_journal_id" string="Account journal for seller payment"/>
+									<field name="seller_payment_journal_id" class="oe_inline" help="Account journal used for creating automatic seller payment when seller get payment via adaptive PayPal. If Seller Payment Journal is not set then adaptive PayPal acquirer Payment Journal(if set) will used for same else seller automatic payment will not generate. Note: Sellers will get payment to  there PayPal account define in seller's profile."/>
+								</div>
+								<label for="seller_payment_product_id"/>
+								<div>
+									<label for="seller_payment_product_id" string="Product used for creating seller payment"/>
+									<field name="seller_payment_product_id" class="oe_inline" help="Product used for creating seller payment."/>
+								</div>
+							</group>
+						</page>
+						<page string="Mail &amp; Notifications" name="config_mail_notify">
+							<group name="mail_notification">
+								<label for="enable_notify_admin_4_new_seller" string="On New Seller Request"/>
+								<div>
+									<field name="enable_notify_admin_4_new_seller" class="oe_inline" help="Enable to notify admin on new seller request."/>
+									<label for="enable_notify_admin_4_new_seller"/>
+									<label for="notify_admin_4_new_seller"/>
+									<field name="notify_admin_4_new_seller" class="oe_inline" required="1" help="Enable to notify admin on new seller request."/>
+									<br/>
+									<field name="enable_notify_seller_4_new_seller" class="oe_inline" help="Enable to notify to seller on new seller request."/>
+									<label for="enable_notify_seller_4_new_seller"/>
+									<label for="notify_seller_4_new_seller"/>
+									<field name="notify_seller_4_new_seller" class="oe_inline" required="1" help="Enable to notify to seller on new seller request."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_admin_on_seller_approve_reject" string="On Seller Approval/Rejection"/>
+								<div>
+									<field name="enable_notify_admin_on_seller_approve_reject" class="oe_inline" help="Enable to notify to admin on seller approval/rejection."/>
+									<label for="enable_notify_admin_on_seller_approve_reject"/>
+									<label for="notify_admin_on_seller_approve_reject"/>
+									<field name="notify_admin_on_seller_approve_reject" class="oe_inline" required="1" help="Enable to notify to admin on seller approval/rejection."/>
+									<br/>
+									<field name="enable_notify_seller_on_approve_reject" class="oe_inline" help="Enable to notify to seller seller approval/rejection."/>
+									<label for="enable_notify_seller_on_approve_reject"/>
+									<label for="notify_seller_on_approve_reject"/>
+									<field name="notify_seller_on_approve_reject" class="oe_inline" required="1" help="Enable to notify to seller seller approval/rejection."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_admin_on_product_approve_reject" string="On Product Approval/Rejection"/>
+								<div>
+									<field name="enable_notify_admin_on_product_approve_reject" class="oe_inline" help="Enable to notify to admin on seller product approval/rejection."/>
+									<label for="enable_notify_admin_on_product_approve_reject"/>
+									<label for="notify_admin_on_product_approve_reject"/>
+									<field name="notify_admin_on_product_approve_reject" class="oe_inline" required="1" help="Enable to notify to admin on seller product approval/rejection."/>
+									<br/>
+									<field name="enable_notify_seller_on_product_approve_reject" class="oe_inline" help="Enable to notify to seller on seller product approval/rejection."/>
+									<label for="enable_notify_seller_on_product_approve_reject"/>
+									<label for="notify_seller_on_product_approve_reject"/>
+									<field name="notify_seller_on_product_approve_reject" class="oe_inline" required="1" help="Enable to notify to seller on seller product approval/rejection."/>
+								</div>
+							</group>
+							<group>
+								<label for="enable_notify_seller_on_new_order" string="On New Order" help="Enable this for sending mail notification to seller on order confirmation having saller product."/>
+								<div>
+									<field name="enable_notify_seller_on_new_order" class="oe_inline" help="Enable to notify to seller on new sale order."/>
+									<label for="enable_notify_seller_on_new_order"/>
+									<label for="notify_seller_on_new_order"/>
+									<field name="notify_seller_on_new_order" class="oe_inline" required="1" help="Enable to notify to seller on new sale order."/>
+								</div>
+							</group>
+						</page>
+						<page string="Website Settings" name="config_website">
+							<group string="Seller Profile/Shop Settings" name="mp_profile_shop_setting">
+								<group name="mp_profile_setting">
+									<label for="product_count" string="Product Count"/>
+									<div>
+										<field name="product_count" class="oe_inline" help="Enable to show seller product count on website."/>
+										<label for="product_count"/>
+									</div>
+									<label for="sale_count" string="Sale Count"/>
+									<div>
+										<field name="sale_count" class="oe_inline" help="Enable to show seller product sale count on website."/>
+										<label for="sale_count"/>
+									</div>
+									<label for="shipping_address" string="Seller Address"/>
+									<div>
+										<field name="shipping_address" class="oe_inline" help="Enable to show seller address on website."/>
+										<label for="shipping_address"/>
+									</div>
+									<label for="seller_since" string="Seller Since"/>
+									<div>
+										<field name="seller_since" class="oe_inline" help="Enable to show seller since date on website."/>
+										<label for="seller_since"/>
+									</div>
+									<label for="recently_product" string="Recently Added Products"/>
+									<div>
+										<field name="recently_product" class="oe_inline" help="Number to show recently product on website(max 20)."/>
+										<label for="recently_product"/>
+									</div>
+								</group>
+								<group name="mp_shop_setting">
+									<label for="return_policy" string="Return Policy"/>
+									<div>
+										<field name="return_policy" class="oe_inline" help="Enable to show seller return policy on website."/>
+										<label for="return_policy"/>
+									</div>
+									<label for="shipping_policy" string="Shipping Policy"/>
+									<div>
+										<field name="shipping_policy" class="oe_inline" help="Enable to show seller shipping policy on website."/>
+										<label for="shipping_policy"/>
+									</div>
+									<label for="seller_review" string="Seller Review"/>
+									<div>
+										<field name="seller_review" class="oe_inline" help="Enable to show seller reviews tab on website."/>
+										<label for="seller_review"/>
+									</div>
+									<label for="seller_t_c" string="Terms &amp; Conditions"/>
+									<div>
+										<field name="seller_t_c" class="oe_inline" help="Enable to show seller terms and condition website."/>
+										<label for="seller_t_c"/>
+									</div>
+									<label for="seller_contact_btn" string="Email to Seller Button"/>
+									<div>
+										<field name="seller_contact_btn" class="oe_inline" help="Enable to show seller contact button on website."/>
+										<label for="seller_contact_btn"/>
+									</div>
+								</group>
+							</group>
+							<group>
+								<group string="Seller Review Settings" name="mp_seller_review_setting">
+									<label for="review_load_no" string="Display Seller Reviews"/>
+									<div>
+										<field name="review_load_no" class="oe_inline" help="Number to show/load seller reviews on every click on website."/>
+										<label for="review_load_no"/>
+									</div>
+									<label for="review_auto_publish" string="Publish Seller Review"/>
+									<div>
+										<field name="review_auto_publish" class="oe_inline" help="Enable to auto publish seller review on website."/>
+										<label for="review_auto_publish"/>
+									</div>
+								</group>
+								 <!-- <group string="Marketplace Product Page Settings" name="mp_product_page_setting">
+									<label for="show_visit_shop" string="Visit Shop"/>
+									<div>
+										<field name="show_visit_shop" class="oe_inline" help="Enable to display visit shop link on product page."/>
+										<label for="show_visit_shop"/>
+									</div>
+								</group> -->
+								<group string="Marketplace Landing Page Settings" name="mp_landing_page_setting">
+									<label for="show_sell_menu_header" string="Header Sell Menu"/>
+									<div>
+										<field name="show_sell_menu_header" class="oe_inline" help="Enable to display Sell menu at header."/>
+										<label for="show_sell_menu_header"/>
+									</div>
+									<label for="show_sell_menu_footer" string="Footer Sell Menu"/>
+									<div>
+										<field name="show_sell_menu_footer" class="oe_inline" help="Enable to display Sell menu at footer."/>
+										<label for="show_sell_menu_footer"/>
+									</div>
+									<label for="show_seller_list" string="Sellers List"/>
+									<div>
+										<field name="show_seller_list" class="oe_inline" help="Enable to display sellers list on website."/>
+										<label for="show_seller_list"/>
+									</div>
+									<label for="show_seller_shop_list" string="Seller Shop List"/>
+									<div>
+										<field name="show_seller_shop_list" class="oe_inline" help="Enable to display seller shop list on website."/>
+										<label for="show_seller_shop_list"/>
+									</div>
+									<label for="landing_page_banner"/>
+									<div>
+										<field name="landing_page_banner" widget="image" class="" help="Banner for sellers landing page. Banner size must be 1298 x 400 px for perfect view." options='{"size": [320, 100]}'/>
+									</div>
+								</group>
+							</group>
+						</page>
+						<page string="Miscellaneous Settings" name="mp_miscellaneous_setting_page">
+							<group>
+								<label for="update_tanslate_field" string="Miscellaneous settings"/>
+								<button string="Click here to configure miscellaneous setting" type="object" name="update_tanslate_field" class="oe_link"/>
+							</group>
+							<div class="oe_inline">
+								<separator string="NOTE :"/>
+								<h4>
+									<p>                                        1. Using this setting, marketplace admin or manager can add translated values for some text fields.                                    </p>
+									<p>                                        2. Landing page setting can be done easily like you can set
+										<i style="color:rebeccapurple;">Sell</i> link and
+										<i style="color:rebeccapurple;">Seller List</i> link label in different-different language.
+									</p>
+									<p>                                        3. Set marketplace terms &amp; conditions for multiple languages.                                    </p>
+								</h4>
+							</div>
+						</page>
+					</notebook>
+					<footer>
+						<button string="Apply" type="object" name="execute" class="oe_highlight"/>
+						<!-- or
+                        <button string="Cancel" type="button" name="cancel" class="oe_link"/> -->
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="translate_marketplace_config_settings_form_view" model="ir.ui.view">
+			<field name="name">Translate.Marketplace.Config.Settings</field>
+			<field name="model">translate.marketplace.config.settings</field>
+			<field name="arch" type="xml">
+				<form create="0" delete="0">
+					<header>
+						<button string="Save" type="object" name="save" class="oe_highlight"/>
+					</header>
+					<group string="Landing Page Settings" name="seller_landing_page" col="4">
+						<field name="sell_page_label" help="Label for seller landing page on which seller will register."/>
+						<field name="sellers_list_label" help="Label for sellers list page on which all sellers will display."/>
+						<field name="seller_shop_list_label" help="Label for seller shop list page on which all seller's shop will display."/>
+					</group>
+					<group string="Seller Messages" name="seller_profile_msg" col="4">
+						<field name="seller_new_status_msg" help="This message will display inside seller profile when seller account will in New state."/>
+						<field name="seller_pending_status_msg" help="This message will display inside seller profile when seller account will in pending state."/>
+						<!-- <field name="seller_denied_status_msg" help="This message will display inside seller profile when seller account will in denied state."/> -->
+					</group>
+					<group>
+						<group string="Seller Review Settings" name="seller_review_settings">
+							<field name="message_to_publish" help="Message which will display after seller reviewing on website."/>
+						</group>
+					</group>
+					<group string="Marketplace Terms &amp; Conditions" name="mp_t_and_c">
+						<field name="term_and_condition" help="This is terms and conditions for the marketplace which will display on seller sign-up page on website."/>
+					</group>
+				</form>
+			</field>
+		</record>
+		<record id="marketplace_base_config_settings_action" model="ir.actions.act_window">
+			<field name="name">Configure Marketplace Settings</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">marketplace.config.settings</field>
+			<field name="view_mode">form</field>
+			<field name="target">inline</field>
+			<field name="view_id" ref="marketplace_base_config_settings_form_view"/>
+		</record>
+		<record id="marketplace_auto_base_config_settings_action" model="ir.actions.act_window">
+			<field name="name">Configure Marketplace Settings</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">marketplace.config.settings</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="marketplace_auto_base_config_settings_form_view"/>
+		</record>
+		<record id="marketplace_configuration_installer_todo" model="ir.actions.todo">
+			<field name="action_id" ref="odoo_marketplace.marketplace_auto_base_config_settings_action"/>
+			<field name="type">automatic</field>
+		</record>
+	</data>
+</odoo>

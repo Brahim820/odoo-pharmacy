@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="mp_pharmacy_details_assets_frontend" inherit_id="website.assets_frontend" name="Pharmacy Details">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/marketplace_pharmacist_details/static/src/js/mp_pharmacist_details.js"/>
+            </xpath>
+        </template>
+
+        <template id="pharmacy_account_registration_form">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <t t-call="theme_pharmacistplace.header_three_for_cart_checkout">
+                        <t t-set="pp_step" t-value="15"/>
+                    </t>
+                    <div class="container">
+                        <t t-call="website_sale.wizard_checkout">
+                            <t t-set="step" t-value="15"/>
+                        </t>
+                        <div class="col-md-12">
+                            <div style="display:flex;">
+                                <div style="width:40%">
+                                    <t t-call="theme_pharmacistplace.three_hr_lines_left_part"/>
+                                </div>
+                                <div style="width:20%;text-align: center;">
+                                    <span style="font-size: 30px;color:#272866;">
+                                        Complete Profile
+                                    </span>
+                                </div>
+                                <div style="width:40%">
+                                    <t t-call="theme_pharmacistplace.three_hr_lines_right_part"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb32 mt32 col-md-offset-2 col-md-8">
+                            <div class="text-center">
+                                <i class="fa fa-exclamation-triangle fa-4x text-primary" aria-hidden="true"></i>
+                            </div>
+                            <div class="mb32 text-center pp-brand-info">
+                                <h4>Please complete your profile to can register for every Distributors</h4>
+                            </div>
+                            <form class="needs-validation" action="/create/pharmacy/account" method="get">
+                                <div class="form-row">
+                                    <div class="col-md-6 mb32">
+                                        <label class="text-muted" for="name">Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Name" value="" required="1"/>
+                                    </div>
+                                    <div class="col-md-6 mb32">
+                                        <label class="text-muted" for="marketplace_seller_name">Pharmacy Name</label>
+                                        <input type="text" class="form-control" name="marketplace_seller_name"
+                                            t-att-value="marketplace_seller_id.name if marketplace_seller_id else None" placeholder="Pharmacy Name" required="1"
+                                            t-att-readonly="1 if marketplace_seller_id else None"/>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="marketplace_seller_id" t-att-value="marketplace_seller_id.id if marketplace_seller_id else None" required="1" readonly="1"/>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb32">
+                                        <label class="text-muted" for="email">Email</label>
+                                        <input type="text" class="form-control" name="email" placeholder="Email" t-att-value="request.env.user.partner_id.email" required="1" readonly="1"/>
+                                    </div>
+                                    <div class="col-md-6 mb32">
+                                        <label class="text-muted" for="name">Phone</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Phone" t-att-value="request.env.user.partner_id.phone" required="1" readonly="1"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb32">
+                                        <label class="text-muted" for="name">Address</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Address" value="" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="form-row col-md-12 mb32">
+                                    <label class="text-muted" for="comm_reg_file_name">Commercial Registration</label>
+                                    <div class="input-group">
+                                        <input id="comm_reg" type="file" name="comm_reg" class=" form-control custom-file-input"
+                                             style="display:none;"/>
+                                        <div id="comm_reg_file_name" tabindex="500"  class="form-control" readonly="1">
+                                            <span> </span>
+                                        </div>
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-primary comm_reg_browse_btn">
+                                                Upload File
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-row col-md-12 mb32">
+                                    <label class="text-muted" for="tax_card_file_name">Tax Card</label>
+                                    <div class="input-group">
+                                        <input id="tax_card" type="file" name="tax_card" class=" form-control custom-file-input"
+                                            style="display:none;"/>
+                                        <div id="tax_card_file_name" tabindex="500"  class="form-control" readonly="1">
+                                            <span> </span>
+                                        </div>
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-primary tax_card_browse_btn">
+                                                Upload File
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div t-if="pharmacy_account_exist" class="pharmacy_account_exist form-row col-md-12 mb16" style="display:none;">
+                                    <span class="label label-warning" style="font-size: 15px;">
+                                        <i class="fa fa-exclamation-triangle"/> There is already an account linked with the seller.
+                                    </span>
+                                </div>
+                                <div class="form-row col-md-12 mb32 text-center">
+                                    <button id="pharmacy_form_submit" class="btn btn-primary" type="submit" style="padding:6px 25px;"
+                                        t-att-data-pharmacy_account_exist="pharmacy_account_exist"> Save <i class=" fa fa-save"/></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

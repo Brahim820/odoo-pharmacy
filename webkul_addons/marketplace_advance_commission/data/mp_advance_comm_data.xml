@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data noupdate="0">
+        <function id="mp_default_config_comm_type"
+            model="ir.values"
+            name="set_default"
+            eval="('marketplace.config.settings', 'comm_type', 'product')"
+            />
+        <function id="mp_default_config_category_comm"
+            model="ir.values"
+            name="set_default"
+            eval="('marketplace.config.settings', 'category_comm', 'minimum')"
+            />
+        <function id="mp_default_config_comm_method"
+            model="ir.values"
+            name="set_default"
+            eval="('marketplace.config.settings', 'comm_method', 'fix')"
+            />
+        <function id="mp_default_config_fix_commission"
+            model="ir.values"
+            name="set_default"
+            eval="('marketplace.config.settings', 'fix_commission', 10)"
+            />
+        <function id="mp_default_config_global_commission"
+            model="ir.values"
+            name="set_default"
+            eval="('marketplace.config.settings', 'global_commission', 10)"
+            />
+    </data>
+</odoo>

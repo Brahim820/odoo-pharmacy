@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+    <record id="product_form" model="ir.ui.view">
+      <field name="name">product_form</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="dvit_product_multi_uom_ratio.dvit_product_uom"/>
+      <field name="arch" type="xml">
+        <xpath expr="//button[@name='%(dvit_product_multi_uom_ratio.action_add_uoms)d']/.." position='replace'></xpath>
+        <xpath expr='//page[@name="dimensions"]' position="inside">
+          <group attrs="{'invisible':['|','|',
+                ('qty_available','!=',0),
+                ('virtual_available','!=',0),
+                ('sales_count','!=',0),
+                ]}">
+            <button name="%(dvit_product_multi_uom_ratio.action_add_uoms)d" type="action" string="Add UoMs" class="oe_highlight oe_inline"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_wiz_prod_uom" model="ir.ui.view">
+      <field name="name">view_wiz_prod_uom</field>
+      <field name="model">wiz.prod.uom</field>
+      <field name="inherit_id" ref="dvit_product_multi_uom_ratio.view_wiz_prod_uom"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='ref_uom']" position='replace'>
+          <field name="product_id" invisible="1"/>
+          <field name="attr_area" invisible="1"/>
+          <field name="ref_uom" required="1" attrs="{'readonly':[('attr_area','!=',0.0)]}"/>
+          <p attrs="{'invisible':[('attr_area','=',0.0)]}">
+            Name forced as product have<b>WxL and Area.</b>
+          </p>
+        </xpath>
+        <xpath expr="//field[@name='qty']" position='after'>
+          <field name="qty_m2"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

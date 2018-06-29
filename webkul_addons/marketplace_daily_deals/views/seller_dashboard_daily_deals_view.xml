@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="inherit_website_daily_deals_form_view" model="ir.ui.view">
+            <field name="name">website.deals.form.inherit</field>
+            <field name="model">website.deals</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="website_daily_deals.website_daily_deals_form_view"/>
+            <field name="arch" type="xml">
+                <field name='wk_pricelist' position="before">
+                    <field name="id" invisible="1"/>
+                    <field name="marketplace_seller_id"
+                            required="1"
+                            attrs="{'readonly': [('id', '!=', False)]}"
+                            string="Seller"
+                            groups="odoo_marketplace.marketplace_officer_group"
+                            domain="[('seller','=',True), ('state','=','approved')]"
+                            options="{'no_create': True}"
+                            context="{'form_view_ref': 'odoo_marketplace.wk_seller_form_view'}"
+                        />
+                </field>
+                <xpath expr="//notebook/page/field[@name='products']" position="attributes">
+                    <attribute name="context">{'mp_seller_deal':1}</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='products']/form/sheet/group/field[@name='product_tmpl_id']" position="attributes">
+                    <attribute name="context">{'tree_view_ref':'odoo_marketplace.wk_seller_product_template_tree_view'}</attribute>
+                    <attribute name="domain">[('marketplace_seller_id','!=',False),('status','=','approved')]</attribute>
+                    <attribute name="options">{'no_create_edit': True,'no_open':True}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="wk_seller_deals_filter" model="ir.ui.view">
+            <field name="name">Products</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <search string="Search Products">
+                    <group  string="Group By">
+                        <filter string="Seller"
+                                context="{'group_by':'marketplace_seller_id'}"
+                                name="by_marketplace_seller_id"
+                                groups="odoo_marketplace.marketplace_officer_group"
+                                />
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="wk_seller_daily_deals_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Daily Deals</field>
+            <field name="res_model">website.deals</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+            <field name="context">{'search_default_by_marketplace_seller_id': 1, 'daily_deals': True}</field>
+            <field name="view_id" ref="website_daily_deals.website_deals_tree_view"/>
+        </record>
+        <record id="wk_seller_deals_action_for_tree" model="ir.actions.act_window.view">
+                <field name="view_mode">tree</field>
+                <field name="view_id" ref="website_daily_deals.website_deals_tree_view"/>
+                <field name="act_window_id" ref="marketplace_daily_deals.wk_seller_daily_deals_action"/>
+        </record>
+        <record id="wk_seller_deals_action_for_form" model="ir.actions.act_window.view">
+                <field name="view_mode">form</field>
+                <field name="view_id" ref="inherit_website_daily_deals_form_view"/>
+                <field name="act_window_id" ref="marketplace_daily_deals.wk_seller_daily_deals_action"/>
+        </record>
+
+    </data>
+</odoo>

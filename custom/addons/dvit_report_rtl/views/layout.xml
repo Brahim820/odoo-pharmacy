@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+   <template priority="999" id="layout" inherit_id="report.layout">	   
+            <xpath expr="//head" position="inside">
+                <link t-if="lang_dir == 'rtl'" rel="stylesheet" 
+                	href="/dvit_report_rtl/static/src/css/bootstrap-rtl.min.css"/>
+                <link t-if="lang_dir == 'rtl'" rel="stylesheet" 
+                	href="/dvit_report_rtl/static/src/css/rtl.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

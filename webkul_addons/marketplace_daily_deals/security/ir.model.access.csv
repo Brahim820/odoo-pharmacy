@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+website_deals_seller,seller_access_website_deals,website_daily_deals.model_website_deals,odoo_marketplace.marketplace_seller_group,1,1,1,0
+website_deals_officer,officer_access_website_deals,website_daily_deals.model_website_deals,odoo_marketplace.marketplace_officer_group,1,1,1,0
+website_deals_manager,manager_access_website_deals,website_daily_deals.model_website_deals,odoo_marketplace.marketplace_manager_group,1,1,1,0

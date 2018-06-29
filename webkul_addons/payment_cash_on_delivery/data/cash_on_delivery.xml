@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+      <!-- Copyright (c) 2017-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+    	<!-- See LICENSE URL <https://store.webkul.com/license.html/> for full copyright and licensing details. -->
+
+         <record id="cash_on_delivery_rule" model="wk.cod">
+            <field name="name">Default Rule</field>
+            <field name="min_order_amount">100</field>
+            <field name="max_order_amount">1000000</field>
+            <field name="policy_content">Order Order Amount Must Be in Between 100€ 1000000€</field>
+            <field name="cod_availability_message">COD AVAILABLE !</field>
+            <field name="cod_unavailability_message">Currently we do not provide COD for this item !</field>
+            <field name="cod_unavailability_payment_message">Some  product in your cart can not delivered  through Cash On Delivery!</field>
+        </record>
+        <record id="applicability_rule" model="wk.cod.applicability.rule">
+           <field name="allowed_country_list" ref='base.us'/>
+           <field name="cod_fk" ref='cash_on_delivery_rule'/>
+
+       </record>
+
+
+        <record id="payment_acquirer_cash_on_delivery" model="payment.acquirer">
+            <field name="name">COD</field>
+            <field name="provider">cash_on_delivery</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="description"><![CDATA[
+                <p>A COD payment options to accept payments on cash on delivery.</p>]]></field>
+
+            <field name="view_template_id" ref="payment_cash_on_delivery_acquirer_button"/>
+            <field name="image" type="base64" file="payment_cash_on_delivery/static/src/img/cash_on_delivery_icon.png"/>
+          <field name="cod_rule" ref="cash_on_delivery_rule"/>
+            <field name="environment">test</field>
+            <field name="website_published" eval="True"/>
+            <field name="pre_msg"><![CDATA[
+<p>You have Selected <b> [Cash On Delivery]</b> Payment Option this Sale Order .</p>]]>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

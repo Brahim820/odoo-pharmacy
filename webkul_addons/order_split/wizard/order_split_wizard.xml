@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <record id="wk_split_transfer_wizard_form_id" model="ir.ui.view">
+            <field name="name">Split wizard</field>
+            <field name="model">wk.split.transfer.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Transfer details" version="7">
+                    
+                   
+                        <field name="item_ids">
+                            <tree string="Inventory Details" editable="bottom" >
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="sourceloc_id" />
+                                <field name="destinationloc_id" />
+                                
+                            </tree>
+                        </field>
+                   
+                    <footer>
+                        <button name="stock_transfer_picking" string="_Split" type="object" class="oe_highlight"/>
+                        or
+                        <button string="_Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="wk_split_transfer_wizard_action_id" model="ir.actions.act_window">
+            <field name="name">Split Wizard</field>
+            <field name="res_model">wk.split.transfer.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+		
+	</data>
+</odoo>

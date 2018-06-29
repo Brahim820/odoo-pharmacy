@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_wiz_mrp_purchase" model="ir.ui.view">
+            <field name="name">wiz_mrp_purchase</field>
+            <field name="model">wiz.mrp.purchase</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="request_all"/>
+                            <field name="is_tender"/>
+                            <field name="vendor_id" required="1"/>
+                        </group>
+                    </group>
+                    <field name="wiz_po_line_ids" required="1">
+                        <tree string="Materials" editable="bottom">
+                            <field name="m_product"/>
+                            <field name="m_desc"/>
+                        </tree>
+                    </field>
+                    <field name="notes" help="Notes for purchase manager on requested materials"/>
+                    <footer>
+                        <button class="oe_highlight"
+                                name="add_po"
+                                string="Add"
+                                type="object"/>
+                        or
+                        <button class="oe_link"
+                                special="cancel"
+                                string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="add_po_action" model="ir.actions.act_window">
+            <field name="name">Request Materials</field>
+            <field name="res_model">wiz.mrp.purchase</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wiz_mrp_purchase"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

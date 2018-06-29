@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+    <record id="purchase_wizard_form" model="ir.ui.view">
+      <field name="name">Purchase</field>
+      <field name="model">wiz.purchase.order</field>
+      <field name="arch" type="xml">
+        <form string="Purchase">
+          <group>
+          <field name="vendor_id"/>
+        </group>
+          <field name="line_ids">
+            <tree editable="bottom">
+              <field name="product_id" required="1"/>
+              <field name="product_qty" required="1"/>
+              <field name="product_uom" required="1"/>
+              <field name="name" required="1"/>
+            </tree>
+          </field>
+          <footer>
+            <button class="oe_highlight" name="add_po" string="Add" type="object"/>
+            or
+            <button class="oe_link" special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+    <record id="purchase_wizard_action" model="ir.actions.act_window">
+      <field name="name">Purchase Order</field>
+      <field name="res_model">wiz.purchase.order</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="purchase_wizard_form"/>
+      <field name="target">new</field>
+    </record>
+    <record id="view_task_form2_inherit" model="ir.ui.view">
+      <field name="name">project.purchase.task</field>
+      <field name="model">project.task</field>
+      <field name="inherit_id" ref="project.view_task_form2"/>
+      <field name="groups_id" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='extra_info']" position="after">
+          <page name="purchase_orders" string="Purchase Orders">
+            <button name="%(purchase_wizard_action)d" class="oe_inline oe_highlight oe_stat_button" string="Add Purchase Order" type="action"/>
+            <field name="purchase_ids" readonly="True"/>
+          </page>
+        </xpath>
+      </field>
+    </record>
+    <record id="purchase_form_inherit" model="ir.ui.view">
+      <field name="name">project.purchase.task</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='date_order']" position="after">
+          <field name="sale_id"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

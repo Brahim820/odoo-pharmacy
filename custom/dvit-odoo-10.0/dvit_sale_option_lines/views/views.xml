@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record id="option_id1" model="ir.ui.view">
+            <field name="name">option</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']/.." position="after">
+                    <group>
+                    <field name="option_line_ids">
+                        <tree editable="inline">
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="price_unit"/>
+                        </tree>
+                    </field>
+                </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+  	<data>
+  		<template id="assets_frontend_show_mp_t_and_c" inherit_id="website.assets_frontend" name="Assets Frontend show Marketplace Term and Condition">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/odoo_marketplace/static/src/js/marketplace.js"></script>
+			</xpath>
+	    </template>
+
+        <template id="mp_t_and_c_modal_template" name="Terms and Conditions">
+            <div class="modal fade" id="mp_t_and_c_modal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"/>
+                            <h4 class="modal-title">Terms &amp; Conditions</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div>
+                                <t t-raw="mp_t_and_c"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+		<template id="account_sign_up_details_id" inherit_id="auth_signup.fields">
+			<xpath expr="//div[@class='form-group field-confirm_password']" position="after">
+				<input type="checkbox" name="is_seller" id="is_seller" t-att-checked="'checked' if set_seller or signup_from_seller_page else None" t-att-required="'disabled' if set_seller or signup_from_seller_page else None"/>
+				<label for="is_seller" class="control-label">&#160;Do you want to become seller/vendor? </label>
+                <div id="mp_seller_details" t-att-style="None if set_seller or signup_from_seller_page else 'display:none;'">
+                    <div class="form-group field-country">
+                        <t t-set="countries" t-value="website.get_mp_ajax_seller_countries()"/>
+                        <t t-set="country" t-value="website.user_id.partner_id.sudo().company_id.country_id"/>
+                        <label class="control-label" for="country_id">Country</label>
+                        <select id="country_id" name="country_id" class="form-control" t-att-required="'disabled' if set_seller or signup_from_seller_page else None">
+                            <option value="">Country...</option>
+                            <t t-foreach="countries" t-as="c">
+                                <option t-att-value="c.id" t-att-selected="c.id == (country and country.id or -1)">
+                                    <t t-esc="c.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label for="profile_url" class="control-label">Profile URL</label>
+                        <span class="fa fa-info-circle text-info pull-right url_info" data-toggle="popover" data-trigger="hover" data-content="This will be used to display your public profile."/>
+                        <input type="text" name="url_handler" id="profile_url" class="form-control" placeholder="Unique Seller Profile URL handler.." t-att-required="'disabled' if set_seller or signup_from_seller_page else None"/>
+                        <span class="fa fa-pencil form-control-feedback"></span>
+                        <div class="text-danger" id="profile_url_error" style="display:none;"></div>
+                        <input type="hidden" name="valid_profile_url" id="valid_profile_url"/>
+                    </div>
+                    <input type="checkbox" name="mp_terms_conditions" id="mp_terms_conditions" t-att-required="'disabled' if set_seller or signup_from_seller_page else None"/>
+    				<label for="mp_terms_conditions" class="form-group control-label">&#160;I Accept <a href="#" id="mp_t_and_c">Terms &amp; Conditions</a></label>
+                    <data id="mp_t_and_c_data" t-att-data-terms="website.sudo().get_mp_config_settings_values().get('term_and_condition', False)"/>
+
+                </div>
+			</xpath>
+	   	</template>
+  	</data>
+</odoo>

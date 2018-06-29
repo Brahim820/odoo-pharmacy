@@ -1,0 +1,32 @@
+
+.o_my_status_table {
+  table-layout: fixed;
+}
+.o_my_status_table th,
+.o_my_status_table td {
+  text-align: right;
+}
+.o_my_status_table th:nth-last-child(2) {
+  width: 150px;
+}
+.o_my_status_table th:nth-last-child(1) {
+  width: 120px;
+}
+.o_my_status_table th:nth-child(1),
+.o_my_status_table td:nth-child(1) {
+  width: auto;
+  min-width: 150px;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .o_my_status_table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+.o_my_home_content > .page-header > a:hover {
+  text-decoration: none;
+}

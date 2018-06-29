@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+
+		<delete id="odoo_marketplace.inherit_portal_layout" model="ir.ui.view"/>
+
+		<template id="inherit_mp_sold_by_detail_in_product" inherit_id="odoo_marketplace.mp_sold_by_detail_in_product" >
+			<xpath expr="//div[@id='selle_pic_name_add']" position="after">
+				<br/>
+                <div class="col-md-12 mt8" style="border-left: 3px solid #eee;background-color: #fcf8f2;border-color: #f0ad4e;padding: 10px;border-radius: 5px;" attrs="{'invisible':[('global_product_tmpl_id', '=', False)]}">
+                    <span>
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <b> In Stock </b>
+						<span t-attf-class="label #{'label-success' if product.custom_stock_status == 'yes' else 'label-danger'}" style="text-transform: uppercase">
+							<t t-esc="product.custom_stock_status"/>
+						</span>
+                    </span>
+                </div>
+
+			</xpath>
+        </template>
+
+    </data>
+</odoo>

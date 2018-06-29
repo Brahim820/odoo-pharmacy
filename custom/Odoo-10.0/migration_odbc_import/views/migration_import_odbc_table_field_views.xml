@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="migration_import_odbc_table_field_form_view" model="ir.ui.view">
+        <field name="name">migration.import.odbc.table.field form view</field>
+        <field name="model">migration.import.odbc.table.field</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="check_valid" string="Check Valid"/>
+                    <button type="object" name="auto_value_map" string="Auto Value Map"/>
+                </header>
+      	        <group>
+      	            <field name="table_id"/>
+      	            <field name="name"/>
+      	            <field name="orm_type" invisible="True"/>
+      	            <field name="orm_name" invisible="True"/>
+      	            <field name="model_id" invisible="True"/>
+      	            <field name="valid"/>
+      	            <field name="field_id"/>
+      	            <field name="date_format" attrs="{'invisible':[('orm_type','!=','date')]}"/>
+      	            <field name="alter_value_ids">
+      	                <tree editable="bottom">
+      	                    <field name="old_value"/>
+      	                    <field name="new_value" widget="amor"/>
+      	                    <button name="auto_create_record" type="object" string="Create Record"/>
+      	                </tree>
+      	            </field>
+      	        </group>
+      	    </form>
+      	</field>
+    </record>
+
+</odoo>

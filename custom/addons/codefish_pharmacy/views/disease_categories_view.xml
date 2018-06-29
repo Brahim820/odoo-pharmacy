@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- TODO: put here a reminder on what to do at the first edition -->
+    <record id="Disease Categories_view" model="ir.ui.view">
+        <field name="name">Disease Categories.view</field>
+        <field name="model">disease_categories</field>
+        <field name="view_type">form</field>
+        <field name="inherit_id" ref=""/>
+        <field name="arch" type="xml">
+          <form string="Disease Categories">
+                            <sheet>
+                                <div class="oe_left" style="width: 500px;">
+                                    <div class="oe_title" style="width: 390px;">
+                                        <label class="oe_edit_only" for="x_name" string="Category Name"/>
+                                        <h1><field name="name" class="oe_inline"/></h1>
+                                    </div>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="parent_category"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+        </field>
+    </record>
+    <record id="Disease Category List_view" model="ir.ui.view">
+        <field name="name">Disease Category List.view</field>
+        <field name="model">disease_categories</field>
+        <field name="view_type">tree</field>
+        <field name="inherit_id" ref=""/>
+        <field name="arch" type="xml">
+          <tree string="Disease Categories">
+                            <field name="name"/>
+                            <field name="parent_category"/>
+                        </tree>
+        </field>
+    </record>
+</odoo>

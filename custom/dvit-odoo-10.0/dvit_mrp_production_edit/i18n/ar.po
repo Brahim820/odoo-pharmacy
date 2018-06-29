@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dvit_mrp_production_edit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-27 11:52+0000\n"
+"PO-Revision-Date: 2017-10-27 14:05+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_EG\n"
+"X-Generator: Poedit 2.0.3\n"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "Consumed"
+msgstr "مستهلك"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "Consumed Materials"
+msgstr "المواد المستهلكة"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.model,name:dvit_mrp_production_edit.model_mrp_production
+msgid "Manufacturing Order"
+msgstr "امر التصنيع"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.model.fields,field_description:dvit_mrp_production_edit.field_mrp_production_tgl_modify
+msgid "Modified"
+msgstr "تم تعديله"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "Register lots"
+msgstr "تسجيل رقم التشغيلة"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "To Consume"
+msgstr "للاستهلاك"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "Toggle Modify"
+msgstr "تعديل"
+
+#. module: dvit_mrp_production_edit
+#: model:ir.ui.view,arch_db:dvit_mrp_production_edit.mrp_production_edit_form_view
+msgid "Update Order"
+msgstr "تحديث"
+
+#. module: dvit_mrp_production_edit
+#: code:addons/dvit_mrp_production_edit/models/mrp_production.py:20
+#, python-format
+msgid "You can not update in progress or done orders."
+msgstr "لا يمكن تحديث امرتحت التشغيل او تم تنفيذه."

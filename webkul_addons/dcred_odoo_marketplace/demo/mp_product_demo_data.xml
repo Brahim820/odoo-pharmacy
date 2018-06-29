@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+	<data noupdate="1">
+		<!-- product.public.category for mp-->
+        <record id="dcred_odoo_marketplace.wk_bags" model="product.public.category">
+          <field name="name">Bags</field>
+          <field name="sequence">105</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_bangles" model="product.public.category">
+          <field name="name">Bangles</field>
+          <field name="sequence">106</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_books" model="product.public.category">
+          <field name="name">Books</field>
+          <field name="sequence">107</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_bottles" model="product.public.category">
+          <field name="name">Bottles</field>
+          <field name="sequence">108</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_camersa" model="product.public.category">
+          <field name="parent_id" ref="website_sale.devices"/>
+          <field name="name">Cameras</field>
+          <field name="sequence">109</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_furnitures" model="product.public.category">
+          <field name="name">Furnitures</field>
+          <field name="sequence">110</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_glasses" model="product.public.category">
+          <field name="name">Glasses</field>
+          <field name="sequence">111</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_headphones" model="product.public.category">
+          <field name="parent_id" ref="website_sale.devices"/>
+          <field name="name">Headphones</field>
+          <field name="sequence">112</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_phones" model="product.public.category">
+          <field name="parent_id" ref="website_sale.devices"/>
+          <field name="name">Phones</field>
+          <field name="sequence">113</field>
+        </record>
+        <record id="dcred_odoo_marketplace.wk_shoes" model="product.public.category">
+          <field name="name">Shoes</field>
+          <field name="sequence">114</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_t_shirts" model="product.public.category">
+          <field name="name">T-Shirts</field>
+          <field name="sequence">115</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.wk_watches" model="product.public.category">
+          <field name="name">Watches</field>
+          <field name="sequence">116</field>
+        </record>
+
+        <!-- Marketplace Products -->
+
+        <!-- Seller 1 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller1" model="product.product">
+        	<field name="name">Red Bag</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">100.0</field>
+            <field name="list_price">150.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	The bag has two compartments for convenience and has a cute mobile pouch.Be it for office or for a party , its a great buy.</field>
+            <field name="default_code">WK-MP-SEL1-BAG1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bags')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bags/1.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">10</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller1" model="product.product">
+        	<field name="name">Black Bag</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">110.0</field>
+            <field name="list_price">170.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	The bag has two compartments for convenience and has a cute mobile pouch.Be it for office or for a party , its a great buy.</field>
+            <field name="default_code">WK-MP-SEL1-BAG2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bags')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bags/2.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">15</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller1" model="product.product">
+        	<field name="name">Sky Blue Bag</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">105.0</field>
+            <field name="list_price">140.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	The bag has two compartments for convenience and has a cute mobile pouch.Be it for office or for a party , its a great buy.</field>
+            <field name="default_code">WK-MP-SEL1-BAG2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bags')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bags/4.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">20</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller1" model="product.product">
+        	<field name="name">Khadi Bag</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">45.0</field>
+            <field name="list_price">90.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	The bag has two compartments for convenience and has a cute mobile pouch.Be it for office or for a party , its a great buy.</field>
+            <field name="default_code">WK-MP-SEL1-BAG2</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bags')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bags/3.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller1" model="product.product">
+        	<field name="name">Gold Plated Bangle1</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">545.0</field>
+            <field name="list_price">990.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	This Gold Plated AD Bangle For Women is made of Alloy. Women love jewellery; specially traditional jewellery adore a women. They wear it on different occasion. They have special importance on ring ceremony, wedding and festive time. They can also wear it on regular basics. Make your moment memorable with this range. This jewel set features a unique one of a kind traditional embellish with antic finish.</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller1" model="product.product">
+        	<field name="name">Gold Plated Bangle2</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">645.0</field>
+            <field name="list_price">1090.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	This Gold Plated AD Bangle For Women is made of Alloy. Women love jewellery; specially traditional jewellery adore a women. They wear it on different occasion. They have special importance on ring ceremony, wedding and festive time. They can also wear it on regular basics. Make your moment memorable with this range. This jewel set features a unique one of a kind traditional embellish with antic finish.</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/5.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller1" model="product.product">
+        	<field name="name">Gold Plated Bangle3</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">445.0</field>
+            <field name="list_price">890.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	This Gold Plated AD Bangle For Women is made of Alloy. Women love jewellery; specially traditional jewellery adore a women. They wear it on different occasion. They have special importance on ring ceremony, wedding and festive time. They can also wear it on regular basics. Make your moment memorable with this range. This jewel set features a unique one of a kind traditional embellish with antic finish.</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/8.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller1" model="product.product">
+        	<field name="name">Silver Plated Bangle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">145.0</field>
+            <field name="list_price">390.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	This Silver Plated AD Bangle For Women is made of Alloy. Women love jewellery; specially traditional jewellery adore a women. They wear it on different occasion. They have special importance on ring ceremony, wedding and festive time. They can also wear it on regular basics. Make your moment memorable with this range. This jewel set features a unique one of a kind traditional embellish with antic finish.</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/3.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller1" model="product.product">
+        	<field name="name">Charvee Minakari Bangle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">145.0</field>
+            <field name="list_price">390.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	The bangle set displays traditional minakari work in resplendent colour. Lovely beads in oval shape are placed around the bangle. The screw of the bangle has a kundan setting.</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/4.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller1" model="product.product">
+        	<field name="name">Kashmir Box Paper Mache Set</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">45.0</field>
+            <field name="list_price">125.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Buy home décor online with ingenious Kashmiri paper mache products at kashmirbox KashmirBox offers you a high quality range of Kashmiri Paper Mache items, highly stylized and appealing by intricate decorations. Crafted from high quality paper material, this is a long lasting piece of home accessory that will add beauty, style and elegance to the settings.This paper mache Bangle srt has a delightful blend of a number of colors and design to adds brightness to your life style when wearing.A perfect gift for special occasions and most importantly, can be used in any occasion Enhance your home decor with paper mache box at kashmirbox</field>
+            <field name="default_code">WK-MP-SEL1-BANGLE6</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bangles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bangles/2.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- Seller 2 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller2" model="product.product">
+        	<field name="name">Note Book</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">05.0</field>
+            <field name="list_price">10.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Available in attractive cover designs.Notebook consists of high quality papers.The cover design of the notebook is subject to change, it depends on stock availability</field>
+            <field name="default_code">WK-MP-SEL2-BOOK1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_books')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/books/2.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">20</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller2" model="product.product">
+        	<field name="name">School Report Book</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">05.0</field>
+            <field name="list_price">20.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Available in attractive cover designs.School Report Book consists of high quality papers.The cover design of the School Report Book is subject to change, it depends on stock availability</field>
+            <field name="default_code">WK-MP-SEL2-BOOK2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_books')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/books/3.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">22</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller2" model="product.product">
+        	<field name="name">Drawing Note Book</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">05.0</field>
+            <field name="list_price">10.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Available in attractive cover designs.Drawing Notebook consists of high quality papers.</field>
+            <field name="default_code">WK-MP-SEL2-BOOK3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_books')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/books/5.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">12</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller2" model="product.product">
+        	<field name="name">Set of 6 Hard Cover Note Book</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">105.0</field>
+            <field name="list_price">210.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Available in attractive cover designs.Notebook consists of high quality papers.</field>
+            <field name="default_code">WK-MP-SEL2-BOOK4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_books')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/books/6.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller2" model="product.product">
+        	<field name="name">Diary For Personal Use</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">65.0</field>
+            <field name="list_price">110.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Available in attractive cover designs.Notebook consists of high quality papers.</field>
+            <field name="default_code">WK-MP-SEL2-BOOK5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_books')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/books/4.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller2" model="product.product">
+        	<field name="name">Duff Beer Bottle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">165.0</field>
+            <field name="list_price">240.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Duff Beer is a brand of beer that originally started as a fictional beverage on the animated series The Simpsons. Since then it has become a real brand of beer in a number of countries without permission or consent from its original creator, Matt Groening, and has resulted in legal battles with varying results. An official version of the beer is sold in three variations near The Simpsons Ride at Universal Studios. In 2015, 21st Century Fox, producer of The Simpsons, began selling licensed Duff beer in Chile, with a view to driving out unlicensed brandjacking</field>
+            <field name="default_code">WK-MP-SEL2-BOTTLE1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bottles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bottles/2.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller2" model="product.product">
+        	<field name="name">Remy Martin Club Bottle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">165.0</field>
+            <field name="list_price">240.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale"></field>
+            <field name="default_code">WK-MP-SEL2-BOTTLE2</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bottles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bottles/4.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller2" model="product.product">
+        	<field name="name">Champagne Bottle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">265.0</field>
+            <field name="list_price">300.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Perfect for graduations, weddings, and New Year"s Eve. These bubble fluid bottles take the form of champagne bottles.</field>
+            <field name="default_code">WK-MP-SEL2-BOTTLE3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bottles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bottles/5.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller2" model="product.product">
+        	<field name="name">Red Bottle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">15.0</field>
+            <field name="list_price">30.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale"></field>
+            <field name="default_code">WK-MP-SEL2-BOTTLE4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bottles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bottles/7.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller2" model="product.product">
+        	<field name="name">Rum Bottle</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">315.0</field>
+            <field name="list_price">400.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale"></field>
+            <field name="default_code">WK-MP-SEL2-BOTTLE6</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_bottles')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/bottles/3.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- Seller 3 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller3" model="product.product">
+        	<field name="name">Kodak Old Camera</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">29.0</field>
+            <field name="list_price">59.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Camera is in good shape. Some small bubbles under the leather on the back door and caked in dirt along the top deck lip. All functions work. Shutter speeds are good.</field>
+            <field name="default_code">WK-MP-SEL3-CAM1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_camersa')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/cameras/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller3" model="product.product">
+        	<field name="name">Slim White Samsung Camera</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">229.0</field>
+            <field name="list_price">399.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Important Made in USA Origin Disclaimer: For certain items sold by Walmart on Walmart.com, the displayed country of origin information may not be accurate or consistent with manufacturer information. For updated, accurate country of origin data, it is recommended that you rely on product packaging or manufacturer information.
+			SAMNXMINI9MMW
+			Samsung NX Mini Mirrorless Digital Camera with 9mm Lens
+			NX-M 9mm f/3.5 ED Lens
+			B740AU Rechargeable Lithium-Ion Battery
+			Software CD-ROM</field>
+            <field name="default_code">WK-MP-SEL3-CAM2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_camersa')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/cameras/2.jpg"/>
+            <field name="status">approved</field>
+            <field name="qty">50</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller3" model="product.product">
+        	<field name="name">Nikon DSLR Camera</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">529.0</field>
+            <field name="list_price">999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">24.2 megapixel effective sensor without an optical low-pass filter
+			Full-colour RGB metering sensor
+			Nikon's scene recognition system
+			New EXPEED 4 processing engine produces stunning images
+			Extended ISO range (100 - 12800) to capture images with noise-suppression
+			7.5 centimeters (3-inch), approximate 921k-dot (VGA) TFT LCD
+			5 frames per second (fps) shooting speed with the bright 0.85x viewfinder
+			Full HD movie recording with 1080/60p support
+			Comes with EN-EL14a rechargeable Li-ion battery (with terminal cover), MH-24 battery charger, AN-DC3 strap, UC-E17 USB cable, EG-CP14 audio/video cable, viewNX 2 CD-ROM
+			Also comes with user manual, 16 GB SD card, camera bag and 18-55mm VR II lens
+			2 years Nikon India warranty
+			A 24.2-effective megapixel sensor without an optical low-pass filter, the full-colour RGB metering sensor and Nikon's Scene Recognition System work to give you the best images possible
+			The new EXPEED 4 processing engine produces stunning images, with exceptional sharpness and detail effortlessly, WU-1a Wireless Mobile Adapter gives you control of the camera shutter from a smartphone or a tablet, and lets you share your photos to friends and family via your mobile device
+			To match the camera's extreme portability, the ISO range has been extended (100 - 12800), so whether shooting at home or trekking through a mountain, you will always capture exceptional images with superb noise-suppression
+			7.5-centimeters (3-inch), approximate 921k-dot (VGA) TFT LCD, 5 frames per second (fps) shooting speed with the bright 0.85x viewfinder, all assist you in capturing great photos, every time
+			Even moving images can be captured with all the stunning detail of still images thanks to Full HD movie recording with 1080/60p support</field>
+            <field name="default_code">WK-MP-SEL3-CAM3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_camersa')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/cameras/3.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller3" model="product.product">
+        	<field name="name">Pentax Camera</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">129.0</field>
+            <field name="list_price">299.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Ricoh's Pentax KP features a new 24MP APS-C sensor with a top ISO of 819200 and an electronic shutter that can reach 1/24000 sec. It's the first Pentax camera to offer 'Shake Reduction II' 5-axis in-body image stabilization, which can reduce shake by up to 5 stops with nearly any lens you attach. The SAFOX 11 autofocus system features 27 points, 25 of which are cross-type.
+
+			The compact body is weather-sealed and functions at tempatures down to -10C/+14F. The camera has replaceable grips, making it comfortable to hold for nearly everyone. Keeping with Pentax tradition, the KP has a pentaprism optical viewfinder with 100% coverage and a 0.95x (0.63x equiv.) magnification. A tilting 3" touchscreen LCD is also available.
+
+			The KP can shoot continuously at up to 7 fps and can capture video at up to 1080/60i (a 30p option is available for those who want to avoid interlacing). As one would expect, Wi-Fi is built-in. The camera uses the familiar D-LI109 battery and can take up to 390 shots per charge.</field>
+            <field name="default_code">WK-MP-SEL3-CAM4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_camersa')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/cameras/5.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller3" model="product.product">
+        	<field name="name">Canon DSLR Camera</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">429.0</field>
+            <field name="list_price">899.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">18 megapixel CMOS (APS-C) image sensor
+			High-performance DIGIC 4 image processor
+			ISO 100-6400 (expandable to H: 12800) to shoot from bright to dim light
+			EOS full HD movie mode to capture brilliant results
+			Scene intelligent auto mode to deliver expertly optimized photos
+			9-point AF system (including one center cross-type AF point) and AI servo
+			EOS 1200D digital SLR body
+			1 rechargeable lithium-ion LP-E10 battery
+			Battery charger LP-E10
+			18-55mm and 55-250mm IS lens
+			Accessories include 8GB card and camera bag
+			Interface cable, EOS digital solution disk
+			Camera instruction manual CD and booklet, software instruction manual CD
+			2 years Canon India warranty</field>
+            <field name="default_code">WK-MP-SEL3-CAM5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_camersa')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/cameras/6.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller3" model="product.product">
+        	<field name="name">Sofa (5+3 Seater)</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">2429.0</field>
+            <field name="list_price">2899.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+	            * Material: Leatherite
+				* Color: Brown
+				* Style: Contemporary
+				* Upholstery Material: Leatherite
+				* Frame Material: Solid Wood
+				* Leg Material: Solid Wood
+				* Filling Material: Polyfiber
+				* Three Seater Sofa Height: 38.4 inches (96 cm), Length: 81.2 inches (203 cm), Width: 37 inches (93 cm)
+			</field>
+            <field name="default_code">WK-MP-SEL3-FURN1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_furnitures')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/furnitures/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller3" model="product.product">
+        	<field name="name">Sofa 1 Seater</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">729.0</field>
+            <field name="list_price">999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Sofa Position:Width-30 Inches x Depth-30 Inches x Height 26 Inches , Bed Position:Width 30 Inches x Depth-72 Inches x Height-7 Inches
+			</field>
+            <field name="default_code">WK-MP-SEL3-FURN2</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_furnitures')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/furnitures/2.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller3" model="product.product">
+        	<field name="name">Sofa 2 Seater</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">1729.0</field>
+            <field name="list_price">1999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	* Material: Solid Wood (Miranty Wood) And Fabric
+				* Color: Brown
+				* Style: Contemporary
+				* Upholstery Material: Fabric
+				* Frame Material: Solid Wood
+				* Filling Material: Foam
+				* Two Seater Sofa Height: 29 inches (73 cm), Length: 50 inches (125 cm), Width: 30 inches (75 cm)
+				* Delivery Condition: Assembled
+				* Quantity: 1 Piece (Two Seater Sofa)
+			</field>
+            <field name="default_code">WK-MP-SEL3-FURN3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_furnitures')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/furnitures/3.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller3" model="product.product">
+        	<field name="name">Metallic chair</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">1729.0</field>
+            <field name="list_price">1999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	It is the ultimate place to find furniture which suits your home, your personality and most of all you
+
+				Eclectic furniture combines design elements or particular styles from different time periods and different origins within a single piece. Bold and bright colors are hallmark feature of metal a range of furniture which is made with raw wood, sheet metal and metal rods painted or powder coated in vibrant colours.
+
+				Furniture bought on Pepperfry.com is shipped for free and comes with a 1 Year Warranty against any manufacturing defects. We also offer you a 7-Day Easy Return window. So go ahead and buy with confidence.
+			</field>
+            <field name="default_code">WK-MP-SEL3-FURN4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_furnitures')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/furnitures/4.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller3" model="product.product">
+        	<field name="name">Wood chair</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">529.0</field>
+            <field name="list_price">799.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Features
+            	========
+				Magellan collection
+				Made of wood and manmade wood
+				Two-tone finish
+				Made in the USA
+
+				Product Details
+				===============
+				Number of Items Included: 1
+				Frame Material: Manufactured wood
+				Seat Frame Material: Wood
+			</field>
+            <field name="default_code">WK-MP-SEL3-FURN5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_furnitures')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/furnitures/5.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- Seller 4 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller4" model="product.product">
+        	<field name="name">Round Shape Glass</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">29.0</field>
+            <field name="list_price">59.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">The new full metal round double bridge reinvents authentic DNA design to create an all-new Ray-Ban icon, disrupting the concept of iconic design with a revolutionary statement of must-have style.
+            Featuring minimalistic volumes in easy to wear tones of gold or black and flat flash gradient lenses, this slick style offers contemporary individuals a passe-partout look with irresistible contemporary appeal – dress it up, or dress it down, a true icon knows no limits!</field>
+            <field name="default_code">WK-MP-SEL4-GLS1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_glasses')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/glasses/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller4" model="product.product">
+        	<field name="name">Sunglass For Boys</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">129.0</field>
+            <field name="list_price">159.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Go 100% Ray-Ban with the original sun prescription lenses made to perfectly fit your favorite Ray-Ban shades. Pick your must-haves frames amongst a wide range and make them truly yours with the inclusion of authentic Ray-Ban sun prescription lenses. Have the full Ray-Ban experience. Your authentic Ray-Ban sun prescription lenses come with 100% UVA and UVB protection to preserve your eyes from sun rays. Pick yours in either polar or non- polar filters. The exclusive and original sun prescription lenses featuring the Ray-Ban logo, just like your favorite standard shades - you won't be able to spot the difference.</field>
+            <field name="default_code">WK-MP-SEL4-GLS2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_glasses')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/glasses/2.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller4" model="product.product">
+        	<field name="name">Sunglass For Girls</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">169.0</field>
+            <field name="list_price">199.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Brilliant, bold and anything but understated, theses Foster Grant Signature Butterfly shape sunglasses for Women features a Grey Full Frame made of Plastic for head turning style and Gradient lenses with a reflective coating for 100% UVA/UVB protection to shield eyes from the harmful effects of sun damage at everyday. Free Sunglass case with cleaning cloth</field>
+            <field name="default_code">WK-MP-SEL4-GLS3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_glasses')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/glasses/3.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller4" model="product.product">
+        	<field name="name">Sports Unisex Sunglasses</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">269.0</field>
+            <field name="list_price">299.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Adjustable Frame according to face width
+				Rare Mercury Blue Shaded
+				Full Wrap-Around
+				400 UV Protection
+				Highly Durable</field>
+            <field name="default_code">WK-MP-SEL4-GLS4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_glasses')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/glasses/7.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller4" model="product.product">
+        	<field name="name">Kids Sunglass</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">29.0</field>
+            <field name="list_price">49.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">A perfect collection for Your Little One
+				Fashionable sunglasses for eye protection
+				Fashion eye protection-400 UV Protected
+				Stol'n presents stylish sunglasses for your little one to protect their eyes from the harsh sun, while keeping them looking absolutely cool. The stylish shape and print on the sun-glass makes it more attractive. Apart from their visual appeal, these trendy sunglasses also offer impact resistance and a comfortable wear</field>
+            <field name="default_code">WK-MP-SEL4-GLS5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_glasses')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/glasses/4.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller4" model="product.product">
+        	<field name="name">Monster Headphone</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">129.0</field>
+            <field name="list_price">149.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Cutting-edge Swipe Controls​ for play/pause, tracking, and volume​.
+				Superior Wireless Performance (apt-X)​.
+				Ultra-Soft Ear  Cushions​
+				Pivoting Ear cups​.
+				Concealed Adjustable headband​. Silicon Padding Won’t slip off your head.
+				Active Echo Suppression  Technology. Built-in, high-intelligibility​ mic for crystal clear calls.
+				Extended battery for all day and all night listening – Over 24 hours at ample level​. 30 hours talk time​. 20 days standby​.
+				Low battery warning tone and light. </field>
+            <field name="default_code">WK-MP-SEL4-HDPH1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_headphones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/headphones/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller4" model="product.product">
+        	<field name="name">Philips In-Ear Headphone With Mic (Blue)</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">69.0</field>
+            <field name="list_price">119.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Perfect in-ear seal blocks out external noise
+				Integrated microphone and call button
+				3 interchangeable rubber ear caps for optimal fit in all ear
+				Rubberized cable relief enhances durability
+				A 1.2m long cable that is ideal for outdoor use </field>
+            <field name="default_code">WK-MP-SEL4-HDPH2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_headphones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/headphones/2.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller4" model="product.product">
+        	<field name="name">Sennheiser Dynamic Headphone</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">869.0</field>
+            <field name="list_price">999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Frequency response (headphones): 21 - 20,000 Hz
+            	Impedance: 24
+            	Item Weight: 581g
+            	Product Dimensions:	25.3 x 19.1 x 10.1 cm
+            </field>
+            <field name="default_code">WK-MP-SEL4-HDPH3</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_headphones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/headphones/3.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller4" model="product.product">
+        	<field name="name">Intex HEADPHONE STANDARD (Black)</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">169.0</field>
+            <field name="list_price">199.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Condition: New: A brand-new, unused and undamaged item. See the seller's listing for full details. See all condition definitions
+				Brand:	intex
+				Colour:	Black
+				MPN:	Standard
+				Connectivity:	Wired
+				Fit Design:	Headband
+				Warranty:	Manufacturer Warranty
+				Duration:	1 year
+				Model:	Standard
+				Type:	Wired
+            </field>
+            <field name="default_code">WK-MP-SEL4-HDPH4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_headphones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/headphones/4.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller4" model="product.product">
+        	<field name="name">AUDEZE - EL - 8 TITANIUM</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">6169.0</field>
+            <field name="list_price">9999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">The Audeze EL-8 Titanium Over Ear Headphones are the world's first headphones with a fully integrated Apple Lightning Cable. The EL-8 Titanium are Apple MFi certified closed-back headphones,  that have been loaded with new technology to provide extreme performance with your iOS devices. The wide frequency, ensures that you experience a superior transient response.
+
+			The EL-8 Titanium's Cipher cable streams a complete 24-bit digital signal through a high quality DSP and DACthat has been built-in to offer better sound quality. Now enjoy superior audio performance for both, you music as well as voice calls. Now enjoy music on your iOS devices with remarkable accuracy. A standard cable too comes included in the package, thus, you can pair the EL-8 with non-iOS devices aswell.
+
+			Designed by  BMWDesignWorks USA, these headphones isolate the listener and reduce ambient noise as no sound escapes the earcups. The EL - 8 Titanium has Audeze's signature advanced planar magnetic technology therefore providing exemplary sound quality that is unheard of in this or any other price category.
+
+			Extremely portable and lightweight,you can carry your headphones where ever you wish.
+
+			If you are looking for audiophile and pro grade sound, the Audeze EL-8 is a clear choice for you.
+            </field>
+            <field name="default_code">WK-MP-SEL4-HDPH5</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_headphones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/headphones/5.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- Seller 5 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller5" model="product.product">
+        	<field name="name">Apple iPhone 4</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">6629.0</field>
+            <field name="list_price">7999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Apple iPhone 4 smartphone was launched in June 2010. The phone comes with a 3.50-inch touchscreen display with a resolution of 640 pixels by 960 pixels at a PPI of 326 pixels per inch. Apple iPhone 4 price in India starts from Rs. 15,990.
+
+			It comes with 512MB of RAM. The phone packs 8GB of internal storage cannot be expanded. As far as the cameras are concerned, the Apple iPhone 4 packs a 5-megapixel primary camera on the rear and a 0.3-megapixel front shooter for selfies.
+
+			The Apple iPhone 4 runs iOS 6.1.3 and is powered by a 1420mAh non removable battery. It measures 115.20 x 59.00 x 9.30 (height x width x thickness) and weigh 137.00 grams.
+
+			The Apple iPhone 4 is a single SIM (GSM) smartphone that accepts a Micro-SIM. Connectivity options include Wi-Fi, GPS, Bluetooth and 3G. Sensors on the phone include Compass Magnetometer, Proximity sensor, Accelerometer, Ambient light sensor and Gyroscope.</field>
+            <field name="default_code">WK-MP-SEL5-PHONE1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_phones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/phones/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller5" model="product.product">
+        	<field name="name">Samsung Galaxy S Duos</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">3229.0</field>
+            <field name="list_price">4299.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Samsung Galaxy S Duos smartphone was launched in November 2012. The phone comes with a 4.00-inch touchscreen display with a resolution of 480 pixels by 800 pixels at a PPI of 233 pixels per inch. Samsung Galaxy S Duos price in India starts from Rs. 18,488.
+
+			The Samsung Galaxy S Duos is powered by 1GHz it comes with 768MB of RAM. The phone packs 4GB of internal storage that can be expanded up to 32GB via a microSD card. As far as the cameras are concerned, the Samsung Galaxy S Duos packs a 5-megapixel primary camera on the rear and a 0.3-megapixel front shooter for selfies.
+
+			The Samsung Galaxy S Duos runs Android 4.0 and is powered by a 1500mAh removable battery. It measures 121.50 x 63.10 x 10.50 (height x width x thickness) and weigh 120.00 grams.
+
+			The Samsung Galaxy S Duos is a dual SIM (GSM and GSM) smartphone that accepts Regular and Regular. Connectivity options include Wi-Fi, GPS, Bluetooth, FM and 3G. Sensors on the phone include Compass Magnetometer, Proximity sensor and Accelerometer.</field>
+            <field name="default_code">WK-MP-SEL5-PHONE2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_phones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/phones/3.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller5" model="product.product">
+        	<field name="name">Apple iPhone 6</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">30299.0</field>
+            <field name="list_price">34999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">Apple iPhone 6 smartphone was launched in September 2014. The phone comes with a 4.70-inch touchscreen display with a resolution of 750 pixels by 1334 pixels at a PPI of 326 pixels per inch. Apple iPhone 6 price in India starts from Rs. 27,990.
+
+			It comes with 1GB of RAM. The phone packs 16GB of internal storage cannot be expanded. As far as the cameras are concerned, the Apple iPhone 6 packs a 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies.
+
+			The Apple iPhone 6 runs iOS 8.0 and is powered by a 1810mAh non removable battery. It measures 138.10 x 67.00 x 6.90 (height x width x thickness) and weigh 129.00 grams.
+
+			The Apple iPhone 6 is a single SIM (GSM) smartphone that accepts a Nano-SIM. Connectivity options include Wi-Fi, GPS, Bluetooth, NFC, 3G and 4G (with support for Band 40 used by some LTE networks in India). Sensors on the phone include Compass Magnetometer, Proximity sensor, Accelerometer, Ambient light sensor, Gyroscope and Barometer.</field>
+            <field name="default_code">WK-MP-SEL5-PHONE3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_phones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/phones/5.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller5" model="product.product">
+        	<field name="name">Micromax Canvas Nitro 4G E455 (Black)</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">8299.0</field>
+            <field name="list_price">9999.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">13MP primary camera with dual LED flash and 5MP front facing camera
+				5-inch (12.7 centimeters) HD IPS capacitive touchscreen with 1280 x 720 pixels resolution
+				Android v5 Lollipop operating system with 1.4GHz MSM8929 Qualcomm Snapdragon octa core processor, 2GB RAM, 16GB internal memory expandable up to 32GB and dual SIM (GSM+GSM)
+				2500mAH lithium-ion battery
+				1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase
+
+				OS:	Android
+				RAM:	2 GB
+				Product Dimensions:	14.1 x 0.9 x 7 cm
+				Wireless communication technologies:	Bluetooth, WiFi Hotspot
+				Connectivity technologies:	GSM, (850/900/1800/1900 MHz), 3G, WCDMA, (900/2100 MHz), 4G LTE, GPRS, EDGE, WiFi
+				Special features:	Video Calls, Dual SIM, GPS, Music Player, Video Player, FM Radio, Light sensor, Proximity sensor, G sensor, eCompass, E-mail, Expandable Memory: 32GB
+				Other camera features:	13MP primary camera with dual LED flash and 5MP front facing camera
+				Form factor	Touchscreen Phone
+				Weight:	135 Grams
+				Colour:	Black
+				Whats in the box: Handset, Charger and User Manual
+			</field>
+            <field name="default_code">WK-MP-SEL5-PHONE4</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_phones')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/phones/4.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller5" model="product.product">
+        	<field name="name">Orange Heel</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">99.0</field>
+            <field name="list_price">150.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Material:fabric
+				Color: Orange
+				Brand:HEAD OVER HEELS LADIES
+				Heel:high
+				Heel Height:9.5 cm
+				Heel Shape:stiletto heel
+				Feature:straps
+				Lining Material:synthetic
+				Sole Material:synthetic
+			</field>
+            <field name="default_code">WK-MP-SEL5-SHOE1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_shoes')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/shoes/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller5" model="product.product">
+        	<field name="name">Leather Casual Shoe</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">89.0</field>
+            <field name="list_price">140.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Color: Brown
+				Upper Material: Genuine Leather
+				Sole Material: RUBBER LIKE (EVA)
+				Closing: Lace-up
+				Tip shape: Round
+			</field>
+            <field name="default_code">WK-MP-SEL5-SHOE2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_shoes')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/shoes/3.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller5" model="product.product">
+        	<field name="name">Merrell Running Shoe</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">88.0</field>
+            <field name="list_price">135.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Leather/Synthetic
+				Imported
+				Vibram sole
+				Hiking shoe with water-resistant leather and mesh upper featuring rubber toe bumper and heel counter
+				Compression-molded EVA footframe
+			</field>
+            <field name="default_code">WK-MP-SEL5-SHOE3</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_shoes')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/shoes/4.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller5" model="product.product">
+        	<field name="name">Babyhug Canvas Shoes - White</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">28.0</field>
+            <field name="list_price">95.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Brand - Cute Walk by Babyhug
+				Type - Canvas Shoes
+				Occasion - Casual Wear
+				Upper Material - Canvas
+				Sole - TPR
+				Closure - Lace tie up style
+			</field>
+            <field name="default_code">WK-MP-SEL5-SHOE4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_shoes')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/shoes/8.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- Seller 6 Products -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller6" model="product.product">
+        	<field name="name">Blue Men T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">429.0</field>
+            <field name="list_price">499.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Blue
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT1</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/1.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller6" model="product.product">
+        	<field name="name">Navy Blue Men T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">439.0</field>
+            <field name="list_price">509.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Blue
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT2</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/8.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller6" model="product.product">
+        	<field name="name">Yellow Men T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">439.0</field>
+            <field name="list_price">509.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Yellow
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT3</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/16.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller6" model="product.product">
+        	<field name="name">Sky Blue Men T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">439.0</field>
+            <field name="list_price">509.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Sky Blue
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT4</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/19.jpg"/>
+            <field name="status">draft</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller6" model="product.product">
+        	<field name="name">Cadet Blue Girls T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">339.0</field>
+            <field name="list_price">409.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: CadetBlue
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT5</field>
+            <field name="website_published" eval="True"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/10.jpg"/>
+            <field name="status">approved</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller6" model="product.product">
+        	<field name="name">Pink Girls T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">339.0</field>
+            <field name="list_price">409.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Pink
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT6</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/13.jpg"/>
+            <field name="status">rejected</field>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller6" model="product.product">
+        	<field name="name">Brown Girls T-Shirt</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">239.0</field>
+            <field name="list_price">309.0</field>
+            <field name="type">product</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">
+            	Fabric: Cotton
+				Sleeves: SHORT SLEEVES
+				Fit: Regular
+				Color: Brown
+				Wash Care: Gentle Wash
+				Style: Solid
+			</field>
+            <field name="default_code">WK-MP-SEL5-TSHIRT7</field>
+            <field name="website_published" eval="False"/>
+            <field name="website_size_x">1</field>
+            <field name="website_size_y">1</field>
+            <field name="website_sequence">3</field>
+            <field name="marketplace_seller_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('wk_t_shirts')])]"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/t-shirts/4.jpg"/>
+            <field name="status">pending</field>
+        </record>
+
+        <!-- Product Templates -->
+
+        <!-- For Seller 1 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product8_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product9_wk_mp_seller1')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller1_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product10_wk_mp_seller1')])]"/>
+        </record>
+
+        <!-- For Seller 2 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product8_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product9_wk_mp_seller2')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller2_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product10_wk_mp_seller2')])]"/>
+        </record>
+
+        <!-- For Seller 3 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids" eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product8_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product9_wk_mp_seller3')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller3_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product10_wk_mp_seller3')])]"/>
+        </record>
+
+        <!-- For Seller 4 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product8_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product9_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product9_wk_mp_seller4')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product10_wk_mp_seller4_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product10_wk_mp_seller4')])]"/>
+        </record>
+
+        <!-- For Seller 5 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller5')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product8_wk_mp_seller5_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product8_wk_mp_seller5')])]"/>
+        </record>
+
+        <!-- For Seller 6 -->
+        <record id="dcred_odoo_marketplace.product1_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product1_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product2_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product2_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product3_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product3_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product4_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product4_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product5_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product5_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product6_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product6_wk_mp_seller6')])]"/>
+        </record>
+
+        <record id="dcred_odoo_marketplace.product7_wk_mp_seller6_product_template" model="product.template">
+            <field name="product_variant_ids"  eval="[(6,0,[ref('dcred_odoo_marketplace.product7_wk_mp_seller6')])]"/>
+        </record>
+
+    </data>
+</odoo>

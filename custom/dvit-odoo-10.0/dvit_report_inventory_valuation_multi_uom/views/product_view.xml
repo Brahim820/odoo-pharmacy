@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="available_uom_product_template_form_view">
+        <field name="name">product.template.common.form.view.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="uom_id" position="after">
+                <field name="available_uom_domain_ids" widget="many2many_tags" invisible="1"/>
+                <field name="available_uom_ids" widget="many2many_tags"
+                       domain="[('id', 'in', available_uom_domain_ids and available_uom_domain_ids[0] and available_uom_domain_ids[0][2] or False)]"
+                       options="{'no_edit': True, 'no_create': True}" groups="product.group_uom"/>
+
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Inherit Form view     -->
+  <record id="sale_form" model="ir.ui.view">
+    <field name="name">sale_form</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <field name="partner_id" position="after">
+        <field name="deliver_prcnt" widget="progressbar"/>
+        <field name="invoice_prcnt" widget="progressbar"/>
+      </field>
+    </field>
+  </record>
+
+  <record id="sale_tree" model="ir.ui.view">
+    <field name="name">sale_tree</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_tree"/>
+    <field name="arch" type="xml">
+      <field name="state" position="after">
+        <field name="deliver_prcnt" widget="progressbar"/>
+        <field name="invoice_prcnt" widget="progressbar"/>
+      </field>
+    </field>
+  </record>
+
+</odoo>

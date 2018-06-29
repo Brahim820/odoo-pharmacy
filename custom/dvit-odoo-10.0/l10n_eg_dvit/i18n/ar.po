@@ -1,0 +1,611 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_eg_dvit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-13 09:42+0000\n"
+"PO-Revision-Date: 2017-04-13 12:04+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_EG\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200100_account_payable
+#: model:account.account.template,name:l10n_eg_dvit.200100_account_payable
+msgid "Account Payable"
+msgstr "حـ.الدائنون/المدفوعات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_120100_account_receivable
+#: model:account.account.template,name:l10n_eg_dvit.120100_account_receivable
+msgid "Account Receivable"
+msgstr "حـ.المدينون/المقبوضات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_110700_accu_deprec
+#: model:account.account.template,name:l10n_eg_dvit.110700_accu_deprec
+msgid "Accumulated Depreciation"
+msgstr "مجمع اهلاك"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_60000_advert_promo
+#: model:account.account.template,name:l10n_eg_dvit.60000_advert_promo
+msgid "Advertising and Promotion"
+msgstr "دعاية واعلان"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_1_assets
+#: model:account.account.template,name:l10n_eg_dvit.1_assets
+msgid "Assets"
+msgstr "اصول"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_60200_auto_exp
+#: model:account.account.template,name:l10n_eg_dvit.60200_auto_exp
+msgid "Automobile Expense"
+msgstr "مصاريف سيارات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_120800_bad_debts
+#: model:account.account.template,name:l10n_eg_dvit.120800_bad_debts
+msgid "Bad Debts"
+msgstr "ديون معدومة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_60400_bank_charge
+#: model:account.account.template,name:l10n_eg_dvit.60400_bank_charge
+msgid "Bank Service Charges"
+msgstr "رسوم خدمات بنكية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_102_banks
+#: model:account.account.template,name:l10n_eg_dvit.102_banks
+msgid "Banks"
+msgstr "بنوك"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_61000_license_permit
+#: model:account.account.template,name:l10n_eg_dvit.61000_license_permit
+msgid "Business Licenses and Permits"
+msgstr "تصاريح وتراخيص"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500100_cogs_cost_of_goods_sold
+#: model:account.account.template,name:l10n_eg_dvit.500100_cogs_cost_of_goods_sold
+msgid "COGS - Cost of goods sold"
+msgstr "تكلفة بضاعة مباعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_30100_capital_stock
+#: model:account.account.template,name:l10n_eg_dvit.30100_capital_stock
+msgid "Capital Stock"
+msgstr "رأس المال"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_101_cash
+#: model:account.account.template,name:l10n_eg_dvit.101_cash
+msgid "Cash"
+msgstr "نقدي"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_61400_charit_contrib
+#: model:account.account.template,name:l10n_eg_dvit.61400_charit_contrib
+msgid "Charitable Contributions"
+msgstr "تبرعات خيرية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_103_cheques
+#: model:account.account.template,name:l10n_eg_dvit.103_cheques
+msgid "Cheques"
+msgstr "شيكات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400600_commission_income
+#: model:account.account.template,name:l10n_eg_dvit.400600_commission_income
+msgid "Commission income"
+msgstr "ايراد عمولات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500700_commissions_paid
+#: model:account.account.template,name:l10n_eg_dvit.500700_commissions_paid
+msgid "Commissions Paid"
+msgstr "عمولات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_61700_computer_internet
+#: model:account.account.template,name:l10n_eg_dvit.61700_computer_internet
+msgid "Computer and Internet Expenses"
+msgstr "مصاريف تقنية ومعلومات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_62000_financial_services
+#: model:account.account.template,name:l10n_eg_dvit.62000_financial_services
+msgid "Continuing Education"
+msgstr "تعليم مستمر"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_5_cogs
+#: model:account.account.template,name:l10n_eg_dvit.5_cogs
+msgid "Cost of Goods"
+msgstr "تكاليف بضاعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_709000_currency_exchange_account
+#: model:account.account.template,name:l10n_eg_dvit.709000_currency_exchange_account
+msgid "Currency Exchange Income"
+msgstr "فرق تغيير عملة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_10_current_assets
+#: model:account.account.template,name:l10n_eg_dvit.10_current_assets
+msgid "Current Assets"
+msgstr "اصول متداولة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_20_current_liabilities
+#: model:account.account.template,name:l10n_eg_dvit.20_current_liabilities
+msgid "Current Liabilities"
+msgstr "التزامات حالية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200300_customer_deposit
+#: model:account.account.template,name:l10n_eg_dvit.200300_customer_deposit
+msgid "Customer Deposits Received"
+msgstr "ايداعات عملاء"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_62400_depreciation_exp
+#: model:account.account.template,name:l10n_eg_dvit.62400_depreciation_exp
+msgid "Depreciation Expense"
+msgstr "مصروفات اهلاك"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_30200_divid_paid
+#: model:account.account.template,name:l10n_eg_dvit.30200_divid_paid
+msgid "Dividends Paid"
+msgstr "ارباح موزعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_62500_dues_subscrip
+#: model:account.account.template,name:l10n_eg_dvit.62500_dues_subscrip
+msgid "Dues and Subscriptions"
+msgstr "اشتراكات"
+
+#. module: l10n_eg_dvit
+#: model:account.chart.template,name:l10n_eg_dvit.account_egypt_coa_general
+msgid "Egypt - Chart of Accounts"
+msgstr "الدليل المحاسبي"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_120200_employee_loans
+#: model:account.account.template,name:l10n_eg_dvit.120200_employee_loans
+msgid "Employee loans"
+msgstr "سلف/قروض الموظفين"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_62600_equip_rent
+#: model:account.account.template,name:l10n_eg_dvit.62600_equip_rent
+msgid "Equipment Rental"
+msgstr "ايجار معدات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_3_equity
+#: model:account.account.template,name:l10n_eg_dvit.3_equity
+msgid "Equity"
+msgstr "ملكية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_6_expenses
+#: model:account.account.template,name:l10n_eg_dvit.6_expenses
+msgid "Expenses"
+msgstr "مصروفات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105200_final_prod_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105200_final_prod_inventory
+msgid "Final Product Inventory"
+msgstr "مخزون تام"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_700000_finance_income
+#: model:account.account.template,name:l10n_eg_dvit.700000_finance_income
+msgid "Finance Charge Income"
+msgstr "إيرادات ودائع"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_11_fixed_assets
+#: model:account.account.template,name:l10n_eg_dvit.11_fixed_assets
+msgid "Fixed Assets"
+msgstr "اصول ثابتة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500800_product_shipping_cost
+#: model:account.account.template,name:l10n_eg_dvit.500800_product_shipping_cost
+msgid "Freight and Shipping Costs"
+msgstr "تكاليف شحن وتوصيل"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_110500_furniture_equipment
+#: model:account.account.template,name:l10n_eg_dvit.110500_furniture_equipment
+msgid "Furniture and Equipment"
+msgstr "اثاث ومعدات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_201100_grni_goods_received_not_invoiced
+#: model:account.account.template,name:l10n_eg_dvit.201100_grni_goods_received_not_invoiced
+msgid "GRNI – Goods received not invoiced"
+msgstr "بضاعة مستلمة غير مفوترة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_63200_gas_oil_exp
+#: model:account.account.template,name:l10n_eg_dvit.63200_gas_oil_exp
+msgid "Gasoline, Fuel and Oil"
+msgstr "مصروفات محروقات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_69310_general_liab_insurance
+#: model:account.account.template,name:l10n_eg_dvit.69310_general_liab_insurance
+msgid "General Liability Insurance"
+msgstr "تأمينات اجتماعية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_120700_goods_shipped_not_invoiced
+#: model:account.account.template,name:l10n_eg_dvit.120700_goods_shipped_not_invoiced
+msgid "Goods shipped not invoiced"
+msgstr "بضاعة صادرة غير مفوترة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_69320_health_insurance
+#: model:account.account.template,name:l10n_eg_dvit.69320_health_insurance
+msgid "Health Insurance"
+msgstr "تامين صحي"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_4_income
+#: model:account.account.template,name:l10n_eg_dvit.4_income
+msgid "Income"
+msgstr "الدخل"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_701000_insurance_income
+#: model:account.account.template,name:l10n_eg_dvit.701000_insurance_income
+msgid "Insurance Proceeds Received"
+msgstr "ايرادات تأمينات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_63400_interest_exp
+#: model:account.account.template,name:l10n_eg_dvit.63400_interest_exp
+msgid "Interest Expense"
+msgstr "مصروفات فوائد"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_702000_interest_income
+#: model:account.account.template,name:l10n_eg_dvit.702000_interest_income
+msgid "Interest Income"
+msgstr "ايرادات فوائد"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105_inventory
+msgid "Inventory"
+msgstr "المخازن"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_2_liabilities
+#: model:account.account.template,name:l10n_eg_dvit.2_liabilities
+msgid "Liabilities"
+msgstr "التزامات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_69330_life_insurance
+#: model:account.account.template,name:l10n_eg_dvit.69330_life_insurance
+msgid "Life and Disability Insurance"
+msgstr "تأمينات على الحياة وضد الاصابات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_101100_main_cash
+#: model:account.account.template,name:l10n_eg_dvit.101100_main_cash
+msgid "Main Cash"
+msgstr "الخزنة الرئيسية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_64200_marketing_exp
+#: model:account.account.template,name:l10n_eg_dvit.64200_marketing_exp
+msgid "Marketing Expense"
+msgstr "مصروفات تسويق"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_64300_meals_entertain
+#: model:account.account.template,name:l10n_eg_dvit.64300_meals_entertain
+msgid "Meals and Entertainment"
+msgstr "وجبات وترفيه"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500200_merchant_fees
+#: model:account.account.template,name:l10n_eg_dvit.500200_merchant_fees
+msgid "Merchant Account Fees"
+msgstr "رسوم حساب تجاري"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_base_miscexpense
+#: model:account.account.template,name:l10n_eg_dvit.base_miscexpense
+msgid "Miscellaneous Expense"
+msgstr "مصروفات نثرية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_base_miscincome
+#: model:account.account.template,name:l10n_eg_dvit.base_miscincome
+msgid "Miscellaneous Income"
+msgstr "ايرادات متنوعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_102100_national_bank
+#: model:account.account.template,name:l10n_eg_dvit.102100_national_bank
+msgid "National Bank"
+msgstr "البنك الاهلي الوطني"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_64900_office_supp
+#: model:account.account.template,name:l10n_eg_dvit.64900_office_supp
+msgid "Office Supplies"
+msgstr "مستلزمات مكتب"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_30000_open_balance
+#: model:account.account.template,name:l10n_eg_dvit.30000_open_balance
+msgid "Opening Balance Equity"
+msgstr "ارصدة ملكية افتتاحية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_108_other_current_assets
+#: model:account.account.template,name:l10n_eg_dvit.108_other_current_assets
+msgid "Other Current Assets"
+msgstr "اصول متداولة اخرى"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_7_other_income
+#: model:account.account.template,name:l10n_eg_dvit.7_other_income
+msgid "Other Income"
+msgstr "ايرادات متنوعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105900_Other_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105900_Other_inventory
+msgid "Other Inventory"
+msgstr "مخزون اخرى"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_120900_other_receivables
+#: model:account.account.template,name:l10n_eg_dvit.120900_other_receivables
+msgid "Other Receivables"
+msgstr "مقبوضات اخرى"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200_payable
+#: model:account.account.template,name:l10n_eg_dvit.200_payable
+msgid "Payable"
+msgstr "دائنون/مدفوعات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_66000_payroll_exp
+#: model:account.account.template,name:l10n_eg_dvit.66000_payroll_exp
+msgid "Payroll Expenses"
+msgstr "مصروفات مرتبات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200200_payroll_liabilities
+#: model:account.account.template,name:l10n_eg_dvit.200200_payroll_liabilities
+msgid "Payroll Liabilities"
+msgstr "التزامات مرتبات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_66500_postage_deliver
+#: model:account.account.template,name:l10n_eg_dvit.66500_postage_deliver
+msgid "Postage and Delivery"
+msgstr "بريد وشحن"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_66660_printing_reporduction
+#: model:account.account.template,name:l10n_eg_dvit.66660_printing_reporduction
+msgid "Printing and Reproduction"
+msgstr "طباعة واعلان"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_705000_assets_sold
+#: model:account.account.template,name:l10n_eg_dvit.705000_assets_sold
+msgid "Proceeds from Sale of Assets"
+msgstr "مبيعات اصول"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400100_general_product_sales
+#: model:account.account.template,name:l10n_eg_dvit.400100_general_product_sales
+msgid "Product Sales"
+msgstr "مبيعات بضاعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_66700_prof_fees
+#: model:account.account.template,name:l10n_eg_dvit.66700_prof_fees
+msgid "Professional Fees"
+msgstr "رسوم مهنية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_69350_prof_insurance
+#: model:account.account.template,name:l10n_eg_dvit.69350_prof_insurance
+msgid "Professional Liability"
+msgstr "نقابة ومسؤلية مهنية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500190_product_purchase_discount
+#: model:account.account.template,name:l10n_eg_dvit.500190_product_purchase_discount
+msgid "Purchase Discounts"
+msgstr "خصومات مشتريات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105100_raw_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105100_raw_inventory
+msgid "Raw Inventory"
+msgstr "مخزون خامات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_12_receivables
+#: model:account.account.template,name:l10n_eg_dvit.12_receivables
+msgid "Receivables"
+msgstr "مقبوضات/مدينون"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_103100_received_cheques
+#: model:account.account.template,name:l10n_eg_dvit.103100_received_cheques
+msgid "Received Cheques"
+msgstr "شيكات مستلمة / للتحصيل"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_103200_rejected_cheques
+#: model:account.account.template,name:l10n_eg_dvit.103200_rejected_cheques
+msgid "Rejected Cheques"
+msgstr "شيكات مرفوضة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_67100_rent_exp
+#: model:account.account.template,name:l10n_eg_dvit.67100_rent_exp
+msgid "Rent Expense"
+msgstr "مصروفات استإجار"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400400_rent_income
+#: model:account.account.template,name:l10n_eg_dvit.400400_rent_income
+msgid "Rent Income"
+msgstr "ايرادات تأجير"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_67200_repair_mainten
+#: model:account.account.template,name:l10n_eg_dvit.67200_repair_mainten
+msgid "Repairs and Maintenance"
+msgstr "صيانة واصلاح"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105500_retail_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105500_retail_inventory
+msgid "Retail Product Inventory"
+msgstr "مخزون تجاري"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_32000_retain_earn
+#: model:account.account.template,name:l10n_eg_dvit.32000_retain_earn
+msgid "Retained Earnings"
+msgstr "ارباح محجوزة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400300_product_sales_discount
+#: model:account.account.template,name:l10n_eg_dvit.400300_product_sales_discount
+msgid "Sales Discounts"
+msgstr "خصومات مبيعات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200400_sales_tax_pay
+#: model:account.account.template,name:l10n_eg_dvit.200400_sales_tax_pay
+msgid "Sales Tax Payable"
+msgstr "التزامات ضرائب مبيعات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105800_scrap_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105800_scrap_inventory
+msgid "Scrap inventory"
+msgstr "مخزون خردة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500500_service_related_costs
+#: model:account.account.template,name:l10n_eg_dvit.500500_service_related_costs
+msgid "Service Related Costs"
+msgstr "تكاليف خدمات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400200_general_service_sales
+#: model:account.account.template,name:l10n_eg_dvit.400200_general_service_sales
+msgid "Service Sales"
+msgstr "مبيعات خدمات"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_400800_product_shipping_income
+#: model:account.account.template,name:l10n_eg_dvit.400800_product_shipping_income
+msgid "Shipping and Delivery Income"
+msgstr "ايرادات شحن وتوصيل"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_105700_spare_parts_inventory
+#: model:account.account.template,name:l10n_eg_dvit.105700_spare_parts_inventory
+msgid "Spare Parts Inventory"
+msgstr "مخزون قطع غيار"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500550_subcontracted_services
+#: model:account.account.template,name:l10n_eg_dvit.500550_subcontracted_services
+msgid "Subcontracted services"
+msgstr "خدمات من الباطن"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500580_subcontract_exp
+#: model:account.account.template,name:l10n_eg_dvit.500580_subcontract_exp
+msgid "Subcontractors Expense"
+msgstr "مصاريف خدمات خارجية"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_68000_tax_property
+#: model:account.account.template,name:l10n_eg_dvit.68000_tax_property
+msgid "Taxes - Property"
+msgstr "ضريبة املاك"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_68100_telephone_exp
+#: model:account.account.template,name:l10n_eg_dvit.68100_telephone_exp
+msgid "Telephone Expense"
+msgstr "مصروفات هاتف"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_500900_tools_equip
+#: model:account.account.template,name:l10n_eg_dvit.500900_tools_equip
+msgid "Tools and Small Equipment"
+msgstr "معدات وادوات بناء"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_transfer_account
+#: model:account.account.template,name:l10n_eg_dvit.transfer_account
+msgid "Transfer Account"
+msgstr "حـ/ تحويل داخلي"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_68400_transport_travel
+#: model:account.account.template,name:l10n_eg_dvit.68400_transport_travel
+msgid "Travel Expense"
+msgstr "مصروفات انتقال وسفر"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_999999_undistributed_PL
+#: model:account.account.template,name:l10n_eg_dvit.999999_undistributed_PL
+msgid "Undistributed Profits/Losses"
+msgstr "ارباح/خسائر غير موزعة"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_200500_use_tax_pay
+#: model:account.account.template,name:l10n_eg_dvit.200500_use_tax_pay
+msgid "Use Tax Payable"
+msgstr "التزامات ضرائب استخدام"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_68600_utilities
+#: model:account.account.template,name:l10n_eg_dvit.68600_utilities
+msgid "Utilities"
+msgstr "فواتير مرافق"
+
+#. module: l10n_eg_dvit
+#: model:account.account,name:l10n_eg_dvit.1_69360_worker_compons
+#: model:account.account.template,name:l10n_eg_dvit.69360_worker_compons
+msgid "Worker's Compensation"
+msgstr "تعويضات عمال"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data noupdate="0">
+
+        <record id="group_marketplace_seller_staff" model="res.groups">
+            <field name="name">Marketplace Seller Staff </field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="implied_ids" eval="[(4, ref('odoo_marketplace.marketplace_seller_group'))]"/>
+        </record>
+
+        <!-- Seller Group Rules -->
+	    <record id="show_seller_staff_rule_only" model="ir.rule">
+	        <field name="name">Seller Staff only</field>
+	        <field name="model_id" ref="model_seller_staff"/>
+	        <field name="domain_force">[('partner_id','=',user.partner_id.id)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_seller_group'))]"/>
+	    </record>
+
+		<record id="odoo_marketplace.show_procurement_to_seller" model="ir.rule">
+	        <field name="name">Procurement Order For Seller</field>
+	        <field name="model_id" ref="procurement.model_procurement_order"/>
+	        <field name="domain_force">[("product_id.marketplace_seller_id.id","=",user.partner_id.id)]</field>
+	        <field name="perm_write" eval="1"/>
+	        <field name="perm_read" eval="1"/>
+	        <field name="perm_create" eval="1"/>
+	        <field name="perm_unlink" eval="0"/>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_seller_group'))]"/>
+	    </record>
+        
+
+	    <!-- Manager & officer group rules -->
+	    <record id="show_seller_staff_all_only" model="ir.rule">
+	        <field name="name">Seller All Staff</field>
+	        <field name="model_id" ref="model_seller_staff"/>
+	        <field name="domain_force">[(1,'=', 1)]</field>
+	        <field name="groups" eval="[(4, ref('odoo_marketplace.marketplace_manager_group')), (4, ref('odoo_marketplace.marketplace_officer_group'))]"/>
+	    </record>
+
+        <!-- Seller staff Group Rules -->
+	    <record id="allow_single_staff_rule_only" model="ir.rule">
+	        <field name="name">Single Staff only</field>
+	        <field name="model_id" ref="model_seller_staff"/>
+	        <field name="domain_force">[('user_id','=',user.id)]</field>
+            <field name="perm_write" eval="0"/>
+	        <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+	        <field name="groups" eval="[(4, ref('marketplace_customization.group_marketplace_seller_staff'))]"/>
+	    </record>
+
+    </data>
+</odoo>

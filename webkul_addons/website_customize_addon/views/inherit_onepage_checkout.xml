@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+
+		<template id="inherit_onepage_cart_review" inherit_id="website_onepage_checkout.onepage_cart_review" >
+            <xpath expr="//div[1]/div[hasclass('oe_cart')]/div[1]" position="before">
+                <div class="col-lg-5 col-sm-6 col-xs-12 text-muted pull-left" id="coupon_box">
+                    <h4>Coupon Code</h4>
+                    <p>
+                      Have a promo code? Fill in this field and apply.
+                    </p>
+                    <t t-if="code_not_available">
+                        <p class="bg-warning">This promo code is not available</p>
+                    </t>
+                    <t t-set="redirect" t-value="'/shop/checkout'"/>
+                    <form t-if="website_sale_order and website_sale_order.website_order_line" t-att-action="'/shop/pricelist%s' % (redirect and '?r=' + redirect or '')"
+                        method="post" class="mb32">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <div class="input-group">
+                            <input name="promo" class="form-control" type="text" placeholder="code..." t-att-value="website_sale_order.pricelist_id.code or None" />
+                            <div class="input-group-btn">
+                                <a class="btn btn-default a-submit">Apply</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+				<br/>
+            </xpath>
+			<xpath expr="//td[3]" position="inside">
+				<t t-if="not line.is_complemantory_line">
+					<t t-call="website_sale_offer.wk_product_sale_offer">
+						<span class="" t-set="product" t-value="line.product_id"/>
+					</t>
+				</t>
+				<t t-if="line.is_complemantory_line">
+					<br/>
+					<span class="label label-success" style="font-size:11px;">
+						<span> Free Bonus product.
+						</span>
+					</span>
+				</t>
+			</xpath>
+        </template>
+
+
+		<template id="inherit_onepage_checkout" inherit_id="website_onepage_checkout.onepage_checkout" name="onepage checkout inherit">
+			<xpath expr="//div[@id='headingOne']" position="replace">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" t-att-aria-expanded="'true' if not code_applied else 'false'" aria-controls="collapseOne">
+						  <t t-esc="wk_billing_panel_name"/>
+						  <span id="shipping-panel-data" t-att-data-shipping="'on' if wk_shipping_panel else 'off'"></span>
+						</a>
+					</h4>
+				</div>
+			</xpath>
+			<xpath expr="//div[@id='collapseOne']" position="replace">
+				<div id="collapseOne" t-att-class="'panel-collapse collapse' if code_applied else 'panel-collapse collapse in' " role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<t t-call="website_onepage_checkout.onepage_billing_kanban"></t>
+					</div>
+					<div class="clearfix" />
+					<div class="text-center">
+						<button type="button" class="btn btn-primary fa fa-arrow-down submit-billing-btn" href="#" name="Continue" style="margin-bottom:11px;">Continue</button>
+					</div>
+				</div>
+			</xpath>
+			<xpath expr="//div[@id='headingFive']" position="replace">
+				<div class="panel-heading" role="tab" id="headingFive">
+					<h4 class="panel-title">
+						<a class="collapsed hide_class" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" t-att-aria-expanded="'true' if code_applied else 'false'" aria-controls="collapseFive">
+							<t t-esc="wk_overview_and_payment_panel_name"/>
+						</a>
+					</h4>
+				</div>
+			</xpath>
+			<xpath expr="//div[@id='collapseFive']" position="replace">
+				<div id="collapseFive" t-att-class="'panel-collapse collapse in' if code_applied else 'panel-collapse collapse' " role="tabpanel" aria-labelledby="heading">
+					<div class="panel-body">
+						<t t-call="website_onepage_checkout.onepage_cart_review"/>
+						<t t-call="website_onepage_checkout.onepage_payment_method"></t>
+					</div>
+				</div>
+			</xpath>
+		</template>
+
+		<template id="sale_offer_info_on_sellers_product_list" inherit_id="marketplace_product_price_comparison.wk_mp_product_other_seller_page" name="Custom Product Other Seller Info">
+            <xpath expr="//span[@name='sold_by']" position="inside">
+				<br/>
+                <t t-call="website_sale_offer.wk_product_sale_offer">
+                    <span class="" t-set="product" t-value="other_seller_product"/>
+                </t>
+            </xpath>
+            <xpath expr="//td[@name='product_add_to_cart']" position="inside">
+                <a class="btn btn-primary btn-lg pull-right mt4" t-attf-href="/shop/product/#{other_seller_product.id}" target="_blank">
+                    View Product Details
+                </a>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

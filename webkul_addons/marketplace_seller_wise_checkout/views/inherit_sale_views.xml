@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+		<record id="mp_seller_checkout_inherit_view_order_form" model="ir.ui.view">
+			<field name="name">sale.order.form.inherit.checkout</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form/sheet//field[@name='payment_term_id']" position="after">
+					<field name="marketplace_seller_id" readonly="1" groups="odoo_marketplace.marketplace_officer_group"/>
+				</xpath>
+			</field>
+		</record>
+    </data>
+</odoo>

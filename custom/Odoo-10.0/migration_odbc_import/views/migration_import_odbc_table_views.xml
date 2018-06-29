@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="migration_import_odbc_table_form_view" model="ir.ui.view">
+        <field name="name">migration.import.odbc.table form view</field>
+        <field name="model">migration.import.odbc.table</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+      	            <button type="object" name="import_table_data_wrapper" string="Import Table Data"/>
+      	            <button type="object" name="validate" string="Validate"/>
+      	            <!--<button type="object" name="get_table_relationships" string="Fetch FK"/>-->
+      	        </header>
+      	        <group>
+      	            <field name="import_id"/>
+      	            <field name="name"/>
+      	            <field name="model_id"/>
+      	            <field name="where_clause"/>
+      	            <field name="db_field_ids" context="{'default_model_id':model_id}">
+      	                <tree colors="red:valid=='invalid';green:valid=='valid'" editable="bottom">
+      	                    <field name="name"/>
+      	                    <field name="orm_type" invisible="True"/>
+      	                    <field name="orm_name" invisible="True"/>
+      	                    <field name="model_id" invisible="True"/>
+      	                    <field name="is_key" invisible="True"/>
+      	                    <field name="field_id" attrs="{'readonly': [('is_key', '=', True)]}" domain="[('model_id','=',model_id)]" context="{'default_ttype':orm_type, 'default_name': orm_name, 'default_field_description':name, 'default_model_id':model_id}"/>
+      	                    <button type="object" name="define_relationship" string="Define Relationship"/>
+      	                    <button type="object" name="find_distinct_values" string="Distinct Values"/>
+      	                    <button type="object" name="auto_create_field" string="Auto Create Field"/>
+      	                    <button type="object" name="open_line" string="Edit Field"/>
+      	                    <field name="valid"/>
+      	                </tree>
+      	            </field>
+                    <field name="default_value_ids" context="{'default_model_id':model_id}">
+                        <tree editable="bottom">
+                            <field name="model_id" invisible="True"/>
+                            <field name="field_id" domain="[('model_id','=',model_id)]"/>
+                            <field name="value"/>
+                        </tree>
+                    </field>
+                    <field name="file_download_ids" context="{'default_model_id':model_id}">
+                        <tree editable="bottom">
+                            <field name="model_id" invisible="True"/>
+                            <field name="field_id" domain="[('model_id','=',model_id)]"/>
+                            <field name="download_url"/>
+                        </tree>
+                    </field>
+                    <field name="relationship_ids">
+                        <tree>
+                            <field name="table1_id_field"/>
+                            <field name="table2"/>
+                            <field name="table2_id_field"/>
+                            <field name="table2_name_field"/>
+                            <field name="relationship_type"/>
+                        </tree>
+                    </field>
+      	            <field name="select_sql"/>
+      	        </group>
+      	    </form>
+      	</field>
+    </record>
+
+</odoo>

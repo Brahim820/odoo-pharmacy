@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <template id="inherit_wk_demo_home_page_product_pack" name="Marketplace Product Pack Homepage" inherit_id="demo_odoo_marketplace.wk_demo_home_page">
+            <xpath expr="//*[@id='wk_demo_error_modal']" position="after">
+                <div style="        position: absolute;
+                                    top: 301px;
+                                    color: white;
+                                    left: 594px;
+                                    font-weight: bold;
+                                    font-size: 34px;">
+                <i class="fa fa-plus" aria-hidden="true" style="position: relative;left: 150px;top: 6px;"></i>
+                <br/>
+                Odoo Marketplace Seller Wise Checkout
+            </div>
+            </xpath>
+            <xpath expr="//t[@t-call='website.layout']/div[3]" position="after">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center;">
+                                <h3 class="wk_underline">
+                                   <i class="fa fa-plus" aria-hidden="true" style="position: relative;left: 264px;bottom: 36px;"></i>
+                                          Odoo Marketplace Seller Wise Checkout
+                                </h3>
+                            </div>
+                            <div class="col-md-12 col-md-12 mt8 mb16">
+                                <p style="text-align: center;" class="wk_text2 mt8">
+                                   Odoo Marketplace Seller Wise Checkout provides facility to .
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

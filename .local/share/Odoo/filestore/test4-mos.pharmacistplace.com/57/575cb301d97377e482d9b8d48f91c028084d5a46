@@ -1,0 +1,51 @@
+
+/* Copyright 2016 LasLabs Inc.
+ * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). */
+.main-nav {
+  margin-bottom: 0;
+  min-height: 25px;
+}
+.main-nav ul.nav > li > a {
+  padding: 8px 7.5px;
+}
+.oe_topbar_avatar {
+  margin-top: -7.5px;
+  height: 25px;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  a.navbar-collapse.collapse {
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+}
+.dropdown-scrollable {
+  overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  #odooMenuBarNav[aria-expanded="false"] {
+    /* Hack to hide the visibly expanded mobile menu on load. */
+    position: absolute;
+    z-index: -9999;
+  }
+}
+.navbar {
+  border-radius: 0px;
+}
+.panel-heading {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-left: -15px;
+  margin-right: 0;
+}
+.app-name {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  margin-right: 25px;
+}

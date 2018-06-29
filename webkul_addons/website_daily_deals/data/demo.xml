@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="wk_deals_pricelist" model="product.pricelist">
+            <field name="name">Deals Pricelist</field>
+            <field name="sequence">1</field>
+            <field name="discount_policy">without_discount</field>
+            <field name="selectable">True</field>
+            <field name="website_id" ref="website.default_website" />
+        </record>
+        <function id="show_page_header_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'show_page_header', True)"/>
+        <function id="page_header_text_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'page_header_text', 'DONT MISS A DEAL THIS TIME')"/>
+        <function id="item_to_show_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'item_to_show', 'both')"/>
+        <function id="display_products_as_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'display_products_as', 'grid')"/>
+        <function id="wk_pricelist_d" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'wk_pricelist', ref('website_daily_deals.wk_deals_pricelist'))"/>
+        <function id="show_message_before_expiry_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'show_message_before_expiry', True)"/>
+        <function id="message_before_expiry_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'message_before_expiry', 'Hurry Up!!! This deal is about to expire.')"/>
+        <function id="message_before_expiry_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'message_before_expiry', 'Hurry Up!!! This deal is about to expire.')"/>
+        <function id="show_message_after_expiry_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'show_message_after_expiry', True)"/>
+        <function id="message_after_expiry_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'message_after_expiry', 'Opps!! This deal has been expired.')"/>
+         <function id="interval_before_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'interval_before', 5)"/>
+         <function id="unit_of_time_id" model="ir.values" name="set_default"
+        eval="('website.daily.deals.conf', 'unit_of_time','hours' )"/>
+
+        <record id="daily_deals_template_1" model="product.template">
+            <field name="name">Woollen Coat</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/15.png"></field>
+        </record>
+
+        <record id="daily_deals_template_2" model="product.template">
+            <field name="name">Woollen Sweater</field>
+            <field name="standard_price">305.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/16.png"></field>
+        </record>
+        <record id="daily_deals_template_3" model="product.template">
+            <field name="name">Baby Shoes</field>
+            <field name="standard_price">200.0</field>
+            <field name="list_price">180.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+        <field name="image" type="base64" file="website_daily_deals/static/description/14.png"></field>
+        </record>
+        <record id="daily_deals_template_4" model="product.template">
+            <field name="name">Ladies Bag</field>
+            <field name="standard_price">150.0</field>
+            <field name="list_price">140.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/1.png"></field>
+        </record>
+        <record id="daily_deals_template_5" model="product.template">
+            <field name="name">Ladies Sandels</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/10.png"></field>
+        </record>
+         <record id="daily_deals_template_5" model="product.template">
+            <field name="name">Ladies Shoes</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/2.png"></field>
+        </record>
+        <record id="daily_deals_template_5" model="product.template">
+            <field name="name">Gents Suits</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/8.png"></field>
+        </record>
+        <record id="daily_deals_template_6" model="product.template">
+            <field name="name">Ladies Shoes high Heel</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/6.png"></field>
+        </record>
+        <record id="daily_deals_template_7" model="product.template">
+            <field name="name">Transparent Googles</field>
+            <field name="standard_price">300.0</field>
+            <field name="list_price">280.0</field>
+            <field name="type">product</field>
+            <field name="website_published">True</field>
+            <field name="image" type="base64" file="website_daily_deals/static/description/12.png"></field>
+        </record>
+
+        <record id="daily_deals_1" model="website.deals">
+            <field name="name">Winter Sale</field>
+            <field name="title">Get a heavy discount on the winter collection</field>
+            <field name="banner" type="base64" file="website_daily_deals/static/description/5.png"></field>
+            <field name="products" eval="[(0, 0, {'applied_on':'1_product', 'product_tmpl_id': ref('daily_deals_template_1'),'percent_price':20,'compute_price':'percentage'}),(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_2'),'percent_price':25,'compute_price':'percentage'}),(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_3'),'percent_price':30,'compute_price':'percentage'})]"/>
+            <field name="state">validated</field>
+        </record>
+
+        <record id="daily_deals_2" model="website.deals">
+            <field name="name">Summer Sale</field>
+            <field name="title">Get a heavy discount on the summer collection</field>
+            <field name="overide_config">True</field>
+            <field name="display_products_as">slider</field>
+            <field name="banner" type="base64" file="website_daily_deals/static/description/4.png"></field>
+            <field name="products" eval="[(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_4'),'percent_price':20,'compute_price':'percentage'}),(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_5'),'percent_price':25,'compute_price':'percentage'}),(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_6'),'percent_price':30,'compute_price':'percentage'}),(0, 0, {'applied_on':'1_product','product_tmpl_id': ref('daily_deals_template_7'),'percent_price':35,'compute_price':'percentage'})]"/>
+            <field name="state">validated</field>
+        </record>
+       
+        <record model="res.groups" id="base.group_user">
+        <field name="implied_ids" eval="[(4, ref('product.group_sale_pricelist')),(4, ref('sale.group_discount_per_so_line')),]"/>
+    </record>
+
+        <function id="sale_pricelist_setting" model="ir.values" name="set_default"
+        eval="('sale.config.settings', 'sale_pricelist_setting', 'formula')"/>
+
+    </data>
+</openerp>

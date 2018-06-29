@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+##########################################################################
+# Author      : Webkul Software Pvt. Ltd. (<https://webkul.com/>)
+# Copyright(c): 2016-Present Webkul Software Pvt. Ltd.
+# All Rights Reserved.
+#
+#
+#
+# This program is copyright property of the author mentioned above.
+# You can`t redistribute it and/or modify it.
+#
+#
+# You should have received a copy of the License along with this program.
+# License URL :<https://store.webkul.com/license.html/>
+##########################################################################
+from odoo import models,fields,api,_
+from openerp.exceptions import Warning, UserError
+
+import logging
+_logger = logging.getLogger(__name__)
+
+class SellerBannerImage(models.Model):
+    _name = "seller.banner.image"
+    _order = "sequence"
+
+    image = fields.Binary(string="Profile Banner", required=1, copy=False)
+    sequence = fields.Integer(help="Determine the display order", default=1)
+    url = fields.Char(string="URL")
+    in_carousel = fields.Boolean(string='Show in Slider', default=True)
+    partner_id = fields.Many2one('res.partner',String="Seller")
+    shop_id = fields.Many2one('seller.shop',string="Shop")
+
+    @api.model
+    def create(self,vals):
+        if not vals.get('image'):
+            raise UserError('No banner uploaded, please upload a banner before saving.')
+        return super(SellerBannerImage , self).create(vals)

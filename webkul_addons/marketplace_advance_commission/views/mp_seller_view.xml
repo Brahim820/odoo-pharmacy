@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="inherit_wk_seller_kanban_view" model="ir.ui.view">
+            <field name="name">seller.kanban</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_kanban_view"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban/templates/t/div/div[2]/div[2]/ul/li[7]" position="after">
+                    <span t-if="record.comm_method.raw_value">
+                        <li><b>Commission: </b><field name="comm_method"/></li>
+                    </span>
+                    <span t-if="record.comm_method.raw_value == 'percent'">
+                        <li>( <field name="commission"/>% )</li>
+                    </span>
+                    <span t-if="record.comm_method.raw_value == 'fix'">
+                        <li>( <field name="fix_commission" widget="monetary" options="{'currency_field': 'seller_currency_id'}"/> )</li>
+                    </span>
+                    <span t-if="record.comm_method.raw_value == 'percent_and_fix'">
+                        <li>( <field name="commission"/>% + <field name="fix_commission" widget="monetary" options="{'currency_field': 'seller_currency_id'}"/> )</li>
+                    </span>
+                    <span t-if="record.comm_method.raw_value == 'fix_and_percent'">
+                        <li>( <field name="fix_commission" widget="monetary" options="{'currency_field': 'seller_currency_id'}"/> + <field name="commission"/>% )</li>
+                    </span>
+                </xpath>
+                <xpath expr="//kanban/templates/t/div/div[2]/div[2]/ul/li[7]" position="replace">
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

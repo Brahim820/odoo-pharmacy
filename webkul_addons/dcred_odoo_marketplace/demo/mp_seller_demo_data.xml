@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+    	<!-- Marketplace approved Sellers -->
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller1">
+            <field name="name">Bryon Jun</field>
+            <field name="url_handler">bryon-jun</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">bryon-jun@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller1.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller1.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner1.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller1')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller1_user" context="{'no_reset_password': True}">
+        	<field name="login">bryon-jun@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller1"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller2">
+            <field name="name">Maya Anand</field>
+            <field name="url_handler">maya-anand</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">maya-anand@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller2.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller2.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner2.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller2')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller2_user" context="{'no_reset_password': True}">
+        	<field name="login">maya-anand@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller2"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller3">
+            <field name="name">George Horne</field>
+            <field name="url_handler">george-horne</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">george-horne@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller3.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller3.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner3.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller3')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller3_user" context="{'no_reset_password': True}">
+        	<field name="login">george-horne@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller3"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller4">
+            <field name="name">Ryan Solly</field>
+            <field name="url_handler">ryan-solly</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">ryan-solly@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller4.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller4.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner4.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller4')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller4_user" context="{'no_reset_password': True}">
+        	<field name="login">ryan-solly@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller4"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller5">
+            <field name="name">Blake Clancy</field>
+            <field name="url_handler">blake-clancy</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">blake-clancy@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller5.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller5.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner5.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller5')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller5_user" context="{'no_reset_password': True}">
+        	<field name="login">blake-clancy@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller5"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller6">
+            <field name="name">Molly Raws</field>
+            <field name="url_handler">molly-raws</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">approved</field>
+            <field name="email">molly-raws@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller6.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller6.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner6.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller6')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller6_user" context="{'no_reset_password': True}">
+        	<field name="login">molly-raws@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_group'),ref('base.group_portal')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller6"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <!-- denied sellers -->
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller7_deny">
+            <field name="name">Brooke Daniels</field>
+            <field name="url_handler">brooke-daniels</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">denied</field>
+            <field name="email">brooke-daniels@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller7.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller7.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner7.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller7_deny')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller7_deny_user" context="{'no_reset_password': True}">
+        	<field name="login">brooke-daniels@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_draft_seller_group')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller7_deny"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller8_deny">
+            <field name="name">Ryan Cooper</field>
+            <field name="url_handler">ryan-cooper</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">denied</field>
+            <field name="email">ryan-cooper@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller8.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller8.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner8.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller8_deny')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller8_deny_user" context="{'no_reset_password': True}">
+        	<field name="login">ryan-cooper@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_draft_seller_group')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller8_deny"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <!-- Pending Sellers -->
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller9_pending">
+            <field name="name">Sam Iqbal</field>
+            <field name="url_handler">sam-iqbal</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">pending</field>
+            <field name="email">sam-iqbal@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller9.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller9.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner9.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller9_pending')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller9_pending_user" context="{'no_reset_password': True}">
+        	<field name="login">sam-iqbal@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_draft_seller_group')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller9_pending"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+        <record model="res.partner" id="dcred_odoo_marketplace.wk_mp_seller10_pending">
+            <field name="name">Harrison Skinner</field>
+            <field name="url_handler">harrison-skinner</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="seller" eval="True"/>
+            <field name="payment_method" eval="[(6,0,[ref('odoo_marketplace.marketplace_seller_payment_method_data1')])]"/>
+            <field name="state">pending</field>
+            <field name="email">harrison-skinner@test.com</field>
+            <field name="warehouse_id" ref="stock.warehouse0"/>
+            <field name="image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller10.jpg"/>
+            <!-- <field name="profile_image" type="base64" file="dcred_odoo_marketplace/static/img/Seller/seller10.jpg"/>
+            <field name="profile_banner" type="base64" file="dcred_odoo_marketplace/static/img/Banner/banner10.jpg"/> -->
+            <field name="return_policy" type="html"><p>You have 30 calender days to return an item from the day you received it.</p>
+                <p>Your item must be in the original packaging.</p>
+                <p>To be eligible for the return, your item must be unused and should be in the same condition in which you received it.</p>
+                <p>Your items need to have the receipt or proof of purchase.</p></field>
+            <field name="shipping_policy"  type="html">
+                <p>Thanks for visiting and shopping at my site</p>
+                <p>shipping processing time</p>
+                <p>All orders are processed within 2-3 business days.Orders are not shipped or delivered on weekends or holidays</p>
+                <p>If we are experiencing a high volume of orders, shipment may be delayed for few days.Please allow additional days in transit for delivery. If there will be significant delay in shipment of your order we will inform you via email or text message</p>
+                <p>Shipping rates and delivery charges are calculated as per the shipping method opted and estimated delivery time that may vary on the method select for shipment</p>
+                <p>Delivery delays can occasionally occur.</p>
+            </field>
+        </record>
+
+        <function model="res.partner" name="set_warehouse_data" eval="[ref('dcred_odoo_marketplace.wk_mp_seller10_pending')]"/>
+
+        <record model="res.users" id="dcred_odoo_marketplace.wk_mp_seller10_pending_user" context="{'no_reset_password': True}">
+        	<field name="login">harrison-skinner@test.com</field>
+            <field name="password">webkul</field>
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_draft_seller_group')])]"/>
+            <field name="partner_id" ref="dcred_odoo_marketplace.wk_mp_seller10_pending"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+        </record>
+
+    </data>
+</odoo>

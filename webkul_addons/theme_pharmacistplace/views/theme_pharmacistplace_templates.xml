@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Theme Pharmacistplace Assets Frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" href="/theme_pharmacistplace/static/src/less/variables.less"/>
+            <link rel="stylesheet" href="/theme_pharmacistplace/static/src/less/theme_pharmacistplace_templates.less"/>
+            <link rel="stylesheet" href="/theme_pharmacistplace/static/src/css/theme_pharmacistplace_templates.css"/>
+            <link rel="stylesheet" href="/theme_pharmacistplace/static/src/css/bootstrap_pannel.css"/>
+        </xpath>
+    </template>
+
+    <template id="footer_custom" inherit_id="website.layout" name="Footer">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div class="oe_structure" id="footer">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12 wk_footer_left">
+                                <div class="row">
+                                    <!-- <div class="col-md-6"> -->
+                                        <div class="col-md-3 col-xs-6">
+                                            <h4 class="">Info</h4>
+                                            <ul class="list-unstyled">
+                                                <li class="" style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 col-xs-6">
+                                            <h4 class="">Find Products</h4>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <div class="col-md-3 col-xs-6">
+                                            <h4 class="">Help</h4>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 col-xs-6">
+                                            <h4 class="">Distributor</h4>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-unstyled">
+                                                <li style="white-space: initial;">
+                                                    <a href="/page/website.contactus">
+                                                        <span class="footer_link_icon"></span>
+                                                        <span>Contact us</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 wk_left_border wk_js_count_div">
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-6">
+                                        <div class="pp-brand-primary wk_js_count">
+                                            15,065
+                                        </div>
+                                        <div class="wk_js_count_label">
+                                            Pharmacies
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 wk_left_border">
+                                        <div class="pp-brand-primary wk_js_count" style="float:right">
+                                            15,065
+                                        </div>
+                                        <div class="wk_js_count_label" style="float:right">
+                                            Distributor
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt32">
+                                    <div class="col-md-12 col-xs-12">
+                                        <p class="pp-label-footer">
+                                            Subscribe to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:
+                                        </p>
+                                        <form>
+                                            <div class="input-group">
+                                                <span class="input-group-addon pp-bg-info" style="border-right: 0px;border-color: #b3b3b3;">
+                                                    <i class="fa fa-envelope pp-text-white"></i>
+                                                </span>
+                                                <input style="border-left: 0px;border-color: #b3b3b3;" id="pp_news_latter" type="text" class="form-control pp-bg-info" name="msg" placeholder="Enter Your Email"/>
+                                                <span class="input-group-btn" style="border-color: #b3b3b3;">
+                                                    <button class="btn btn-primary" type="submit"> Subscribe </button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="theme_pharmacistplace_layout_footer_copyright" inherit_id="website.layout" name="Footer Copyright">
+        <xpath expr="//footer" position="inside">
+            <div class="oe_structure" id="footer_copyright">
+                <section class="pp-bg-primary">
+                    <div class="container" style="padding-top: 24px; padding-bottom: 24px;">
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12" itemscope="itemscope" itemtype="http://schema.org/Organization" id="footer_copyright_msg">
+                                <p class="pp-label-white">
+                                    Copyright &amp;copy; 2018
+                                    <span t-field="res_company.name" itemprop="name">Company name</span>, A Maarcare Solution. All Rights Reserved.
+                                </p>
+                                <p class="pp-label-white">
+                                    <a href="/page/legal">Terms of Use</a> / <a href="/page/privacy">Privacy Policy</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="list-unstyled">
+                                            <li class="pull-right">
+                                                <a class="social-media-link" t-att-href="website.social_facebook" t-if="website.social_facebook">
+                                                    <i class="fa fa-facebook"/>
+                                                </a>
+                                                <a class="social-media-link" t-att-href="website.social_twitter" t-if="website.social_twitter">
+                                                    <i class="fa fa-twitter"/>
+                                                </a>
+                                                <a class="social-media-link" t-att-href="website.social_linkedin" t-if="website.social_linkedin">
+                                                    <i class="fa fa-linkedin"/>
+                                                </a>
+                                                <a class="social-media-link" t-att-href="website.social_youtube" t-if="website.social_youtube">
+                                                    <i class="fa fa-youtube-play"/>
+                                                </a>
+                                                <a class="social-media-link" t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher">
+                                                    <i class="fa fa-google-plus"/>
+                                                </a>
+                                                <a class="social-media-link" t-att-href="website.social_github" t-if="website.social_github">
+                                                    <i class="fa fa-github"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div t-if="res_company.email" class="pp-label-white col-xs-12 col-md-7">
+                                        <i class="fa fa-envelope"></i>
+                                        <span t-field="res_company.email"></span>
+                                    </div>
+                                    <div t-if="res_company.phone" class="pp-label-white pull-right col-xs-12 col-md-5">
+                                        <i class="fa fa-phone"></i>
+                                        <span t-field="res_company.phone"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- PP header shoulde be seprate but not in use now -->
+    <!-- <template id="pharmacistplace_header" name="Pharmacistplace Header Layout">
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-top-collapse">
+                        <ul class="nav navbar-nav navbar-right" id="top_menu">
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu"/>
+                            </t>
+                            <li class="wk_divider" t-ignore="true" t-if="website.user_id != user_id"/>
+                            <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <b>
+                                        <span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"/>
+                                        <span class="caret"></span>
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu js_usermenu" role="menu">
+                                    <li id="o_logout"><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </template> -->
+
+    <template id="language_selector_drop_down">
+        <li class="dropdown" t-ignore="true" t-if="(request and request.website_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <b>
+                    <t t-foreach="languages" t-as="lgs">
+                        <t t-if="request.lang and request.lang==lgs[0]">
+                            <t t-esc="lgs[1].split('/').pop()"/></t>
+                    </t>
+                    <i class="fa fa-angle-down"></i>
+                </b>
+            </a>
+            <ul class="dropdown-menu js_language_selector" role="menu">
+                <t t-foreach="languages" t-as="lg">
+                    <li t-att-class="'active' if request.lang== lg[0] else None">
+                        <a t-att-data-lang="lg[0]" t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])" class="">
+                            <t t-esc="lg[1].split('/').pop()"/>
+                        </a>
+                    </li>
+                </t>
+                <li groups="website.group_website_publisher">
+                    <t t-set="url_return" t-value="url_for('', '[lang]') + '?' + keep_query()"/>
+                    <a t-attf-href="/web#action=base.action_view_base_language_install&amp;website_id=#{website.id}&amp;url_return=#{url_return}" class="">
+                        <i class="fa fa-plus-circle"/>Add...
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </template>
+
+    <template id="theme_pharmacistplace_layout" inherit_id="website.layout">
+        <xpath expr="//header" position="replace">
+            <header>
+                <div class="navbar navbar-xs navbar-pharmacistplace navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand hidden-md hidden-lg hidden-xl hidden-sm" href="/" t-if="website" t-field="website.name">My Website</a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-top-collapse">
+                            <ul class="nav navbar-nav" id="top_menu_left">
+                                <li>
+                                    <t t-call="theme_pharmacistplace.language_selector_drop_down"/>
+                                </li>
+                                <li class="remove_li_border" t-if="website.user_id != user_id">
+                                    <a href="#" class="">
+                                        <i class="fa fa-bell" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown">
+                                        <b>
+                                            <span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"/>
+                                            <span class="caret"></span>
+                                        </b>
+                                    </a>
+                                    <ul class="dropdown-menu js_usermenu" role="menu">
+                                        <li>
+                                            <a href="/my/home" t-if="website.user_id != user_id">
+                                                My Account
+                                            </a>
+                                        </li>
+                                        <li id="o_logout">
+                                            <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" class="">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li style="padding: 3px 15px 0px 15px;" id="upgrade_btn" t-if="website.user_id != user_id">
+                                    <!-- <a href="#" class="">
+                                        Upgrade Smart Pharmacy
+                                        <i class="fa fa-angle-right"></i>
+                                    </a> -->
+                                    <button class="btn btn-info btn-sm upgrade_btn_shadow">
+                                        Upgrade Smart Pharmacy
+                                        <i class="fa fa-angle-right"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav pull-right" id="top_menu">
+                                <li class="">
+                                    <a href="#" class="">
+                                        Help <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/wishlist" class="">
+                                        <span>List</span>
+                                        <span class="list_icon"></span>
+                                        <!-- <sup t-attf-class="my_wishlist_quantity label label-primary">
+                                            <t t-esc="len(website.get_wishlist_products()) or ''"/>
+                                        </sup> -->
+                                    </a>
+                                </li>
+                                <li class="dropdown" t-ignore="true">
+                                    <a href="/shop/cart" class="">
+                                        Cart
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class="fa fa-angle-down" style="margin-left: 5px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="oe_structure" id="layout_footer_copyright">
+                <section class="" style="border-bottom:1px solid #e5e5e5">
+                    <div class="container">
+                        <div class="row" style="padding: 10px 0px 10px 0px;">
+                            <div class="col-md-4">
+                                <a href="/" class="">
+                                    <img src="/logo.png" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" style="max-height: 70px;"/>
+                                </a>
+                            </div>
+                            <div class="col-md-4 text-center" style="padding-top:20px;">
+                                <form class="form-inline">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary all_product_btn_shadow" type="submit">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4" style="padding-top: 20px;display: flex;justify-content:flex-end;">
+                                <a href="/shop" class="btn btn-primary all_product_btn_shadow" style="margin-right: 20px;">
+                                    <span class="all_product_icon"></span>
+                                    <span>All Products</span>
+                                    <!-- <i class="fa fa-medkit" aria-hidden="true"></i>
+                                    All Products -->
+                                </a>
+                                <span class="menu_icon">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- <template id="website.show_sign_in" customize_show="True" inherit_id="website.layout" name="Show Sign In">
+
+    </template> -->
+
+    <template id="theme_pharmacistplace_show_sign_in" inherit_id="theme_pharmacistplace.theme_pharmacistplace_layout" name="Theme Pharmacistplace Show Sign In">
+        <xpath expr="//ul[@id='top_menu_left']" position="inside">
+            <li groups="base.group_public">
+                <a t-attf-href="/web/login">
+                    <button class="btn btn-sm btn-primary btn-round-sm" style="border-color:#ffffff;width: 80px;">Login</button>
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="inherit_website_layout_footer_copyright" inherit_id="website.layout_footer_copyright">
+        <div class="container mt16 mb8" position="attributes">
+            <attribute name="style">display:None;</attribute>
+        </div>
+        <!-- <xpath expr="//div[hasclass('container mt16 mb8')]" position="replace"/> -->
+    </template>
+
+    <!-- <template id="pp_show_sign_in" customize_show="True" inherit_id="website.show_sign_in" name="Show Sign In">
+        <li class="divider" position="replace"/>
+        <xpath expr="//li[@groups='base.group_public']" position="replace">
+            <li groups="base.group_public">
+                <a class="" t-attf-href="/web/login">
+                    <button class="btn btn-sm btn-primary btn-round-sm" style="border-color:#ffffff;width: 80px;">Login</button>
+                </a>
+            </li>
+        </xpath>
+    </template> -->
+
+    <!-- <template id="website.layout_logo_show" inherit_id="website.layout" customize_show="False" name="Show Logo" active="False"></template> -->
+
+</odoo>

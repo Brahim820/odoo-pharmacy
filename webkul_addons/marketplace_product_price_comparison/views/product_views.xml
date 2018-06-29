@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+
+    <record id="wk_mp_global_products_form_view" model="ir.ui.view">
+        <field name="name">Global Product</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <form string="Global products" create="0" delete="0">
+            <div class="oe_button_box " name="mp_p_c_button_box">
+                    <button name="toggle_global_product" type="object" class="oe_stat_button" icon="fa-share-alt" string="Global Product" attrs="{'invisible':[('is_global_product','==',False)]}" help="Click to remove this product from global product list.">
+                        <field name="is_global_product"  invisible="1"/>
+                    </button>
+                    <button name="toggle_global_product" type="object" class="oe_stat_button" icon="fa-share-alt" attrs="{'invisible':[('is_global_product','==',True)]}" string="Not a Global Product" help="Click to add this product to global product list.">
+                        <field name="is_global_product"  invisible="1"/>
+                    </button>
+                    <button name="toggle_website_published" type="object"
+                            class="oe_stat_button" icon="fa-globe">
+                        <field name="website_published" widget="website_button"/>
+                    </button>
+                </div>
+                <field name="image" widget="image" class="oe_avatar oe_left"/>
+
+                <div class="oe_title" style="height: 106px;width:61%">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <label for="list_price"/>
+                    <field name="list_price" readonly="1" widget="monetary"/>
+                    <br/>
+                    <label for="marketplace_seller_id" attrs="{'invisible':[('marketplace_seller_id', '=', False)]}" string="Seller"/>
+                    <field name="marketplace_seller_id" attrs="{'invisible':[('marketplace_seller_id', '=', False)]}" readonly="1"/>
+                    <div attrs="{'invisible':['|',('criteria_to_dispaly_one_product', '!=', 'manual'), ('mp_display', '=', True)]}">
+                        <b>Display: </b><span style="color:red">No</span>
+                        <button class="badge ml8 fa fa-globe" string="Display It" name="set_mp_display" type="object"/>
+                    </div>
+                    <div attrs="{'invisible':['|',('criteria_to_dispaly_one_product', '!=', 'manual'), ('mp_display', '=', False)]}">
+                        <b>Display: </b><span style="color:green">Yes</span>
+                    </div>
+                </div>
+                <br/>
+                <group invisible="1">
+                  <field name="criteria_to_dispaly_one_product" invisible="1"/>
+                  <field name="mp_display" invisible="1"/>
+                  <field name="wk_hide_on_web" invisible="1"/>
+                </group>
+                <label for="seller_product_ids"/>
+                <field colspan="4" name="seller_product_ids" widget="many2many_kanban" options="{'no_create': True}" context="{'form_view_ref':'odoo_marketplace.wk_seller_product_template_form_view'}">
+                    <kanban string="Comparison Products">
+                        <field name="image_small"/>
+                        <field name="lst_price"/>
+                        <field name="mp_display"/>
+                        <field name="criteria_to_dispaly_one_product"/>
+                        <field name="currency_id"/>
+                        <field name="status"/>
+                        <field name="website_published"/>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div class="oe_kanban_global_click" >
+                                    <div class="o_kanban_image">
+                                        <img t-att-src="kanban_image('product.template', 'image_small', record.id.value)"/>
+                                    </div>
+                                    <div class="oe_kanban_details">
+                                        <strong>
+                                            <span t-if="record.default_code.value">[<field name="default_code"/>]</span>
+                                            <field name="name"/>
+                                        </strong>
+
+                                        <div name="tags"/>
+                                        <ul>
+                                            <li>Price: <field name="lst_price" widget="monetary"/></li>
+                                            <li>Status: <field name="status"/></li>
+                                            <li t-if="record.website_published.raw_value"><span style="color:green">Published On Webiste</span></li>
+                                            <li t-if="!record.website_published.raw_value"><span style="color:red">Not Published On Webiste</span></li>
+                                            <li t-if="record.criteria_to_dispaly_one_product.raw_value == 'manual' and record.status.raw_value == 'approved'">Display:
+                                                <span t-if="record.mp_display.raw_value"><span style="color:green">Yes</span></span>
+                                                <span t-if="!record.mp_display.raw_value"><span style="color:red">No</span></span>
+                                                <span t-if="record.criteria_to_dispaly_one_product.raw_value == 'manual' and !record.mp_display.raw_value">
+                                                    <button class="badge" string="Display It" name="set_mp_display" type="object">
+                                                      <i class="fa fa-fw fa-globe"></i>
+                                                    </button>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <div name="tags"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                </field>
+             </form>
+        </field>
+    </record>
+
+    <record id="wk_mp_global_products_tree_view" model="ir.ui.view">
+        <field name="name">Global products tree view</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <tree string="Global products" create="0" delete="0">
+                <field name="name"/>
+                <field name="list_price"/>
+                <field name="website_published" string="Visible On Website"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="inherit_mp_product_template_form_view" model="ir.ui.view">
+        <field name="name">product.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="id" position="after">
+                <field name="global_product_tmpl_id" invisible="1"/>
+            </field>
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'readonly': [('global_product_tmpl_id', '!=', False)]}</attribute>
+            </field>
+            <field name="public_categ_ids" position="attributes">
+                <attribute name="attrs">{'readonly': [('global_product_tmpl_id', '!=', False)]}</attribute>
+            </field>
+            <notebook position="after">
+                <br/>
+                <div style="border-left: 3px solid #eee;background-color: #fcf8f2;border-color: #f0ad4e;padding: 1px 5px 1px 5px;border-radius: 5px;" attrs="{'invisible':[('global_product_tmpl_id', '=', False)]}">
+                    <h4>
+                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                        This product is linked with <i><field name="global_product_tmpl_id" options="{'no_open':True}" readonly="1"/>.</i>
+                    </h4>
+                </div>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="inherit_mp_product_product_form_view" model="ir.ui.view">
+        <field name="name">product.product.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="odoo_marketplace.mp_product_product_form_view"/>
+        <field name="arch" type="xml">
+            <field name="id" position="after">
+                <field name="global_product_tmpl_id" invisible="1"/>
+            </field>
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'readonly': [('global_product_tmpl_id', '!=', False)]}</attribute>
+            </field>
+            <field name="public_categ_ids" position="attributes">
+                <attribute name="attrs">{'readonly': [('global_product_tmpl_id', '!=', False)]}</attribute>
+            </field>
+            <notebook position="after">
+                <br/>
+                <div style="border-left: 3px solid #eee;background-color: #fcf8f2;border-color: #f0ad4e;padding: 1px 5px 1px 5px;border-radius: 5px;" attrs="{'invisible':[('global_product_tmpl_id', '=', False)]}">
+                    <h4>
+                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                        It is a Comparison product linked with <i><field name="global_product_tmpl_id" options="{'no_open':True}"/>.</i>
+                    </h4>
+                </div>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="wk_mp_global_products_action" model="ir.actions.act_window" >
+        <field name="name">Global Products</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('is_global_product','=',True)]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Global product not defined yet.
+            </p>
+        </field>
+    </record>
+
+        <record id="action_mp_p_c_product_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="wk_mp_global_products_tree_view"/>
+            <field name="act_window_id" ref="wk_mp_global_products_action"/>
+        </record>
+
+        <record id="action_mp_p_c_product_view_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wk_mp_global_products_form_view"/>
+            <field name="act_window_id" ref="wk_mp_global_products_action"/>
+        </record>
+
+    <menuitem id="wk_mp_global_product_list_menu" name="Global Products" action="wk_mp_global_products_action" parent="odoo_marketplace.wk_seller_dashboard_menu2" groups="odoo_marketplace.marketplace_manager_group"/>
+
+</odoo>

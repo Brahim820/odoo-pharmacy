@@ -1,0 +1,14 @@
+
+/*BG micin*/
+/*Border radiuse*/
+/* Transition */
+/* Media */
+/* Hover menu*/
+.menu-hover-effect-open {
+  display: block;
+}
+.menu-hover-effect-left-open {
+  visibility: visible;
+  opacity: 1;
+  right: -60%;
+}

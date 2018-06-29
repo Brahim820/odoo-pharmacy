@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <template id="sale_report_hide_price.report_sale_document_inherits" inherit_id="sale.report_saleorder_document" priority="999">
+
+    <xpath expr="//t[@t-set='display_discount']" position="replace">
+      <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line]) "/>
+    </xpath>
+
+    <xpath expr="//th[@xid='description']" position="attributes">
+      <attribute name="style">min-width: 400px !important;</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='unit_price']" position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+      <attribute name="style">min-width: 150px;</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='disc_percent']" position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+      <attribute name="style">min-width: 150px;</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='taxes']" position="attributes">
+      <attribute name="t-if">taxes and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='total_price']" position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='price']" position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//span[@t-field='l.price_unit']/.." position="attributes">
+      <attribute name="t-if">
+        (not display_discount and doc.show_price) or (display_discount and doc.show_discount and doc.show_price)
+      </attribute>
+    </xpath>
+    <xpath expr="//span[@t-field='l.price_unit']/.." position="after">
+      <td class="text-right" t-if="not doc.show_discount and display_discount and doc.show_price">
+        <t t-esc="'{0:,.2f}'.format(l.price_unit * (1 - (l.discount / 100)))"/>
+      </td>
+    </xpath>
+
+    <xpath expr="//span[@t-field='l.discount']/.." position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price
+      </attribute>
+    </xpath>
+    <xpath expr="//span[@t-field='l.discount']/.." position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price
+      </attribute>
+    </xpath>
+
+    <xpath expr="//span[@t-field='l.price_subtotal']/.." position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//span[@t-field='l.price_total']/.." position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+    </xpath>
+    <!-- Below xpath selects node if the attribute value contains text (Taxes lines here) -->
+    <xpath expr="//span[contains(@t-esc,'tax_id')]/.." position="attributes">
+      <attribute name="t-if">taxes and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//tr[@xid='total_without_taxes']" position="attributes">
+      <attribute name="t-if">doc.show_price and taxes</attribute>
+    </xpath>
+
+    <xpath expr="//div[@name='total']" position="attributes">
+      <attribute name="t-if">doc.show_price</attribute>
+    </xpath>
+
+  </template>
+
+  <template priority="999" inherit_id="dvit_sale_discount.report_saleorder_discount" id="dvit_sale_hide_price">
+
+    <xpath expr="//span[@t-field='doc.total_b4_disc']/.." position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//th[@xid='total']" position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+    <xpath expr="//th[@xid='discount']" position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//span[@t-field='l.total_line']/.." position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+    <xpath expr="//span[@t-field='l.disc_line']/.." position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//tr[@xid='total_b4_discount']" position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+
+    <xpath expr="//tr[@xid='total_discount']" position="attributes">
+      <attribute name="t-if">display_discount and doc.show_discount and doc.show_price</attribute>
+    </xpath>
+
+  </template>
+
+</odoo>

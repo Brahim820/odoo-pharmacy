@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <!-- Copyright (c) 2017-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+    	<!-- See LICENSE URL <https://store.webkul.com/license.html/> for full copyright and licensing details. -->
+  <record id="cash_on_delivery_cod_applicability_form" model="ir.ui.view">
+          <field name="name">form.wk.cod.applicability.rule</field>
+          <field name="model">wk.cod.applicability.rule</field>
+          <field name="type">form</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <group>
+                         <field name="allowed_country_list"/>
+                         <field name="allowed_state_list" domain="[('country_id','=',allowed_country_list)]"/>
+                         <!-- domain="[(allowed_country_list.code, 'in','allowed_state_list[0][2].country_id.code')]" -->
+                         <field name="zipcode_list"  placeholder="WC2N,201301,21044,400001,460001,970001  , keep it blank if you want to allow all Zipcode" />
+                     </group>
+                 </sheet>
+             </form>
+         </field>
+  </record>
+
+ <record id="cash_on_delivery_cod_applicability_tree" model="ir.ui.view">
+  <field name="name">tree.wk.cod.applicability.rule</field>
+  <field name="model">wk.cod.applicability.rule</field>
+  <field name="type">tree</field>
+  <field name="arch" type="xml">
+      <tree>
+          <field name="allowed_country_list"/>
+          <field name="allowed_state_list"/>
+          <field name="zipcode_list"/>
+      </tree>
+  </field>
+  </record>
+
+  <record id="cash_on_delivery" model="ir.ui.view">
+      <field name="name">form.cod</field>
+      <field name="model">wk.cod</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet>
+                  <group>
+                     <field name="name"/>
+                     <field name="min_order_amount"/>
+                     <field name="max_order_amount"/>
+                 </group>
+                 <separator string="Miscellaneous Setting"/>
+                 <group>
+                  <field name="exclude_product"  widget="many2many_tags"/>
+              </group>
+              <separator string="COD Applicability"/>
+              <field name='cod_applicability' context="{'tree_view_ref':'cash_on_delivery_cod_applicability_tree'}"/>
+              <separator string="Product Page Setting" />
+              <group>
+               <field name="show_expected_cod_date"/>
+               <field name="show_policy"/>
+               <field name="policy_content" attrs="{'invisible': [('show_policy', '==', False)]}"/>
+               <field name='cod_availability_message'/>
+               <!-- <field name='cod_unavailability_message'/> -->
+               <field name='cod_unavailability_payment_message'/>
+              </group>
+            </sheet>
+        </form>
+   </field>
+  </record>
+
+  <record id="acquirer_form" model="ir.ui.view">
+      <field name="name">acquirer.form.cod</field>
+      <field name="model">payment.acquirer</field>
+      <field name="inherit_id" ref="payment.acquirer_form"/>
+      <field name="arch" type="xml">
+
+
+          <xpath expr='//group[@name="acquirer"]' position='after'>
+              <group attrs="{'invisible': [('provider', '!=', 'cash_on_delivery')]}">
+                  <field name="cod_rule"/>
+              </group>
+          </xpath>
+      </field>
+  </record>
+
+  <record id="transaction_form" model="ir.ui.view">
+      <field name="name">acquirer.transaction.form.cod</field>
+      <field name="model">payment.transaction</field>
+      <field name="inherit_id" ref="payment.transaction_form"/>
+      <field name="arch" type="xml">
+          <field name="acquirer_id" position='after'>
+              <field name="provider" class="oe_hide oe_hidden"/>
+          </field>
+
+      </field>
+  </record>
+
+  <record id="action_client_open_acquire" model="ir.actions.client">
+      <field name="name">Open Acquirer Menu</field>
+      <field name="tag">reload</field>
+      <field name="params" eval="{'menu_id': ref('payment.payment_acquirer_menu')}"/>
+  </record>
+
+  <record id="base.open_menu" model="ir.actions.todo">
+      <field name="action_id" ref="action_client_open_acquire"/>
+      <field name="state">open</field>
+      <field name="type">automatic</field>
+      <field name="note">Acquirer Credentials</field>
+  </record>
+</odoo>

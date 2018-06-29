@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+        <record id="sale_offer_inherit_sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale.offer.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']" position="after">
+                    <div>
+                        <label for="applied_sale_offer_id"/>
+                        <field name="applied_sale_offer_id" readonly="1"/>
+                    </div>
+                </xpath>
+
+                <field name="amount_tax" position="after">
+                    <field name="global_discount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

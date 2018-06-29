@@ -1,0 +1,3207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+<!-- Home slider -->
+<template name="Main Slider" id="theme_slider">
+    <section id="stoneware-main-slider" class="carousel s_banners_theme_slider slide as-home-slider" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#stoneware-main-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#stoneware-main-slider" data-slide-to="1"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item item1 active" style="background-image: url(/theme_stoneware/static/src/img/extreme-skier.jpg)">
+          <div class="container">
+            <blockquote> 
+              <h2>Leadership Training</h2>
+              <div class="clearfix"></div>
+              <p>Firmly pioneering step</p>
+              <div class="clearfix"></div>
+              <div class="btn-box">
+                <a href="#" class="asb-btn-trs">Learn More</a>
+                <a href="#" class="asb-btn">Buy Now</a>
+              </div>
+            </blockquote>
+           
+          </div>
+        </div>
+          
+        <div class="item item2" style="background-image: url(/theme_stoneware/static/src/img/surfing.jpg)">
+          <div class="container">
+             <blockquote> 
+              <h2>Consulting and Investment</h2>
+              <div class="clearfix"></div>
+              <p>Your business to keep up</p>
+              <div class="clearfix"></div>
+              <div class="btn-box">
+                <a href="#" class="asb-btn-trs">Learn More</a>
+                <a href="#" class="asb-btn">Buy Now</a>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      <!-- Controls -->
+        <a class="left carousel-control" data-target="#stoneware-main-slider" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" data-target="#stoneware-main-slider" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </section>
+</template>
+<!-- Home slide End -->
+
+<!-- Creative Slider -->
+<template name="Creative Slider" id="theme_slider_creative">
+
+      <section id="as-home-slider-re" class="carousel s_banners_theme_slider_creative slide as-home-slider-cr" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#as-home-slider-re" data-slide-to="0" class="active"></li>
+          <li data-target="#as-home-slider-re" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item item1 active" style="background-image: url(/theme_stoneware/static/src/img/banner-1.jpg)">
+            <div class="container">
+              <blockquote> 
+                <h2>Video Production</h2>
+                <div class="clearfix"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <div class="clearfix"></div>
+                <div class="btn-box">
+                  <a class="creative-btn" href="#">Learn More</a>
+                </div>
+              </blockquote>
+             
+            </div>
+          </div>
+            
+          <div class="item item2" style="background-image: url(/theme_stoneware/static/src/img/banner-3.jpg)">
+            <div class="container">
+               <blockquote> 
+                <h2>Web Design Project </h2>
+                <div class="clearfix"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <div class="clearfix"></div>
+                <div class="btn-box">
+                  <a class="creative-btn" href="#">Learn More </a>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+      </div>
+      </section>
+  
+</template>
+<!-- Home slide End -->
+
+<!-- Slider with Banner -->
+<template id="home_slider01" name="Slider With Banner">
+  <section id="as_home_slider01" class="carousel s_banners_home_slider01 slide as-home-slider01" data-ride="carousel" data-interval="8000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#as_home_slider01" data-slide-to="0" class="active"></li>
+      <li data-target="#as_home_slider01" data-slide-to="1"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="/theme_stoneware/static/src/img/home2-3.jpg" alt="" />
+        </div><!--/.item-->
+        <div class="item">
+            <img src="/theme_stoneware/static/src/img/home2-2.jpg" alt="" />
+        </div><!--/.item-->
+    </div><!--/.carousel-inner-->
+
+    <!-- Controls -->
+    <a class="left carousel-control" data-target="#as_home_slider01" role="button" data-slide="prev">
+      <span class="fa fa-angle-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" data-target="#as_home_slider01" role="button" data-slide="next">
+      <span class="fa fa-angle-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </section> 
+</template>
+<!-- End -->
+
+<!-- Slider with Banner -->
+<template id="home_slider02" name="Box Slider">  
+  <section id="as_home_slider02" class="carousel s_banners_home_slider02 slide as-home-slider02" data-ride="carousel" data-interval="8000">
+      <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#as_home_slider02" data-slide-to="0" class="active"></li>
+      <li data-target="#as_home_slider02" data-slide-to="1"></li>
+    </ol>
+
+    <div class="carousel-inner">
+        <div class="item bg-alpha active">
+            <div class="container">
+              <blockquote class="col-md-6 col-sm-6 col-xs-6">
+                <h2 class="o_default_snippet_text">Maecenas dap sapien</h2>
+                <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <div class="btn-box">
+                  <a class="o_default_snippet_text" href="#">SHOP NOW</a>
+                </div>
+              </blockquote>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="img">
+                  <img src="/theme_stoneware/static/src/img/slider01.png" alt="" />
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="item bg-gamma">
+            <div class="container">
+              <blockquote class="col-md-6 col-sm-6 col-xs-6">
+                <h2 class="o_default_snippet_text">Dignissim semper velit</h2>
+                <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <div class="btn-box">
+                  <a class="o_default_snippet_text" href="#">SHOP NOW</a>
+                </div>
+              </blockquote>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="img">
+                  <img src="/theme_stoneware/static/src/img/slider02.png" alt="" />
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" data-target="#as_home_slider02" role="button" data-slide="prev">
+        <span class="fa fa-angle-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" data-target="#as_home_slider02" role="button" data-slide="next">
+        <span class="fa fa-angle-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+  </section>
+</template>
+<!-- End -->
+
+<!-- Animation Slider -->
+<template id="animated_slider" name="Animated Slider">
+    <section class="as-animated-slider">
+        <div id="as_animated_slider" class="carousel s_banners_animated_slider slide" data-ride="carousel" data-interval="8000">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#as_animated_slider" data-slide-to="0" class="active"></li>
+            <li data-target="#as_animated_slider" data-slide-to="1"></li>
+            <li data-target="#as_animated_slider" data-slide-to="2"></li>
+          </ol>
+
+        <div class="carousel-inner">
+            <div class="item active" style="background-image: url(/theme_stoneware/static/src/img/bg1.jpg)">
+                <div class="container">
+                    <blockquote class="carousel-content">
+                        <h2 class="animation animated-item-2"> Primary Health Care </h2>
+                        <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, </h1>
+                        <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                    </blockquote>
+                </div>
+            </div><!--/.item-->
+
+            <div class="item" style="background-image: url(/theme_stoneware/static/src/img/bg2.jpg)">
+                <div class="container">
+                    <blockquote class="carousel-content">
+                        <h2 class="animation animated-item-2">Dental Treatment</h2>
+                        <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</h1>
+                        <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                    </blockquote>
+                </div>
+            </div><!--/.item-->
+
+            <div class="item" style="background-image: url(/theme_stoneware/static/src/img/bg3.jpg)">
+                <div class="container">                    
+                    <blockquote class="carousel-content">
+                        <h2 class="animation animated-item-2">Heart Treatment</h2>
+                        <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</h1>
+                        <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                    </blockquote>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+
+          <!-- Controls -->
+          <a class="left carousel-control" data-target="#as_animated_slider" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" data-target="#as_animated_slider" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </section>
+</template>
+<!-- End -->
+
+
+<!-- Home Banner -->
+<template name="Home Banner" id="as_home_banner">
+  <section class="as-home-banner" style="background-image: url(/theme_stoneware/static/src/img/home-banner.jpg)">
+    <div class="hb-intro">
+      <div class="hbi-inner">
+            <h1>THIS IS STONEWARE</h1>
+            <p> Unique, Multi-purpose, Responsive Odoo Theme</p>
+          </div>
+        </div>
+    </section>
+</template>
+<!-- End -->
+
+<!-- Clinic Testimonial -->
+<template name="B - Testimonial" id="clinic_slider">
+  <section class="as-testimonial-slider" style="background-image: url(/theme_stoneware/static/src/img/customers-img.png)">
+    <div class="container">
+        <section class="as-title">
+            <h6>Testimonials</h6>
+            <h2>What Our Customers Are Saying</h2>
+        </section>
+        <div id="as_clinic_slider" class="carousel s_banners_clinic_slider slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#as_clinic_slider" data-slide-to="0" class="active"></li>
+            <li data-target="#as_clinic_slider" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-1.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-2.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-2.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+            </div>
+          <div class="item">
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-1.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-2.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+                <blockquote> 
+                  <div class="lms-box">
+                    <div class="acs-img">
+                      <div class="acs-img-in">
+                        <img src="/theme_stoneware/static/src/img/acs-2.png" title="" alt="" />
+                      </div>
+                      <div class="asc-author">
+                        <label>John</label>
+                        <span>CEO</span>
+                      </div>
+                    </div>
+                    <div class="asc-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+                    </div>
+                    </div>
+                </blockquote>
+          </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</template>
+<!-- End -->
+
+<!-- Testimonial slider -->
+<template name="A - Testimonial" id="client_slider">
+  <section class="as-client-slider" style="background-image: url(/theme_stoneware/static/src/img/clients-say.png)">
+    <div class="container">
+        <div id="as-client-slider-a" class="carousel s_banners_client_slider slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#as-client-slider-a" data-slide-to="0" class="active"></li>
+            <li data-target="#as-client-slider-a" data-slide-to="1"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <blockquote> 
+                  <div class="acs-img">
+                    <div class="acs-img-in">
+                      <img src="/theme_stoneware/static/src/img/acs-2.png" title="" alt="" />
+                    </div>
+                    <i class="fa fa-quote-right"></i>
+                  </div>
+                  <div class="asc-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="asc-author">
+                      <label>John Smith</label>
+                      <span>CEO</span>
+                    </div>
+                  </div>
+                </blockquote>
+            </div>
+          <div class="item">
+                 <blockquote> 
+                  <div class="acs-img">
+                    <div class="acs-img-in">
+                      <img src="/theme_stoneware/static/src/img/acs-1.png" title="" alt="" />
+                    </div>
+                    <i class="fa fa-quote-right"></i>
+                  </div>
+                  <div class="asc-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="asc-author">
+                      <label>John Smith</label>
+                      <span>CEO</span>
+                    </div>
+                  </div>
+                </blockquote>
+          </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</template>
+<!-- End -->
+
+  <!-- Testimonial slider -->
+<template name="T Testimonial parallax" id="as_testimonial_parallax">
+  <section class="as-testimonial-parallax" style="background-image: url(/theme_stoneware/static/src/img/clients-say.png)">
+    <div class="container">
+      <section class="as-t-title">
+                <h2>Testimonial</h2>
+            </section>
+        <div id="as-client-slider1" class="carousel s_banners_as_testimonial_parallax slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#as-client-slider1" data-slide-to="0" class="active"></li>
+            <li data-target="#as-client-slider1" data-slide-to="1"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <blockquote> 
+                  <div class="desc-top">
+                    <i class="fa fa-quote-right"></i>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+                  <div class="author-info">
+                    <div class="author-info-right"><span> James More</span><p>Fouder &amp; CEO ThemeMove Ltd.,</p></div>
+                  </div>
+                </blockquote>
+            </div>
+          <div class="item">
+                 <blockquote> 
+                  <div class="desc-top">
+                    <i class="fa fa-quote-right"></i>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, a quam quae dolore blanditiis eveniet cum amet quasi sunt nostrum, suscipit commodi sequi sapiente deserunt dolorem iusto? Ipsa, quas ut!. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                  </div>
+                  <div class="author-info">
+                    <div class="author-info-right"><span> James More</span><p>Fouder &amp; CEO ThemeMove Ltd.,</p></div>
+                  </div>
+                </blockquote>
+          </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</template>
+<!-- End -->
+
+
+<template id="as_stats_section-bg" name="Stats Counter with BG">
+<section class="as-stats-section asss-with-bg" style="background-image: url(/theme_stoneware/static/src/img/home-banner.jpg)">
+
+  <div class="container">
+     <div class="row">
+       <div class="col-md-3">
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-picture-o" />
+            </label>
+            <span class="counter-s"><span class="counter counter-portfolio">500</span>+</span>
+            <p class="stats-label">Portfolio Layouts </p>
+         </div>
+       </div>
+
+       <div class="col-md-3">
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-pencil" />
+            </label>
+            <span class="counter-s"><span class="counter counter-blog-template">1000</span>+</span>
+            <p class="stats-label">Blog Templates</p>
+         </div>
+       </div>
+
+       <div class="col-md-3">
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-puzzle-piece" />
+            </label>
+            <span class="counter-s"><span class="counter counter-shortcut">500</span>+</span>
+            <p class="stats-label">Shortcodes</p>
+         </div>
+       </div>
+       <div class="col-md-3">
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-file-text-o" />
+            </label>
+            <span class="counter-s"><span class="counter counter-like">2000</span>+</span>
+            <p class="stats-label">Likes</p>
+         </div>
+       </div>
+     </div>
+  </div>
+
+</section>
+</template> 
+
+
+
+
+<!-- collections Promo -->
+<template name="Collections Promo" id="calcsn_promo">
+  <section class="as-calcsn-promo">
+    <div class="container">
+      <div class="home-banner-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="image-wrap">
+          <a href="#">
+            <img src="/theme_stoneware/static/src/img/banner4.jpg" alt="Banner Image"/>
+          </a>
+        </div>
+      </div>
+      <div class="home-banner-right col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="image-wrap">
+          <a href="#">
+            <img src="/theme_stoneware/static/src/img/banner7.jpg" alt="Banner Image"/>
+          </a>
+        </div>
+        <div class="image-wrap image-wrap-50">
+          <a href="#">
+            <img src="/theme_stoneware/static/src/img/banner5.jpg" alt="Banner Image"/>
+          </a>
+        </div>
+        <div class="image-wrap image-wrap-50 last">
+          <a href="#">
+            <img src="/theme_stoneware/static/src/img/banner6.jpg" alt="Banner Image"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<!-- End -->
+<!-- collections Promo -->
+<template name="Fashion Promo" id="fashion_promo">
+  <section class="as-fashion-promo">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="banner-full">
+            <div class="banner-left">
+              <div class="banner-image">
+                <a title="Banner Image" href="#">
+                  <img src="/theme_stoneware/static/src/img/id3-banner1.jpg" alt="Banner Image"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="banner-right">
+              <div class="banner-top">
+                <div class="banner-image">
+                  <a title="Banner Image" href="#">
+                    <img src="/theme_stoneware/static/src/img/id3-banner2.jpg" alt="Banner Image" />
+                  </a>
+                </div>
+              </div>
+              <div class="banner-bottom">
+                <div class="item-left">
+                  <div class="banner-image">
+                    <a title="Banner Image" href="#">
+                      <img src="/theme_stoneware/static/src/img/id3-banner3.jpg" alt="Banner Image" />
+                    </a>
+                  </div>
+                </div>
+                <div class="item-right">
+                  <div class="banner-image">
+                    <a title="Banner Image" href="#">
+                      <img src="/theme_stoneware/static/src/img/id3-banner4.jpg" alt="Banner Image" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<!-- End -->
+
+<!-- collections Promo -->
+<template name="Collections Promo 1" id="banner_two">
+  <section class="as-bannertwo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="image-wrap">
+            <a href="#">
+              <img src="/theme_stoneware/static/src/img/banner9.jpg" alt="Banner Image"/>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="image-wrap">
+            <a href="#">
+              <img src="/theme_stoneware/static/src/img/banner10.jpg" alt="Banner Image"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<!-- End -->
+
+<!-- Col 3 Boxs  -->
+<template name="Box 3 column" id="col_3_boxs">
+	<section class="col-3-boxs">
+            <div class="container">
+                <section class="seaction-head">
+                    <h1>Welcome To Our Theme</h1>
+                    <p>Odoo Responsive Theme</p>
+                </section>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-line-chart"></i></span>
+                            <h2>
+                                <label>Best Productivity</label>
+                                Grow Your Rebvenue
+                            </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-money"></i></span>
+                            <h2>
+                                <label>Best Productivity</label>
+                                Grow Your Rebvenue
+                            </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-bullseye"></i></span>
+                            <h2>
+                                <label>Best Productivity</label>
+                                Grow Your Rebvenue
+                            </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</template>
+<!-- End -->
+
+<!-- Col 4 Boxs  -->
+<template name="Box 4 column" id="col_4_boxs">
+	<section class="col-4-boxs bg-gray-dark">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <div class="c4b-inner">
+                    <span class="iicon"><i class="color-theme fa fa-line-chart"></i></span>
+                    <h3>We are creative</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="c4b-inner">
+                    <span class="iicon"><i class="color-theme fa fa-money"></i></span>
+                    <h3>Parallax effect</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="c4b-inner">
+                    <span class="iicon"><i class="color-theme fa fa-bullseye"></i></span>
+                    <h3>We use Bootstrap</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="c4b-inner">
+                    <span class="iicon"><i class="color-theme fa fa-bullseye"></i></span>
+                    <h3>Retina Ready</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+<!-- End -->
+
+
+
+<!-- Services Column  -->
+<template name="Services Column" id="services_boxs">
+	<section class="services-boxs">
+            <div class="container">
+                <section class="seaction-head">
+                    <h1>Services and Awesome Skills</h1>
+                    <p>Odoo Theme Developments</p>
+                </section>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-sticky-note"></i></span>
+                            <h2>Project Planning</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-tag"></i></span>
+                            <h2>Branding</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-map-signs"></i></span>
+                            <h2>Decide Process</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-wrench"></i></span>
+                            <h2>Build Form</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-paint-brush"></i></span>
+                            <h2>Design Workflow</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="color-theme fa fa-rocket"></i></span>
+                            <h2>Go Live</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</template>
+<!-- End -->
+
+<!-- Policy Box  -->
+<template name="Policy 3 Box" id="as_policy_box_01">
+	<section class="as-policy-box-01">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+      					<div class="pb-inner">
+      						<i class="fa fa-plane"/>
+      						<div class="text">
+      							<h6>Free shiping</h6>
+      							<span>On order over $100</span>
+      						</div>
+      					</div>
+      				</div>
+      				<div class="col-md-4 col-sm-4 col-xs-12">
+      					<div class="pb-inner">
+      						<i class="fa fa-headphones"/>
+      						<div class="text">
+      							<h6>Support online</h6>
+      							<span>Call us: 000 000 000</span>
+      						</div>
+      					</div>
+      				</div>
+      				<div class="col-md-4 col-sm-4 col-xs-12">
+      					<div class="pb-inner">
+      							<i class="fa fa-refresh"/>
+      						<div class="text">
+      							<h6>Money back</h6>
+      							<span>Guarantee</span>
+      						</div>
+      					</div>
+      				</div>
+            </div>
+        </div>
+    </section>
+</template>
+<!-- End -->
+
+<!-- Policy Box  -->
+<template name="Policy Box" id="as_policy_box">
+  <section class="as-policy-box" style="background-image: url(/theme_stoneware/static/src/img/parallax-bg.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="pb-inner">
+            <i class="fa fa-plane"/>
+            <div class="text">
+              <h6>Free shiping</h6>
+              <span>On order over $100</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="pb-inner">
+            <i class="fa fa-headphones"/>
+            <div class="text">
+              <h6>Support online</h6>
+              <span>Call us: 000 000 000</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="pb-inner">
+              <i class="fa fa-tag"/>
+            <div class="text">
+              <h6>Discount</h6>
+              <span>5% on order over $190</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="pb-inner">
+              <i class="fa fa-refresh"/>
+            <div class="text">
+              <h6>Money back</h6>
+              <span>Guarantee</span>
+            </div>
+          </div>
+        </div>
+            </div>
+        </div>
+    </section>
+</template>
+<!-- End -->
+
+<!-- Cutomo Title -->
+<template name="Cutomo Title" id="seaction_head">
+	<section class="seaction-head">
+        <h1>Your Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+    </section>
+</template>
+<!-- End -->
+
+<!-- New Home Pages -->
+	
+
+	<!-- About us -->
+	<template name="About Us" id="as_about">
+		<section class="as-about">
+			<div class="container">
+				<div class="row">
+				<div class="col-md-6">
+					<img src="/theme_stoneware/static/src/img/about-us.jpg" title="" alt="" />
+				</div>
+				<div class="col-md-6">
+					<h1>THIS IS STONEWARE</h1>
+					<div class="ab-desc">
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        			</div>
+        			<div class="ab-link">
+        				<a href="#">More Info</a>
+        			</div>
+				</div>
+				</div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	
+
+	<!-- Why Choose Us -->
+	<template name="Why Choose Us" id="as_choose_us">
+		<section class="as-choose-us feature-left-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="flb-img-inner">
+		                	<img src="/theme_stoneware/static/src/img/mac-2.png" title="" alt="" />
+		                </div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="flb-desc">
+	                        <h1>Our Elegant Design</h1>
+	                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+		                    <ul>
+		                    	<li><i class="fa fa-check"></i> Page Layout Options with Boxed and Full Width</li>
+		                    	<li><i class="fa fa-check"></i> 3 Header options</li>
+		                    	<li><i class="fa fa-check"></i> 2 Footer color options</li>
+		                    	<li><i class="fa fa-check"></i> 3 Footer Style</li>
+		                    	<li><i class="fa fa-check"></i> Shop category left right option</li>
+		                    	<li><i class="fa fa-check"></i> 3 Product styles</li>
+		                    </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	
+<template id="accordion_option1" name="Accordion">
+   <section class="accordion-option1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="panel-group" role="tablist" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" data-toggle="collapse">
+                        <h4 class="panel-title">
+                            Collapsible Group Item #1
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" data-toggle="collapse">
+                        <h4 class="panel-title">
+                            Collapsible Group Item #2
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" data-toggle="collapse">
+                        <h4 class="panel-title">
+                            Collapsible Group Item #3
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+<!-- End -->
+</template>
+
+<!-- Counter -->
+<template id="as_stats_section" name="Stats Counter">
+	<section class="as-stats-section">
+	  <div class="container">
+	     <div class="row">
+	       <div class="col-md-3">
+	          <div class="stats-box">
+	            <label class="stats-icon">
+	              <i class="fa fa-picture-o" />
+	            </label>
+	            <span class="counter-s"><span class="counter counter-portfolio">500</span>+</span>
+	            <p class="stats-label">Portfolio Layouts </p>
+	         </div>
+	       </div>
+
+	       <div class="col-md-3">
+	          <div class="stats-box">
+	            <label class="stats-icon">
+	              <i class="fa fa-pencil" />
+	            </label>
+	            <span class="counter-s"><span class="counter counter-blog-template">1000</span>+</span>
+	            <p class="stats-label">Blog Templates</p>
+	         </div>
+	       </div>
+
+	       <div class="col-md-3">
+	          <div class="stats-box">
+	            <label class="stats-icon">
+	              <i class="fa fa-puzzle-piece" />
+	            </label>
+	            <span class="counter-s"><span class="counter counter-shortcut">500</span>+</span>
+	            <p class="stats-label">Shortcodes</p>
+	         </div>
+	       </div>
+	       <div class="col-md-3">
+	          <div class="stats-box">
+	            <label class="stats-icon">
+	              <i class="fa fa-file-text-o" />
+	            </label>
+	            <span class="counter-s"><span class="counter counter-like">2000</span>+</span>
+	            <p class="stats-label">Likes</p>
+	         </div>
+	       </div>
+	     </div>
+	  </div>
+
+	</section>
+</template> 
+<!-- End  -->
+
+<!-- Blank Space -->
+<template id="as_space" name="Blank Space">
+	<section class="as-space">
+	</section>
+</template> 
+
+<!-- Tabs start -->
+<template id="custom_tabs_1" name="Tab Style 1">
+	<section class="custom-tabs-1">
+		<div class="container">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+		    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+		    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+		    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+		  </ul>
+
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="home">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+		    <div role="tabpanel" class="tab-pane" id="profile">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+		    <div role="tabpanel" class="tab-pane" id="messages">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse  </div>
+		    <div role="tabpanel" class="tab-pane" id="settings">  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+		  </div>
+		</div>
+	</section>
+</template>
+
+  <template id="options_tabs" inherit_id="website.snippets" name="Customize Options">
+    <xpath expr="//div[@id='snippet_options']" position="inside">
+        <div data-js='tabslide'
+            data-selector=".custom-tabs-1">
+            <li data-add_tab=""><a>Add Tab</a></li>
+            <li data-remove_tab=""><a>Remove Tab</a></li>
+        </div>
+    </xpath>
+  </template>
+<!-- End  -->
+
+
+<!-- Tabs start 1 -->
+<template id="custom_tabs_2" name="Tab Style 1">
+	<section class="custom-tabs-2">
+	    <div class="container">
+	    <!-- Nav tabs -->
+	    <ul class="nav nav-tabs" role="tablist">
+	      <li role="presentation" class="active"><a href="#home1" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+	      <li role="presentation"><a href="#profile1" aria-controls="profile1" role="tab" data-toggle="tab">Profile</a></li>
+	      <li role="presentation"><a href="#messages1" aria-controls="messages1" role="tab" data-toggle="tab">Messages</a></li>
+	      <li role="presentation"><a href="#settings1" aria-controls="settings1" role="tab" data-toggle="tab">Settings</a></li>
+	    </ul>
+
+	    <!-- Tab panes -->
+	    <div class="tab-content">
+	      <div role="tabpanel" class="tab-pane active" id="home1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+	      <div role="tabpanel" class="tab-pane" id="profile1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+	      <div role="tabpanel" class="tab-pane" id="messages1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse  </div>
+	      <div role="tabpanel" class="tab-pane" id="settings1">  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	    </div>
+	  </div>
+	</section>
+</template>
+
+<template id="options_tabs" inherit_id="website.snippets" name="Customize Options">
+	<xpath expr="//div[@id='snippet_options']" position="inside">
+	    <div data-js='tabslide'
+	        data-selector=".custom-tabs-2">
+	        <li data-add_tab=""><a>Add Tab</a></li>
+	        <li data-remove_tab=""><a>Remove Tab</a></li>
+	    </div>
+	</xpath>
+</template>
+<!-- End  -->
+
+<!-- Creative Home Pages -->
+
+<!-- Give Us A Call-->
+<template name="Give Us A Call" id="give_call">
+  <section class="as-give-call bg-alpha">
+     <h4>Give Us A Call</h4>
+     <h2>+1 92-126-386</h2>
+     <a class="creative-btn" href="#">Get In Touch</a>
+  </section>
+</template>
+<!-- End -->
+<!-- Creative Home Pages End -->
+
+<!-- Clinic Home Pages -->
+<!-- Clinic 3 Boxs  -->
+<template name="Clinic 3 column" id="clinic_col_3_boxs">
+  <section class="col-3-boxs clinic-col-3-boxs">
+            <div class="container">
+                <section class="seaction-head-a">
+                    <h1>We Specialize In</h1>
+                    <p>Lorem ipsum is a dummy text it will use for subtitle here</p>
+                </section>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-medkit"></i></span>
+                            <h2>
+                                Primary Health Care
+                            </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="btn-box">
+                              <a href="#" class="creative-btn2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-heartbeat"></i></span>
+                            <h2>Dental Treatment</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="btn-box">
+                              <a href="#" class="creative-btn2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="c3b-inner">
+                            <span class="iicon"><i class="color-theme fa fa-stethoscope"></i></span>
+                            <h2>Heart Treatment</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                            <div class="btn-box">
+                              <a href="#" class="creative-btn2">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</template>
+<!-- End -->
+
+<!-- Clinic BG Img With Content-->
+<template name="Clinic About Us" id="clinic_about_us">
+  <section class="clinic-about-us" style="background-image: url(/theme_stoneware/static/src/img/full-image-1.jpg)">
+            <div class="row">
+                <section class="col-md-6 fli-desc bg-white pull-right">
+                    <section class="seaction-head-b">
+                        <h1>More about us</h1>
+                    </section>
+                    <div class="pb-desc">
+                      <h4>We Provide Most Proffesional Service Since 2000</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="buts">
+                      <a class="creative-btn2" href="#">Read More</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+</template>
+<!-- End -->
+
+<!-- Clinic Offer -->
+<template name="Clinic Offer" id="clinic_offer">
+  <section class="as-clinic-offer">
+      <div class="row">
+        <section class="col-md-6 col-xs-12" style="background-image: url(/theme_stoneware/static/src/img/1.jpg)">
+          <div class="desc-wrap">
+            <h3>We Specialize In</h3>
+            <p>Lorem Ipsum is simply du my text of the pritin industry. Lorm Ipsum hasbeen the industry's standardsdummy text eversince the 1500s, when an unknown printer</p>
+            <div class="buts">
+              <a class="creative-btn2-border" href="#">Read More</a>
+            </div>
+          </div>
+        </section>
+        <section class="col-md-6 col-xs-12" style="background-image: url(/theme_stoneware/static/src/img/2.jpg)">
+          <div class="desc-wrap">
+            <h3>Why Choose us?</h3>
+            <p>Lorem Ipsum is simply du my text of the pritin industry. Lorm Ipsum hasbeen the industry's standardsdummy text eversince the 1500s, when an unknown printer</p>
+            <div class="buts">
+              <a class="creative-btn2-border" href="#">Read More</a>
+            </div>
+          </div>
+        </section>
+      </div>
+  </section>
+</template>
+<!-- End -->
+
+
+<!-- Clinic Choose Us -->
+<template name="Clinic Choose Us" id="clinic_choose_us">
+  <section class="clinic-choose-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="flb-desc">
+            <section class="seaction-head-b">
+                <h1>Why Choose us?</h1>
+            </section>
+            <div class="flb-desc">
+              <p>Lorem Ipsum is simply du my text of the pritin industry. Lorm Ipsum hasbeen the industry's standardsdummy text eversince the 1500s, when an unknown printer took a galley of type and scramble it to make type specimen book. It has survived not only five centurie, but also the leap into</p>
+              <p>took a galley of type and scramble it to make type specimen book. It has survived not only five centurie, but also the leap into</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="flb-img-inner">
+             <img src="/theme_stoneware/static/src/img/clinic_choose_us.jpg" title="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<!-- End -->
+
+<!-- Clinic Served -->
+<template name="Clinic Served" id="clinic_served">
+  <section class="clinic-served">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>We are served since 25 years to our customer with trust and we are happy</h2> 
+          <div class="buts">
+              <a class="creative-btn2-border" href="#">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-trophy" />
+            </label>
+            <span class="counter-s"><span class="counter counter-portfolio">300</span>+</span>
+            <p class="stats-label">Awards</p>
+          </div>
+
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-users" />
+            </label>
+            <span class="counter-s"><span class="counter counter-portfolio">155</span>+</span>
+            <p class="stats-label">Doctors</p>
+          </div>
+
+          <div class="stats-box">
+            <label class="stats-icon">
+              <i class="fa fa-wheelchair" />
+            </label>
+            <span class="counter-s"><span class="counter counter-portfolio">2000</span>+</span>
+            <p class="stats-label">Beds</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<!-- End -->
+
+<!-- Busines Theme -->
+	<!-- Company Feature -->
+	<template name="B - Company Feature" id="as_company_feature">
+	  <section class="as-company-feature">
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="cf-content">
+						<div class="img">
+							<img src="/theme_stoneware/static/src/img/cf-1.png" title="" alt="" />
+						</div>
+						<div class="cfc-info">
+							<h5><a href="#" class="tran3s">Business Advising</a></h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="cf-content">
+						<div class="img">
+							<img src="/theme_stoneware/static/src/img/cf-2.png" title="" alt="" />
+						</div>
+						<div class="cfc-info">
+							<h5><a href="#" class="tran3s">Market Analysis</a></h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="cf-content">
+						<div class="img">
+							<img src="/theme_stoneware/static/src/img/cf-3.png" title="" alt="" />
+						</div>
+						<div class="cfc-info">
+							<h5><a href="#" class="tran3s">Investment Plan</a></h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="ceo-word">
+						<h3>Fantastic service, i’m exited!</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+						<h6>RASHED KABIR</h6>
+						<p>CreativeGigs CEO</p>
+					</div>
+				</div>
+	    	</div>
+	     </div>
+	  </section>
+	</template>
+	<!-- End -->
+
+	<!-- Why Choose us -->
+	<template name="B - Why Choose us" id="as_company_offer">
+	  <section class="as-company-offer">
+	    <div class="container">
+	    	
+	    	<div class="row">
+	    		<div class="col-md-8">
+            <div class="as-title">
+              <h6>Why Choose us</h6>
+              <h2>We Business Company!!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            </div>
+	    			<div class="row">
+	    				<div class="col-sm-6 col-xs-12">
+							<div class="single-offer">
+								<i class="fa fa-user"></i>
+								<h4>Expert Advisor</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-12">
+							<div class="single-offer">
+								<i class="fa fa-certificate"></i>
+								<h4>Trsuted Vendor</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-12">
+							<div class="single-offer">
+								<i class="fa fa-rocket"></i>
+								<h4>Fast Process</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-12">
+							<div class="single-offer">
+								<i class="fa fa-trophy"></i>
+								<h4>Award Winner</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+							</div>
+						</div>
+	    			</div>
+	    		</div>
+          <div class="col-md-4">
+            <img src="/theme_stoneware/static/src/img/Why-Choose-us.png" title="" alt="" />
+          </div>
+	    	</div>
+	     </div>
+	  </section>
+	</template>
+	<!-- End -->
+
+	<!-- About us -->
+	<template name="B - About us" id="as_abouts_b">
+	  <section class="as-abouts-b">
+	    <div class="container">
+	    	
+	    	<div class="row">
+          <div class="col-md-4">
+            <img src="/theme_stoneware/static/src/img/About-Us-c.png" title="" alt="" />
+          </div>
+
+	    		<div class="col-md-8">
+	    			<div class="as-title">
+						<h2>About Us</h2>
+					</div>
+					<div class="asbb-info">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+						<div class="asbb-author">
+							<div class="asbb-img"><img src="/theme_stoneware/static/src/img/asbb.png" title="" alt="" /></div>
+							<div class="asbb-name">
+								<h6>James More</h6>
+								<p>CEO of Stoneware</p>
+							</div>
+						</div>
+						<div class="asbb-more">
+							<a class="asb-btn" href="#">Learn More</a>
+						</div>
+					</div>
+	    		</div>
+	    	</div>
+	     </div>
+	  </section>
+	</template>
+	<!-- End -->
+
+	<!-- What we offer -->
+	<template name="B - What We Offer" id="as_we_offer">
+		<section class="as-we-offer" style="background-image: url(/theme_stoneware/static/src/img/services-bg.png)">
+			<div class="container">
+				<div class="as-title">
+						<h2>About Us</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-html5"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">Web Design</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-code"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">Web Development</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-pencil-square-o"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">Graphic Design</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-tablet"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">App Development</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-briefcase"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">Commercial Fitouts</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-service">
+                            <div class="heading">
+                                <span class="icon"><i class="fa fa-check-square"></i></span>
+                                <label>We are best in</label>
+                                <h5 class="title"><a href="#">RECIDENTAL REPAINTS</a></h5>
+                            </div>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                        </div>
+					</div>
+				</div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+	
+	<!-- About us -->
+	<template name="B - About Us" id="as_about">
+		<section class="as-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="as-title">
+							<h6>CASE STUDY</h6>
+		                    <h2>This is stonware</h2>
+	                	</div>
+						<div class="ab-desc">
+		        			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	        			</div>
+	        			<div class="ab-link">
+	        				<a class="asb-btn-trs" href="#">Learn More</a>
+	        			</div>
+					</div>
+					<div class="col-md-6">
+						<img src="/theme_stoneware/static/src/img/about-us.jpg" title="" alt="" />
+					</div>
+				</div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- About us -->
+	<template name="B - Case Box" id="as_case_box">
+		<section class="as-case-box">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-xs-12">
+						<div class="asc-case">
+							<span><i class="fa fa-refresh"></i></span>
+							<h5>Sync faster</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						</div> 
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="asc-case">
+							<span><i class="fa fa-envelope-o"></i></span>
+							<h5>Mailing</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						</div> 
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="asc-case">
+							<span><i class="fa fa-paper-plane-o"></i></span>
+							<h5>faster</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						</div> 
+					</div>
+				</div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Our Team  -->
+	<template name="B - Our Team" id="clinic_team">
+	  <section class="teams-boxs clinic-teams-boxs">
+	    <div class="container">
+	        <section class="as-title">
+	            <h2>Executive Team</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	        </section>
+	        <div class="row">
+	            <div class="col-md-3 col-sm-6 box-3">
+	                <div class="team-col">
+	                    <div class="tc-img">
+	                      <img src="/theme_stoneware/static/src/img/team1.jpg" title="" alt="" />
+	                    </div>
+	                    <h4>John Smith</h4>
+	                    <label>Heart Specialist</label>
+	                    <p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem</p>
+	                    <ul>
+	                      <li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                      <li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                      <li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="col-md-3 col-sm-6 box-3">
+	                <div class="team-col">
+	                    <div class="tc-img">
+	                      <img src="/theme_stoneware/static/src/img/team2.jpg" title="" alt="" />
+	                    </div>
+	                    <h4>Aimee</h4>
+	                    <label>Heart Specialist</label>
+	                    <p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem</p>
+	                    <ul>
+	                      <li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                      <li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                      <li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="col-md-3 col-sm-6 box-3">
+	                <div class="team-col">
+	                    <div class="tc-img">
+	                      <img src="/theme_stoneware/static/src/img/team3.jpg" title="" alt="" />
+	                    </div>
+	                    <h4>Alice</h4>
+	                    <label>Heart Specialist</label>
+	                    <p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem</p>
+	                    <ul>
+	                      <li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                      <li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                      <li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="col-md-3 col-sm-6 box-3">
+	                <div class="team-col">
+	                    <div class="tc-img">
+	                      <img src="/theme_stoneware/static/src/img/team4.jpg" title="" alt="" />
+	                    </div>
+	                    <h4>Lee</h4>
+	                    <label>Heart Specialist</label>
+	                    <p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem</p>
+	                    <ul>
+	                      <li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                      <li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                      <li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	</template>
+	<!-- End -->
+
+
+	<!-- Contact us -->
+	<template name="B - Contact Us" id="contact_usa">
+		<section class="as-contact-us">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-md-6">
+	            		<section class="as-title">
+	            			<h2>Send Message</h2>
+					    </section>
+						<form action="/website_form/crm.lead" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks" class="s_website_form form-horizontal" enctype="multipart/form-data">
+	                		<div class="ascu-form">
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Name*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" required=""  placeholder="Email*"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Subject*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" placeholder="Phone"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+	                				<div class="col-md-12">
+								<textarea class="form-control o_website_form_input" name="description" required="" placeholder="Message*"></textarea>
+	                				</div>
+	                				<div class="col-md-12">
+	                					<button class="asb-btn-trs" >SEND MESSAGE</button>
+	                				</div>
+	                			</div>
+	                		</div>
+						</form>
+	            	</div>
+	            	<div class="col-md-4 col-md-offset-2">
+	            		<div class="ascu-info">
+	            			<section class="as-title">
+					            <h2>Information</h2>
+					        </section>
+					        <ul>
+					        	<li><i class="fa fa-map-marker"></i> 514 Creekside Court <br/>Erlanger, KY 41018</li>
+		            			<li><i class="fa fa-phone"></i> +44 000 000 0000</li>
+		            			<li><i class="fa fa-envelope"></i> <a href="mailto:info@example.com"> info@yourcompany.example.com</a> </li>
+		            			<li><i class="fa fa-fax"></i> +44 000 000 0000</li>
+					        </ul>
+	            		</div>
+	            	</div>
+	            </div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Action box -->
+	<template id="as_action_box" name="Action box">
+		<section class="as-action-box">
+		  <div class="container">
+		     <div class="row">
+		        <div class="col-lg-8 col-md-8 text-left">
+		          <h3>Stoneware HTML5 Odoo Ecommerce Responsive Theme</h3>
+		        </div>
+		        <div class="col-lg-4 col-md-4 text-right action-box-button">
+		          <a href="#" class="asb-btn-trs">Learn More</a>
+		          <a href="#" class="asb-btn">SubScribe Now</a>
+		        </div>
+		      </div>
+		  </div>
+		</section>
+	</template> 
+	<!-- End  -->
+
+<!-- End Big -->
+
+
+<!-- Agency Theme -->
+<!-- Progress Bar -->
+	<template id="progress_bar" name="A - Progress Bar">
+	  <section class="progress-bar-theme">
+	    <div class="container">
+	    	<section class="as-a-title">
+		        <h2>We are skilled</h2>
+		        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+			</section>
+	      	<div class="row">
+		      	<div class="col-md-6">
+		      		<div class="pb-desc-inner">
+				      	<h4>Specialization</h4>	
+			    		<div class="pb-desc">
+			    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+			    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+			    		</div>
+		    		</div>
+		      	</div>
+		      	<div class="col-md-6">
+		      		<div class="pb-bar-inner">
+				  		<section class="progress">
+					      <div class="progress-bar progress-bar-gray" role="progressbar" data-animate-width="80%">
+					        <span class="object-non-visible" data-effect-delay="200">Design</span>
+					      </div>
+					    </section>
+					    <section class="progress">
+					      <div class="progress-bar progress-bar-gray" role="progressbar" data-animate-width="90%">
+					        <span class="object-non-visible" data-effect-delay="200">Development</span>
+					      </div>
+					    </section>
+					    <section class="progress">
+					      <div class="progress-bar progress-bar-gray" role="progressbar" data-animate-width="75%">
+					        <span class="object-non-visible" data-effect-delay="200">Odoo</span>
+					      </div>
+					    </section>
+				    </div>
+		      	</div>
+	      	</div>
+	  </div>
+	  </section>
+	</template>
+	<template id="options_progress" inherit_id="website.snippets" name="Customize Options">
+	<xpath expr="//div[@id='snippet_options']" position="inside">
+	    <div data-js='theme_progressbar'
+	        data-selector=".progress-bar-theme .progress .progress-bar">
+	        <li data-change_progress=""><a>Change Progress</a></li>
+	    </div>
+	</xpath>
+	</template>
+	<!-- End -->
+
+	<!-- Our Team  -->
+	<template name="A - Our Team" id="our_team">
+		<section class="teams-boxs teams-boxs-ag">
+	        <div class="container">
+	            <section class="as-a-title">
+			        <h2>Our Team</h2>
+			        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+				</section>
+	            <div class="row">
+	                <div class="col-md-3 col-sm-6 box-3">
+	                    <div class="team-col">
+	                        <div class="tc-img">
+	                        	<img src="/theme_stoneware/static/src/img/team-1.png" title="" alt="" />
+	                        </div>
+	                        <h4>John Smith</h4>
+	                        <label>CEO</label>
+	                        <ul>
+	                        	<li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-md-3 col-sm-6 box-3">
+	                    <div class="team-col">
+	                        <div class="tc-img">
+	                        	<img src="/theme_stoneware/static/src/img/team-2.png" title="" alt="" />
+	                        </div>
+	                        <h4>Aimee</h4>
+	                        <label>HR Manager</label>
+	                        <ul>
+	                        	<li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-md-3 col-sm-6 box-3">
+	                    <div class="team-col">
+	                        <div class="tc-img">
+	                        	<img src="/theme_stoneware/static/src/img/team-3.png" title="" alt="" />
+	                        </div>
+	                        <h4>Alice</h4>
+	                        <label>Web Developer</label>
+	                        <ul>
+	                        	<li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-md-3 col-sm-6 box-3">
+	                    <div class="team-col">
+	                        <div class="tc-img">
+	                        	<img src="/theme_stoneware/static/src/img/team-4.png" title="" alt="" />
+	                        </div>
+	                        <h4>Lee</h4>
+	                        <label>Web Designer</label>
+	                        <ul>
+	                        	<li><a href="#"><i class="fa fa-facebook"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-twitter"/></a></li>
+	                        	<li><a href="#"><i class="fa fa-google-plus"/></a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Features  -->
+	<template name="A - Features" id="features_boxs">
+		<section class="features-boxs">
+	        <div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-4">
+					 	<div class="col-feature">
+				            <h6>Web design</h6>
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut earum ducimus minima nesciunt, aperiam sequi impedit quis accusantium</p>
+		              	</div>
+		            </div>
+		            <div class="col-sm-4 col-md-4">
+					 	<div class="col-feature">
+				            <h6>Development</h6>
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut earum ducimus minima nesciunt, aperiam sequi impedit quis accusantium</p>
+		              	</div>
+		            </div>
+		            <div class="col-sm-4 col-md-4">
+					 	<div class="col-feature">
+				            <h6>Odoo</h6>
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut earum ducimus minima nesciunt, aperiam sequi impedit quis accusantium</p>
+		              	</div>
+		            </div>
+				</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Recent works  -->
+	<template name="A - Recent works" id="as_recent_works">
+		<section class="as-recent-works">
+	        <div class="container">
+	            <section class="as-a-title">
+			        <h2>Recent works</h2>
+			        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+				</section>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-1.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-2.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-3.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-4.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-5.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-6.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- A -Our Packages -->
+	<template name="A - Price Tabel" id="as_packages">
+		<section class="as-packages">
+			<div class="container">
+				<section class="as-a-title">
+	                <h2>Pricing Lists</h2>
+	                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+	            </section>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 pt-basic">
+						<div class="pt-inner">
+							<div class="pt-title">BASIC</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>35</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Pupular</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>65</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Premium</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>85</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Ultimate</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>99</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a href="#">Get Started</a>
+							</div>
+						</div>
+					</div>	
+                </div>
+			</div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Action box -->
+	<template id="as_action_box1" name="Action box 1">
+		<section class="as-action-box1" style="background-image: url(/theme_stoneware/static/src/img/as_action_box.png)">
+		  <div class="container">
+		     <div class="row">
+		        <div class="col-lg-8 col-md-8 text-left">
+		          <h3>Hey! Build Your Own Website Now!</h3>
+		        </div>
+		        <div class="col-lg-4 col-md-4 text-right action-box-button">
+		          <a href="#" class="asa-btn-trs">Get start now</a>
+		        </div>
+		      </div>
+		  </div>
+		</section>
+	</template> 
+	<!-- End  -->
+<!-- End Big -->
+
+<!-- Technology Home-->
+	
+	<!-- About us -->
+	<template id="as_abouts_t" name="T- About us">
+		<section class="as-abouts-t">
+		  <div class="container">
+		  	<div class="row">
+		  		<div class="col-md-6">
+		  			<div class="as-t-title">
+		  				<h2>About Us</h2>
+		  			</div>
+		  			<div class="asat-desc">
+		  				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium corporis perferendis architecto provident. Est beatae corporis, odio perspiciatis ipsam aliquam amet rem natus fugiat dolorum, hic cumque a et cupiditate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium corporis perferendis architecto provident. Est beatae corporis, odio perspiciatis ipsam aliquam amet rem natus fugiat dolorum, hic cumque a et cupiditate. </p>
+		  			</div>
+		  			<div class="asat-action">
+		  				<a href="#" class="ast-btn">Lorn More</a>
+		  			</div>
+		  		</div>
+		  		<div class="col-md-6">
+		  			<div class="s_well_content clearfix accordion-option1">
+					   <div class="panel-group" role="tablist" id="accordion_t">
+					    <div class="panel panel-default">
+					        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+					            <h4 class="panel-title">
+					                What does it mean by Stoneware?
+					            </h4>
+					        </div>
+					        <div class="panel-collapse collapse" role="tabpanel">
+					            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.
+					            </div>
+					        </div>
+					    </div>
+					    <div class="panel panel-default">
+					        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+					            <h4 class="panel-title">
+					                How to install Stoneware in Odoo.
+					            </h4>
+					        </div>
+					        <div class="panel-collapse collapse" role="tabpanel">
+					            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.
+					            </div>
+					        </div>
+					    </div>
+					    <div class="panel panel-default">
+					        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+					            <h4 class="panel-title">
+					                How to get support. 
+					            </h4>
+					        </div>
+					        <div class="panel-collapse collapse" role="tabpanel">
+					            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam incidi dunt ut labore et dolore magna aliqua, Ut enim ad minim veniam.
+					            </div>
+					        </div>
+					    </div>
+					  </div>
+					</div>
+		  		</div>
+		  	</div>
+		  </div>
+		</section>
+	</template> 
+	<!-- End  -->
+
+	<!-- Feature  -->
+	<template id="as_feature_t" name="T - Feature Box">
+		<section class="as-feature-t">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="ab-feature clearfix">
+							<div class="feature-icon">
+								<i class="fa fa-lightbulb-o"></i>
+							</div>
+							<h3 class="title">We're Creative</h3>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="ab-feature clearfix">
+							<div class="feature-icon">
+								<i class="fa fa-user"></i>
+							</div>
+							<h3 class="title">We're Friendly</h3>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="ab-feature clearfix">
+							<div class="feature-icon">
+								<i class="fa fa-thumbs-o-up"></i>
+							</div>
+							<h3 class="title">Our Quality</h3>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- End  -->
+
+	<!-- Parallax slider -->
+	<template name="Parallax" id="parallax_box">
+		<section class="as-parallax-box" style="background-image: url(/theme_stoneware/static/src/img/parallax-bg.png)">
+			<div class="container">
+	            <h2>Parallax Block</h2>
+	            <div class="pb-desc">
+	            	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+	            </div>
+	            <div class="buts">
+	            	<a class="creative-btn1" href="#">Learn More</a>
+	            	<a class="creative-btn1" href="#">Buy Now !</a>
+	            </div>
+	            <section class="pb-img">
+	            	<img src="/theme_stoneware/static/src/img/parallax.png" title="" alt="" />
+	            </section>
+		    </div>
+		</section>
+	</template>
+	<!-- End -->
+	
+	<!-- Speciality Column  -->
+	<template name="Speciality Column" id="speciality_boxs">
+		<section class="speciality-boxs">
+            <div class="container">
+                <section class="as-t-title">
+                    <h2>Our Speciality</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde harum perspiciatis aliquam, veniam iusto accusamus. Dolor tempora </p>
+                </section>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-sticky-note"></i></span>
+                            <h2>Project Planning</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-tag"></i></span>
+                            <h2>Branding</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-map-signs"></i></span>
+                            <h2>Decide Process</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-wrench"></i></span>
+                            <h2>Build Form</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-paint-brush"></i></span>
+                            <h2>Design Workflow</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 box-3">
+                        <div class="boxs-col">
+                            <span class="iicon"><i class="fa fa-rocket"></i></span>
+                            <h2>Go Live</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Latest Works  -->
+	<template name="T - Our Latest Works" id="as_latest_works">
+		<section class="as-latest-works">
+	        <div class="container">
+	            <section class="as-t-title">
+			        <h2>Latest works</h2>
+			        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, maxime tempora quaerat ratione iste. Nulla excepturi voluptatem error repellat tenetur facilis, veniam illum.</p>
+				</section>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-1.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-2.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-3.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-4.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-5.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="asrw-box">
+							<div class="asrw-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/asrw-6.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="asrw-info">
+								<label><a href="#">design</a></label>
+								<h3 class="blog-title"><a href="#">Your Website</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	
+
+	<!-- Price Table  -->
+	<template name="T Price Table" id="as_price_tables">
+		<section class="as-price-tables">
+            <div class="container">
+            	<section class="as-t-title">
+                    <h2>Price Table</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+                </section>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 pt-basic">
+						<div class="pt-inner">
+							<div class="pt-title">BASIC</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>35</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a class="creative-btn1"  href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Pupular</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>65</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a  class="creative-btn1" href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Premium</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>85</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a class="creative-btn1" href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pt-inner">
+							<div class="pt-title">Ultimate</div>
+							<div class="pt-price">
+								<span>$</span>
+								<label>99</label>
+								<small>.99</small>
+							</div>
+							<h6>Billed Per Month</h6>
+							<ul>
+								<li>Full Statistics</li>
+								<li>Mobile-Optimized</li>
+								<li>No Transacation Fees</li>
+								<li>Max 200 items</li>
+								<li>27/7 Supports</li>
+							</ul>
+							<div class="pt-action">
+								<a class="creative-btn1" href="#">Get Started</a>
+							</div>
+						</div>
+					</div>
+					
+                </div>
+            </div>
+        </section>
+	</template>
+	<!-- End -->
+
+	<!-- Get in Touch -->
+	<template name="T - Get in Touch" id="as_get_in_touch">
+		<section class="as-get-in-touch">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-md-4">
+	            		<div class="ascu-info">
+	            			<div class="con-details">
+								<h3>Adress:</h3>
+								<p>123 6th St. <br/> Melbourne, FL 32904, USA</p>
+							</div>
+							<div class="con-details">
+								<h3>Email:</h3>
+								<p>example@yourdomain.com<br/>example@yourdomain.com</p>
+							</div>
+							<div class="con-details">
+								<h3>Phone:</h3>
+								<p>Mob: +01 000 000 000<br/> Mob: +01 000 000 000</p>
+							</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-8">
+	            		<div class="git-form">
+	            		<h2>Get in Touch</h2>
+						<form action="/website_form/crm.lead" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks" class="s_website_form form-horizontal" enctype="multipart/form-data">
+	                		<div class="ascu-form">
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Name*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" required=""  placeholder="Email*"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Subject*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" placeholder="Phone"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+	                				<div class="col-md-12">
+										<textarea class="form-control o_website_form_input" name="description" required="" placeholder="Message*"></textarea>
+	                				</div>
+	                				<div class="col-md-12">
+	                					<button class="ast-btn" >SEND MESSAGE</button>
+	                				</div>
+	                			</div>
+	                		</div>
+						</form>
+						</div>
+	            	</div>
+	            </div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+	<template name="T - Title" id="as_t_title">
+		<section class="as-t-title">
+	        <h2>Technology Title</h2>
+	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+	    </section>
+	</template>
+
+<!-- End Big -->
+
+
+<!-- Modern Home-->
+	<!-- Work Flow  -->
+	<template name="M - Work Flow" id="as_work_flow">
+		<section class="as-work-flow">
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-md-6">
+	        			<img src="/theme_stoneware/static/src/img/wf-img.png" title="" alt="" />
+	        		</div>
+	        		<div class="col-md-6">
+	        			<div class="wf-box">
+	        				<div class="wf-icon"><i class="fa fa-paint-brush"></i></div>
+	        				<div class="wf-desc">
+	        					<h2>Unique and Clean</h2>
+	        					<p>It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+	        				</div>
+	        			</div>
+	        			<div class="wf-box">
+	        				<div class="wf-icon"><i class="fa fa-arrows-alt"></i></div>
+	        				<div class="wf-desc">
+	        					<h2>Flexible Layout</h2>
+	        					<p>Responsive and Flexible layout. This allows the web page to stretch and contract relative to the user's screen size.</p>
+	        				</div>
+	        			</div>
+	        			<div class="wf-box">
+	        				<div class="wf-icon"><i class="fa fa-code"></i></div>
+	        				<div class="wf-desc">
+	        					<h2>HTML5 and css3</h2>
+	        					<p>HTML5 and CSS3 are now becoming one of the most trusted used trendiest of designing websites to the web designers.</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Work Flow  -->
+	<template name="M - 4 Col Box" id="as_4_col_box">
+		<section class="as-4-col-box">
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-md-3">
+	        			<div class="c4b-box">
+	        				<div class="c4b-icon"><i class="fa fa-bar-chart"></i></div>
+	        				<h2>Finance Consulting</h2>
+	        				<div class="c4b-desc">
+	        					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-3">
+	        			<div class="c4b-box">
+	        				<div class="c4b-icon"><i class="fa fa-user"></i></div>
+	        				<h2>Business Consulting</h2>
+	        				<div class="c4b-desc">
+	        					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-3">
+	        			<div class="c4b-box">
+	        				<div class="c4b-icon"><i class="fa fa-balance-scale"></i></div>
+	        				<h2>Lawyers Consulting</h2>
+	        				<div class="c4b-desc">
+	        					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-3">
+	        			<div class="c4b-box">
+	        				<div class="c4b-icon"><i class="fa fa-pie-chart"></i></div>
+	        				<h2>Online Consulting</h2>
+	        				<div class="c4b-desc">
+	        					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium porro neque debitis quo ab quidem, sit facere eum maxime</p>
+	        				</div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Portfolio  -->
+	<template name="M - Our Portfolio" id="as_our_portfolia">
+		<section class="as-our-portfolia">
+	        <div class="container">
+	        	<section class="as-m-title">
+		            <h2>Latest Project</h2>
+		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+	          	</section>
+	        	<div class="row">
+	        		<div class="col-md-4">
+	        			<section class="op-section" style="background-image: url(/theme_stoneware/static/src/img/as-our-portfolia.jpg)">
+	        				<div class="ops-box">
+		        				<h2>Project Title</h2>
+		        				<div class="ops-desc">
+		        					<p>It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+		        				</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		<div class="col-md-4">
+	        			<section class="op-section" style="background-image: url(/theme_stoneware/static/src/img/as-our-portfolia1.jpg)">
+	        				<div class="ops-box">
+		        				<h2>Project Title</h2>
+		        				<div class="ops-desc">
+		        					<p>It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+		        				</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        		<div class="col-md-4">
+	        			<section class="op-section" style="background-image: url(/theme_stoneware/static/src/img/as-our-portfolia2.jpg)">
+	        				<div class="ops-box">
+		        				<h2>Project Title</h2>
+		        				<div class="ops-desc">
+		        					<p>It's always nice to browse some nice and clean websites. It is a good way to get inspiration for future projects</p>
+		        				</div>
+	        				</div>
+	        			</section>
+	        		</div>
+	        	</div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+
+	<!-- Static Blog -->
+	<template name="M - Static Blog" id="as_static_blog">
+		<section class="as-static-blog">
+			<div class="container">
+				<section class="as-m-title">
+		            <h2>Static Blogs</h2>
+		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+	          	</section>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="sb-blog">
+							<div class="sb-blog-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/sb-blog1.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="sb-blog-info">
+								<label>Category</label>
+								<div class="meta">by admin / May 26,2017</div>
+								<h3>Blog Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="sb-blog">
+							<div class="sb-blog-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/sb-blog2.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="sb-blog-info">
+								<label>Category</label>
+								<div class="meta">by admin / May 26,2017</div>
+								<h3>Blog Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="sb-blog">
+							<div class="sb-blog-img">
+								<a href="#">
+									<img src="/theme_stoneware/static/src/img/sb-blog3.jpg" title="" alt="" />
+								</a>
+							</div>
+							<div class="sb-blog-info">
+								<label>Category</label>
+								<div class="meta">by admin / May 26,2017</div>
+								<h3>Blog Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione in dolore numquam laboriosam aliquid quibusdam </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- End -->
+	<!-- Call Info -->
+	<template name="M - Call Info" id="as_call_info">
+		<section class="as-call-info">
+	        <div class="row">
+	          <section class="col-md-6 col-xs-12">
+	            <div class="ci-desc text-right">
+	            	<h6>Call us for more info. </h6>
+	              	<h3>(8895-444-6858)</h3>
+	              	<span><i class="fa fa-mobile"></i></span>
+	            </div>
+	          </section>
+	          <div class="col-md-6 col-xs-12">
+	            <div class="ci-desc text-left">
+	              	<h6>Mail now for more info.</h6>
+	              	<h3>mail@yourdomin.com</h3>
+	              	<span><i class="fa fa-envelope-o"></i></span>
+	            </div>
+	          </div>
+	        </div>
+      </section>
+	</template>
+	<!-- End -->
+
+	<!-- M - Contact us -->
+	<template name="M - Contact Us" id="contact_us_m">
+		<section class="as-contact-us-m">
+	        <div class="container">
+	        	<section class="as-m-title">
+		            <h2>Connect with us</h2>
+		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nulla unde.</p>
+	          	</section>
+	            <div class="row">
+	            	<div class="col-md-12">
+						<form action="/website_form/crm.lead" method="post" data-model_name="crm.lead" data-success_page="/page/website_crm.contactus_thanks" class="s_website_form form-horizontal" enctype="multipart/form-data">
+	                		<div class="ascu-form">
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Name*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" required=""  placeholder="Email*"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="contact_name" required="" placeholder="Subject*"/>
+		                			</div>
+		                			<div class="col-md-6">
+										<input type="text" class="form-control o_website_form_input" name="email_from" placeholder="Phone"/>
+		                			</div>
+	                			</div>
+	                			<div class="row">
+	                				<div class="col-md-12">
+								<textarea class="form-control o_website_form_input" name="description" required="" placeholder="Message*"></textarea>
+	                				</div>
+	                				<div class="col-md-12">
+	                					<button class="asb-btn-trs" >SEND MESSAGE</button>
+	                				</div>
+	                			</div>
+	                		</div>
+						</form>
+	            	</div>
+	            </div>
+	        </div>
+	    </section>
+	</template>
+	<!-- End -->
+	
+	<!-- Brands -->
+	<template name="M - Static Brands" id="as_static_brands">
+		<section class="as-static-brands" style="background-image: url(/theme_stoneware/static/src/img/as-static-brands.png)">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd1.jpg" title="" alt="" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd2.jpg" title="" alt="" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd3.jpg" title="" alt="" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd4.jpg" title="" alt="" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd5.jpg" title="" alt="" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="asbrd-img">
+							<img src="/theme_stoneware/static/src/img/asbrd6.jpg" title="" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+	<!-- End -->
+
+<!-- End Big -->
+
+<template id="add_snippets" inherit_id="website.snippets" name="Add Custom snippet">
+  <xpath expr="//div[@id='snippet_structure']//div[@class='o_panel_body']" position="inside">
+  
+  <t t-snippet="theme_stoneware.theme_slider"
+       t-thumbnail="/theme_stoneware/static/src/icon/home_slider01.png"/>
+  <t t-snippet="theme_stoneware.theme_slider_creative"
+       t-thumbnail="/theme_stoneware/static/src/icon/home_slider01.png"/>
+  <t t-snippet="theme_stoneware.home_slider01"
+       t-thumbnail="/theme_stoneware/static/src/icon/home_slider01.png"/>
+  <t t-snippet="theme_stoneware.home_slider02"
+       t-thumbnail="/theme_stoneware/static/src/icon/home_slider01.png"/>
+  <t t-snippet="theme_stoneware.animated_slider"
+       t-thumbnail="/theme_stoneware/static/src/icon/home_slider01.png"/>
+  <t t-snippet="theme_stoneware.as_home_banner"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_home_banner.png"/>
+
+  <t t-snippet="theme_stoneware.clinic_slider"
+       t-thumbnail="/theme_stoneware/static/src/icon/clinic_slider.jpg"/>
+  <t t-snippet="theme_stoneware.client_slider"
+       t-thumbnail="/theme_stoneware/static/src/icon/testimonial.png"/>
+  <t t-snippet="theme_stoneware.as_testimonial_parallax"
+       t-thumbnail="/theme_stoneware/static/src/icon/testimonial.png"/>
+
+
+  <!-- Busines Theme -->     
+   <t t-snippet="theme_stoneware.as_company_feature"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_company_feature.png"/>
+   <t t-snippet="theme_stoneware.as_company_offer"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_company_offer.png"/>
+    <t t-snippet="theme_stoneware.as_abouts_b"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_abouts_b.png"/>
+   <t t-snippet="theme_stoneware.as_we_offer"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_we_offer.png"/>
+   <t t-snippet="theme_stoneware.as_about"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_about.png"/>
+   <t t-snippet="theme_stoneware.as_case_box"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_case_box.png"/>
+   <t t-snippet="theme_stoneware.clinic_team"
+       t-thumbnail="/theme_stoneware/static/src/icon/clinic_team.jpg"/>
+   
+   <t t-snippet="theme_stoneware.contact_usa"
+       t-thumbnail="/theme_stoneware/static/src/icon/contact_us.png"/>
+   <t t-snippet="theme_stoneware.as_action_box"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_percent_button.png"/> 
+  <!-- End -->
+
+  <!-- Agency Theme -->
+  	<t t-snippet="theme_stoneware.progress_bar"
+       t-thumbnail="/theme_stoneware/static/src/icon/progress_bar.png"/>
+  	<t t-snippet="theme_stoneware.our_team"
+       t-thumbnail="/theme_stoneware/static/src/icon/our-team.jpg"/>
+ 	<t t-snippet="theme_stoneware.features_boxs"
+       t-thumbnail="/theme_stoneware/static/src/icon/features_boxs.png"/>
+    <t t-snippet="theme_stoneware.as_recent_works"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_recent_works.png"/>
+    
+    <t t-snippet="theme_stoneware.as_packages"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_packages.png"/>
+    <t t-snippet="theme_stoneware.as_action_box1"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_percent_button.png"/>
+  <!-- End -->
+
+  <!-- Technology -->
+    <t t-snippet="theme_stoneware.as_abouts_t"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_abouts_t.png"/>
+    <t t-snippet="theme_stoneware.as_feature_t"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_feature_t.png"/>
+    <t t-snippet="theme_stoneware.parallax_box"
+       t-thumbnail="/theme_stoneware/static/src/icon/as-parallax-1.png"/>
+    <t t-snippet="theme_stoneware.speciality_boxs"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_content_feature.png"/>
+    <t t-snippet="theme_stoneware.as_latest_works"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_latest_works.png"/>
+    <t t-snippet="theme_stoneware.as_price_tables"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_price_table3.png"/> 
+    <t t-snippet="theme_stoneware.as_get_in_touch"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_get_in_touch.png"/>
+     <t t-snippet="theme_stoneware.as_t_title"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_t_title.png"/>
+    
+  <!-- End -->
+
+  <!-- Modern -->
+    <t t-snippet="theme_stoneware.as_work_flow"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_work_flow.png"/>
+    <t t-snippet="theme_stoneware.as_4_col_box"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_4_col_box.png"/>
+    <t t-snippet="theme_stoneware.as_our_portfolia"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_our_portfolia.png"/>
+    <t t-snippet="theme_stoneware.as_call_info"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_call_info.png"/>
+    <t t-snippet="theme_stoneware.as_static_blog"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_static_blog.png"/>
+    <t t-snippet="theme_stoneware.contact_us_m"
+       t-thumbnail="/theme_stoneware/static/src/icon/contact_us_m.png"/>
+    <t t-snippet="theme_stoneware.as_static_brands"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_static_brands.png"/>
+  <!-- End -->
+  
+
+    
+    
+    
+    
+    <t t-snippet="theme_stoneware.calcsn_promo"
+       t-thumbnail="/theme_stoneware/static/src/icon/ads-blocks.png"/>
+    <t t-snippet="theme_stoneware.fashion_promo"
+       t-thumbnail="/theme_stoneware/static/src/icon/ads-blocks.png"/>
+    <t t-snippet="theme_stoneware.banner_two"
+       t-thumbnail="/theme_stoneware/static/src/icon/ads-two.png"/>
+    <t t-snippet="theme_stoneware.custom_tabs_1"
+       t-thumbnail="/theme_stoneware/static/src/icon/custom-tabs-1.png"/>
+    <t t-snippet="theme_stoneware.custom_tabs_2"
+       t-thumbnail="/theme_stoneware/static/src/icon/custom-tabs-1.png"/>
+  
+    <t t-snippet="theme_stoneware.col_3_boxs"
+       t-thumbnail="/theme_stoneware/static/src/icon/services.jpg"/>
+    <t t-snippet="theme_stoneware.col_4_boxs"
+       t-thumbnail="/theme_stoneware/static/src/icon/services.jpg"/>
+    <t t-snippet="theme_stoneware.services_boxs"
+       t-thumbnail="/theme_stoneware/static/src/icon/services.jpg"/>
+  
+    <t t-snippet="theme_stoneware.as_policy_box"
+       t-thumbnail="/theme_stoneware/static/src/icon/policy.png"/>
+    <t t-snippet="theme_stoneware.as_policy_box_01"
+       t-thumbnail="/theme_stoneware/static/src/icon/policy.png"/>
+    <t t-snippet="theme_stoneware.seaction_head"
+       t-thumbnail="/theme_stoneware/static/src/icon/as-desc-head.png"/>
+    <t t-snippet="theme_stoneware.as_choose_us"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_choose_us.png"/>
+    <t t-snippet="theme_stoneware.accordion_option1"
+       t-thumbnail="/theme_stoneware/static/src/icon/accordion_option1.png"/>
+    <t t-snippet="theme_stoneware.as_stats_section"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_stats_section.png"/>
+    <t t-snippet="theme_stoneware.as_stats_section-bg"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_stats_section.png"/>
+    <t t-snippet="theme_stoneware.as_space"
+       t-thumbnail="/theme_stoneware/static/src/icon/as_space.png"/>
+    
+    <t t-snippet="theme_stoneware.give_call"
+         t-thumbnail="/theme_stoneware/static/src/icon/give_call.jpg"/>
+    <t t-snippet="theme_stoneware.clinic_col_3_boxs"
+         t-thumbnail="/theme_stoneware/static/src/icon/clinic_col_3_boxs.jpg"/>
+    <t t-snippet="theme_stoneware.clinic_about_us"
+         t-thumbnail="/theme_stoneware/static/src/icon/clinic_about_us.jpg"/>
+    <t t-snippet="theme_stoneware.clinic_offer"
+       t-thumbnail="/theme_stoneware/static/src/icon/clinic_offer.jpg"/>
+    <t t-snippet="theme_stoneware.clinic_choose_us"
+       t-thumbnail="/theme_stoneware/static/src/icon/clinic_choose_us.jpg"/>
+    <t t-snippet="theme_stoneware.clinic_served"
+       t-thumbnail="/theme_stoneware/static/src/icon/clinic_served.jpg"/>
+</xpath>
+</template>
+
+
+
+
+<!-- Content Snippets -->
+
+<!-- List Style -->
+<template id="as_list01" name="List Style">
+    <div class="s_well_content clearfix as-list01">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+
+<!-- List Style -->
+<template id="as_list02" name="List Style 1">
+    <div class="s_well_content clearfix as-list02">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+
+<!-- List Style -->
+<template id="as_list03" name="List Style 2">
+    <div class="s_well_content clearfix as-list03">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+
+<!-- List Style -->
+<template id="as_list04" name="List Style 3">
+    <div class="s_well_content clearfix as-list04">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+
+<!-- List Style -->
+<template id="as_list05" name="List Style 4">
+    <div class="s_well_content clearfix as-list05">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+<!-- List Style -->
+<template id="as_list06" name="List Style 5">
+    <div class="s_well_content clearfix as-list06">
+        <ul>
+            <li>Page Layout Options with Boxed and Full Width </li>
+            <li>6 Header Style </li>
+            <li>2 Footer color options </li>
+            <li>3 Footer Style </li>
+            <li>Shop Left Right Navigation  </li>
+            <li>3 Product styles </li>
+            <li>18 colors options </li>
+            <li>6 Background Patterns </li>
+            <li>6 Background Colors </li>
+            <li>6 Font Combinations </li>
+        </ul>
+    </div>
+</template>
+<!-- End -->
+
+
+<template id="accordion_option2" name="Accordion 2">
+<div class="s_well_content clearfix accordion-option2">
+   <div class="panel-group" role="tablist" id="accordion1">
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #1
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #2
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #3
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</template>
+<!-- End -->
+
+<template id="accordion_option3" name="Accordion 3">
+<div class="s_well_content clearfix accordion-option1">
+   <div class="panel-group" role="tablist" id="accordion2">
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #1
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #2
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading collapsed" role="tab" data-toggle="collapse">
+            <h4 class="panel-title">
+                Collapsible Group Item #3
+            </h4>
+        </div>
+        <div class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</template>
+<!-- End -->
+
+<template id="add_snippets_content" inherit_id="website.snippets" name="Add Custom snippet">
+  <xpath expr="//div[@id='snippet_content']//div[@class='o_panel_body']" position="inside">
+  <t t-snippet="theme_stoneware.accordion_option2" 
+    t-thumbnail="/theme_stoneware/static/src/icon/accordion_option1.png"/>
+  <t t-snippet="theme_stoneware.accordion_option3" 
+    t-thumbnail="/theme_stoneware/static/src/icon/accordion_option1.png"/>
+  <t t-snippet="theme_stoneware.as_list01" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+  <t t-snippet="theme_stoneware.as_list02" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+  <t t-snippet="theme_stoneware.as_list03" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+  <t t-snippet="theme_stoneware.as_list04" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+  <t t-snippet="theme_stoneware.as_list05" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+  <t t-snippet="theme_stoneware.as_list06" 
+    t-thumbnail="/theme_stoneware/static/src/icon/as_list01.jpg"/>
+</xpath>
+</template>
+    <template id="website_s_Well_options" inherit_id="website.snippet_options" name="Twitter Options">
+        <xpath expr="//div" position="after">
+            <div
+                data-selector=".s_well_content"
+                data-drop-near="p, h1, h2, h3, blockquote, .well, .panel, .row, .as-custom-col">
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+
+    <template id="wk_my_orders_reorder" name="Orders Reorder" inherit_id="website_portal_sale.orders_followup">
+        <xpath expr="//div[@class='col-sm-4']" position="after">
+          <div>
+            <a id="add_to_cart_reorder"
+                class="btn btn-primary mt8 js_check_product a-submit pull-right mb32 "
+                groups="sale_reorder.group_sale_reorder"
+                t-attf-href="/my/orders/reorder/#{(order.id)}">Reorder</a>
+          </div>
+        </xpath>
+    </template>
+
+    <template id="wk_my_orders_reorder_tree" name="Orders Reorder" inherit_id="website_portal_sale.portal_my_orders">
+        <xpath expr="//table[@class='table table-hover o_my_status_table']//thead//tr//th[4]" position="after">
+          <th groups="sale_reorder.group_sale_reorder">Reorder</th>
+        </xpath>
+        <xpath expr="//table[@class='table table-hover o_my_status_table']//tr//td[4]" position="after">
+        <td groups="sale_reorder.group_sale_reorder">
+          <a id="add_to_cart_reorder_tree"
+              class="btn js_check_product a-submit fa fa-refresh"
+              t-attf-href="/my/orders/reorder/#{(order.id)}"></a>
+        </td>
+      </xpath>
+    </template>
+</odoo>

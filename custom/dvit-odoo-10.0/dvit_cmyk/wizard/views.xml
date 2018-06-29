@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record id="view_wiz_prod_uom" model="ir.ui.view">
+      <field name="name">view_wiz_prod_uom</field>
+      <field name="model">wiz.prod.uom</field>
+      <field name="inherit_id" ref="dvit_product_multi_uom_ratio_dimensions.view_wiz_prod_uom"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='qty']" position='replace'>
+          <field name="attr_area" invisible="1"/>
+          <field name="qty" required="1" attrs="{'readonly':[('attr_area','!=',0.0)]}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

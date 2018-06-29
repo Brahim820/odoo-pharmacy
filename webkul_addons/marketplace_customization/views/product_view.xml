@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data>
+        <record id="wk_product_template_custom_inherit" model="ir.ui.view">
+            <field name="name">Marketplace Customization Product Inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_template_form_view"/>
+            <field name="arch" type="xml">
+				<xpath expr="//page[2]/group[1]/group[1]" position="replace">
+                    <group string="Product Stock Availablity">
+                        <field name="custom_stock_status" widget="radio"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//page[2]/group[1]/group[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="wk_product_product_custom_inherit" model="ir.ui.view">
+            <field name="name">Marketplace Customization Product Inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="odoo_marketplace.mp_product_product_form_view"/>
+            <field name="arch" type="xml">
+				<xpath expr="//page[2]/group[1]/group[1]" position="replace">
+                    <group string="">
+                        <field name="custom_stock_status" widget="radio"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//page[2]/group[1]/group[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

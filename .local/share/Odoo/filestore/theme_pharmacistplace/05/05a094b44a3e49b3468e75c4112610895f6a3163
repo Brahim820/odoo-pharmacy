@@ -1,0 +1,324 @@
+
+/* as-product
+------------------*/
+#products_grid .as-product-list {
+  letter-spacing: -0.31em;
+}
+#products_grid .as-product-list .col-sm-6 {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: normal;
+}
+@media (max-width: 767px) {
+  #products_grid .as-product-list .col-sm-6 {
+    width: 50%;
+  }
+}
+@media (max-width: 479px) {
+  #products_grid .as-product-list .col-sm-6 {
+    width: 100%;
+  }
+}
+#products_grid.list-view-box,
+#products_grid .oe_list {
+  border: none;
+}
+#products_grid.list-view-box .as-product .pro-img,
+#products_grid .oe_list .as-product .pro-img {
+  width: 31%;
+  float: left;
+  background: #f5f5f5;
+}
+#products_grid.list-view-box .as-product .pro-action,
+#products_grid .oe_list .as-product .pro-action {
+  position: absolute;
+  top: auto;
+  left: 24%;
+  right: auto;
+  bottom: 20px;
+}
+#products_grid.list-view-box .as-product .pro-info,
+#products_grid .oe_list .as-product .pro-info {
+  width: 69%;
+  float: left;
+  padding: 0 20px;
+  background: transparent;
+  text-align: left;
+}
+#products_grid.list-view-box .as-product .pro-info .o_rating_card .rating .o_rating_star_card,
+#products_grid .oe_list .as-product .pro-info .o_rating_card .rating .o_rating_star_card {
+  text-align: left;
+}
+#products_grid.list-view-box .as-product-list .col-md-4,
+#products_grid .oe_list .as-product-list .col-md-4 {
+  width: 100%;
+}
+.owl-item .as-product {
+  margin-bottom: 0;
+}
+.as-product {
+  margin-bottom: 30px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.as-product .asp-inner {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+}
+.as-product .asp-inner .pro-img {
+  position: relative;
+  height: 263px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #f4f4f4;
+}
+.as-product .asp-inner .pro-img img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  width: auto;
+}
+.as-product .asp-inner .pro-img .preview-image {
+  overflow: hidden;
+}
+.as-product .asp-inner .pro-img .preview-image .product-hover-img {
+  position: absolute;
+  left: 0;
+  top: -100%;
+  z-index: 1;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+.as-product .asp-inner .pro-img .preview-image .product-hover-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+.as-product .asp-inner .sale ul {
+  margin: 0;
+  padding: 0;
+}
+.as-product .asp-inner .sale ul li {
+  list-style-type: none;
+  padding: 4px 10px;
+  background: #F05656;
+  color: #ffffff;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  line-height: normal;
+  z-index: 10;
+  margin: 0 0 5px;
+  font-size: 12px;
+  border-radius: 15px;
+}
+.as-product .asp-inner .pro-action {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  position: absolute;
+  bottom: 90px;
+  right: 20px;
+  margin: auto;
+  z-index: 9;
+}
+.as-product .asp-inner .pro-action .add_to_wishlist {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 9;
+  line-height: 40px;
+  background: #2196f3;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.as-product .asp-inner .pro-action .add_to_wishlist span {
+  display: none;
+}
+.as-product .asp-inner .pro-action a.btn-cart {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.as-product .asp-inner .pro-action .button.btn-cart {
+  border: 1px solid #000000;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  color: #000000;
+  background: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.as-product .asp-inner .pro-action .button.btn-cart .fa {
+  font-size: 17px;
+}
+.as-product .asp-inner .pro-action .button.btn-cart span {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  display: none;
+}
+.as-product .asp-inner .pro-action .button.btn-cart:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.as-product .asp-inner .pro-info {
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 15px 20px 12px;
+  background: #f4f4f4;
+}
+.as-product .asp-inner .pro-info h3 {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #e0e0e0;
+}
+.as-product .asp-inner .pro-info h3 strong {
+  font-weight: 400;
+}
+.as-product .asp-inner .pro-info h3 a {
+  color: #000000;
+}
+.as-product .asp-inner .pro-info h3:hover a {
+  color: #2196f3;
+}
+.as-product .asp-inner .pro-info .product_price {
+  float: right;
+  max-width: 50%;
+  font-size: 14px;
+  position: relative;
+  font-weight: 700;
+}
+.as-product .asp-inner .pro-info .product_price b {
+  font-weight: 300;
+}
+.as-product .asp-inner .pro-info .product_price span {
+  font-weight: 300;
+}
+.as-product .asp-inner .pro-info .product_price .text-danger {
+  color: #d40707;
+}
+.as-product .asp-inner .pro-info .o_rating_card {
+  width: 50%;
+  float: left;
+  line-height: normal;
+}
+.as-product .asp-inner .pro-info .o_rating_card .well {
+  float: none;
+  text-align: left;
+}
+.as-product .asp-inner .pro-info .o_rating_card .rating {
+  float: none;
+}
+.as-product .asp-inner .pro-info .o_rating_card .rating .o_rating_star_card {
+  float: none;
+  margin: 0;
+}
+.as-product .asp-inner .pro-info .o_rating_card .rating .o_rating_star_card .stars {
+  margin: 0;
+}
+.as-product .asp-inner .pro-info .o_rating_card .rating .o_rating_star_card .stars .fa {
+  color: #2196f3;
+  font-size: 13px;
+  margin: 0;
+}
+.as-product .asp-inner .pro-info .o_rating_card .fa-user {
+  display: none;
+}
+.as-product .asp-inner .pro-info .o_rating_card .popover {
+  display: none !important;
+}
+.as-product:hover .asp-inner .pro-action .add_to_wishlist {
+  top: -95px;
+  visibility: visible;
+  opacity: 1;
+}
+.as-product:hover .asp-inner .pro-action .button.btn-cart {
+  top: 5px;
+}
+.as-product:hover .asp-inner .preview-image .product-hover-img {
+  top: 0;
+}
+/**/
+/* Events
+---------------------------------------------*/
+#left_column .nav-pills {
+  border: 1px solid #e8e8e8;
+}
+#left_column .nav-pills > li + li {
+  border-top: 1px solid #e8e8e8;
+  margin: 0;
+}
+#left_column .nav-pills > li > a {
+  padding: 10px;
+  border-radius: 0;
+}
+#left_column .nav-pills > li.active > a {
+  background: #2196f3;
+  color: #ffffff;
+}
+#left_column .nav-pills > li.active > a .badge {
+  color: #2196f3;
+}
+#left_column .nav-pills > li.active > a:hover,
+#left_column .nav-pills > li.active > a:active,
+#left_column .nav-pills > li.active > a:focus {
+  background: #2196f3;
+  color: #ffffff;
+}

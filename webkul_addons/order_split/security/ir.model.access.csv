@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user,wk.split.transfer.wizard,model_wk_split_transfer_wizard,,1,0,0,0
+access_admin,wk.split.transfer.wizard,model_wk_split_transfer_wizard,stock.group_stock_manager,1,1,1,1

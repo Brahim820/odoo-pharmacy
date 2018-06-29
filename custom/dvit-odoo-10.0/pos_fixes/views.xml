@@ -1,0 +1,9 @@
+<openerp>
+	<data>
+		<template id="pos_index_inherit" name="pos_pay_nobarcode" inherit_id="point_of_sale.index">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_fixes/static/src/js/main.js"/>
+            </xpath>
+        </template>
+	</data>
+</openerp>

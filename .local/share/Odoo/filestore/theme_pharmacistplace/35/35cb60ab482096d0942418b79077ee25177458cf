@@ -1,0 +1,105 @@
+
+/*Buttons*/
+.btn {
+  border-radius: 0;
+}
+.btn.btn-primary {
+  background: #2196f3;
+  border-color: #2196f3;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+  background: #0c7cd5;
+  border-color: #0c7cd5;
+}
+.btn.button-style1 {
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+}
+.btn.button-style2 {
+  border-radius: 20px;
+}
+.btn.button-style2.btn-lg {
+  border-radius: 30px;
+}
+.label-primary {
+  background-color: #2196f3;
+}
+.creative-btn {
+  padding: 16px 21px 14px 22px;
+  border: 2px solid #000000;
+  color: #000000;
+  background-color: transparent;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  transition: all 0.35s ease;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  display: inline-block;
+}
+.creative-btn:hover {
+  background: #2196f3;
+  color: #ffffff;
+  border-color: #2196f3;
+}
+/*creative-btn1*/
+.creative-btn1 {
+  font-size: 15px;
+  font-stretch: 300;
+  border-radius: 30px;
+  padding: 17px 45px;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #2196f3;
+  color: #ffffff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  margin: 0 10px;
+}
+.creative-btn1:hover {
+  background: #ffffff;
+  color: #000000;
+}
+/**/
+/*creative-btn2*/
+.creative-btn2 {
+  font-size: 14px;
+  font-stretch: 300;
+  border-radius: 30px;
+  padding: 10px 15px;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  background: #2196f3;
+  color: #ffffff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  margin: 0 10px;
+}
+.creative-btn2:hover {
+  background: #ffffff;
+  color: #000000;
+}
+.creative-btn2-border {
+  font-size: 14px;
+  font-stretch: 300;
+  border-radius: 30px;
+  padding: 10px 15px;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  margin: 0 10px;
+}
+.creative-btn2-border:hover {
+  background: #ffffff;
+  color: #2196f3;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <menuitem name="Deals and Offers"
+                id="wk_seller_dashboard_menu2_sub_menu5"
+                parent="odoo_marketplace.wk_seller_dashboard_menu2"
+                action="marketplace_daily_deals.wk_seller_daily_deals_action"
+                sequence="5"
+                />
+    </data>
+</odoo>

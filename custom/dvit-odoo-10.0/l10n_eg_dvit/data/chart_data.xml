@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Chart Template -->
+    <record id="account_egypt_coa_general" model="account.chart.template">
+        <field name="property_account_receivable_id" ref="120100_account_receivable"/>
+        <field name="property_account_payable_id" ref="200100_account_payable"/>
+        <field name="property_account_expense_id" ref="500100_cogs_cost_of_goods_sold"/>
+        <field name="property_account_income_id" ref="400100_general_product_sales"/>
+        <field name="property_account_expense_categ_id" ref="500100_cogs_cost_of_goods_sold"/>
+        <field name="property_account_income_categ_id" ref="400100_general_product_sales"/>
+        <field name="income_currency_exchange_account_id" ref="709000_currency_exchange_account"/>
+        <field name="expense_currency_exchange_account_id" ref="709000_currency_exchange_account"/>
+    </record>
+</odoo>

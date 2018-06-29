@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <report 
+            id="action_stock_inventory_location"
+            model="wizard.valuation.stock.inventory"
+            string="Stock Inventory by Location"
+            menu="False"
+            report_type="qweb-pdf"
+            name="dvit_report_inventory_valuation_multi_uom.report_stock_inventory_location"
+            file="dvit_report_inventory_valuation_multi_uom.report_stock_inventory_location"
+        />        
+    </data>
+</odoo>

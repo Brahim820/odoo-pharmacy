@@ -1,0 +1,257 @@
+<odoo>
+  <data>
+
+    <template inherit_id="dvit_sale_discount.report_saleorder_discount" id="dvit_report_smartsys_discount">
+      <xpath expr="//span[@t-field='l.total_line']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.disc_line']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+    </template>
+
+    <template id="sales_report_product_image.report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//th[@xid='description']/.." position="inside">
+        <t t-if="doc.print_image and doc.image_sizes in ('image', 'image_medium', 'image_small') ">
+          <th xid="product_image" style="min-width: 9cm;">
+            Product Image
+          </th>
+        </t>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']/../.." position="inside">
+        <t t-if="doc.image_sizes == 'image' and doc.print_image ">
+          <td>
+            <span style="min-width: 9cm; border:0px;" t-field="l.product_id.image" t-field-options="{&quot;widget&quot;: &quot;image&quot;,}"/>
+          </td>
+        </t>
+        <t t-if="doc.image_sizes == 'image_medium' and doc.print_image">
+          <td>
+            <span style="min-width: 6cm;border:0px;" t-field="l.product_id.image_medium" t-field-options="{&quot;widget&quot;: &quot;image&quot;,}"/>
+          </td>
+        </t>
+        <t t-if="doc.image_sizes == 'image_small' and doc.print_image ">
+          <td>
+            <span style="min-width: 3cm;border:0px;" t-field="l.product_id.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, }"/>
+          </td>
+        </t>
+      </xpath>
+
+    </template>
+
+    <template id="dvit_sale_line_no.line_no" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//th[@xid='description']" position="before">
+        <th xid="line_no" style="min-width:90px;">Item No.</th>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']/.." position="before">
+        <td t-att-style="style">
+          <strong><span t-field="l.line_no"/></strong>
+        </td>
+      </xpath>
+    </template>
+
+    <template id="report_saleorder_smartsys" inherit_id="sale.report_saleorder_document" priority="1111">
+      <xpath expr="//div[@class='row']" position="replace"></xpath>
+      <xpath expr="//div[@t-if='doc.date_order']" position="replace"></xpath>
+      <xpath expr="//div[@t-if='doc.user_id.name']" position="replace"></xpath>
+      <xpath expr="//div[@id='informations']" position="replace"></xpath>
+      <xpath expr="//h2" position="replace"></xpath>
+      <xpath expr="//div[@class='page']" position="attributes">
+        <attribute name="style">font-size: 16px !important;</attribute>
+      </xpath>
+
+      <xpath expr="//t[@t-set='display_discount']" position="after">
+        <t t-set="packs" t-value="any([l.product_id.pack for l in doc.order_line])"/>
+        <t t-set="taxes" t-value="any([l.tax_id for l in doc.order_line])"/>
+        <div class="row" style="direction:rtl;">
+            <div class="col-md-8 col-span-8 pull-right" style="margin-right:30px; direction:rtl;">
+              <t t-if="doc.partner_id.company_type == 'company'">
+                السادة/
+              </t>
+              <t t-if="doc.partner_id.company_type == 'person'">
+                <span t-field="doc.partner_id.title"/>/
+              </t>
+              <span t-field="doc.partner_id.name"/><br/>
+              <span t-field="doc.partner_id.function"/><br/>
+              <span t-field="doc.partner_id.department_id.name"/><br/>
+              <t t-if="doc.partner_id.department_id.parent_id.name">
+                <span t-field="doc.partner_id.department_id.parent_id.name"/><br/>
+              </t>
+              <p t-field="doc.partner_id.parent_id.name"/>
+            </div>
+        </div>
+        <p style="text-align:right; direction:rtl;">
+          <center>،،،تحية طيبة وبعد</center>
+        </p>
+        <div class="row">
+          <div class="col-md-4 col-span-4 pull-right" style="min-width:3000px; direction:rtl;">
+            <strong>
+              <p style="margin-right: 30px; text-align:right; direction:rtl; ">
+                نتشرف بتقديم العرض رقم
+                <span t-field="doc.name"/>
+              </p>
+            </strong>
+          </div>
+        </div>
+      </xpath>
+
+      <xpath expr="//t[@t-as='l']/tr" position="before">
+        <t t-if="l.pack_parent_line_id">
+          <t t-set="style" t-value="'border: 0px;'"/>
+        </t>
+        <t t-if="not l.product_id.pack and not l.pack_parent_line_id and packs">
+          <t t-set="style" t-value="'border-top: 1px solid black;'"/>
+        </t>
+        <t t-if="l.product_id.pack and not l.pack_parent_line_id">
+          <t t-set="style" t-value="'background-color: #eee; font-weight:bold;'"/>
+        </t>
+      </xpath>
+
+      <xpath expr="//th[@xid='quantity']" position="attributes">
+        <attribute name="class"></attribute>
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+      <xpath expr="//th[@xid='unit_price']" position="attributes">
+        <attribute name="class"></attribute>
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+      <xpath expr="//th[@xid='total_price']" position="attributes">
+        <attribute name="class"></attribute>
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+      <xpath expr="//th[@xid='taxes']" position="attributes">
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+      <xpath expr="//th[@xid='disc_percent']" position="attributes">
+        <attribute name="class"></attribute>
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+      <xpath expr="//th[@xid='discount']" position="attributes">
+        <attribute name="class"></attribute>
+        <attribute name="style">max-width:100px !important;</attribute>
+      </xpath>
+
+      <xpath expr="//th[@xid='description']" position="after">
+        <th xid='code' style="min-width:100px;">Order No.</th>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']/.." position="after">
+        <td t-att-style="style">
+          <span t-field="l.product_id.default_code"/>
+        </td>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.name']/../.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.name']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']" position="attributes">
+        <attribute name="t-att-style">style</attribute>
+        <attribute name="t-if">mhjghjk</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.name']" position="after">
+        <span t-esc="l.name.replace('['+str(l.product_id.default_code)+']','')"/>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.product_uom_qty']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.price_unit']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.price_unit']" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+
+      <xpath expr="//t[contains(@t-esc,'l.price_unit')]/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//t[contains(@t-esc,'l.price_unit')]" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.discount']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.discount']" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+
+      <xpath expr="//span[contains(@t-esc,'tax_id')]/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[contains(@t-esc,'tax_id')]" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.price_subtotal']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.price_subtotal']" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.price_total']/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.price_total']" position="attributes">
+        <attribute name="t-if">not l.pack_parent_line_id</attribute>
+      </xpath>
+      <xpath expr="//span[contains(@t-field,'l.product_id.image')]/.." position="attributes">
+        <attribute name="t-att-style">style</attribute>
+      </xpath>
+
+      <xpath expr="//span[@t-field='l.product_uom_qty']" position="replace">
+        <t t-set="lqty" t-value="(l.pack_parent_line_id.product_uom_qty > 0) and int(l.product_uom_qty/l.pack_parent_line_id.product_uom_qty) or 0"/>
+        <span t-if="l.pack_parent_line_id and not l.hide_info" t-esc="lqty"/>
+        <span t-if="not l.pack_parent_line_id and not l.hide_info" t-field="l.product_uom_qty"/>
+      </xpath>
+      <xpath expr="//span[@t-field='l.product_id.default_code']" position="replace">
+        <span t-if="not l.hide_info" t-field="l.product_id.default_code"/>
+      </xpath>
+
+      <xpath expr="//p[@t-if='doc.note2']" position="replace" >
+        <div dir="rtl" >
+          <div t-if="doc.note2 != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;' and not doc.show_price" style="page-break-before:always;">
+            <span t-field="doc.note2"/>
+          </div>
+          <div t-if="doc.note3 != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;' and doc.show_price" style="page-break-before:always;">
+            <span t-field="doc.note3"/>
+          </div>
+        </div>
+      </xpath>
+
+    </template>
+
+    <!-- catalogue / proposal -->
+    <report id="report_sale_catalog" string="Catalogue / Proposal" model="sale.order" report_type="qweb-pdf" file="dvit_report_smartsys.report_saleorder_catalog" name="dvit_report_smartsys.report_saleorder_catalog"/>
+
+    <template id="report_sale_catalog_document" primary="True" priority="9999" inherit_id="report_saleorder_smartsys">
+      <xpath expr="//span[@t-field='l.name']/.." position="replace">
+        <td t-att-style="style">
+          <span t-if="doc.print_type == 'catalogue' and l.product_id.product_tmpl_id.desc_catalog" t-field="l.product_id.product_tmpl_id.desc_catalog"/>
+          <span t-if="doc.print_type == 'proposal' and l.product_id.product_tmpl_id.desc_proposal" t-field="l.product_id.product_tmpl_id.desc_proposal"/>
+          <span t-if="not l.product_id.product_tmpl_id.desc_catalog and not l.product_id.product_tmpl_id.desc_proposal or not doc.print_type" t-field="l.name"/>
+        </td>
+      </xpath>
+      <xpath expr="//th[@xid='code']" position="attributes">
+        <attribute name="t-if">doc.print_type == 'catalogue'</attribute>
+      </xpath>
+      <xpath expr="//span[@t-field='l.product_id.default_code']/.." position="attributes">
+        <attribute name="t-if">doc.print_type == 'catalogue'</attribute>
+      </xpath>
+
+    </template>
+
+    <template id="report_saleorder_catalog">
+      <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="doc">
+          <t t-call="dvit_report_smartsys.report_sale_catalog_document" t-lang="doc.partner_id.lang"/>
+        </t>
+      </t>
+    </template>
+
+  </data>
+</odoo>

@@ -1,0 +1,318 @@
+
+.social-media-link:hover, .social-media-link:focus, .social-media-link:active, .social-media-link:visited, .social-media-link:link{
+    text-decoration: none;
+}
+
+.social-media-link{
+    font-size: 18px;
+    margin: 0px 5px 0px 5px;
+}
+
+/* .wk_white_text{
+    color: #fcfffe !important;
+} */
+
+@media ( min-width: 768px) {
+    .grid-divider {
+        position: relative;
+        padding: 0;
+    }
+    .grid-divider>[class*='col-'] {
+        position: static;
+    }
+    .grid-divider>[class*='col-']:nth-child(n+2):before {
+        content: "";
+        border-left: 1px solid #DDD;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    .col-padding {
+        padding: 0 15px;
+    }
+}
+
+.wk_left_border {
+    border-left: 1px solid #3a3c82;
+    
+}
+
+.wk_left_border:before {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-left: 0.1rem solid #0b0c35;
+}
+
+/* #footer_copyright>div.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+} */
+
+/* .wk_primary_color{
+    color:#13ae8e
+} */
+.wk_js_count_div{
+    padding-left:40px;
+}
+
+@media ( max-width: 768px) {
+    .wk_js_count_div{
+        padding-left: 15px;
+    }
+    /* .wk_js_count_div > wk_js_count{
+
+    }
+    .wk_js_count_div > wk_js_count {} */
+
+}
+
+.wk_js_count{
+    font-size: 32px;
+}
+
+.wk_js_count_label{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.wk_divider{
+    margin-top: 15px;
+    padding-top: 20px;
+    border-right: 1px solid white;
+}
+
+.pp-label-footer{
+    color: #cccccc;
+}
+
+.wk_js_count_label{
+    color:#EEEEEE;
+}
+
+
+.navbar-pharmacistplace .navbar-nav>li {
+    border-right: 1px solid #00000038;
+}
+
+.navbar-pharmacistplace .navbar-nav>li:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-right: 0.1rem solid #ffffff6b;
+    
+}
+.navbar-pharmacistplace .navbar-nav>li:last-child:before {
+    content: none;
+}
+.navbar-pharmacistplace .navbar-nav>li:last-child {
+    border: none;
+}
+
+.sidebar-nav .navbar-nav > li {
+    border-bottom: 1px solid transparent;
+    border-color: #e7e7e7;
+}
+
+.sidebar-nav .navbar-nav > li:last-child {
+    border: none;
+}
+
+.sidebar-nav  .navbar-default {
+    background-color: white;
+}
+
+.sidebar-nav .navbar-nav>li.active {
+    background-color: white;
+}
+
+.sidebar-nav .navbar-default .navbar-nav a {
+    color: rgb(39, 40, 102);
+    /* background-color: rgb(18, 174, 142); */
+}
+
+.sidebar-nav .navbar-default .navbar-nav>.active>a {
+    color: white;
+    background-color: rgb(18, 174, 142);
+}
+/* .navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus { */
+
+.remove_li_border{
+    border: none !important;
+}
+.remove_li_border::before{
+    border-right: none !important;
+}
+
+.menu_icon{
+    width: 36px;
+    height: 25px;
+    background-image: url('/theme_pharmacistplace/static/src/icon/Menu-Icons.png');
+    background-repeat: no-repeat;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.footer_link_icon{
+    width: 4px;
+    height: 20px;
+    background-image: url(/theme_pharmacistplace/static/src/icon/widget-link-dark.png);
+    background-repeat: no-repeat;
+    display: inline-table;
+    vertical-align: middle;
+}
+
+.list_icon {
+    width: 12px;
+    height: 17px;
+    background-image: url(/theme_pharmacistplace/static/src/icon/Order.png);
+    background-repeat: no-repeat;
+    display: inline-table;
+    vertical-align: middle;
+}
+
+.all_product_icon {
+    width: 24px;
+    height: 19px;
+    background-image: url(/theme_pharmacistplace/static/src/icon/All-Products.png);
+    background-repeat: no-repeat;
+    display: inline-table;
+    vertical-align: middle;
+}
+/*  */
+.navbar-xs {
+    min-height: 36px;
+    height: 36px;
+}
+
+.navbar-xs .navbar-brand {
+    padding: 0px 12px;
+    font-size: 16px;
+    line-height: 36px;
+}
+
+.navbar-xs .navbar-nav>li>a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 36px;
+}
+
+.btn-round-lg {
+    border-radius: 22.5px;
+}
+
+.btn-round {
+    border-radius: 17px;
+}
+
+.btn-round-sm {
+    border-radius: 15px;
+}
+
+.btn-round-xs {
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*  */
+
+.upgrade_btn_shadow{
+    -webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow : 0px 3px 2px 0px rgba(0,0,0,0.27);
+    box-shadow : 0px 3px 2px 0px rgba(0,0,0,0.27);
+}
+
+.all_product_btn_shadow {
+    /* -webkit-box-shadow: 0px 3px 0px 0px #0d8e72;
+    -moz-box-shadow: 0px 3px 0px 0px #0d8e72;
+    box-shadow: 0px 3px 0px 0px #0d8e72; */
+    border-bottom-width: 0.4229rem;
+}
+
+/* .pp_portal_content_sheet .page-header{
+    text-align: center;
+    margin-bottom: 32px;
+} */
+/* pp_wizard */
+
+ul.pp_wizard {
+    margin-top: 20px;
+    list-style: none outside none;
+    display: inline-flex;
+    /* padding: 0; */
+    /* -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px; */
+}
+
+ul.pp_wizard li {
+    border: 1px solid #d4d4d4;
+    padding: 10px 30px 0px 30px;
+    border-radius: 20px;
+
+
+
+    /* border: 1px solid #d4d4d4;
+    border-right-width: 0;
+
+    position: relative;
+
+    float: left;
+    padding: 0 20px 0 20px;
+    margin-right: 43px;
+    line-height: 30px;
+    background: #fbfbfb;
+
+    border-radius: 20px; */
+}
+.pp_hr{
+    width: 40px;
+    padding: 0px;
+    border-top: 1px solid #eeeeee;
+}
+
+ul.pp_wizard li.pp-text-white {
+    background: rgb(18, 174, 142);
+    /* color: #ffffff; */
+}
+
+
+/* ul.pp_wizard li.pp-text-primary {
+    background: #ffffff;
+} */
+
+/* make sidebar nav vertical */
+
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.pp_change_password_form {
+    max-width: 300px;
+    position: relative;
+    margin: 0px auto;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+
+		<template id="mp_checkout_inherit_quotation_inherit_in_marketplace" inherit_id="odoo_marketplace.quotation_inherit_in_marketplace">
+		    <xpath expr="//div[@id='product_name']//i[hasclass('sol-info')]" position="attributes">
+				<attribute name="style">display:none;</attribute>
+		    </xpath>
+		</template>
+
+		<template id="mp_checkout_inherit_orders_followup" inherit_id="website_portal_sale.orders_followup">
+			<xpath expr="//div[hasclass('panel-body')]//span[@t-field='order.create_date']" position="after">
+				<span class="pull-right col-md-6">
+					<t t-if="order.mp_order_state == 'new'">
+						<div class="label label-warning" style="padding:5px;">
+							<i class="fa fa-clock-o"></i> Waiting for Seller Approval
+						</div>
+					</t>
+					<t t-if="order.mp_order_state == 'approved'">
+						<div class="label label-success" style="padding:5px;">
+							<i class="fa fa-check-square-o"></i> Approved by Seller
+						</div>
+					</t>
+					<t t-if="order.mp_order_state == 'shipped'">
+						<div class="label label-info" style="padding:5px;">
+							<i class="fa fa-truck"></i> Shipped by Seller
+						</div>
+					</t>
+					<t t-if="order.mp_order_state == 'cancel'">
+						<div class="label label-danger" style="padding:5px;">
+							<i class="fa fa-times"></i> Cancelled by Seller
+						</div>
+					</t>
+				</span>
+			</xpath>
+		</template>
+
+	</data>
+</odoo>

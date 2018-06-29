@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+    <record id="sale_order_form_add_comment" model="ir.ui.view">
+      <field name="name">ale_order_form_add_comment</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale_comment_template.sale_order_form_add_comment"/>
+      <field name="arch" type="xml">
+        <page name="comments" position="replace">
+          <page string="Comments" name="comments">
+            <p style="margin-top: 10px;">The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document.</p>
+            <group string="Top Comments">
+              <field name="comment_template1_id" string="Load a template" domain="[('position','=','before_lines')]" context="{'default_position': 'before_lines'}"/>
+              <field name="note1" nolabel="1" colspan="2"/>
+            </group>
+            <group string="Bottom Comments">
+              <field name="comment_template2_id" string="Technical terms" context="{'default_position': 'after_lines'}" domain="[('position','=','after_lines')]"/>
+              <field name="note2" nolabel="1" colspan="2"/>
+            </group>
+            <group>
+              <field name="comment_template3_id" string="Financial terms" context="{'default_position': 'after_lines'}" domain="[('position','=','after_lines')]"/>
+              <field name="note3" nolabel="1" colspan="2"/>
+            </group>
+          </page>
+        </page>
+      </field>
+    </record>
+
+    <record id="sales_report_product_image.view_order_image_form_inherit" model="ir.ui.view">
+      <field name="name">sale.order.form.sale.image</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <field name="partner_id" position="after">
+          <field name="print_image"/>
+          <field name="image_sizes"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="sale_catalog" model="ir.ui.view">
+      <field name="name">sale_catalog</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form//field[@name='partner_id']/.." posiiton="inside">
+          <field name="print_type"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="product_catalog" model="ir.ui.view">
+      <field name="name">sproduct_catalog</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='description']" position="after">
+          <group name="catalogue">
+            <separator string="Description for Catalogue" colspan="4"/>
+            <field name="desc_catalog" colspan="4" nolabel="1"/>
+          </group>
+          <group name="proposal">
+            <separator string="Description for Proposal" colspan="4"/>
+            <field name="desc_proposal" colspan="4" nolabel="1"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="product_prod_catalog" model="ir.ui.view">
+      <field name="name">sproduct_prod_catalog</field>
+      <field name="model">product.product</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='description']" position="after">
+          <group name="catalogue">
+            <separator string="Description for Catalogue" colspan="4"/>
+            <field name="desc_catalog" colspan="4" nolabel="1"/>
+          </group>
+          <group name="proposal">
+            <separator string="Description for Proposal" colspan="4"/>
+            <field name="desc_proposal" colspan="4" nolabel="1"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+    <record id="sale_order_inherit_smartsys" model="ir.ui.view">
+      <field name="name">Sale Order</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+          <field name="is_optional"/>
+          <field name="hide_info"/>
+        </xpath>
+
+      </field>
+    </record>
+  </data>
+</odoo>

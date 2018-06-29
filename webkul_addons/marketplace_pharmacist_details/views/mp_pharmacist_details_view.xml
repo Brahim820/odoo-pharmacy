@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+	<data>
+
+		<record id="mp_pharmacist_details_form_view" model="ir.ui.view">
+            <field name="name">mp.pharmacist.details.form.view</field>
+            <field name="model">pharmacist.details</field>
+            <field name="arch" type="xml">
+                <form string="Pharmacist Account">
+					<sheet>
+						<group>
+							<group>
+								<field name="id" invisible="1"/>
+								<field name="customer_id"
+									context="{'form_view_ref': 'odoo_marketplace.customer_form_view_for_marketplace'}"
+									attrs="{'readonly': [('id','!=',False)]}"/>
+							</group>
+						</group>
+						<field name="mp_pharmacist_ids" invisible="1"/>
+					</sheet>
+                </form>
+            </field>
+        </record>
+
+		<record id="mp_pharmacist_id_details_tree_view" model="ir.ui.view">
+            <field name="name">mp.pharmacist.id.details.tree.view</field>
+            <field name="model">pharmacist.id.details</field>
+            <field name="arch" type="xml">
+                <tree string="Pharmacist Account">
+					<field name="name"/>
+					<field name="pharmacist_customer_id"/>
+					<field name="email"/>
+					<field name="phone"/>
+					<field name="pharmacist_id"/>
+					<field name="marketplace_seller_id" groups="odoo_marketplace.marketplace_officer_group"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="mp_pharmacist_id_details_form_view" model="ir.ui.view">
+            <field name="name">mp.pharmacist.details.id.form.view</field>
+            <field name="model">pharmacist.id.details</field>
+            <field name="arch" type="xml">
+                <form string="Pharmacist Account">
+					<sheet>
+						<div class="oe_title oe_inline">
+                            <b><label for="name" string="Name" class="oe_edit_only"/></b>
+                        	<h1>
+								<field name="name" default_focus="1" placeholder="Pharmacy Name"
+									class=" oe_title" readonly="1"/>
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="pharmacist_id" placeholder="Unique Id" required="1"/>
+								<field name="marketplace_seller_id" options="{'no_create_edit':True}"
+									context="{'form_view_ref': 'odoo_marketplace.wk_seller_form_view'}"
+									groups="odoo_marketplace.marketplace_officer_group"/>
+								<field name="pharmacist_customer_id" readonly="1" />
+							</group>
+						</group>
+						<group>
+							<group string="Address">
+								<label for="street1" string="Address"/>
+								<div>
+									<field name="street1" placeholder="Street..." readonly="1"/>
+									<field name="street2" readonly="1" placeholder="Street2.."/>
+									<div class="address_format">
+										<field name="city" placeholder="City" style="width: 40%%" readonly="1"/>
+										<field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%"
+											options='{"no_open": True, "no_create": True}' readonly="1"/>
+										<field name="zipcode" placeholder="ZIP" style="width: 22%%" readonly="1"/>
+									</div>
+									<field name="country_id" placeholder="Country" class="oe_no_button"
+										options='{"no_open": True, "no_create": True}' readonly="1"/>
+								</div>
+		                    </group>
+						    <group string="Contact">
+								<div>
+									<group>
+					                    <field name="email" placeholder="abc123@webkul.com" readonly="1"/>
+					                    <field name="phone" placeholder="Mobile Number" readonly="1"/>
+									</group>
+								</div>
+						    </group>
+	                    </group>
+						<group>
+							<field name="comm_registration_file" readonly="1"/>
+							<field name="tax_card" readonly="1"/>
+						</group>
+					</sheet>
+                </form>
+            </field>
+        </record>
+
+		<record id="inherit_mp_pharmacist_id_details_form_view_officer" model="ir.ui.view">
+            <field name="name">mp.pharmacist.details.id.form.view.officer.inherit</field>
+            <field name="model">pharmacist.id.details</field>
+            <field name="inherit_id" ref="marketplace_pharmacist_details.mp_pharmacist_id_details_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='marketplace_seller_id']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='pharmacist_customer_id']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='street1']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='street2']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='city']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='state_id']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='zipcode']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='country_id']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='email']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='phone']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='comm_registration_file']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				<xpath expr="//field[@name='tax_card']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="mp_pharmacist_id_details_search_view" model="ir.ui.view">
+            <field name="name">mp.pharmacist.id.details.search.view</field>
+            <field name="model">pharmacist.id.details</field>
+            <field name="arch" type="xml">
+				<search string="Search">
+					<group>
+						<filter string="Customer"
+							context="{'group_by':'pharmacist_customer_id'}"
+							name="group_pharmacist_customer_id"
+							groups="odoo_marketplace.marketplace_seller_group"
+							/>
+					</group>
+				</search>
+            </field>
+        </record>
+
+		<record id="inherit_mp_pharmacist_id_details_search_view_officer" model="ir.ui.view">
+            <field name="name">mp.pharmacist.id.details.search.view.officer.inherit</field>
+            <field name="model">pharmacist.id.details</field>
+			<field name="inherit_id" ref="marketplace_pharmacist_details.mp_pharmacist_id_details_search_view"/>
+			<field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+            <field name="arch" type="xml">
+				<group position="inside">
+					<filter string="Seller"
+						context="{'group_by':'marketplace_seller_id'}"
+						name="group_marketplace_seller_id"
+						groups="odoo_marketplace.marketplace_seller_group"
+						/>
+				</group>
+            </field>
+        </record>
+
+		<record id="mp_pharmacist_id_details_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Pharmacist Account</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pharmacist.id.details</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,</field>
+			<field name="context">{'search_default_group_marketplace_seller_id': 1,}</field>
+        </record>
+
+        <menuitem id="wk_seller_dashboard_mp_pharmacist_id_details"
+			name="Pharmacist Account"
+			parent="odoo_marketplace.wk_seller_dashboard"
+			action="mp_pharmacist_id_details_action"
+			groups="odoo_marketplace.marketplace_seller_group"
+			sequence="9"/>
+
+    </data>
+</odoo>

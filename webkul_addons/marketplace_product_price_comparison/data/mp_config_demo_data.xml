@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data noupdate="0">
+
+        <!-- Marketplace-Product-Price-Comparison Config settings -->
+        <function id="dispaly_comparison_product" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'dispaly_comparison_product', 'one')"/>
+
+        <function id="criteria_to_dispaly_one_product" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'criteria_to_dispaly_one_product', 'low_price')"/>
+
+        <function id="on_inactive_global_product" model="ir.values" name="set_default" eval="('marketplace.config.settings', 'on_inactive_global_product', 'inactive_all')"/>
+
+    </data>
+</odoo>

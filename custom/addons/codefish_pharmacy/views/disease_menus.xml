@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="action_Diseases_form_view" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">disease</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html"><p class="oe_view_nocontent_create">Click to add a new disease information.</p><p>Here is a list of all the diseases generated through the module</p>
+        </field>
+    </record>
+
+    <menuitem action="action_Diseases_form_view"
+              name="Diseases"
+              id="menu_action_Diseases_form"
+parent=""              sequence="10"
+              groups=""
+              />
+</odoo>

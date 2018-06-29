@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+<data>
+    <template id="invoice_num2words" priority="999" inherit_id="account.report_invoice_document">
+         <xpath expr="//table//tr[@class='border-black']" position="after">
+                  <tr>
+                  <td>Total in words</td>
+                  <td class="text-right"><span t-field="o.total_amount_in_words"/> </td>
+                  </tr>
+         </xpath>
+     </template>
+    </data>
+</odoo>

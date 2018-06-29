@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="action_account_partner_ledger_filter" model="ir.actions.act_window">
+		<field name="name">Partner Ledger</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">account.report.partner.ledger</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="account.account_report_partner_ledger_view"/>
+		<field name="context">{'default_partner_ids':active_ids, 'default_reconciled':True,}</field>
+		<field name="target">new</field>
+	</record>
+
+	<record id="action_account_partner_ledger_report_filter" model="ir.values">
+		<field name="model_id" ref="account.model_res_partner"/>
+		<field name="name">Partner Ledger</field>
+		<field name="key2">client_print_multi</field>
+		<field name="value" eval="'ir.actions.act_window,' +str(ref('action_account_partner_ledger_filter'))"/>
+		<field name="key">action</field>
+		<field name="model">res.partner</field>
+	</record>
+
+	<record id="account_report_partner_ledger_view" model="ir.ui.view">
+		<field name="name">Partner Ledger</field>
+		<field name="model">account.report.partner.ledger</field>
+		<field name="inherit_id" ref="account.account_common_report_view"/>
+		<field name="arch" type="xml">
+			<data>
+				<xpath expr="//field[@name='journal_ids']" position="before">
+					<field name="partner_ids" widget="many2many_tags"/>
+				</xpath>
+			</data>
+		</field>
+	</record>
+
+	<template id="report_generalledger_inherit" inherit_id="account.report_generalledger">
+		<xpath expr="//tbody/t/tr[1]/td[5]" position="replace">
+			<td groups="base.group_multi_currency" class="text-right">
+				<span t-esc="account['amount_currency'] if account['amount_currency'] > 0.00 else ''"/>
+				<span t-esc="account['currency_code'] if account['amount_currency'] > 0.00 else ''"/>
+			</td>
+		</xpath>
+	</template>
+
+	<template id="report_partnerledger_inherit" inherit_id="account.report_partnerledger">
+		<xpath expr="//table/tbody/tr[1]/td[4]" position="after">
+			<td groups="base.group_multi_currency" class="text-right" t-if="data['form']['amount_currency']">
+				<strong t-esc="sum_partner(data, o, 'amount_currency')" t-options="{'widget': 'monetary', 'display_currency': get_sec_currency()}"/>
+			</td>
+		</xpath>
+	</template>
+
+</odoo>

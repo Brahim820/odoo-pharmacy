@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_website_deals_and_offers_public_user,website.deals,model_website_deals,base.group_public,1,1,1,1
+access_product_website_deals_and_offers_users,website.deals,model_website_deals,,1,1,1,1
+access_product_website_deals_and_offers_public_user_portal_user,website.deals,model_website_deals,base.group_portal,1,1,1,1
